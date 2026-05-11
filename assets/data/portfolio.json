@@ -1,0 +1,336 @@
+{
+  "featured_cases": [
+    {
+      "slug": "service-department-banners",
+      "title": "Service Department Banners",
+      "category": "Dealerships, Design, Production, Products, Signs",
+      "summary": "A dealership-facing banner and sign package focused on quick-read messaging, production consistency, and environment fit.",
+      "placeholder": "case-service-department-banners.svg",
+      "labels": [
+        "Signage",
+        "Dealership",
+        "Production"
+      ],
+      "challenge": "Turn service messaging into durable, visible, easy-to-scan graphics for a busy dealership environment.",
+      "approach": "Create a modular banner system with simple hierarchy, direct wording, production-ready sizing, and consistent brand treatment.",
+      "deliverables": [
+        "Banner concepts",
+        "Production art",
+        "Material planning",
+        "Finished display pieces"
+      ]
+    },
+    {
+      "slug": "bills-root-juice",
+      "title": "Bill\u2019s Root Juice",
+      "category": "Ad Design, Branding, Design, Illustration, Logos, Production, Products",
+      "summary": "A brand-forward product package concept spanning identity, illustration, product assets, and production collateral.",
+      "placeholder": "case-bills-root-juice.svg",
+      "labels": [
+        "Branding",
+        "Illustration",
+        "Product"
+      ],
+      "challenge": "Create a product identity with enough personality to work on packaging, promotional material, and sales collateral.",
+      "approach": "Combine expressive illustration with a flexible logo and supporting brand assets for both print and product contexts.",
+      "deliverables": [
+        "Logo direction",
+        "Illustration",
+        "Product graphics",
+        "Production files"
+      ]
+    },
+    {
+      "slug": "sweet-retreat-ice-cream-trailer",
+      "title": "Sweet Retreat Ice Cream Trailer",
+      "category": "Design, Production, Signs, Vehicle Wraps",
+      "summary": "A mobile brand application using large-format graphics to make the trailer visible, recognizable, and photo-ready.",
+      "placeholder": "case-sweet-retreat-trailer.svg",
+      "labels": [
+        "Vehicle Wraps",
+        "Signage",
+        "Production"
+      ],
+      "challenge": "Translate a fun food-service brand into a wrap that reads clearly from a distance and feels inviting up close.",
+      "approach": "Plan the layout around trailer surfaces, customer approach angles, service windows, and the need for strong outdoor visibility.",
+      "deliverables": [
+        "Trailer wrap concept",
+        "Large-format print files",
+        "Vinyl production",
+        "Installation planning"
+      ]
+    },
+    {
+      "slug": "fleet-parts-truck",
+      "title": "Fleet Parts Truck",
+      "category": "Dealerships, Design, Production, Vehicle Wraps",
+      "summary": "A service vehicle graphic system designed for credibility, visibility, and fleet consistency.",
+      "placeholder": "case-fleet-parts-truck.svg",
+      "labels": [
+        "Fleet",
+        "Vehicle Wraps",
+        "Dealership"
+      ],
+      "challenge": "Make a working service truck function as both a brand asset and a clear service identifier on the road.",
+      "approach": "Use a clean hierarchy, side-panel visibility, readable contact zones, and production-aware wrap layout.",
+      "deliverables": [
+        "Fleet graphics",
+        "Vehicle mockups",
+        "Print-ready wrap files",
+        "Installation support"
+      ]
+    }
+  ],
+  "design_projects": [
+    {
+      "title": "Bob Chapman Ford Vehicle",
+      "categories": "Branding, Dealerships, Design, Illustration, Production, Vehicle Wraps",
+      "filters": [
+        "branding",
+        "illustration"
+      ]
+    },
+    {
+      "title": "Maryhaven Brochure Mailer",
+      "categories": "Ad Design, Branding, Design",
+      "filters": [
+        "ad-design",
+        "branding"
+      ]
+    },
+    {
+      "title": "Performance Impact 60 Dodge Ram Mega Cab",
+      "categories": "Branding, Dealerships, Design, Illustration, Production, Vehicle Wraps",
+      "filters": [
+        "branding",
+        "illustration"
+      ]
+    },
+    {
+      "title": "The Joint",
+      "categories": "Branding, Design, Logos",
+      "filters": [
+        "branding",
+        "logos"
+      ]
+    },
+    {
+      "title": "Shoreline Marine Construction",
+      "categories": "Design, Logos",
+      "filters": [
+        "logos"
+      ]
+    },
+    {
+      "title": "Chapman Collision",
+      "categories": "Design, Illustration, Logos",
+      "filters": [
+        "illustration",
+        "logos"
+      ]
+    },
+    {
+      "title": "Chapman Corporate",
+      "categories": "Design, Illustration, Logos",
+      "filters": [
+        "illustration",
+        "logos"
+      ]
+    },
+    {
+      "title": "The Hog",
+      "categories": "Design, Illustration, Logos",
+      "filters": [
+        "illustration",
+        "logos"
+      ]
+    },
+    {
+      "title": "Run4Kids Event",
+      "categories": "Design, Logos",
+      "filters": [
+        "logos"
+      ]
+    },
+    {
+      "title": "Baja Ridgeline",
+      "categories": "Dealerships, Design, Illustration, Vehicle Wraps",
+      "filters": [
+        "illustration"
+      ]
+    },
+    {
+      "title": "FormaCars Trailer",
+      "categories": "Design, Signs, Vehicle Wraps",
+      "filters": [
+        "ad-design"
+      ]
+    },
+    {
+      "title": "Ganim Medical",
+      "categories": "Design, Vehicle Wraps",
+      "filters": [
+        "branding"
+      ]
+    },
+    {
+      "title": "Bill\u2019s Root Juice",
+      "categories": "Ad Design, Branding, Design, Illustration, Logos, Production, Products",
+      "filters": [
+        "ad-design",
+        "branding",
+        "illustration",
+        "logos"
+      ]
+    },
+    {
+      "title": "Kissi Cakes",
+      "categories": "Branding, Signs",
+      "filters": [
+        "branding"
+      ]
+    },
+    {
+      "title": "Skyward Grille",
+      "categories": "Branding, Logos",
+      "filters": [
+        "branding",
+        "logos"
+      ]
+    },
+    {
+      "title": "Polaris Wealth Management",
+      "categories": "Illustration, Logos",
+      "filters": [
+        "illustration",
+        "logos"
+      ]
+    }
+  ],
+  "production_projects": [
+    {
+      "title": "Performance Delaware Courtesy Shuttle",
+      "categories": "Dealerships, Vehicle Wraps",
+      "filters": [
+        "dealerships",
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Lunsford Performance",
+      "categories": "Branding, Production, Vehicle Wraps",
+      "filters": [
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Performance CDJR Mobile Service Vehicle",
+      "categories": "Dealerships, Production, Vehicle Wraps",
+      "filters": [
+        "dealerships",
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Bob Chapman Ford Vehicle",
+      "categories": "Branding, Dealerships, Design, Illustration, Production, Vehicle Wraps",
+      "filters": [
+        "dealerships",
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Baja Ridgeline",
+      "categories": "Dealerships, Design, Illustration, Vehicle Wraps",
+      "filters": [
+        "dealerships",
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "FormaCars Trailer",
+      "categories": "Design, Signs, Vehicle Wraps",
+      "filters": [
+        "signs",
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Range Rover",
+      "categories": "Production, Vehicle Wraps",
+      "filters": [
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Engie Fleet",
+      "categories": "Design, Production, Vehicle Wraps",
+      "filters": [
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "The Nicklaus Group",
+      "categories": "Ad Design, Branding, Design, Production, Signs, Vehicle Wraps",
+      "filters": [
+        "signs",
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Fleet Parts Truck",
+      "categories": "Dealerships, Design, Production, Vehicle Wraps",
+      "filters": [
+        "dealerships",
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Sweet Retreat Ice Cream Trailer",
+      "categories": "Design, Production, Signs, Vehicle Wraps",
+      "filters": [
+        "signs",
+        "vehicle-wraps"
+      ]
+    },
+    {
+      "title": "Service Department Banners",
+      "categories": "Dealerships, Design, Production, Products, Signs",
+      "filters": [
+        "dealerships",
+        "products",
+        "signs"
+      ]
+    },
+    {
+      "title": "Beer Tubes",
+      "categories": "Products",
+      "filters": [
+        "products"
+      ]
+    },
+    {
+      "title": "Huguenin Family Dental",
+      "categories": "Signs",
+      "filters": [
+        "signs"
+      ]
+    },
+    {
+      "title": "Wall Vinyl",
+      "categories": "Dealerships, Signs",
+      "filters": [
+        "dealerships",
+        "signs"
+      ]
+    },
+    {
+      "title": "Prize Wheels",
+      "categories": "Dealerships, Products",
+      "filters": [
+        "dealerships",
+        "products"
+      ]
+    }
+  ]
+}

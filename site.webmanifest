@@ -1,0 +1,9 @@
+{
+  "name": "Tridico Design",
+  "short_name": "Tridico",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#111217",
+  "description": "Graphic design, printing, branding, signage, vehicle wraps, and installation."
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Case Detail Image 2 — Sweet Retreat Ice Cream Trailer</title>
+  <desc id="desc">Placeholder image for Tridico Design. Replace with final photography.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#fffdf8"/>
+      <stop offset=".38" stop-color="#e8ecff"/>
+      <stop offset=".72" stop-color="#e7faf4"/>
+      <stop offset="1" stop-color="#f7e7ff"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#111217" stroke-opacity=".07" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" rx="36" fill="url(#bg)"/>
+  <rect width="1200" height="900" rx="36" fill="url(#grid)"/>
+  <circle cx="192" cy="198" r="144" fill="#245bff" fill-opacity=".13"/>
+  <circle cx="1008" cy="684" r="171" fill="#16c9a8" fill-opacity=".16"/>
+  <rect x="72" y="72" width="1056" height="756" rx="28" fill="#fffdf8" fill-opacity=".72" stroke="#111217" stroke-opacity=".12"/>
+  <text x="600.0" y="270" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="4" fill="#245bff">TRIDICO DESIGN PLACEHOLDER</text>
+  <text x="600.0" y="416" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#111217">Case Detail Image 2 — Sweet</text>
+<text x="600.0" y="484" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="#111217">Retreat Ice Cream Trailer</text>
+  <text x="600.0" y="702" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#666b78">Replace this SVG with final image</text>
+  <text x="600.0" y="756" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#666b78">case-sweet-retreat-trailer-detail-2.svg</text>
+</svg>
