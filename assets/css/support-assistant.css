@@ -39,16 +39,16 @@
 .tdsa-panel[hidden]{display:none}
 .tdsa-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 8%,rgba(239,29,36,.35),transparent 34%),radial-gradient(circle at 88% 4%,rgba(255,210,29,.24),transparent 28%),linear-gradient(180deg,rgba(255,255,255,.04),transparent 22%);pointer-events:none}
 
-.tdsa-header{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1rem 1rem .85rem;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(5,5,5,.84);backdrop-filter:saturate(150%) blur(12px)}
+.tdsa-header{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1rem .85rem;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(5,5,5,.84);backdrop-filter:saturate(150%) blur(12px)}
 .tdsa-title-wrap{display:flex;align-items:center;gap:.75rem;min-width:0;flex:1 1 auto}
 .tdsa-mark{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;width:44px;height:44px;background:#050505;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.2);box-shadow:0 10px 24px rgba(0,0,0,.3)}
 .tdsa-mark::before{content:"";background:var(--tdsa-red)}
 .tdsa-mark::after{content:"";background:var(--tdsa-yellow)}
 .tdsa-title{min-width:0}
 .tdsa-title strong{display:block;font-size:1rem;line-height:1.1;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tdsa-header-actions{display:flex;align-items:flex-start;justify-content:flex-end;gap:.7rem;margin-left:auto;flex:0 0 auto}
-.tdsa-header-motto{display:block;line-height:1;margin-top:.08rem}
-.tdsa-header-motto .brand-slogan--assistant{--slogan-quote-size:1.65rem;--slogan-script-size:.52rem;--slogan-integrity-size:.94rem;--slogan-tridico-size:.32rem;--slogan-quote-color:#fff;--slogan-close-quote-color:var(--tdsa-yellow);--slogan-script-color:var(--tdsa-yellow);--slogan-integrity-color:#fff;--slogan-tridico-color:rgba(255,255,255,.74)}
+.tdsa-header-actions{display:flex;align-items:center;justify-content:flex-end;gap:.72rem;margin-left:auto;flex:0 0 auto}
+.tdsa-header-motto{display:block;line-height:1;margin-top:0}
+.tdsa-header-motto .brand-slogan--assistant{--slogan-quote-size:1.9rem;--slogan-script-size:.6rem;--slogan-integrity-size:1.08rem;--slogan-tridico-size:.37rem;--slogan-quote-color:#fff;--slogan-close-quote-color:var(--tdsa-yellow);--slogan-script-color:var(--tdsa-yellow);--slogan-integrity-color:#fff;--slogan-tridico-color:rgba(255,255,255,.78)}
 .tdsa-bubble .brand-slogan--chat{--slogan-quote-size:2.25rem;--slogan-script-size:.72rem;--slogan-integrity-size:1.32rem;--slogan-tridico-size:.44rem;--slogan-quote-color:#050505;--slogan-close-quote-color:var(--tdsa-yellow-2);--slogan-script-color:var(--tdsa-red);--slogan-integrity-color:#050505;--slogan-tridico-color:rgba(0,0,0,.62);margin:.25rem 0 .2rem}
 .tdsa-motto-row>span:first-child{display:block;margin-bottom:.25rem}
 .tdsa-close{flex:0 0 auto;width:40px;height:40px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;transition:background .18s ease,transform .18s ease}
@@ -102,7 +102,7 @@
   .tdsa-root{right:.6rem;bottom:.6rem;left:.6rem;display:flex;justify-content:flex-end;pointer-events:none}.tdsa-root>*{pointer-events:auto}
   .tdsa-launcher{min-height:56px;padding:.5rem .76rem .5rem .5rem}.tdsa-launcher__orb{width:42px;height:42px}.tdsa-launcher__text small{display:none}
   .tdsa-panel{right:0;left:0;bottom:calc(100% + .65rem);width:100%;height:min(72vh,680px);min-height:460px;border-radius:20px}
-  .tdsa-bubble{max-width:88%}.tdsa-chips{max-width:100%}.tdsa-header-motto .brand-slogan--assistant{--slogan-quote-size:1.45rem;--slogan-script-size:.46rem;--slogan-integrity-size:.82rem;--slogan-tridico-size:.29rem}.tdsa-header{padding:.85rem}.tdsa-log{padding:.82rem}.tdsa-footer{padding:.6rem}
+  .tdsa-bubble{max-width:88%}.tdsa-chips{max-width:100%}.tdsa-header-motto .brand-slogan--assistant{--slogan-quote-size:1.68rem;--slogan-script-size:.53rem;--slogan-integrity-size:.95rem;--slogan-tridico-size:.33rem}.tdsa-header{padding:.85rem}.tdsa-log{padding:.82rem}.tdsa-footer{padding:.6rem}
 }
 
 @media (prefers-reduced-motion:reduce){
