@@ -48,6 +48,8 @@ button{cursor:pointer}
 .brand-slogan__tridico{font-size:var(--slogan-tridico-size);font-weight:300;letter-spacing:.095em;color:var(--slogan-tridico-color);text-transform:uppercase;margin-top:-.08em}
 .brand-slogan__tridico strong{font-weight:850;color:inherit}
 .brand-slogan--utility{--slogan-quote-size:2.45rem;--slogan-script-size:.86rem;--slogan-integrity-size:1.55rem;--slogan-tridico-size:.52rem;--slogan-quote-color:#fff;--slogan-close-quote-color:#fff;--slogan-script-color:#fff;--slogan-integrity-color:#fff;--slogan-tridico-color:rgba(255,255,255,.88)}
+.brand-slogan--utility .brand-slogan__script{letter-spacing:.045em;margin:-.1em 0 -.08em .26em;transform:skew(-8deg) translateY(-.08em)}
+.brand-slogan--utility .brand-slogan__tridico{font-weight:430;letter-spacing:.105em}
 .brand-slogan--footer{--slogan-quote-size:3.1rem;--slogan-script-size:1.02rem;--slogan-integrity-size:1.9rem;--slogan-tridico-size:.62rem;--slogan-quote-color:#fff;--slogan-close-quote-color:var(--yellow);--slogan-script-color:var(--yellow);--slogan-integrity-color:#fff;--slogan-tridico-color:rgba(255,255,255,.78)}
 .brand-slogan--hero{--slogan-quote-size:3.2rem;--slogan-script-size:1.1rem;--slogan-integrity-size:2.15rem;--slogan-tridico-size:.72rem;--slogan-quote-color:#fff;--slogan-close-quote-color:var(--yellow);--slogan-script-color:var(--yellow);--slogan-integrity-color:#fff;--slogan-tridico-color:rgba(255,255,255,.78)}
 .brand-slogan--body{--slogan-quote-size:2.7rem;--slogan-script-size:.92rem;--slogan-integrity-size:1.65rem;--slogan-tridico-size:.56rem;--slogan-quote-color:var(--black);--slogan-close-quote-color:var(--yellow-2);--slogan-script-color:var(--red);--slogan-integrity-color:var(--black);--slogan-tridico-color:rgba(0,0,0,.62);margin:0 .35rem .35rem 0}
