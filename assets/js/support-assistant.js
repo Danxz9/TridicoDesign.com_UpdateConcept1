@@ -283,7 +283,6 @@
         </div>
         <div class="tdsa-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
         <div class="tdsa-footer">
-          <div class="tdsa-chips" aria-label="Suggested support paths"></div>
           <form class="tdsa-composer" autocomplete="off">
             <input class="tdsa-input" type="text" name="message" placeholder="Type your question…" aria-label="Message Braxton">
             <button class="tdsa-send" type="submit">Send</button>
@@ -298,7 +297,6 @@
     state.panel = root.querySelector('.tdsa-panel');
     state.closeButton = root.querySelector('.tdsa-close');
     state.log = root.querySelector('.tdsa-log');
-    state.chips = root.querySelector('.tdsa-chips');
     state.form = root.querySelector('.tdsa-composer');
     state.input = root.querySelector('.tdsa-input');
 
@@ -396,7 +394,21 @@
   }
 
   function setChips(chipIds) {
-    state.chips.innerHTML = '';
+    if (state.chips) {
+      state.chips.remove();
+      state.chips = null;
+    }
+    if (!chipIds.length) return;
+
+    const row = document.createElement('div');
+    row.className = 'tdsa-message tdsa-message--options';
+    const group = document.createElement('div');
+    group.className = 'tdsa-chips';
+    group.setAttribute('aria-label', 'Suggested support paths');
+    row.appendChild(group);
+    state.log.appendChild(row);
+    state.chips = row;
+
     chipIds.forEach((id) => {
       const chip = CHIP_DEFS[id];
       if (!chip) return;
@@ -409,8 +421,12 @@
         el.type = 'button';
         el.addEventListener('click', () => handleChip(chip));
       }
-      state.chips.appendChild(el);
+      group.appendChild(el);
     });
+    if (!group.children.length) {
+      row.remove();
+      state.chips = null;
+    }
   }
 
   function handleChip(chip) {
