@@ -42,20 +42,49 @@
   });
 
   document.querySelectorAll('[data-filter-bar]').forEach(bar => {
-    const grid = document.querySelector('[data-filter-grid]');
+    const grid = bar.closest('section')?.querySelector('[data-filter-grid]') || document.querySelector('[data-filter-grid]');
     if (!grid) return;
     const cards = Array.from(grid.querySelectorAll('[data-category]'));
-    bar.addEventListener('click', event => {
-      const btn = event.target.closest('[data-filter]');
-      if (!btn) return;
-      const filter = btn.dataset.filter;
-      bar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      cards.forEach(card => {
-        const show = filter === 'all' || card.dataset.category.split(' ').includes(filter);
-        card.classList.toggle('is-hidden', !show);
+    const secondaryButtons = Array.from(bar.querySelectorAll('[data-filter-secondary]'));
+    const tertiaryButtons = Array.from(bar.querySelectorAll('[data-filter-tertiary]'));
+    let secondaryFilter = 'all';
+    let tertiaryFilter = '';
+    const setPressed = (button, active) => {
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
+    };
+    const applyFilters = () => {
+      const secondaryTokens = secondaryFilter === 'all' ? ['design', 'production'] : [secondaryFilter];
+      secondaryButtons.forEach(button => {
+        const value = button.dataset.filterSecondary;
+        const active = value === 'all'
+          ? secondaryFilter === 'all'
+          : secondaryFilter === 'all' || secondaryFilter === value;
+        setPressed(button, active);
       });
+      tertiaryButtons.forEach(button => setPressed(button, button.dataset.filterTertiary === tertiaryFilter));
+      cards.forEach(card => {
+        const categories = card.dataset.category.split(' ');
+        const matchesSecondary = secondaryTokens.some(token => categories.includes(token));
+        const matchesTertiary = !tertiaryFilter || categories.includes(tertiaryFilter);
+        card.classList.toggle('is-hidden', !(matchesSecondary && matchesTertiary));
+      });
+    };
+    bar.addEventListener('click', event => {
+      const secondaryBtn = event.target.closest('[data-filter-secondary]');
+      if (secondaryBtn) {
+        secondaryFilter = secondaryBtn.dataset.filterSecondary;
+        if (secondaryFilter === 'all') tertiaryFilter = '';
+        applyFilters();
+        return;
+      }
+      const btn = event.target.closest('[data-filter-tertiary]');
+      if (!btn) return;
+      const filter = btn.dataset.filterTertiary;
+      tertiaryFilter = tertiaryFilter === filter ? '' : filter;
+      applyFilters();
     });
+    applyFilters();
   });
 
   document.querySelectorAll('[data-card-deck]').forEach(deck => {
