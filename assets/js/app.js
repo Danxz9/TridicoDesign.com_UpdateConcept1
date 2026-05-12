@@ -41,6 +41,13 @@
     update();
   });
 
+  document.querySelectorAll('.portfolio-media--contain').forEach(media => {
+    const img = media.querySelector('img');
+    if (!img) return;
+    const src = img.currentSrc || img.getAttribute('src');
+    if (src) media.style.setProperty('--media-backdrop', `url("${new URL(src, window.location.href).href}")`);
+  });
+
   document.querySelectorAll('[data-filter-bar]').forEach(bar => {
     const grid = bar.closest('section')?.querySelector('[data-filter-grid]') || document.querySelector('[data-filter-grid]');
     if (!grid) return;
