@@ -16,6 +16,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/images/work/yokohama-racer-work-hero.jpg" as="image">
   <link rel="preload" href="assets/images/work/honda-racing-xl-vehicle-wrap.jpg" as="image">
+  <link rel="preload" href="assets/images/work/acura-trio-four-car-wrap.jpg" as="image">
   <link rel="preload" href="assets/css/styles.css" as="style">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/support-assistant.css">
@@ -85,7 +86,28 @@
       <p>Replace each labeled image slot with real project photography. Keep this structure: customers should understand the type of project before they click.</p>
       <div class="hero-actions"><a class="btn btn-primary" href="quote.html">Quote Similar Work</a><a class="btn btn-ghost-light" href="upload-artwork.html">Upload Artwork</a></div>
     </div>
-    <img src="assets/images/work/honda-racing-xl-vehicle-wrap.jpg" alt="Honda Racing XL vehicle wrap project" loading="eager" decoding="async">
+    <div class="hero-card-deck" data-card-deck aria-label="Featured vehicle wrap image deck" tabindex="0">
+      <button class="deck-arrow deck-arrow--prev" type="button" data-deck-prev aria-label="Show previous featured project">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="deck-stack" aria-live="polite">
+        <figure class="deck-card is-active" data-deck-card>
+          <img src="assets/images/work/honda-racing-xl-vehicle-wrap.jpg" alt="Honda Racing XL vehicle wrap project" loading="eager" decoding="async">
+          <figcaption><span>Vehicle Wraps</span><strong>Honda Racing XL Vehicle Wrap</strong></figcaption>
+        </figure>
+        <figure class="deck-card" data-deck-card>
+          <img src="assets/images/work/acura-trio-four-car-wrap.jpg" alt="Four white Acura race vehicles with coordinated graphics on a track" loading="eager" decoding="async">
+          <figcaption><span>Vehicle Graphics</span><strong>Acura Trio Vehicle Graphics</strong></figcaption>
+        </figure>
+      </div>
+      <button class="deck-arrow deck-arrow--next" type="button" data-deck-next aria-label="Show next featured project">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="deck-dots" aria-label="Featured project selection">
+        <button class="deck-dot is-active" type="button" data-deck-dot aria-label="Show Honda Racing XL Vehicle Wrap" aria-current="true"><span class="sr-only">Honda Racing XL Vehicle Wrap</span></button>
+        <button class="deck-dot" type="button" data-deck-dot aria-label="Show Acura Trio Vehicle Graphics"><span class="sr-only">Acura Trio Vehicle Graphics</span></button>
+      </div>
+    </div>
   </div>
 </section>
 <section class="section-pad">

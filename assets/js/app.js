@@ -58,6 +58,44 @@
     });
   });
 
+  document.querySelectorAll('[data-card-deck]').forEach(deck => {
+    const cards = Array.from(deck.querySelectorAll('[data-deck-card]'));
+    const dots = Array.from(deck.querySelectorAll('[data-deck-dot]'));
+    const prev = deck.querySelector('[data-deck-prev]');
+    const next = deck.querySelector('[data-deck-next]');
+    if (!cards.length) return;
+    let active = cards.findIndex(card => card.classList.contains('is-active'));
+    if (active < 0) active = 0;
+    const setActive = index => {
+      active = (index + cards.length) % cards.length;
+      cards.forEach((card, i) => {
+        const isActive = i === active;
+        card.classList.toggle('is-active', isActive);
+        card.setAttribute('aria-hidden', String(!isActive));
+      });
+      dots.forEach((dot, i) => {
+        const isActive = i === active;
+        dot.classList.toggle('is-active', isActive);
+        if (isActive) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+    };
+    if (prev) prev.addEventListener('click', () => setActive(active - 1));
+    if (next) next.addEventListener('click', () => setActive(active + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => setActive(i)));
+    deck.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        setActive(active - 1);
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        setActive(active + 1);
+      }
+    });
+    setActive(active);
+  });
+
   function serializeForm(form){
     const data = new FormData(form);
     const lines = [];
