@@ -46,7 +46,10 @@
 .tdsa-mark::after{content:"";background:var(--tdsa-yellow)}
 .tdsa-title{min-width:0}
 .tdsa-title strong{display:block;font-size:1rem;line-height:1.1;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tdsa-title span{display:block;margin-top:.2rem;font-size:.76rem;color:var(--tdsa-muted);line-height:1.25}
+.tdsa-title-motto{display:block;margin-top:.24rem;line-height:1}
+.tdsa-title .brand-slogan--assistant{--slogan-quote-size:1.65rem;--slogan-script-size:.52rem;--slogan-integrity-size:.94rem;--slogan-tridico-size:.32rem;--slogan-quote-color:#fff;--slogan-close-quote-color:var(--tdsa-yellow);--slogan-script-color:var(--tdsa-yellow);--slogan-integrity-color:#fff;--slogan-tridico-color:rgba(255,255,255,.74)}
+.tdsa-bubble .brand-slogan--chat{--slogan-quote-size:2.25rem;--slogan-script-size:.72rem;--slogan-integrity-size:1.32rem;--slogan-tridico-size:.44rem;--slogan-quote-color:#050505;--slogan-close-quote-color:var(--tdsa-yellow-2);--slogan-script-color:var(--tdsa-red);--slogan-integrity-color:#050505;--slogan-tridico-color:rgba(0,0,0,.62);margin:.25rem 0 .2rem}
+.tdsa-motto-row>span:first-child{display:block;margin-bottom:.25rem}
 .tdsa-close{flex:0 0 auto;width:40px;height:40px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;transition:background .18s ease,transform .18s ease}
 .tdsa-close:hover{background:rgba(255,255,255,.14);transform:scale(1.05)}
 .tdsa-close:focus-visible{outline:3px solid var(--tdsa-yellow);outline-offset:2px}
@@ -77,13 +80,15 @@
 .tdsa-chip:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.28);transform:translateY(-1px)}
 .tdsa-chip--primary{background:var(--tdsa-yellow);border-color:var(--tdsa-yellow);color:#050505}.tdsa-chip--primary:hover{background:#ffe066;color:#050505}
 .tdsa-chip--danger{background:var(--tdsa-red);border-color:var(--tdsa-red);color:#fff}
-.tdsa-composer{display:grid;grid-template-columns:1fr auto;gap:.45rem;align-items:center}
+.tdsa-composer{display:grid;grid-template-columns:auto 1fr auto;gap:.45rem;align-items:center}
+.tdsa-attach{display:grid;place-items:center;width:44px;min-height:44px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;transition:background .18s ease,transform .18s ease,border-color .18s ease}
+.tdsa-attach:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.28);transform:translateY(-1px)}
 .tdsa-input{width:100%;min-height:44px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;padding:.72rem .9rem;font-size:.9rem;outline:none}
 .tdsa-input::placeholder{color:rgba(255,255,255,.55)}
 .tdsa-input:focus{border-color:var(--tdsa-yellow);box-shadow:0 0 0 3px rgba(255,210,29,.18)}
 .tdsa-send{min-height:44px;border:0;border-radius:999px;background:var(--tdsa-yellow);color:#050505;font-weight:950;padding:.68rem .84rem;cursor:pointer;transition:transform .18s ease,filter .18s ease}
 .tdsa-send:hover{transform:translateY(-1px);filter:brightness(1.04)}
-.tdsa-send:focus-visible,.tdsa-chip:focus-visible{outline:3px solid var(--tdsa-yellow);outline-offset:2px}
+.tdsa-send:focus-visible,.tdsa-chip:focus-visible,.tdsa-attach:focus-visible{outline:3px solid var(--tdsa-yellow);outline-offset:2px}
 .tdsa-composer-note{margin:.44rem .2rem 0;color:rgba(255,255,255,.56);font-size:.72rem;line-height:1.25}
 
 .tdsa-actions{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.65rem}.tdsa-action{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:.55rem .7rem;border-radius:999px;border:1px solid #111;background:#111;color:#fff!important;text-decoration:none!important;font-weight:900;font-size:.82rem;cursor:pointer}.tdsa-action--yellow{background:var(--tdsa-yellow);border-color:var(--tdsa-yellow);color:#050505!important}.tdsa-action--outline{background:transparent;color:#111!important;border-color:#111}.tdsa-action:hover{transform:translateY(-1px)}
@@ -96,7 +101,7 @@
   .tdsa-root{right:.6rem;bottom:.6rem;left:.6rem;display:flex;justify-content:flex-end;pointer-events:none}.tdsa-root>*{pointer-events:auto}
   .tdsa-launcher{min-height:56px;padding:.5rem .76rem .5rem .5rem}.tdsa-launcher__orb{width:42px;height:42px}.tdsa-launcher__text small{display:none}
   .tdsa-panel{right:0;left:0;bottom:calc(100% + .65rem);width:100%;height:min(72vh,680px);min-height:460px;border-radius:20px}
-  .tdsa-bubble{max-width:88%}.tdsa-chips{max-width:100%}.tdsa-title span{font-size:.7rem}.tdsa-header{padding:.85rem}.tdsa-log{padding:.82rem}.tdsa-footer{padding:.6rem}
+  .tdsa-bubble{max-width:88%}.tdsa-chips{max-width:100%}.tdsa-title .brand-slogan--assistant{--slogan-quote-size:1.45rem;--slogan-script-size:.46rem;--slogan-integrity-size:.82rem;--slogan-tridico-size:.29rem}.tdsa-header{padding:.85rem}.tdsa-log{padding:.82rem}.tdsa-footer{padding:.6rem}
 }
 
 @media (prefers-reduced-motion:reduce){

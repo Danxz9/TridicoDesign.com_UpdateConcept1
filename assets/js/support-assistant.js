@@ -16,7 +16,7 @@
     phoneHref: 'tel:+16145080815',
     email: 'ben@tridicodesign.com',
     address: '8626 Cotter Street, Lewis Center, OH 43035',
-    hours: 'Weekdays 9am – 5pm',
+    hours: 'Weekdays 9am - 5pm',
     quoteUrl: 'quote.html',
     uploadUrl: 'upload-artwork.html',
     contactUrl: 'contact.html',
@@ -29,6 +29,12 @@
     storageKey: 'tridico_support_tickets_v1'
   };
 
+  const SLOGAN_LABEL = 'Welcome to integrity, Welcome to Tridico.';
+
+  function sloganHtml(variant) {
+    return `<span class="brand-slogan ${variant}" aria-label="${SLOGAN_LABEL}"><span class="brand-slogan__quote brand-slogan__quote--open" aria-hidden="true"></span><span class="brand-slogan__words" aria-hidden="true"><span class="brand-slogan__script">Welcome to</span><span class="brand-slogan__integrity">INTEGRITY</span><span class="brand-slogan__tridico">WELCOME TO <strong>TRIDICO</strong></span></span><span class="brand-slogan__quote brand-slogan__quote--close" aria-hidden="true"></span></span>`;
+  }
+
   const PATHS = {
     start: {
       label: 'Start',
@@ -39,7 +45,7 @@
     navigation: {
       label: 'Find a page',
       keywords: ['navigation', 'navigate', 'page', 'where', 'find', 'website', 'menu', 'link', 'go to'],
-      html: `<p><strong>Fastest website paths:</strong></p><ul><li><a href="work.html">Work</a> — view project examples and portfolio categories.</li><li><a href="services.html">Services</a> — graphic design, print, signs, wraps, branding, and installation.</li><li><a href="industries.html">Industries</a> — contractors, restaurants, schools, retail, automotive, offices, gyms, and more.</li><li><a href="process.html">Process</a> — intake, proof, production, and installation.</li><li><a href="quote.html">Get Quote</a> — submit project details.</li><li><a href="upload-artwork.html">Upload Artwork</a> — prepare files for Tridico.</li><li><a href="contact.html">Contact</a> — phone, email, location, and hours.</li></ul>`,
+      html: `<p><strong>Fastest website paths:</strong></p><ul><li><a href="work.html">Work</a> - view project examples and portfolio categories.</li><li><a href="services.html">Services</a> - graphic design, print, signs, wraps, branding, and installation.</li><li><a href="industries.html">Industries</a> - contractors, restaurants, schools, retail, automotive, offices, gyms, and more.</li><li><a href="process.html">Process</a> - intake, proof, production, and installation.</li><li><a href="quote.html">Get Quote</a> - submit project details.</li><li><a href="upload-artwork.html">Upload Artwork</a> - prepare files for Tridico.</li><li><a href="contact.html">Contact</a> - phone, email, location, and hours.</li></ul>`,
       chips: ['quote', 'upload', 'services', 'website_issue', 'company']
     },
     quote: {
@@ -57,7 +63,7 @@
     services: {
       label: 'Services',
       keywords: ['services', 'service', 'sign', 'signage', 'wrap', 'wraps', 'vehicle', 'printing', 'print', 'graphic design', 'branding', 'materials', 'decals', 'banner', 'installation', 'install', 'wall graphic', 'window graphic'],
-      html: `<p><strong>Tridico service paths:</strong></p><ul><li><a href="graphic-design.html">Graphic Design</a> — layouts, logos, concepts, and production-ready artwork.</li><li><a href="printing.html">Printing Services</a> — cards, brochures, folders, decals, banners, display materials, and large-format print.</li><li><a href="branding-materials.html">Branding Materials</a> — branded assets that keep a business consistent across touchpoints.</li><li><a href="signage.html">Signage</a> — storefront, interior, exterior, event, wall, and window graphics.</li><li><a href="vehicle-wraps.html">Vehicle Wraps</a> — single vehicles, fleets, trailers, food trucks, and decals.</li><li><a href="installation.html">On-Site Installation</a> — install-ready planning for real locations.</li></ul>`,
+      html: `<p><strong>Tridico service paths:</strong></p><ul><li><a href="graphic-design.html">Graphic Design</a> - layouts, logos, concepts, and production-ready artwork.</li><li><a href="printing.html">Printing Services</a> - cards, brochures, folders, decals, banners, display materials, and large-format print.</li><li><a href="branding-materials.html">Branding Materials</a> - branded assets that keep a business consistent across touchpoints.</li><li><a href="signage.html">Signage</a> - storefront, interior, exterior, event, wall, and window graphics.</li><li><a href="vehicle-wraps.html">Vehicle Wraps</a> - single vehicles, fleets, trailers, food trucks, and decals.</li><li><a href="installation.html">On-Site Installation</a> - install-ready planning for real locations.</li></ul>`,
       chips: ['quote', 'work', 'industries', 'care', 'installation']
     },
     quality: {
@@ -87,7 +93,7 @@
     company: {
       label: 'Company info',
       keywords: ['company', 'about', 'hours', 'address', 'location', 'phone', 'email', 'contact', 'who', 'tridico', 'integrity', 'motto'],
-      html: `<p><strong>Tridico Design LLC</strong></p><ul><li>Motto: “Welcome to integrity, Welcome to Tridico.”</li><li>Phone: <a href="tel:+16145080815">(614) 508-0815</a></li><li>Email: <a href="mailto:ben@tridicodesign.com">ben@tridicodesign.com</a></li><li>Address: 8626 Cotter Street, Lewis Center, OH 43035</li><li>Hours: Weekdays 9am – 5pm</li></ul>`,
+      html: `<p><strong>Tridico Design LLC</strong></p><ul><li class="tdsa-motto-row"><span>Motto:</span> ${sloganHtml('brand-slogan--chat')}</li><li>Phone: <a href="tel:+16145080815">(614) 508-0815</a></li><li>Email: <a href="mailto:ben@tridicodesign.com">ben@tridicodesign.com</a></li><li>Address: 8626 Cotter Street, Lewis Center, OH 43035</li><li>Hours: Weekdays 9am - 5pm</li></ul>`,
       chips: ['contact', 'services', 'quote', 'feedback', 'navigation']
     },
     product_support: {
@@ -117,7 +123,7 @@
     rush: {
       label: 'Rush timeline',
       keywords: ['rush', 'urgent', 'emergency', 'asap', 'same day', 'next day', 'deadline', 'event', 'tomorrow', 'fast'],
-      html: `<p><strong>Rush project path:</strong></p><ul><li>State the hard deadline first.</li><li>Include what must be produced, quantity, size, and whether design is already approved.</li><li>Upload any files immediately and mention “rush” in the notes.</li><li>Call after submitting details if the deadline is business-critical.</li></ul><p>Rush feasibility depends on design complexity, proof approval, materials, production queue, and installation needs.</p>`,
+      html: `<p><strong>Rush project path:</strong></p><ul><li>State the hard deadline first.</li><li>Include what must be produced, quantity, size, and whether design is already approved.</li><li>Upload any files immediately and mention "rush" in the notes.</li><li>Call after submitting details if the deadline is business-critical.</li></ul><p>Rush feasibility depends on design complexity, proof approval, materials, production queue, and installation needs.</p>`,
       chips: ['open_quote', 'call', 'open_upload', 'ticket_quote']
     },
     ticket: {
@@ -129,7 +135,7 @@
     fallback: {
       label: 'Not sure',
       keywords: [],
-      html: `<p>I can help route that. Choose the closest topic below, or type a few more details such as “vinyl peeling,” “invoice question,” “upload problem,” “quote help,” or “existing project.”</p>`,
+      html: `<p>I can help route that. Choose the closest topic below, or type a few more details such as "vinyl peeling," "invoice question," "upload problem," "quote help," or "existing project."</p>`,
       chips: ['quote', 'upload', 'services', 'quality', 'billing', 'product_support', 'ticket']
     }
   };
@@ -162,7 +168,8 @@
     ticket_upload: { label: 'Upload ticket', ticket: 'upload' },
     ticket_quote: { label: 'Quote ticket', ticket: 'quote' },
     ticket_website: { label: 'Website ticket', ticket: 'website' },
-    ticket_feedback: { label: 'Feedback ticket', ticket: 'feedback' }
+    ticket_feedback: { label: 'Feedback ticket', ticket: 'feedback' },
+    back: { label: 'Go back', action: 'back' }
   };
 
   const TICKET_LABELS = {
@@ -177,9 +184,9 @@
 
   const COMMON_TICKET_QUESTIONS = [
     { key: 'name', prompt: 'What is your name?' },
-    { key: 'company', prompt: 'What business or organization is this for? Type “personal” if not applicable.' },
+    { key: 'company', prompt: 'What business or organization is this for? Type "personal" if not applicable.' },
     { key: 'contact', prompt: 'What is the best phone number or email for follow-up?' },
-    { key: 'projectRef', prompt: 'Do you have an invoice, estimate, project, proof, or order number? Type “none” if not available.' }
+    { key: 'projectRef', prompt: 'Do you have an invoice, estimate, project, proof, or order number? Type "none" if not available.' }
   ];
 
   const TICKET_QUESTIONS = {
@@ -200,7 +207,7 @@
     billing: [
       ...COMMON_TICKET_QUESTIONS,
       { key: 'billingIssue', prompt: 'What billing issue needs review?', options: ['Invoice question', 'Payment question', 'Deposit/balance', 'Receipt needed', 'Refund/credit question', 'Tax exemption', 'Purchase order'] },
-      { key: 'amount', prompt: 'What amount, invoice, or payment detail is involved? Type “not sure” if unknown.' },
+      { key: 'amount', prompt: 'What amount, invoice, or payment detail is involved? Type "not sure" if unknown.' },
       { key: 'details', prompt: 'Describe what looks incorrect or what you need changed.' },
       { key: 'priority', prompt: 'Is this blocking production, pickup, or installation?', options: ['No', 'Yes - production blocked', 'Yes - pickup/install blocked'] }
     ],
@@ -245,8 +252,12 @@
     opened: false,
     started: false,
     ticket: null,
-    lastFocus: null
+    lastFocus: null,
+    lastPath: null,
+    pathHistory: []
   };
+
+  const PATH_HISTORY_LIMIT = 12;
 
   const escapeHtml = (value) => String(value || '')
     .replace(/&/g, '&amp;')
@@ -276,15 +287,20 @@
             <span class="tdsa-mark" aria-hidden="true"></span>
             <div class="tdsa-title">
               <strong>${escapeHtml(CONFIG.assistantName)}</strong>
-              <span>${escapeHtml(CONFIG.motto)}</span>
+              <div class="tdsa-title-motto">${sloganHtml('brand-slogan--assistant')}</div>
             </div>
           </div>
-          <button class="tdsa-close" type="button" aria-label="Close support assistant">×</button>
+          <button class="tdsa-close" type="button" aria-label="Close support assistant">&times;</button>
         </div>
         <div class="tdsa-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
         <div class="tdsa-footer">
           <form class="tdsa-composer" autocomplete="off">
-            <input class="tdsa-input" type="text" name="message" placeholder="Type your question…" aria-label="Message Braxton">
+            <button class="tdsa-attach" type="button" aria-label="Attach a file or photo" title="Attach a file or photo">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.41 17.41a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+              </svg>
+            </button>
+            <input class="tdsa-input" type="text" name="message" placeholder="Type your question..." aria-label="Message Braxton">
             <button class="tdsa-send" type="submit">Send</button>
           </form>
           <p class="tdsa-composer-note">Braxton is a guided support assistant. For urgent production needs, call ${escapeHtml(CONFIG.phone)}.</p>
@@ -299,10 +315,12 @@
     state.log = root.querySelector('.tdsa-log');
     state.form = root.querySelector('.tdsa-composer');
     state.input = root.querySelector('.tdsa-input');
+    state.attach = root.querySelector('.tdsa-attach');
 
     state.launcher.addEventListener('click', () => (state.opened ? closePanel() : openPanel()));
     state.closeButton.addEventListener('click', closePanel);
     state.form.addEventListener('submit', handleSubmit);
+    if (state.attach) state.attach.addEventListener('click', handleAttachClick);
 
     document.addEventListener('keydown', (event) => {
       if (!state.opened) return;
@@ -319,6 +337,8 @@
     setTimeout(() => state.input && state.input.focus(), 60);
     if (!state.started) {
       state.started = true;
+      state.lastPath = 'start';
+      state.pathHistory = [];
       botSay(`<p><strong>Hi, I am Braxton.</strong></p><p>I can help with quotes, uploads, services, billing, quality issues, existing project support, website navigation, and support tickets for Tridico Design.</p>`, 350, ['quote', 'upload', 'services', 'quality', 'billing', 'product_support', 'navigation', 'ticket']);
     }
   }
@@ -355,6 +375,21 @@
       return;
     }
     routeText(text);
+  }
+
+  // The attach button is a routing entry point, not a real upload - the static
+  // GitHub Pages site has no upload backend. It mirrors saying "I want to attach
+  // a file" and routes the visitor into the upload path, where Open Upload Page
+  // and Upload Ticket chips already exist.
+  function handleAttachClick() {
+    userSay('Attach a file');
+    if (state.ticket) {
+      // Mid-ticket: don't change the ticket flow - just acknowledge and remind
+      // the visitor that the generated ticket email is the place to attach files.
+      botSay('<p>Once the ticket is generated, attach your file or photo to the email that opens, or include a link to it. The ticket summary will reference your attachment.</p>', 420);
+      return;
+    }
+    showPath('upload');
   }
 
   function scrollLog() {
@@ -431,6 +466,10 @@
 
   function handleChip(chip) {
     userSay(chip.label);
+    if (chip.action === 'back') {
+      goBack();
+      return;
+    }
     if (state.ticket && chip.answer) {
       continueTicket(chip.answer);
       return;
@@ -442,9 +481,28 @@
     if (chip.path) showPath(chip.path);
   }
 
-  function showPath(id) {
-    const path = PATHS[id] || PATHS.fallback;
-    botSay(path.html, 650, path.chips);
+  function showPath(id, opts) {
+    opts = opts || {};
+    const resolvedId = PATHS[id] ? id : 'fallback';
+    const path = PATHS[resolvedId];
+    // Push the previous path onto history so "Go back" can reverse it.
+    if (!opts.skipHistory && state.lastPath && state.lastPath !== resolvedId) {
+      state.pathHistory.push(state.lastPath);
+      if (state.pathHistory.length > PATH_HISTORY_LIMIT) state.pathHistory.shift();
+    }
+    state.lastPath = resolvedId;
+    const chips = (path.chips || []).slice();
+    // Offer "Go back" whenever there is a prior path and we are not mid-ticket.
+    if (state.pathHistory.length && !state.ticket) chips.push('back');
+    botSay(path.html, 650, chips);
+  }
+
+  function goBack() {
+    if (!state.pathHistory.length) return;
+    const previous = state.pathHistory.pop();
+    // Clear lastPath so showPath does not re-push the path we just left onto history.
+    state.lastPath = null;
+    showPath(previous, { skipHistory: true });
   }
 
   // Priority order for free-text routing: more specific intents win over generic
@@ -475,7 +533,7 @@
       data: {},
       id: createTicketId()
     };
-    botSay(`<p>I’m generating a <strong>${escapeHtml(state.ticket.label)}</strong> support ticket path now.</p><p>I’ll ask only the details needed to route it clearly. You can type “cancel” at any time.</p>`, 650).then(askTicketQuestion);
+    botSay(`<p>I'm generating a <strong>${escapeHtml(state.ticket.label)}</strong> support ticket path now.</p><p>I'll ask only the details needed to route it clearly. You can type "cancel" at any time.</p>`, 650).then(askTicketQuestion);
   }
 
   function askTicketQuestion() {
@@ -495,6 +553,8 @@
     const trimmed = String(answer || '').trim();
     if (/^(cancel|stop|never mind|nevermind|exit)$/i.test(trimmed)) {
       state.ticket = null;
+      state.lastPath = 'start';
+      state.pathHistory = [];
       botSay('<p>Ticket generation canceled. Choose another path below.</p>', 420, ['quote', 'upload', 'services', 'quality', 'billing', 'product_support', 'ticket']);
       return;
     }
@@ -509,6 +569,10 @@
   function finalizeTicket() {
     const ticket = state.ticket;
     state.ticket = null;
+    // After a completed ticket, treat the chip row that follows as a fresh start
+    // so the next click does not push a stale "ticket" path onto history.
+    state.lastPath = 'start';
+    state.pathHistory = [];
     const body = buildTicketBody(ticket);
     saveTicket(ticket, body);
     const mailto = buildMailto(ticket, body);
