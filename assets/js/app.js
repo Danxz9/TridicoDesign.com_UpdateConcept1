@@ -41,11 +41,14 @@
     update();
   });
 
-  document.querySelectorAll('.portfolio-media--contain').forEach(media => {
-    const img = media.querySelector('img');
+  const setContainBackdrop = (media, img) => {
     if (!img) return;
     const src = img.currentSrc || img.getAttribute('src');
     if (src) media.style.setProperty('--media-backdrop', `url("${new URL(src, window.location.href).href}")`);
+  };
+
+  document.querySelectorAll('.portfolio-media--contain').forEach(media => {
+    setContainBackdrop(media, media.querySelector('img'));
   });
 
   document.querySelectorAll('[data-filter-bar]').forEach(bar => {
@@ -147,6 +150,9 @@
         slide.setAttribute('aria-hidden', String(!isActive));
         slide.tabIndex = isActive ? 0 : -1;
       });
+      if (carousel.classList.contains('portfolio-media--contain')) {
+        setContainBackdrop(carousel, slides[active]?.querySelector('img'));
+      }
     };
     if (slides.length < 2) {
       if (prev) prev.hidden = true;
