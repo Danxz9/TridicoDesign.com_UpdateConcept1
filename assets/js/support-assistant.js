@@ -32,9 +32,9 @@
   const PATHS = {
     start: {
       label: 'Start',
-      keywords: ['start', 'menu', 'home', 'help'],
-      html: `<p>I can route you to the right page, help prepare a quote, troubleshoot an upload, document a quality issue, or generate a support ticket.</p><p>Select a path or type what you need.</p>`,
-      chips: ['quote', 'upload', 'services', 'quality', 'billing', 'navigation', 'ticket']
+      keywords: ['start over', 'main menu', 'restart', 'begin again', 'reset'],
+      html: `<p>I can route you to the right page, help prepare a quote, troubleshoot an upload, document a quality issue, follow up on an existing project, or generate a support ticket.</p><p>Select a path or type what you need.</p>`,
+      chips: ['quote', 'upload', 'services', 'quality', 'billing', 'product_support', 'navigation', 'ticket']
     },
     navigation: {
       label: 'Find a page',
@@ -64,13 +64,13 @@
       label: 'Quality issue',
       keywords: ['quality', 'peeling', 'vinyl peeling', 'bubble', 'bubbling', 'wrinkle', 'fading', 'cracking', 'lift', 'lifting', 'damaged', 'scratch', 'wrong', 'defect', 'problem', 'issue', 'complaint'],
       html: `<p><strong>Quality issue path:</strong></p><p>If vinyl is peeling, bubbling, lifting, damaged, or not matching expectations, do this first:</p><ul><li>Do not pull, cut, heat, or pressure-wash the affected area.</li><li>Take clear photos: wide shot, close-up, edge/detail, and surrounding area.</li><li>Note when the issue appeared, weather/temperature exposure, washing/cleaning history, and install/delivery date if known.</li><li>Keep order, invoice, proof, or project references available.</li></ul><p>I can generate a quality support ticket so the issue is documented cleanly.</p>`,
-      chips: ['ticket_quality', 'care', 'installation', 'call', 'feedback']
+      chips: ['ticket_quality', 'care', 'product_support', 'call']
     },
     billing: {
       label: 'Billing issue',
       keywords: ['billing', 'bill', 'invoice', 'payment', 'paid', 'deposit', 'refund', 'receipt', 'tax', 'charge', 'balance', 'card', 'check', 'purchase order', 'po'],
       html: `<p><strong>Billing support path:</strong></p><ul><li>Invoice or estimate number if available.</li><li>Business name and billing contact.</li><li>Payment method or purchase order details.</li><li>Amount in question and what looks incorrect.</li><li>Whether the issue is urgent because production, pickup, or installation is blocked.</li></ul><p>I can generate a billing ticket that prepares the exact information Tridico needs to resolve it.</p>`,
-      chips: ['ticket_billing', 'call', 'quote', 'company']
+      chips: ['ticket_billing', 'call', 'product_support', 'company']
     },
     feedback: {
       label: 'Feedback',
@@ -82,19 +82,19 @@
       label: 'Website issue',
       keywords: ['website issue', 'site issue', 'broken', 'not loading', 'button', 'form', '404', 'bug', 'browser', 'mobile', 'desktop', 'page problem', 'link problem'],
       html: `<p><strong>Website support path:</strong></p><ul><li>Which page or button had the issue?</li><li>What device/browser were you using?</li><li>What did you expect to happen?</li><li>What happened instead?</li><li>Screenshot or error message if available.</li></ul><p>I can generate a website issue ticket and include the page details.</p>`,
-      chips: ['ticket_website', 'navigation', 'quote', 'upload']
+      chips: ['ticket_website', 'navigation', 'contact', 'call']
     },
     company: {
       label: 'Company info',
       keywords: ['company', 'about', 'hours', 'address', 'location', 'phone', 'email', 'contact', 'who', 'tridico', 'integrity', 'motto'],
       html: `<p><strong>Tridico Design LLC</strong></p><ul><li>Motto: “Welcome to integrity, Welcome to Tridico.”</li><li>Phone: <a href="tel:+16145080815">(614) 508-0815</a></li><li>Email: <a href="mailto:ben@tridicodesign.com">ben@tridicodesign.com</a></li><li>Address: 8626 Cotter Street, Lewis Center, OH 43035</li><li>Hours: Weekdays 9am – 5pm</li></ul>`,
-      chips: ['contact', 'services', 'quote', 'navigation']
+      chips: ['contact', 'services', 'quote', 'feedback', 'navigation']
     },
     product_support: {
       label: 'Product support',
       keywords: ['product support', 'customer support', 'support', 'after project', 'after install', 'order', 'project support', 'status', 'pickup', 'delivery'],
       html: `<p><strong>Product/customer support includes:</strong></p><ul><li>Project status or approval questions.</li><li>Pickup, delivery, or installation coordination.</li><li>Reorder help for previous signs, decals, print, or wraps.</li><li>Proof revision questions.</li><li>Material, care, or durability questions.</li><li>Post-install quality documentation.</li></ul><p>For a specific project, creating a ticket is best because it captures the project reference and contact details.</p>`,
-      chips: ['ticket_general', 'quality', 'billing', 'quote', 'call']
+      chips: ['ticket_general', 'quality', 'installation', 'billing', 'call']
     },
     artwork_prep: {
       label: 'Artwork prep',
@@ -106,13 +106,13 @@
       label: 'Care instructions',
       keywords: ['care', 'clean', 'cleaning', 'wash', 'washing', 'maintenance', 'maintain', 'vehicle wash', 'pressure wash', 'wrap care'],
       html: `<p><strong>Care guidance for wraps, decals, and graphics:</strong></p><ul><li>Avoid aggressive pressure washing near vinyl edges.</li><li>Use mild soap, soft cloths, and gentle rinsing.</li><li>Do not scrape edges or use harsh solvents unless Tridico approves the method.</li><li>For vehicle graphics, avoid automatic brushes when possible.</li><li>Document any edge lifting, bubbling, fading, or damage with photos before attempting repair.</li></ul><p>For a specific issue, start a quality ticket so the team can review it properly.</p>`,
-      chips: ['ticket_quality', 'quality', 'services', 'call']
+      chips: ['ticket_quality', 'product_support', 'services', 'call']
     },
     installation: {
       label: 'Installation help',
       keywords: ['installation', 'install', 'schedule', 'site', 'wall', 'window', 'storefront', 'vehicle dropoff', 'measurements', 'measure', 'access'],
       html: `<p><strong>Installation planning checklist:</strong></p><ul><li>Confirm location, access, hours, parking/loading, and site contact.</li><li>For vehicles, provide year/make/model and clean drop-off expectations.</li><li>For walls/windows/signs, provide photos, dimensions, surface type, and any obstacles.</li><li>Confirm whether ladders, lift access, landlord approval, permits, or after-hours work are needed.</li><li>Keep final proof approval and installation date aligned.</li></ul>`,
-      chips: ['quote', 'ticket_general', 'services', 'quality']
+      chips: ['ticket_general', 'services', 'quote', 'call']
     },
     rush: {
       label: 'Rush timeline',
@@ -129,8 +129,8 @@
     fallback: {
       label: 'Not sure',
       keywords: [],
-      html: `<p>I can help route that. Choose the closest topic below, or type a few more details such as “vinyl peeling,” “invoice question,” “upload problem,” “quote help,” or “services.”</p>`,
-      chips: ['quote', 'upload', 'services', 'quality', 'billing', 'ticket']
+      html: `<p>I can help route that. Choose the closest topic below, or type a few more details such as “vinyl peeling,” “invoice question,” “upload problem,” “quote help,” or “existing project.”</p>`,
+      chips: ['quote', 'upload', 'services', 'quality', 'billing', 'product_support', 'ticket']
     }
   };
 
@@ -199,7 +199,7 @@
     ],
     billing: [
       ...COMMON_TICKET_QUESTIONS,
-      { key: 'billingIssue', prompt: 'What billing issue needs review?', options: ['Invoice question', 'Payment question', 'Deposit/balance', 'Receipt needed', 'Refund/credit question', 'Tax exempt / PO'] },
+      { key: 'billingIssue', prompt: 'What billing issue needs review?', options: ['Invoice question', 'Payment question', 'Deposit/balance', 'Receipt needed', 'Refund/credit question', 'Tax exemption', 'Purchase order'] },
       { key: 'amount', prompt: 'What amount, invoice, or payment detail is involved? Type “not sure” if unknown.' },
       { key: 'details', prompt: 'Describe what looks incorrect or what you need changed.' },
       { key: 'priority', prompt: 'Is this blocking production, pickup, or installation?', options: ['No', 'Yes - production blocked', 'Yes - pickup/install blocked'] }
@@ -319,7 +319,7 @@
     setTimeout(() => state.input && state.input.focus(), 60);
     if (!state.started) {
       state.started = true;
-      botSay(`<p><strong>Hi, I am Braxton.</strong></p><p>I can help with quotes, uploads, services, billing, quality issues, website navigation, and support tickets for Tridico Design.</p>`, 350, ['quote', 'upload', 'services', 'quality', 'billing', 'navigation', 'ticket']);
+      botSay(`<p><strong>Hi, I am Braxton.</strong></p><p>I can help with quotes, uploads, services, billing, quality issues, existing project support, website navigation, and support tickets for Tridico Design.</p>`, 350, ['quote', 'upload', 'services', 'quality', 'billing', 'product_support', 'navigation', 'ticket']);
     }
   }
 
@@ -447,9 +447,20 @@
     botSay(path.html, 650, path.chips);
   }
 
+  // Priority order for free-text routing: more specific intents win over generic
+  // ones. 'start' is intentionally excluded so users don't get bounced back to the
+  // main menu when they type a real question. 'navigation' is last because phrases
+  // like "find the quote page" should route to quote, not the page list.
+  const ROUTE_PRIORITY = [
+    'rush', 'quality', 'website_issue', 'billing',
+    'upload', 'artwork_prep', 'care', 'installation',
+    'feedback', 'product_support', 'quote', 'services',
+    'company', 'ticket', 'navigation'
+  ];
+
   function routeText(text) {
     const lower = normalize(text);
-    const direct = Object.keys(PATHS).find((id) => id !== 'fallback' && PATHS[id].keywords.some((kw) => lower.includes(normalize(kw))));
+    const direct = ROUTE_PRIORITY.find((id) => PATHS[id] && PATHS[id].keywords.some((kw) => lower.includes(normalize(kw))));
     if (direct) showPath(direct);
     else showPath('fallback');
   }
@@ -484,7 +495,7 @@
     const trimmed = String(answer || '').trim();
     if (/^(cancel|stop|never mind|nevermind|exit)$/i.test(trimmed)) {
       state.ticket = null;
-      botSay('<p>Ticket generation canceled. Choose another path below.</p>', 420, ['quote', 'upload', 'services', 'quality', 'billing', 'ticket']);
+      botSay('<p>Ticket generation canceled. Choose another path below.</p>', 420, ['quote', 'upload', 'services', 'quality', 'billing', 'product_support', 'ticket']);
       return;
     }
     const q = state.ticket.questions[state.ticket.step];
