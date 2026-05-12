@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Branding Materials Image</title>
-  <desc id="desc">Use branded collateral, folders, cards, shirts, vehicle graphics, signs, and sales materials.</desc>
+  <title id="title">Fleet Vehicle Wrap Project</title>
+  <desc id="desc">Use a finished fleet van or truck wrap photographed outdoors at a clean angle.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#070707"/>
@@ -21,14 +21,14 @@
   <path d="M1260 1000 L1600 1000 L1600 785 L1410 810 Z" fill="#FFD21D" opacity=".78"/>
   <path d="M-80 230 L660 110 L760 210 L0 360 Z" fill="#ffffff" opacity=".08"/>
   <g filter="url(#shadow)">
-    <rect x="70" y="84" width="148" height="148" rx="24" fill="#FFD21D"/>
+    <rect x="70" y="84" width="148" height="148" rx="24" fill="#EF1D24"/>
     <rect x="118" y="118" width="52" height="112" fill="#060606"/>
     <rect x="170" y="118" width="38" height="112" fill="#060606" opacity=".75"/>
-    <rect x="80" y="720" width="640" height="8" fill="#EF1D24"/>
+    <rect x="80" y="720" width="640" height="8" fill="#FFD21D"/>
   </g>
-  <text x="80" y="405" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="70" font-weight="800" fill="#ffffff" letter-spacing="1.5"><tspan x="80" dy="0">BRANDING MATERIALS IMAGE</tspan></text>
-  <text x="80" y="620" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" fill="#f5f5f5" opacity=".88"><tspan x="80" dy="0">Use branded collateral, folders, cards,</tspan><tspan x="80" dy="34">shirts, vehicle graphics, signs, and sales</tspan><tspan x="80" dy="34">materials.</tspan></text>
+  <text x="80" y="405" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="70" font-weight="800" fill="#ffffff" letter-spacing="1.5"><tspan x="80" dy="0">FLEET VEHICLE WRAP PROJECT</tspan></text>
+  <text x="80" y="620" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" fill="#f5f5f5" opacity=".88"><tspan x="80" dy="0">Use a finished fleet van or truck wrap</tspan><tspan x="80" dy="34">photographed outdoors at a clean angle.</tspan></text>
   <text x="80" y="800" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" fill="#FFD21D" letter-spacing="5">IMAGE SLOT / REPLACE WITH REAL PROJECT PHOTO</text>
   <circle cx="1360" cy="760" r="150" fill="none" stroke="#ffffff" stroke-opacity=".12" stroke-width="2"/>
-  <circle cx="1360" cy="760" r="90" fill="none" stroke="#FFD21D" stroke-opacity=".8" stroke-width="8"/>
+  <circle cx="1360" cy="760" r="90" fill="none" stroke="#EF1D24" stroke-opacity=".8" stroke-width="8"/>
 </svg>

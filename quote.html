@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page Not Found | Tridico Design LLC</title>
-  <meta name="description" content="Page not found.">
+  <title>Get Quote | Tridico Design LLC</title>
+  <meta name="description" content="Request a quote from Tridico Design LLC for graphic design, printing, signs, vehicle wraps, branding materials, and installation.">
   <meta name="theme-color" content="#050505">
-  <meta property="og:title" content="Page Not Found | Tridico Design LLC">
-  <meta property="og:description" content="Page not found.">
+  <meta property="og:title" content="Get Quote | Tridico Design LLC">
+  <meta property="og:description" content="Request a quote from Tridico Design LLC for graphic design, printing, signs, vehicle wraps, branding materials, and installation.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/brand/columbus-bridge-brand-bg.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -72,7 +72,47 @@
   </div>
 </header>
 <main id="main">
-<section class="page-hero text-only"><div class="container"><p class="eyebrow">404</p><h1>Page not found.</h1><p>The page may have moved. Use the links below to continue.</p><div class="hero-actions"><a class="btn btn-primary" href="index.html">Home</a><a class="btn btn-ghost-light" href="quote.html">Get Quote</a></div></div></section>
+
+<section class="page-hero compact-hero quote-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <p class="eyebrow">Get Quote</p>
+      <h1>Start with the project details. Tridico will help shape the right solution.</h1>
+      <p>Use this quote flow for design, print, branding materials, signs, wraps, decals, banners, and installation requests.</p>
+    </div>
+    <img src="assets/images/placeholders/quote-collage.svg" alt="Quote project collage image slot" loading="eager" decoding="async">
+  </div>
+</section>
+<section class="section-pad form-section">
+  <div class="container form-grid">
+    <form class="project-form reveal" id="quoteForm" data-mailto="ben@tridicodesign.com">
+      <div class="form-row two"><label>First Name *<input required name="First name" autocomplete="given-name"></label><label>Last Name *<input required name="Last name" autocomplete="family-name"></label></div>
+      <div class="form-row two"><label>Email *<input required type="email" name="Email" autocomplete="email"></label><label>Phone<input type="tel" name="Phone" autocomplete="tel"></label></div>
+      <label>Business / Organization<input name="Business" autocomplete="organization"></label>
+      <div class="form-row two"><label>Project Type *<select required name="Project type"><option value="">Select one</option><option>Graphic Design</option><option>Printing Services</option><option>Branding Materials</option><option>Signage</option><option>Vehicle Wraps</option><option>On-Site Installation</option><option>Multiple Services</option><option>Not Sure Yet</option></select></label><label>Desired Timeline<select name="Timeline"><option>Flexible</option><option>This week</option><option>2–3 weeks</option><option>1 month</option><option>Specific deadline</option></select></label></div>
+      <label>Project Details *<textarea required name="Project details" rows="7" placeholder="Tell us what you need, what it is for, sizes/quantities if known, vehicle details if relevant, installation location, and deadline."></textarea></label>
+      <label>Artwork / Reference Files<input type="file" name="Artwork files" multiple><span class="field-note">For GitHub Pages static hosting, the form opens an email draft. Attach files manually or paste a transfer link.</span></label>
+      <div class="form-actions"><button class="btn btn-primary btn-large" type="submit">Open Email Quote Request</button><a class="btn btn-outline" href="tel:+16145080815">Call (614) 508-0815</a></div>
+      <p class="form-status" data-form-status aria-live="polite"></p>
+    </form>
+    <aside class="quote-aside reveal delay-1">
+      <h2>Include this if you have it.</h2>
+      <ul class="check-list">
+        <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Logo files: AI, EPS, PDF, SVG, PNG, or JPG.</li>
+        <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vehicle year, make, model, and photos.</li>
+        <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Sign dimensions, wall/window photos, and install location.</li>
+        <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Quantity, material, paper, finish, and deadline for print.</li>
+        <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Examples of the look you like.</li>
+      </ul>
+      <div class="contact-card-mini">
+        <strong>Prefer direct contact?</strong>
+        <a href="tel:+16145080815">(614) 508-0815</a>
+        <a href="mailto:ben@tridicodesign.com">ben@tridicodesign.com</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">

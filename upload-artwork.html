@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page Not Found | Tridico Design LLC</title>
-  <meta name="description" content="Page not found.">
+  <title>Upload Artwork | Tridico Design LLC</title>
+  <meta name="description" content="Upload or send artwork files to Tridico Design LLC for production review, print, signage, vehicle wraps, branding, and installation.">
   <meta name="theme-color" content="#050505">
-  <meta property="og:title" content="Page Not Found | Tridico Design LLC">
-  <meta property="og:description" content="Page not found.">
+  <meta property="og:title" content="Upload Artwork | Tridico Design LLC">
+  <meta property="og:description" content="Upload or send artwork files to Tridico Design LLC for production review, print, signage, vehicle wraps, branding, and installation.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/brand/columbus-bridge-brand-bg.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -72,7 +72,41 @@
   </div>
 </header>
 <main id="main">
-<section class="page-hero text-only"><div class="container"><p class="eyebrow">404</p><h1>Page not found.</h1><p>The page may have moved. Use the links below to continue.</p><div class="hero-actions"><a class="btn btn-primary" href="index.html">Home</a><a class="btn btn-ghost-light" href="quote.html">Get Quote</a></div></div></section>
+
+<section class="page-hero compact-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <p class="eyebrow">Upload Artwork</p>
+      <h1>Send production files, references, or a transfer link.</h1>
+      <p>Artwork upload is most useful for customers who already have files and need print, signs, decals, wraps, or production review.</p>
+      <a class="btn btn-primary" href="mailto:ben@tridicodesign.com?subject=Artwork%20Upload%20for%20Tridico%20Design">Email Artwork</a>
+    </div>
+    <img src="assets/images/placeholders/process-proof.svg" alt="Artwork proof image slot" loading="eager" decoding="async">
+  </div>
+</section>
+<section class="section-pad form-section">
+  <div class="container form-grid">
+    <form class="project-form reveal" id="uploadForm" data-mailto="ben@tridicodesign.com">
+      <div class="form-row two"><label>Name *<input required name="Name"></label><label>Email *<input required type="email" name="Email"></label></div>
+      <label>Business / Organization<input name="Business"></label>
+      <label>What are the files for? *<select required name="File purpose"><option value="">Select one</option><option>Print materials</option><option>Signage</option><option>Vehicle wrap / decal</option><option>Branding / logo</option><option>Wall or window graphics</option><option>Other</option></select></label>
+      <label>Upload files<input type="file" name="Artwork files" multiple accept=".ai,.eps,.pdf,.svg,.psd,.jpg,.jpeg,.png,.tif,.tiff,.zip"><span class="field-note">Static GitHub Pages cannot receive files directly. Use this page to collect details, then attach files manually in the email draft or paste a transfer link below.</span></label>
+      <label>Transfer Link / Notes<textarea name="Transfer link or notes" rows="6" placeholder="Paste a Dropbox, Google Drive, WeTransfer, or similar link. Include sizes, quantities, material, and deadline."></textarea></label>
+      <button class="btn btn-primary btn-large" type="submit">Open Artwork Email</button>
+      <p class="form-status" data-form-status aria-live="polite"></p>
+    </form>
+    <aside class="quote-aside reveal delay-1">
+      <h2>Best file types</h2>
+      <div class="file-type-grid">
+        <span>AI</span><span>EPS</span><span>PDF</span><span>SVG</span><span>PSD</span><span>ZIP</span>
+      </div>
+      <p>Vector files are best for logos, signs, wraps, decals, and sharp large-format work. High-resolution images should be actual size or large enough for the final output.</p>
+      <h3>Before sending</h3>
+      <ul class="check-list"><li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Include fonts or outline type.</li><li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Include linked images.</li><li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Provide final size and quantity.</li><li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Note deadline and installation needs.</li></ul>
+    </aside>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">

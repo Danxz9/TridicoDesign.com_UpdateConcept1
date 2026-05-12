@@ -1,47 +1,37 @@
-# TridicoDesign.com — Website Overhaul Concept 2
+# TridicoDesign_website_concept_1.2
 
-This ZIP contains a complete static website concept designed for direct upload to a GitHub repository root.
+Static GitHub Pages preview website for **Tridico Design LLC**.
 
-## Concept direction
+## Included
 
-Concept 2 is the mainstream, highly modernized version: image-forward, bento-style sections, sticky mobile-first navigation, stronger conversion paths, faster portfolio scanning, and clearer service architecture.
+- `index.html` homepage
+- Portfolio, services, industries, process, about, quote, upload artwork, contact, resources, privacy, terms, and 404 pages
+- Service landing pages for Graphic Design, Printing Services, Branding Materials, Signage, Vehicle Wraps, and On-Site Installation
+- Fully local CSS and JavaScript; no external frameworks
+- Tridico logo mark and supplied brand reference photos
+- Labeled SVG image slots that show exactly what real photos should replace
+- Responsive navigation, mobile menu, quote CTA placement, portfolio filters, reveal animations, and before/after comparison component
+- GitHub Pages support files: `.nojekyll`, `robots.txt`, `sitemap.xml`, `site.webmanifest`, and `.github/workflows/pages.yml`
 
-## How to deploy on GitHub Pages
+## Contact Details Currently Used
 
-1. Unzip this package.
-2. Upload all files and folders to the root of the GitHub repository.
-3. For this preview repository, do not include `CNAME`; the site should resolve from the GitHub Pages project URL.
-4. Enable GitHub Pages for the repository using the included workflow.
-5. Replace placeholder images in `assets/images/placeholders/` with final assets or update the HTML references.
-
-## Preserved front-end business data
-
-- Business: Tridico Design
-- Legal name used in terms: Tridico Design Solutions, LLC
-- Address: 8626 Cotter Street, Lewis Center, OH 43035
-- Email: ben@tridicodesign.com
 - Phone: (614) 508-0815
-- Hours: Weekdays 9am – 5pm
-- Core services: graphic design, printing, branding, signage, vehicle wraps, on-site installation
+- Email: ben@tridicodesign.com
+- Address: 8626 Cotter Street, Lewis Center, OH 43035
+- Hours: Weekdays 9am - 5pm
 
-## Static-site limitations
+Review these before production launch.
 
-- The contact form opens a prefilled email draft. It does not store or send form submissions from a server.
-- The shop and cart are static. Connect Shopify, Stripe, WooCommerce, Snipcart, or another commerce backend before accepting online orders.
-- The terms page preserves the existing visible terms structure, but legal and pricing language should be reviewed before launch.
+## Deployment
 
-## Image replacement
+This repository is configured for the public GitHub Pages preview URL:
 
-Use `assets/image-manifest.json` for a structured image map. The separate text file `separately-generated-assets.txt` lists suggested files to generate or upload outside this ZIP.
+`https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/`
 
-## Files of note
+The preview intentionally does not include a root `CNAME` file so it does not claim the production `tridicodesign.com` domain. Add a `CNAME` file only when this repository is ready to become the production domain source.
 
-- `index.html` — homepage
-- `services/` — service overview and six service detail pages
-- `portfolio/` — portfolio overview and four featured case study pages
-- `design/` and `production/` — legacy portfolio-category pages retained for URL/navigation continuity
-- `shop/` and `cart/` — static storefront shell
-- `assets/css/styles.css` — full responsive styling
-- `assets/js/main.js` — mobile nav, portfolio filters, reveal animation, mailto form behavior
-- `assets/data/site-content.json` — editable business/service/product content
-- `assets/data/portfolio.json` — editable portfolio data
+## Forms and Uploads
+
+This is a static GitHub Pages build. The quote, contact, and upload pages open an email draft to `ben@tridicodesign.com` with the form details included. File inputs cannot attach files automatically in a static site. Customers are instructed to attach files manually or paste a transfer link.
+
+To use a live backend form processor later, update the forms in `quote.html`, `contact.html`, and `upload-artwork.html`.

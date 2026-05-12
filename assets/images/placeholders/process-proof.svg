@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Branding Materials Image</title>
-  <desc id="desc">Use branded collateral, folders, cards, shirts, vehicle graphics, signs, and sales materials.</desc>
+  <title id="title">Design Proof / Approval</title>
+  <desc id="desc">Use a proof screen, marked-up layout, vehicle template, or print-ready review.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#070707"/>
@@ -26,8 +26,8 @@
     <rect x="170" y="118" width="38" height="112" fill="#060606" opacity=".75"/>
     <rect x="80" y="720" width="640" height="8" fill="#EF1D24"/>
   </g>
-  <text x="80" y="405" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="70" font-weight="800" fill="#ffffff" letter-spacing="1.5"><tspan x="80" dy="0">BRANDING MATERIALS IMAGE</tspan></text>
-  <text x="80" y="620" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" fill="#f5f5f5" opacity=".88"><tspan x="80" dy="0">Use branded collateral, folders, cards,</tspan><tspan x="80" dy="34">shirts, vehicle graphics, signs, and sales</tspan><tspan x="80" dy="34">materials.</tspan></text>
+  <text x="80" y="405" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="70" font-weight="800" fill="#ffffff" letter-spacing="1.5"><tspan x="80" dy="0">DESIGN PROOF / APPROVAL</tspan></text>
+  <text x="80" y="620" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" fill="#f5f5f5" opacity=".88"><tspan x="80" dy="0">Use a proof screen, marked-up layout,</tspan><tspan x="80" dy="34">vehicle template, or print-ready review.</tspan></text>
   <text x="80" y="800" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" fill="#FFD21D" letter-spacing="5">IMAGE SLOT / REPLACE WITH REAL PROJECT PHOTO</text>
   <circle cx="1360" cy="760" r="150" fill="none" stroke="#ffffff" stroke-opacity=".12" stroke-width="2"/>
   <circle cx="1360" cy="760" r="90" fill="none" stroke="#FFD21D" stroke-opacity=".8" stroke-width="8"/>
