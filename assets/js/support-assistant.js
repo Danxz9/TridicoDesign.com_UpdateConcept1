@@ -287,10 +287,12 @@
             <span class="tdsa-mark" aria-hidden="true"></span>
             <div class="tdsa-title">
               <strong>${escapeHtml(CONFIG.assistantName)}</strong>
-              <div class="tdsa-title-motto">${sloganHtml('brand-slogan--assistant')}</div>
             </div>
           </div>
-          <button class="tdsa-close" type="button" aria-label="Close support assistant">&times;</button>
+          <div class="tdsa-header-actions">
+            <div class="tdsa-header-motto">${sloganHtml('brand-slogan--assistant')}</div>
+            <button class="tdsa-close" type="button" aria-label="Close support assistant">&times;</button>
+          </div>
         </div>
         <div class="tdsa-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
         <div class="tdsa-footer">
