@@ -138,3 +138,12 @@ h1,h2,h3{line-height:1.02;margin:0;color:inherit;letter-spacing:0}h1{font-size:5
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}
 }
+
+
+/* News navigation fit */
+@media (min-width:1051px) and (max-width:1180px){
+  .desktop-nav{gap:.08rem}
+  .nav-link{padding:.7rem .55rem;font-size:.88rem}
+  .header-actions .btn-small{padding:.65rem .82rem}
+}
+.mobile-panel a.active{color:#050505;background:var(--yellow)}

@@ -1,0 +1,1522 @@
+{
+  "generatedAt": "2026-05-14T00:00:00.000Z",
+  "siteBase": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1",
+  "facebookUrl": "https://www.facebook.com/TridicoDesign",
+  "categories": [
+    {
+      "label": "Vehicle Wraps",
+      "slug": "vehicle-wraps",
+      "description": "Vehicle wrap updates, fleet graphics, trailer graphics, decals, and mobile brand visibility.",
+      "servicePage": "vehicle-wraps.html"
+    },
+    {
+      "label": "Signage",
+      "slug": "signage",
+      "description": "Storefront signs, window graphics, wall graphics, banners, displays, and environmental signage.",
+      "servicePage": "signage.html"
+    },
+    {
+      "label": "Printing",
+      "slug": "printing",
+      "description": "Printed collateral, decals, marketing materials, banners, and production-ready brand pieces.",
+      "servicePage": "printing.html"
+    },
+    {
+      "label": "Branding",
+      "slug": "branding",
+      "description": "Logo systems, identity work, branded environments, launch packages, and design direction.",
+      "servicePage": "branding-materials.html"
+    },
+    {
+      "label": "Installations",
+      "slug": "installations",
+      "description": "On-site installation notes, surface preparation, finishing details, and before/after project updates.",
+      "servicePage": "installation.html"
+    },
+    {
+      "label": "Company Updates",
+      "slug": "company-updates",
+      "description": "Tridico Design announcements, shop updates, service notes, and business news.",
+      "servicePage": "about.html"
+    },
+    {
+      "label": "Behind the Scenes",
+      "slug": "behind-the-scenes",
+      "description": "Production process, install preparation, design checks, fabrication details, and project planning.",
+      "servicePage": "process.html"
+    }
+  ],
+  "tags": [
+    {
+      "label": "fleet branding",
+      "slug": "fleet-branding",
+      "description": "Updates tagged fleet branding."
+    },
+    {
+      "label": "box truck",
+      "slug": "box-truck",
+      "description": "Updates tagged box truck."
+    },
+    {
+      "label": "semi truck",
+      "slug": "semi-truck",
+      "description": "Updates tagged semi truck."
+    },
+    {
+      "label": "pickup truck",
+      "slug": "pickup-truck",
+      "description": "Updates tagged pickup truck."
+    },
+    {
+      "label": "food truck",
+      "slug": "food-truck",
+      "description": "Updates tagged food truck."
+    },
+    {
+      "label": "storefront",
+      "slug": "storefront",
+      "description": "Updates tagged storefront."
+    },
+    {
+      "label": "wall graphics",
+      "slug": "wall-graphics",
+      "description": "Updates tagged wall graphics."
+    },
+    {
+      "label": "decals",
+      "slug": "decals",
+      "description": "Updates tagged decals."
+    },
+    {
+      "label": "banners",
+      "slug": "banners",
+      "description": "Updates tagged banners."
+    },
+    {
+      "label": "design",
+      "slug": "design",
+      "description": "Updates tagged design."
+    },
+    {
+      "label": "print",
+      "slug": "print",
+      "description": "Updates tagged print."
+    },
+    {
+      "label": "install",
+      "slug": "install",
+      "description": "Updates tagged install."
+    },
+    {
+      "label": "local business",
+      "slug": "local-business",
+      "description": "Updates tagged local business."
+    },
+    {
+      "label": "project spotlight",
+      "slug": "project-spotlight",
+      "description": "Updates tagged project spotlight."
+    },
+    {
+      "label": "before after",
+      "slug": "before-after",
+      "description": "Updates tagged before after."
+    }
+  ],
+  "posts": [
+    {
+      "id": "news_2026_05_10_honda_passport_rally_wrap",
+      "slug": "honda-passport-rally-vehicle-wrap",
+      "title": "Honda Passport Rally Vehicle Wrap Built for Trail Visibility",
+      "subtitle": "A project spotlight on bold vehicle graphics with outdoor-ready impact.",
+      "excerpt": "A Honda Passport wrap project shows how scale, contrast, and clean install details turn a vehicle into a moving brand moment.",
+      "body": "This project update highlights a Honda Passport rally wrap designed to read quickly in motion and hold up visually in outdoor settings. The design uses a strong color story, large graphic fields, and clear vehicle contours so the finished wrap feels integrated with the body lines instead of simply placed on top.\n\nFor Tridico, vehicle wrap work starts with the viewing distance and surface geometry. Door breaks, handles, wheel arches, and curves all affect where brand marks and visual energy should land. The result needs to look intentional from a distance while staying clean up close.\n\nThis type of project is useful for businesses that want their vehicle to act as both transportation and a high-value brand surface. A wrap can support events, field work, service routes, dealership promotions, and everyday local visibility without relying on a temporary sign setup.",
+      "contentFormat": "social-import",
+      "category": "Vehicle Wraps",
+      "categorySlug": "vehicle-wraps",
+      "tags": [
+        "fleet branding",
+        "decals",
+        "project spotlight",
+        "before after"
+      ],
+      "tagSlugs": [
+        "fleet-branding",
+        "decals",
+        "project-spotlight",
+        "before-after"
+      ],
+      "topic": "Vehicle Wraps",
+      "serviceType": "Vehicle Wraps",
+      "projectType": "Specialty Vehicle Wrap",
+      "industry": "Automotive",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-05-10T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "3 min read",
+      "featuredImage": {
+        "id": "img_honda_passport_rally_hero",
+        "src": "assets/images/work/honda-passport-rally-vehicle-wrap-01-forest-trail.jpg",
+        "width": 2048,
+        "height": 1365,
+        "alt": "Honda Passport with rally-inspired Tridico vehicle wrap on a forest trail.",
+        "caption": "A high-visibility vehicle wrap project from Tridico Design."
+      },
+      "thumbnailImage": {
+        "id": "img_honda_passport_rally_hero",
+        "src": "assets/images/work/honda-passport-rally-vehicle-wrap-01-forest-trail.jpg",
+        "width": 2048,
+        "height": 1365,
+        "alt": "Honda Passport with rally-inspired Tridico vehicle wrap on a forest trail.",
+        "caption": "A high-visibility vehicle wrap project from Tridico Design."
+      },
+      "images": [
+        {
+          "id": "img_honda_passport_rally_hero",
+          "src": "assets/images/work/honda-passport-rally-vehicle-wrap-01-forest-trail.jpg",
+          "width": 2048,
+          "height": 1365,
+          "alt": "Honda Passport with rally-inspired Tridico vehicle wrap on a forest trail.",
+          "caption": "A high-visibility vehicle wrap project from Tridico Design."
+        },
+        {
+          "id": "img_honda_passport_rally_action",
+          "src": "assets/images/work/honda-passport-rally-vehicle-wrap-04-action-side.jpg",
+          "width": 1080,
+          "height": 608,
+          "alt": "Side view of Honda Passport rally vehicle graphics in motion.",
+          "caption": "Side graphics designed for quick recognition."
+        },
+        {
+          "id": "img_honda_passport_rally_collage",
+          "src": "assets/images/work/honda-passport-rally-vehicle-wrap-06-event-collage.jpg",
+          "width": 1080,
+          "height": 1080,
+          "alt": "Collage of Honda Passport wrap details and event-ready graphics.",
+          "caption": "Wrap details and finished views."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-honda-passport-rally-wrap",
+      "relatedPostIds": [
+        "news_2026_04_29_jacobs_restoration_fleet_wrap",
+        "news_2026_05_02_cookie_dough_food_trailer",
+        "news_2026_04_19_fleet_wrap_rollout"
+      ],
+      "priority": 100,
+      "popularityScore": 96,
+      "isFeatured": true,
+      "isPinned": true,
+      "isTrending": true,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Honda Passport Rally Vehicle Wrap Built for Trail Visibility | Tridico Design News",
+        "description": "A Honda Passport wrap project shows how scale, contrast, and clean install details turn a vehicle into a moving brand moment.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/honda-passport-rally-vehicle-wrap/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/honda-passport-rally-vehicle-wrap-01-forest-trail.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-honda-passport-rally-wrap",
+        "sourceContentHash": "facebook-honda-passport-rally-wrap-2026-05-10",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-05-10T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-honda-passport-rally-vehicle-wrap"
+    },
+    {
+      "id": "news_2026_05_07_sbc_brewing_branding",
+      "slug": "sbc-brewing-company-interior-and-window-branding",
+      "title": "SBC Brewing Company Branding Carries From Windows to Interior Graphics",
+      "subtitle": "A visual system for a hospitality space with public-facing storefront impact.",
+      "excerpt": "Window graphics, interior brand moments, and clean production details help SBC Brewing Company feel consistent from street view to guest experience.",
+      "body": "SBC Brewing Company needed visual pieces that could work at more than one distance. Storefront windows need to be legible from outside, while interior graphics should support the mood of the space without overwhelming the room.\n\nThe Tridico approach connects brand expression, material choice, print production, and installation planning. The goal is a finished system that looks intentional from the sidewalk, from the entry, and from inside the business.\n\nFor restaurants, breweries, retail storefronts, and hospitality spaces, the best graphics often do more than decorate. They guide attention, reinforce identity, and make the location feel finished on opening day and every day after.",
+      "contentFormat": "social-import",
+      "category": "Branding",
+      "categorySlug": "branding",
+      "tags": [
+        "storefront",
+        "wall graphics",
+        "design",
+        "install",
+        "local business",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "storefront",
+        "wall-graphics",
+        "design",
+        "install",
+        "local-business",
+        "project-spotlight"
+      ],
+      "topic": "Branding",
+      "serviceType": "Branding",
+      "projectType": "Storefront Brand System",
+      "industry": "Food and Beverage",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-05-07T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "3 min read",
+      "featuredImage": {
+        "id": "img_sbc_brewing_cover",
+        "src": "assets/images/work/sbc-brewing-company-01-cover.jpg",
+        "width": 2048,
+        "height": 1536,
+        "alt": "SBC Brewing Company branded window and interior graphics by Tridico Design.",
+        "caption": "Storefront and interior branding for SBC Brewing Company."
+      },
+      "thumbnailImage": {
+        "id": "img_sbc_brewing_cover",
+        "src": "assets/images/work/sbc-brewing-company-01-cover.jpg",
+        "width": 2048,
+        "height": 1536,
+        "alt": "SBC Brewing Company branded window and interior graphics by Tridico Design.",
+        "caption": "Storefront and interior branding for SBC Brewing Company."
+      },
+      "images": [
+        {
+          "id": "img_sbc_brewing_cover",
+          "src": "assets/images/work/sbc-brewing-company-01-cover.jpg",
+          "width": 2048,
+          "height": 1536,
+          "alt": "SBC Brewing Company branded window and interior graphics by Tridico Design.",
+          "caption": "Storefront and interior branding for SBC Brewing Company."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-sbc-brewing-branding",
+      "relatedPostIds": [
+        "news_2026_04_24_honda_used_car_window_graphics",
+        "news_2026_05_03_hidden_creek_sign",
+        "news_2026_04_21_storefront_signage_checklist"
+      ],
+      "priority": 94,
+      "popularityScore": 91,
+      "isFeatured": true,
+      "isPinned": false,
+      "isTrending": true,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "SBC Brewing Company Branding Carries From Windows to Interior Graphics | Tridico Design News",
+        "description": "Window graphics, interior brand moments, and clean production details help SBC Brewing Company feel consistent from street view to guest experience.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/sbc-brewing-company-interior-and-window-branding/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/sbc-brewing-company-01-cover.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-sbc-brewing-branding",
+        "sourceContentHash": "facebook-sbc-brewing-branding-2026-05-07",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-05-07T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-sbc-brewing-company-interior-and-window-branding"
+    },
+    {
+      "id": "news_2026_05_03_hidden_creek_sign",
+      "slug": "hidden-creek-landscaping-sign",
+      "title": "Hidden Creek Landscaping Signage Designed for Clear Local Recognition",
+      "excerpt": "A signage project for Hidden Creek Landscaping shows how clean hierarchy and durable production help a local brand get noticed.",
+      "body": "A strong sign has to work quickly. For Hidden Creek Landscaping, the priority was readable branding, a polished finish, and a visual presence that fits a service business seen by customers in the real world.\n\nTridico signage projects bring design, print or fabrication, material planning, and installation details into one workflow. That reduces the chance of a sign looking good on screen but losing clarity once it is produced and placed.\n\nFor local service businesses, signage is often the first impression before anyone speaks to the company. Clear identity, strong contrast, and correct scale make the difference between a sign that simply exists and a sign that works.",
+      "contentFormat": "social-import",
+      "category": "Signage",
+      "categorySlug": "signage",
+      "tags": [
+        "storefront",
+        "banners",
+        "design",
+        "local business",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "storefront",
+        "banners",
+        "design",
+        "local-business",
+        "project-spotlight"
+      ],
+      "topic": "Signage",
+      "serviceType": "Signage",
+      "projectType": "Exterior Signage",
+      "industry": "Local Services",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-05-03T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_hidden_creek_sign",
+        "src": "assets/images/work/hidden-creek-landscaping-sign-01-cover.jpg",
+        "width": 2012,
+        "height": 2048,
+        "alt": "Hidden Creek Landscaping sign produced by Tridico Design.",
+        "caption": "Signage project for Hidden Creek Landscaping."
+      },
+      "thumbnailImage": {
+        "id": "img_hidden_creek_sign",
+        "src": "assets/images/work/hidden-creek-landscaping-sign-01-cover.jpg",
+        "width": 2012,
+        "height": 2048,
+        "alt": "Hidden Creek Landscaping sign produced by Tridico Design.",
+        "caption": "Signage project for Hidden Creek Landscaping."
+      },
+      "images": [
+        {
+          "id": "img_hidden_creek_sign",
+          "src": "assets/images/work/hidden-creek-landscaping-sign-01-cover.jpg",
+          "width": 2012,
+          "height": 2048,
+          "alt": "Hidden Creek Landscaping sign produced by Tridico Design.",
+          "caption": "Signage project for Hidden Creek Landscaping."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-hidden-creek-sign",
+      "relatedPostIds": [
+        "news_2026_04_28_honda_performance_zone_display",
+        "news_2026_04_24_honda_used_car_window_graphics",
+        "news_2026_04_21_storefront_signage_checklist"
+      ],
+      "priority": 90,
+      "popularityScore": 88,
+      "isFeatured": true,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Hidden Creek Landscaping Signage Designed for Clear Local Recognition | Tridico Design News",
+        "description": "A signage project for Hidden Creek Landscaping shows how clean hierarchy and durable production help a local brand get noticed.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/hidden-creek-landscaping-sign/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/hidden-creek-landscaping-sign-01-cover.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-hidden-creek-sign",
+        "sourceContentHash": "facebook-hidden-creek-sign-2026-05-03",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-05-03T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-hidden-creek-landscaping-sign"
+    },
+    {
+      "id": "news_2026_05_02_cookie_dough_food_trailer",
+      "slug": "cookie-dough-food-trailer-wrap",
+      "title": "Cookie Dough Food Trailer Wrap Turns a Mobile Setup Into a Brand Destination",
+      "excerpt": "A food trailer wrap pairs expressive graphics with practical readability for customers approaching from across an event or parking lot.",
+      "body": "Food trailers need to do more than look fun. They need to communicate what is being sold, make the line easy to find, and create a memorable image that people can recognize again later.\n\nThis trailer wrap uses large-scale graphics, clear panels, and a brand-forward composition that works from multiple angles. Tridico's production and install process keeps the finished result aligned with the trailer shape and daily use.\n\nFor mobile food businesses, a wrap can become the storefront. It supports social photos, event discovery, repeat recognition, and a more professional customer experience at every stop.",
+      "contentFormat": "social-import",
+      "category": "Vehicle Wraps",
+      "categorySlug": "vehicle-wraps",
+      "tags": [
+        "food truck",
+        "decals",
+        "design",
+        "install",
+        "local business",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "food-truck",
+        "decals",
+        "design",
+        "install",
+        "local-business",
+        "project-spotlight"
+      ],
+      "topic": "Vehicle Wraps",
+      "serviceType": "Vehicle Wraps",
+      "projectType": "Food Trailer Wrap",
+      "industry": "Food and Beverage",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-05-02T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_cookie_dough_trailer",
+        "src": "assets/images/work/cookie-dough-food-trailer-wrap-01-cover.jpg",
+        "width": 1936,
+        "height": 1244,
+        "alt": "Cookie dough food trailer wrapped with bold Tridico-designed graphics.",
+        "caption": "Food trailer graphics designed for event visibility."
+      },
+      "thumbnailImage": {
+        "id": "img_cookie_dough_trailer",
+        "src": "assets/images/work/cookie-dough-food-trailer-wrap-01-cover.jpg",
+        "width": 1936,
+        "height": 1244,
+        "alt": "Cookie dough food trailer wrapped with bold Tridico-designed graphics.",
+        "caption": "Food trailer graphics designed for event visibility."
+      },
+      "images": [
+        {
+          "id": "img_cookie_dough_trailer",
+          "src": "assets/images/work/cookie-dough-food-trailer-wrap-01-cover.jpg",
+          "width": 1936,
+          "height": 1244,
+          "alt": "Cookie dough food trailer wrapped with bold Tridico-designed graphics.",
+          "caption": "Food trailer graphics designed for event visibility."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-cookie-dough-food-trailer",
+      "relatedPostIds": [
+        "news_2026_05_10_honda_passport_rally_wrap",
+        "news_2026_04_25_honda_marysville_trailer_graphics",
+        "news_2026_04_19_fleet_wrap_rollout"
+      ],
+      "priority": 84,
+      "popularityScore": 87,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": true,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Cookie Dough Food Trailer Wrap Turns a Mobile Setup Into a Brand Destination | Tridico Design News",
+        "description": "A food trailer wrap pairs expressive graphics with practical readability for customers approaching from across an event or parking lot.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/cookie-dough-food-trailer-wrap/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/cookie-dough-food-trailer-wrap-01-cover.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-cookie-dough-food-trailer",
+        "sourceContentHash": "facebook-cookie-dough-food-trailer-2026-05-02",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-05-02T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-cookie-dough-food-trailer-wrap"
+    },
+    {
+      "id": "news_2026_04_30_polaris_brand_identity",
+      "slug": "polaris-wealth-management-brand-identity",
+      "title": "Polaris Wealth Management Identity Work Built for Trust and Clarity",
+      "excerpt": "Brand identity work for Polaris Wealth Management focuses on a polished visual system that can carry across print, signage, and digital touchpoints.",
+      "body": "Professional-service brands need to feel stable before a customer reads a full paragraph. The Polaris Wealth Management identity work centers on a refined mark, clean presentation, and a system that can scale across business materials.\n\nTridico branding projects are built with production in mind. A logo or identity system should work on printed collateral, signage, apparel, office graphics, vehicle applications, and digital placements without losing clarity.\n\nThe value is not just a single graphic. It is a consistent visual foundation that helps every future piece of communication look like it belongs to the same business.",
+      "contentFormat": "social-import",
+      "category": "Branding",
+      "categorySlug": "branding",
+      "tags": [
+        "design",
+        "print",
+        "local business",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "design",
+        "print",
+        "local-business",
+        "project-spotlight"
+      ],
+      "topic": "Branding",
+      "serviceType": "Branding",
+      "projectType": "Brand Identity",
+      "industry": "Professional Services",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-30T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "3 min read",
+      "featuredImage": {
+        "id": "img_polaris_brand_identity",
+        "src": "assets/images/work/polaris-wealth-management-brand-identity.jpg",
+        "width": 1500,
+        "height": 1125,
+        "alt": "Polaris Wealth Management brand identity materials by Tridico Design.",
+        "caption": "Brand identity work for Polaris Wealth Management."
+      },
+      "thumbnailImage": {
+        "id": "img_polaris_brand_identity",
+        "src": "assets/images/work/polaris-wealth-management-brand-identity.jpg",
+        "width": 1500,
+        "height": 1125,
+        "alt": "Polaris Wealth Management brand identity materials by Tridico Design.",
+        "caption": "Brand identity work for Polaris Wealth Management."
+      },
+      "images": [
+        {
+          "id": "img_polaris_brand_identity",
+          "src": "assets/images/work/polaris-wealth-management-brand-identity.jpg",
+          "width": 1500,
+          "height": 1125,
+          "alt": "Polaris Wealth Management brand identity materials by Tridico Design.",
+          "caption": "Brand identity work for Polaris Wealth Management."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-polaris-brand-identity",
+      "relatedPostIds": [
+        "news_2026_05_07_sbc_brewing_branding",
+        "news_2026_04_26_sat_track_print_marketing",
+        "news_2026_04_17_design_to_installation_checks"
+      ],
+      "priority": 80,
+      "popularityScore": 82,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Polaris Wealth Management Identity Work Built for Trust and Clarity | Tridico Design News",
+        "description": "Brand identity work for Polaris Wealth Management focuses on a polished visual system that can carry across print, signage, and digital touchpoints.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/polaris-wealth-management-brand-identity/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/polaris-wealth-management-brand-identity.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-polaris-brand-identity",
+        "sourceContentHash": "facebook-polaris-brand-identity-2026-04-30",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-04-30T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-polaris-wealth-management-brand-identity"
+    },
+    {
+      "id": "news_2026_04_29_jacobs_restoration_fleet_wrap",
+      "slug": "jacobs-restoration-fleet-wrap",
+      "title": "Jacobs Restoration Fleet Wrap Keeps Service Vehicles Consistent",
+      "excerpt": "A fleet wrap update shows how consistent graphics help service vehicles feel like part of one professional system.",
+      "body": "Fleet graphics are strongest when each vehicle feels connected to the same brand family. For Jacobs Restoration, the wrap approach emphasizes consistency, clear service recognition, and a finish that can stand up to daily work.\n\nTridico plans fleet work around repeatability. Colors, typography, vehicle placement, and production specs need to be controlled so each new vehicle can join the fleet without looking improvised.\n\nThis kind of wrap program is especially useful for restoration, construction, trades, delivery, and service companies whose vehicles are seen across job sites and neighborhoods every day.",
+      "contentFormat": "social-import",
+      "category": "Vehicle Wraps",
+      "categorySlug": "vehicle-wraps",
+      "tags": [
+        "fleet branding",
+        "box truck",
+        "pickup truck",
+        "decals",
+        "local business",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "fleet-branding",
+        "box-truck",
+        "pickup-truck",
+        "decals",
+        "local-business",
+        "project-spotlight"
+      ],
+      "topic": "Vehicle Wraps",
+      "serviceType": "Vehicle Wraps",
+      "projectType": "Fleet Wrap",
+      "industry": "Construction",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-29T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_jacobs_restoration_fleet",
+        "src": "assets/images/work/jacobs-restoration-fleet-wrap-01-cover.jpg",
+        "width": 2048,
+        "height": 1576,
+        "alt": "Jacobs Restoration fleet vehicle wrap by Tridico Design.",
+        "caption": "Consistent fleet graphics for a local service business."
+      },
+      "thumbnailImage": {
+        "id": "img_jacobs_restoration_fleet",
+        "src": "assets/images/work/jacobs-restoration-fleet-wrap-01-cover.jpg",
+        "width": 2048,
+        "height": 1576,
+        "alt": "Jacobs Restoration fleet vehicle wrap by Tridico Design.",
+        "caption": "Consistent fleet graphics for a local service business."
+      },
+      "images": [
+        {
+          "id": "img_jacobs_restoration_fleet",
+          "src": "assets/images/work/jacobs-restoration-fleet-wrap-01-cover.jpg",
+          "width": 2048,
+          "height": 1576,
+          "alt": "Jacobs Restoration fleet vehicle wrap by Tridico Design.",
+          "caption": "Consistent fleet graphics for a local service business."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-jacobs-restoration-fleet-wrap",
+      "relatedPostIds": [
+        "news_2026_05_10_honda_passport_rally_wrap",
+        "news_2026_04_27_advanced_basement_truck_wrap",
+        "news_2026_04_19_fleet_wrap_rollout"
+      ],
+      "priority": 78,
+      "popularityScore": 89,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": true,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Jacobs Restoration Fleet Wrap Keeps Service Vehicles Consistent | Tridico Design News",
+        "description": "A fleet wrap update shows how consistent graphics help service vehicles feel like part of one professional system.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/jacobs-restoration-fleet-wrap/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/jacobs-restoration-fleet-wrap-01-cover.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-jacobs-restoration-fleet-wrap",
+        "sourceContentHash": "facebook-jacobs-restoration-fleet-wrap-2026-04-29",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-04-29T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-jacobs-restoration-fleet-wrap"
+    },
+    {
+      "id": "news_2026_04_28_honda_performance_zone_display",
+      "slug": "honda-performance-zone-pop-display",
+      "title": "Honda Performance Zone Display Brings Print and Signage Together",
+      "excerpt": "A point-of-purchase display project combines print production, structure, and visual hierarchy for a branded customer-facing zone.",
+      "body": "Displays need to work in crowded environments. The Honda Performance Zone project uses a clear branded presence, strong print surfaces, and a structure that supports quick recognition inside a retail or event setting.\n\nTridico's role in display work includes design translation, production planning, print quality, and practical finishing details. Each part needs to hold up visually once installed, not just as a proof on a screen.\n\nFor businesses with showrooms, counters, retail spaces, or events, display graphics can focus attention and make a product or service area feel intentional.",
+      "contentFormat": "social-import",
+      "category": "Signage",
+      "categorySlug": "signage",
+      "tags": [
+        "banners",
+        "print",
+        "design",
+        "install",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "banners",
+        "print",
+        "design",
+        "install",
+        "project-spotlight"
+      ],
+      "topic": "Signage",
+      "serviceType": "Signage",
+      "projectType": "Point of Purchase Display",
+      "industry": "Automotive",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-28T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_honda_performance_zone_display",
+        "src": "assets/images/work/honda-performance-zone-pop-display-01-cover.jpg",
+        "width": 1536,
+        "height": 2048,
+        "alt": "Honda Performance Zone point-of-purchase display produced by Tridico Design.",
+        "caption": "Display graphics and signage for a branded retail zone."
+      },
+      "thumbnailImage": {
+        "id": "img_honda_performance_zone_display",
+        "src": "assets/images/work/honda-performance-zone-pop-display-01-cover.jpg",
+        "width": 1536,
+        "height": 2048,
+        "alt": "Honda Performance Zone point-of-purchase display produced by Tridico Design.",
+        "caption": "Display graphics and signage for a branded retail zone."
+      },
+      "images": [
+        {
+          "id": "img_honda_performance_zone_display",
+          "src": "assets/images/work/honda-performance-zone-pop-display-01-cover.jpg",
+          "width": 1536,
+          "height": 2048,
+          "alt": "Honda Performance Zone point-of-purchase display produced by Tridico Design.",
+          "caption": "Display graphics and signage for a branded retail zone."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-honda-performance-zone-display",
+      "relatedPostIds": [
+        "news_2026_05_03_hidden_creek_sign",
+        "news_2026_04_26_sat_track_print_marketing",
+        "news_2026_04_17_design_to_installation_checks"
+      ],
+      "priority": 76,
+      "popularityScore": 81,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Honda Performance Zone Display Brings Print and Signage Together | Tridico Design News",
+        "description": "A point-of-purchase display project combines print production, structure, and visual hierarchy for a branded customer-facing zone.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/honda-performance-zone-pop-display/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/honda-performance-zone-pop-display-01-cover.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-honda-performance-zone-display",
+        "sourceContentHash": "facebook-honda-performance-zone-display-2026-04-28",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-04-28T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-honda-performance-zone-pop-display"
+    },
+    {
+      "id": "news_2026_04_27_advanced_basement_truck_wrap",
+      "slug": "advanced-basement-solutions-truck-wrap",
+      "title": "Advanced Basement Solutions Truck Wrap Adds Job-Site Brand Visibility",
+      "excerpt": "A contractor truck wrap gives Advanced Basement Solutions a cleaner presence on the road, in neighborhoods, and at active job sites.",
+      "body": "A contractor vehicle is often parked where potential customers can see it. For Advanced Basement Solutions, the truck wrap creates a clean brand impression while keeping the service message readable.\n\nThe design balances identity, contact clarity, and vehicle shape. Tridico's installation process also matters because wraps on work trucks have to handle daily use while still looking professional.\n\nFor contractors and trade businesses, truck graphics can turn routine travel and job-site parking into steady local visibility.",
+      "contentFormat": "social-import",
+      "category": "Vehicle Wraps",
+      "categorySlug": "vehicle-wraps",
+      "tags": [
+        "pickup truck",
+        "decals",
+        "local business",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "pickup-truck",
+        "decals",
+        "local-business",
+        "project-spotlight"
+      ],
+      "topic": "Vehicle Wraps",
+      "serviceType": "Vehicle Wraps",
+      "projectType": "Contractor Truck Wrap",
+      "industry": "Construction",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-27T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_advanced_basement_wrap",
+        "src": "assets/images/work/advanced-basement-solutions-contractor-truck-wrap.jpg",
+        "width": 2048,
+        "height": 1536,
+        "alt": "Advanced Basement Solutions contractor truck wrap by Tridico Design.",
+        "caption": "Contractor truck wrap for local service visibility."
+      },
+      "thumbnailImage": {
+        "id": "img_advanced_basement_wrap",
+        "src": "assets/images/work/advanced-basement-solutions-contractor-truck-wrap.jpg",
+        "width": 2048,
+        "height": 1536,
+        "alt": "Advanced Basement Solutions contractor truck wrap by Tridico Design.",
+        "caption": "Contractor truck wrap for local service visibility."
+      },
+      "images": [
+        {
+          "id": "img_advanced_basement_wrap",
+          "src": "assets/images/work/advanced-basement-solutions-contractor-truck-wrap.jpg",
+          "width": 2048,
+          "height": 1536,
+          "alt": "Advanced Basement Solutions contractor truck wrap by Tridico Design.",
+          "caption": "Contractor truck wrap for local service visibility."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-advanced-basement-truck-wrap",
+      "relatedPostIds": [
+        "news_2026_04_29_jacobs_restoration_fleet_wrap",
+        "news_2026_05_10_honda_passport_rally_wrap",
+        "news_2026_04_19_fleet_wrap_rollout"
+      ],
+      "priority": 74,
+      "popularityScore": 80,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Advanced Basement Solutions Truck Wrap Adds Job-Site Brand Visibility | Tridico Design News",
+        "description": "A contractor truck wrap gives Advanced Basement Solutions a cleaner presence on the road, in neighborhoods, and at active job sites.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/advanced-basement-solutions-truck-wrap/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/advanced-basement-solutions-contractor-truck-wrap.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-advanced-basement-truck-wrap",
+        "sourceContentHash": "facebook-advanced-basement-truck-wrap-2026-04-27",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-04-27T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-advanced-basement-solutions-truck-wrap"
+    },
+    {
+      "id": "news_2026_04_26_sat_track_print_marketing",
+      "slug": "sat-track-gps-marketing-collateral",
+      "title": "Sat-Track GPS Marketing Collateral Keeps Sales Materials Consistent",
+      "excerpt": "Printed marketing collateral for Sat-Track GPS shows how sales pieces can carry a brand system beyond the screen.",
+      "body": "Printed materials still matter when customers need something clear, portable, and easy to review. The Sat-Track GPS project focuses on a coordinated set of marketing pieces that feel connected to the same brand system.\n\nTridico print work balances design, production accuracy, paper or material choice, and finishing. Those details affect whether a piece feels temporary or trustworthy in a sales conversation.\n\nFor businesses with trade shows, sales meetings, product sheets, mailers, or leave-behind materials, print can support credibility when it is designed and produced as part of the larger brand.",
+      "contentFormat": "social-import",
+      "category": "Printing",
+      "categorySlug": "printing",
+      "tags": [
+        "print",
+        "design",
+        "local business",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "print",
+        "design",
+        "local-business",
+        "project-spotlight"
+      ],
+      "topic": "Printing",
+      "serviceType": "Printing",
+      "projectType": "Marketing Collateral",
+      "industry": "Technology",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-26T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_sat_track_print",
+        "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+        "width": 1500,
+        "height": 1125,
+        "alt": "Sat-Track GPS printed marketing collateral designed and produced by Tridico Design.",
+        "caption": "Printed collateral system for Sat-Track GPS."
+      },
+      "thumbnailImage": {
+        "id": "img_sat_track_print",
+        "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+        "width": 1500,
+        "height": 1125,
+        "alt": "Sat-Track GPS printed marketing collateral designed and produced by Tridico Design.",
+        "caption": "Printed collateral system for Sat-Track GPS."
+      },
+      "images": [
+        {
+          "id": "img_sat_track_print",
+          "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+          "width": 1500,
+          "height": 1125,
+          "alt": "Sat-Track GPS printed marketing collateral designed and produced by Tridico Design.",
+          "caption": "Printed collateral system for Sat-Track GPS."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-sat-track-print-marketing",
+      "relatedPostIds": [
+        "news_2026_04_30_polaris_brand_identity",
+        "news_2026_04_28_honda_performance_zone_display",
+        "news_2026_04_17_design_to_installation_checks"
+      ],
+      "priority": 72,
+      "popularityScore": 76,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Sat-Track GPS Marketing Collateral Keeps Sales Materials Consistent | Tridico Design News",
+        "description": "Printed marketing collateral for Sat-Track GPS shows how sales pieces can carry a brand system beyond the screen.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/sat-track-gps-marketing-collateral/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/sat-track-gps-print-marketing.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-sat-track-print-marketing",
+        "sourceContentHash": "facebook-sat-track-print-marketing-2026-04-26",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-04-26T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-sat-track-gps-marketing-collateral"
+    },
+    {
+      "id": "news_2026_04_25_honda_marysville_trailer_graphics",
+      "slug": "honda-marysville-motorsports-trailer",
+      "title": "Honda Marysville Motorsports Trailer Graphics Built for Event Presence",
+      "excerpt": "Trailer graphics for Honda Marysville Motorsports give a large mobile surface the structure and polish needed for events and transport.",
+      "body": "Trailers create a major brand surface, especially for motorsports, events, dealerships, and teams. The Honda Marysville Motorsports trailer graphics use scale and placement to make the brand readable while the trailer is parked or moving.\n\nLarge-format vehicle graphics require attention to panel seams, installation direction, viewing angles, and the way graphics interact with the trailer frame. Tridico plans these details before production so the finished piece looks controlled.\n\nFor organizations that travel to shows, races, events, or customer locations, trailer graphics can make the setup feel complete before any booth or table is built.",
+      "contentFormat": "social-import",
+      "category": "Vehicle Wraps",
+      "categorySlug": "vehicle-wraps",
+      "tags": [
+        "semi truck",
+        "fleet branding",
+        "decals",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "semi-truck",
+        "fleet-branding",
+        "decals",
+        "project-spotlight"
+      ],
+      "topic": "Vehicle Wraps",
+      "serviceType": "Vehicle Wraps",
+      "projectType": "Trailer Graphics",
+      "industry": "Automotive",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-25T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_honda_marysville_trailer",
+        "src": "assets/images/work/honda-marysville-motorsports-trailer-01-side.jpg",
+        "width": 960,
+        "height": 720,
+        "alt": "Honda Marysville Motorsports trailer graphics installed by Tridico Design.",
+        "caption": "Trailer graphics for event and transport visibility."
+      },
+      "thumbnailImage": {
+        "id": "img_honda_marysville_trailer",
+        "src": "assets/images/work/honda-marysville-motorsports-trailer-01-side.jpg",
+        "width": 960,
+        "height": 720,
+        "alt": "Honda Marysville Motorsports trailer graphics installed by Tridico Design.",
+        "caption": "Trailer graphics for event and transport visibility."
+      },
+      "images": [
+        {
+          "id": "img_honda_marysville_trailer",
+          "src": "assets/images/work/honda-marysville-motorsports-trailer-01-side.jpg",
+          "width": 960,
+          "height": 720,
+          "alt": "Honda Marysville Motorsports trailer graphics installed by Tridico Design.",
+          "caption": "Trailer graphics for event and transport visibility."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-honda-marysville-trailer",
+      "relatedPostIds": [
+        "news_2026_05_10_honda_passport_rally_wrap",
+        "news_2026_05_02_cookie_dough_food_trailer",
+        "news_2026_04_19_fleet_wrap_rollout"
+      ],
+      "priority": 70,
+      "popularityScore": 74,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Honda Marysville Motorsports Trailer Graphics Built for Event Presence | Tridico Design News",
+        "description": "Trailer graphics for Honda Marysville Motorsports give a large mobile surface the structure and polish needed for events and transport.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/honda-marysville-motorsports-trailer/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/honda-marysville-motorsports-trailer-01-side.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-honda-marysville-trailer",
+        "sourceContentHash": "facebook-honda-marysville-trailer-2026-04-25",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-04-25T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-honda-marysville-motorsports-trailer"
+    },
+    {
+      "id": "news_2026_04_24_honda_used_car_window_graphics",
+      "slug": "honda-used-car-center-window-graphics",
+      "title": "Honda Used Car Center Window Graphics Improve Storefront Readability",
+      "excerpt": "Window graphics for the Honda Used Car Center help organize a glass storefront with clear branded messaging.",
+      "body": "Window graphics can transform a blank glass surface into a useful communication area. For the Honda Used Car Center, the graphics support brand visibility while keeping the storefront clear and intentional.\n\nTridico window graphic projects consider sunlight, viewing distance, installation alignment, and how the graphic reads from both outside and inside. Good execution depends on the design and the install working together.\n\nFor dealerships, retail locations, offices, gyms, and service counters, window graphics can promote key messages without adding bulky fixtures to the space.",
+      "contentFormat": "social-import",
+      "category": "Installations",
+      "categorySlug": "installations",
+      "tags": [
+        "storefront",
+        "wall graphics",
+        "decals",
+        "install",
+        "project spotlight"
+      ],
+      "tagSlugs": [
+        "storefront",
+        "wall-graphics",
+        "decals",
+        "install",
+        "project-spotlight"
+      ],
+      "topic": "Installations",
+      "serviceType": "Installations",
+      "projectType": "Window Graphics Installation",
+      "industry": "Automotive",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-24T13:00:00.000Z",
+      "dateImported": "2026-05-14T00:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_honda_used_car_window",
+        "src": "assets/images/work/honda-used-car-center-window-graphics-01-cover.jpg",
+        "width": 960,
+        "height": 720,
+        "alt": "Honda Used Car Center window graphics installed by Tridico Design.",
+        "caption": "Installed window graphics for a dealership storefront."
+      },
+      "thumbnailImage": {
+        "id": "img_honda_used_car_window",
+        "src": "assets/images/work/honda-used-car-center-window-graphics-01-cover.jpg",
+        "width": 960,
+        "height": 720,
+        "alt": "Honda Used Car Center window graphics installed by Tridico Design.",
+        "caption": "Installed window graphics for a dealership storefront."
+      },
+      "images": [
+        {
+          "id": "img_honda_used_car_window",
+          "src": "assets/images/work/honda-used-car-center-window-graphics-01-cover.jpg",
+          "width": 960,
+          "height": 720,
+          "alt": "Honda Used Car Center window graphics installed by Tridico Design.",
+          "caption": "Installed window graphics for a dealership storefront."
+        }
+      ],
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourcePostId": "tridico-fb-honda-used-car-window-graphics",
+      "relatedPostIds": [
+        "news_2026_05_07_sbc_brewing_branding",
+        "news_2026_04_21_storefront_signage_checklist",
+        "news_2026_04_17_design_to_installation_checks"
+      ],
+      "priority": 68,
+      "popularityScore": 73,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Honda Used Car Center Window Graphics Improve Storefront Readability | Tridico Design News",
+        "description": "Window graphics for the Honda Used Car Center help organize a glass storefront with clear branded messaging.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/honda-used-car-center-window-graphics/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/honda-used-car-center-window-graphics-01-cover.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourcePostId": "tridico-fb-honda-used-car-window-graphics",
+        "sourceContentHash": "facebook-honda-used-car-window-graphics-2026-04-24",
+        "dateImported": "2026-05-14T00:00:00.000Z",
+        "lastSeenAt": "2026-05-14T00:00:00.000Z",
+        "originalPublishedAt": "2026-04-24T13:00:00.000Z",
+        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+      },
+      "contentHash": "facebook-honda-used-car-center-window-graphics"
+    },
+    {
+      "id": "news_2026_04_21_storefront_signage_checklist",
+      "slug": "storefront-signage-prep-checklist",
+      "title": "Storefront Signage Prep Checklist Before Production Starts",
+      "excerpt": "A practical checklist for planning storefront signage so design, production, permitting, surfaces, and installation are aligned early.",
+      "body": "A storefront sign project moves faster when the important details are known early. Dimensions, viewing distance, mounting surface, lighting, local requirements, and brand files all affect the final recommendation.\n\nBefore production starts, Tridico looks for practical constraints that can change the design. Glass, brick, metal, painted surfaces, installation height, power access, and landlord rules can all influence materials and placement.\n\nThe strongest signage projects begin with a clear goal: what the customer should notice, where they should look from, and what action the sign should support. That clarity helps the finished piece work as more than decoration.",
+      "contentFormat": "case-study",
+      "category": "Signage",
+      "categorySlug": "signage",
+      "tags": [
+        "storefront",
+        "banners",
+        "design",
+        "install",
+        "local business"
+      ],
+      "tagSlugs": [
+        "storefront",
+        "banners",
+        "design",
+        "install",
+        "local-business"
+      ],
+      "topic": "Signage",
+      "serviceType": "Signage",
+      "projectType": "Planning Guide",
+      "industry": "Retail",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-21T13:00:00.000Z",
+      "readingTime": "3 min read",
+      "featuredImage": {
+        "id": "img_storefront_signage_prep",
+        "src": "assets/images/work/hidden-creek-landscaping-sign-01-cover.jpg",
+        "width": 2012,
+        "height": 2048,
+        "alt": "Storefront signage example produced by Tridico Design.",
+        "caption": "Storefront signage planning starts with measurements, material choices, and viewing distance."
+      },
+      "thumbnailImage": {
+        "id": "img_storefront_signage_prep",
+        "src": "assets/images/work/hidden-creek-landscaping-sign-01-cover.jpg",
+        "width": 2012,
+        "height": 2048,
+        "alt": "Storefront signage example produced by Tridico Design.",
+        "caption": "Storefront signage planning starts with measurements, material choices, and viewing distance."
+      },
+      "images": [
+        {
+          "id": "img_storefront_signage_prep",
+          "src": "assets/images/work/hidden-creek-landscaping-sign-01-cover.jpg",
+          "width": 2012,
+          "height": 2048,
+          "alt": "Storefront signage example produced by Tridico Design.",
+          "caption": "Storefront signage planning starts with measurements, material choices, and viewing distance."
+        }
+      ],
+      "sourcePlatform": "manual",
+      "sourceLabel": "Tridico Design",
+      "sourceUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/",
+      "relatedPostIds": [
+        "news_2026_05_03_hidden_creek_sign",
+        "news_2026_04_24_honda_used_car_window_graphics",
+        "news_2026_04_17_design_to_installation_checks"
+      ],
+      "priority": 82,
+      "popularityScore": 84,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": true,
+      "isImported": false,
+      "status": "published",
+      "seo": {
+        "title": "Storefront Signage Prep Checklist Before Production Starts | Tridico Design News",
+        "description": "A practical checklist for planning storefront signage so design, production, permitting, surfaces, and installation are aligned early.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/storefront-signage-prep-checklist/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/hidden-creek-landscaping-sign-01-cover.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "contentHash": "manual-storefront-signage-prep-checklist"
+    },
+    {
+      "id": "news_2026_04_19_fleet_wrap_rollout",
+      "slug": "how-to-plan-a-fleet-wrap-rollout",
+      "title": "How to Plan a Fleet Wrap Rollout Without Losing Consistency",
+      "excerpt": "Fleet wrap rollouts work best when brand rules, vehicle templates, production specs, and installation timing are controlled from the start.",
+      "body": "Fleet graphics can become inconsistent when each vehicle is treated like a separate project. A better rollout starts with a repeatable system for logo placement, colors, vehicle measurements, service messaging, and install scheduling.\n\nTridico plans fleet work around the vehicles already in use and the vehicles likely to be added later. That means the first design needs enough structure to repeat across trucks, vans, trailers, and different model years.\n\nFor growing businesses, consistency is not just a visual preference. It helps customers recognize the company faster, makes new vehicles easier to add, and keeps field teams looking professional across locations.",
+      "contentFormat": "case-study",
+      "category": "Vehicle Wraps",
+      "categorySlug": "vehicle-wraps",
+      "tags": [
+        "fleet branding",
+        "box truck",
+        "pickup truck",
+        "decals",
+        "local business"
+      ],
+      "tagSlugs": [
+        "fleet-branding",
+        "box-truck",
+        "pickup-truck",
+        "decals",
+        "local-business"
+      ],
+      "topic": "Vehicle Wraps",
+      "serviceType": "Vehicle Wraps",
+      "projectType": "Planning Guide",
+      "industry": "Local Services",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-19T13:00:00.000Z",
+      "readingTime": "4 min read",
+      "featuredImage": {
+        "id": "img_fleet_wrap_rollout",
+        "src": "assets/images/work/jacobs-restoration-fleet-wrap-01-cover.jpg",
+        "width": 2048,
+        "height": 1576,
+        "alt": "Fleet vehicle wrap example produced by Tridico Design.",
+        "caption": "Fleet wrap planning depends on repeatable graphics and controlled installation details."
+      },
+      "thumbnailImage": {
+        "id": "img_fleet_wrap_rollout",
+        "src": "assets/images/work/jacobs-restoration-fleet-wrap-01-cover.jpg",
+        "width": 2048,
+        "height": 1576,
+        "alt": "Fleet vehicle wrap example produced by Tridico Design.",
+        "caption": "Fleet wrap planning depends on repeatable graphics and controlled installation details."
+      },
+      "images": [
+        {
+          "id": "img_fleet_wrap_rollout",
+          "src": "assets/images/work/jacobs-restoration-fleet-wrap-01-cover.jpg",
+          "width": 2048,
+          "height": 1576,
+          "alt": "Fleet vehicle wrap example produced by Tridico Design.",
+          "caption": "Fleet wrap planning depends on repeatable graphics and controlled installation details."
+        }
+      ],
+      "sourcePlatform": "manual",
+      "sourceLabel": "Tridico Design",
+      "sourceUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/",
+      "relatedPostIds": [
+        "news_2026_04_29_jacobs_restoration_fleet_wrap",
+        "news_2026_04_27_advanced_basement_truck_wrap",
+        "news_2026_05_10_honda_passport_rally_wrap"
+      ],
+      "priority": 86,
+      "popularityScore": 90,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": true,
+      "isImported": false,
+      "status": "published",
+      "seo": {
+        "title": "How to Plan a Fleet Wrap Rollout Without Losing Consistency | Tridico Design News",
+        "description": "Fleet wrap rollouts work best when brand rules, vehicle templates, production specs, and installation timing are controlled from the start.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/how-to-plan-a-fleet-wrap-rollout/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/jacobs-restoration-fleet-wrap-01-cover.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "contentHash": "manual-how-to-plan-a-fleet-wrap-rollout"
+    },
+    {
+      "id": "news_2026_04_18_connected_design_print_install",
+      "slug": "connected-design-print-installation-workflow",
+      "title": "Shop Update: One Workflow for Design, Print, and Installation",
+      "excerpt": "A company update on how Tridico keeps design intent, production details, and installation planning connected from the start.",
+      "body": "Tridico projects often move across several practical stages: design, material selection, print production, finishing, and installation. Keeping those stages connected helps the final piece match the original goal instead of changing shape at every handoff.\n\nThat workflow matters for wraps, signage, branding materials, print collateral, and installed graphics. A design choice can affect production, a production detail can affect installation, and an install surface can affect how the artwork should be prepared.\n\nThe News and Project Updates section gives customers a clearer look at that process through recent project stories, planning notes, and public updates from Tridico Design.",
+      "contentFormat": "company-update",
+      "category": "Company Updates",
+      "categorySlug": "company-updates",
+      "tags": [
+        "design",
+        "print",
+        "install",
+        "local business"
+      ],
+      "tagSlugs": [
+        "design",
+        "print",
+        "install",
+        "local-business"
+      ],
+      "topic": "Company Updates",
+      "serviceType": "Design",
+      "projectType": "Company Update",
+      "industry": "Local Services",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-18T13:00:00.000Z",
+      "readingTime": "2 min read",
+      "featuredImage": {
+        "id": "img_connected_design_print_install",
+        "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+        "width": 1500,
+        "height": 1125,
+        "alt": "Printed marketing materials prepared as part of a connected Tridico production workflow.",
+        "caption": "Tridico connects design, print production, and installation planning."
+      },
+      "thumbnailImage": {
+        "id": "img_connected_design_print_install",
+        "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+        "width": 1500,
+        "height": 1125,
+        "alt": "Printed marketing materials prepared as part of a connected Tridico production workflow.",
+        "caption": "Tridico connects design, print production, and installation planning."
+      },
+      "images": [
+        {
+          "id": "img_connected_design_print_install",
+          "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+          "width": 1500,
+          "height": 1125,
+          "alt": "Printed marketing materials prepared as part of a connected Tridico production workflow.",
+          "caption": "Tridico connects design, print production, and installation planning."
+        }
+      ],
+      "sourcePlatform": "manual",
+      "sourceLabel": "Tridico Design",
+      "sourceUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/",
+      "relatedPostIds": [
+        "news_2026_04_17_design_to_installation_checks",
+        "news_2026_04_26_sat_track_print_marketing",
+        "news_2026_04_21_storefront_signage_checklist"
+      ],
+      "priority": 78,
+      "popularityScore": 72,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": false,
+      "status": "published",
+      "seo": {
+        "title": "Shop Update: One Workflow for Design, Print, and Installation | Tridico Design News",
+        "description": "A company update on how Tridico keeps design intent, production details, and installation planning connected from the start.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/connected-design-print-installation-workflow/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/sat-track-gps-print-marketing.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "contentHash": "manual-connected-design-print-installation-workflow"
+    },
+    {
+      "id": "news_2026_04_17_design_to_installation_checks",
+      "slug": "from-design-to-installation-what-tridico-checks",
+      "title": "From Design to Installation: What Tridico Checks Before a Project Leaves the Shop",
+      "excerpt": "A behind-the-scenes look at the checks that connect design, print production, finishing, and installation quality.",
+      "body": "The best finished graphics depend on decisions made before production. Tridico checks file quality, dimensions, material fit, surface conditions, color expectations, and installation requirements before a project leaves the shop.\n\nThose checks help reduce surprises. A design may need different spacing for a vehicle curve, a sign may need different material for an outdoor setting, and a printed piece may need finishing that changes how the artwork should be prepared.\n\nThis design-to-installation process is one reason customers can bring one project to Tridico instead of coordinating separate design, print, and install vendors.",
+      "contentFormat": "company-update",
+      "category": "Behind the Scenes",
+      "categorySlug": "behind-the-scenes",
+      "tags": [
+        "design",
+        "print",
+        "install",
+        "before after"
+      ],
+      "tagSlugs": [
+        "design",
+        "print",
+        "install",
+        "before-after"
+      ],
+      "topic": "Behind the Scenes",
+      "serviceType": "Installations",
+      "projectType": "Process Note",
+      "industry": "Local Services",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-17T13:00:00.000Z",
+      "readingTime": "3 min read",
+      "featuredImage": {
+        "id": "img_design_install_checks",
+        "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+        "width": 1500,
+        "height": 1125,
+        "alt": "Printed marketing materials prepared by Tridico Design before finishing.",
+        "caption": "Quality checks connect design, production, and installation."
+      },
+      "thumbnailImage": {
+        "id": "img_design_install_checks",
+        "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+        "width": 1500,
+        "height": 1125,
+        "alt": "Printed marketing materials prepared by Tridico Design before finishing.",
+        "caption": "Quality checks connect design, production, and installation."
+      },
+      "images": [
+        {
+          "id": "img_design_install_checks",
+          "src": "assets/images/work/sat-track-gps-print-marketing.jpg",
+          "width": 1500,
+          "height": 1125,
+          "alt": "Printed marketing materials prepared by Tridico Design before finishing.",
+          "caption": "Quality checks connect design, production, and installation."
+        }
+      ],
+      "sourcePlatform": "manual",
+      "sourceLabel": "Tridico Design",
+      "sourceUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/",
+      "relatedPostIds": [
+        "news_2026_04_21_storefront_signage_checklist",
+        "news_2026_04_19_fleet_wrap_rollout",
+        "news_2026_04_26_sat_track_print_marketing"
+      ],
+      "priority": 88,
+      "popularityScore": 79,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": false,
+      "status": "published",
+      "seo": {
+        "title": "From Design to Installation: What Tridico Checks Before a Project Leaves the Shop | Tridico Design News",
+        "description": "A behind-the-scenes look at the checks that connect design, print production, finishing, and installation quality.",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/from-design-to-installation-what-tridico-checks/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/work/sat-track-gps-print-marketing.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "contentHash": "manual-from-design-to-installation-what-tridico-checks"
+    }
+  ]
+}
