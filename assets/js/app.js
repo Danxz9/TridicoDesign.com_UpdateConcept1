@@ -47,24 +47,66 @@
     if (src) media.style.setProperty('--media-backdrop', `url("${new URL(src, window.location.href).href}")`);
   };
 
+  const hydratePortfolioImage = img => {
+    if (!img || img.getAttribute('src')) return;
+    const src = img.dataset.src;
+    if (src) img.setAttribute('src', src);
+  };
+
+  const hydratePortfolioCard = card => {
+    if (!card || card.dataset.assetsLoaded === 'true') return;
+    card.querySelectorAll('img[data-src]').forEach(hydratePortfolioImage);
+    card.dataset.assetsLoaded = 'true';
+    card.querySelectorAll('.portfolio-media--contain').forEach(media => {
+      const activeImg = media.querySelector('.portfolio-slide.is-active img') || media.querySelector('img');
+      setContainBackdrop(media, activeImg);
+    });
+  };
+
   document.querySelectorAll('.portfolio-media--contain').forEach(media => {
     setContainBackdrop(media, media.querySelector('img'));
   });
 
   document.querySelectorAll('[data-filter-bar]').forEach(bar => {
-    const grid = bar.closest('section')?.querySelector('[data-filter-grid]') || document.querySelector('[data-filter-grid]');
+    const section = bar.closest('section');
+    const grid = section?.querySelector('[data-filter-grid]') || document.querySelector('[data-filter-grid]');
     if (!grid) return;
     const cards = Array.from(grid.querySelectorAll('[data-category]'));
     const secondaryButtons = Array.from(bar.querySelectorAll('[data-filter-secondary]'));
     const tertiaryButtons = Array.from(bar.querySelectorAll('[data-filter-tertiary]'));
+    const loadMoreWrap = section?.querySelector('[data-portfolio-load-more-wrap]');
+    const loadMoreButton = loadMoreWrap?.querySelector('[data-portfolio-load-more]');
+    const loadMoreCount = loadMoreWrap?.querySelector('[data-portfolio-count]');
+    const pageSize = Math.max(1, Number(grid.dataset.portfolioPageSize) || 12);
     let secondaryFilter = 'all';
     let tertiaryFilter = '';
+    let visibleLimit = pageSize;
     const setPressed = (button, active) => {
       button.classList.toggle('active', active);
       button.setAttribute('aria-pressed', String(active));
     };
-    const applyFilters = () => {
+    const cardMatchesFilters = card => {
+      const categories = card.dataset.category.split(' ');
       const secondaryTokens = secondaryFilter === 'all' ? ['design', 'production'] : [secondaryFilter];
+      const matchesSecondary = secondaryTokens.some(token => categories.includes(token));
+      const matchesTertiary = !tertiaryFilter || categories.includes(tertiaryFilter);
+      return matchesSecondary && matchesTertiary;
+    };
+    const updateLoadMoreControls = matches => {
+      if (!loadMoreWrap) return;
+      const shown = Math.min(visibleLimit, matches.length);
+      if (loadMoreCount) {
+        loadMoreCount.textContent = matches.length
+          ? `Showing ${shown} of ${matches.length} projects`
+          : 'No projects match the selected filters.';
+      }
+      if (loadMoreButton) {
+        const remaining = Math.max(matches.length - shown, 0);
+        loadMoreButton.hidden = remaining === 0;
+        loadMoreButton.setAttribute('aria-label', `Show 12 more projects. ${remaining} remaining.`);
+      }
+    };
+    const applyFilters = () => {
       secondaryButtons.forEach(button => {
         const value = button.dataset.filterSecondary;
         const active = value === 'all'
@@ -73,18 +115,24 @@
         setPressed(button, active);
       });
       tertiaryButtons.forEach(button => setPressed(button, button.dataset.filterTertiary === tertiaryFilter));
+      const matches = cards.filter(cardMatchesFilters);
+      const matchedCards = new Set(matches);
+      const visibleCards = new Set(matches.slice(0, visibleLimit));
       cards.forEach(card => {
-        const categories = card.dataset.category.split(' ');
-        const matchesSecondary = secondaryTokens.some(token => categories.includes(token));
-        const matchesTertiary = !tertiaryFilter || categories.includes(tertiaryFilter);
-        card.classList.toggle('is-hidden', !(matchesSecondary && matchesTertiary));
+        const isMatch = matchedCards.has(card);
+        const isVisible = visibleCards.has(card);
+        card.classList.toggle('is-hidden', !isMatch);
+        card.classList.toggle('is-deferred', isMatch && !isVisible);
+        if (isVisible) hydratePortfolioCard(card);
       });
+      updateLoadMoreControls(matches);
     };
     bar.addEventListener('click', event => {
       const secondaryBtn = event.target.closest('[data-filter-secondary]');
       if (secondaryBtn) {
         secondaryFilter = secondaryBtn.dataset.filterSecondary;
         if (secondaryFilter === 'all') tertiaryFilter = '';
+        visibleLimit = pageSize;
         applyFilters();
         return;
       }
@@ -92,8 +140,15 @@
       if (!btn) return;
       const filter = btn.dataset.filterTertiary;
       tertiaryFilter = tertiaryFilter === filter ? '' : filter;
+      visibleLimit = pageSize;
       applyFilters();
     });
+    if (loadMoreButton) {
+      loadMoreButton.addEventListener('click', () => {
+        visibleLimit += pageSize;
+        applyFilters();
+      });
+    }
     applyFilters();
   });
 

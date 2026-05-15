@@ -662,7 +662,7 @@ function renderCard(slot) {
   const slides = slot.images
     .map((image, index) => {
       const activeClass = index === 0 ? " is-active" : "";
-      return `        <a class="portfolio-slide${activeClass}" data-portfolio-slide href="quote.html"><img src="${htmlEscape(
+      return `        <a class="portfolio-slide${activeClass}" data-portfolio-slide href="quote.html"><img data-src="${htmlEscape(
         image.webPath
       )}" alt="${title} project image ${index + 1}" loading="lazy" decoding="async"></a>`;
     })
@@ -686,7 +686,7 @@ ${slides}${arrows}
 }
 
 function findGridBounds(html) {
-  const gridOpenPattern = /<div class="portfolio-grid" data-filter-grid>/i;
+  const gridOpenPattern = /<div class="portfolio-grid"[^>]*data-filter-grid[^>]*>/i;
   const openMatch = gridOpenPattern.exec(html);
   if (!openMatch) {
     throw new Error("Could not find portfolio grid in work.html");
