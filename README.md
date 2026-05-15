@@ -30,6 +30,20 @@ This repository is configured for the public GitHub Pages preview URL:
 
 The preview intentionally does not include a root `CNAME` file so it does not claim the production `tridicodesign.com` domain. Add a `CNAME` file only when this repository is ready to become the production domain source.
 
+## News and Facebook Imports
+
+The News section is generated with `npm run build`. Public Tridico Design Facebook Page posts can be imported into the local News system without Meta API access, login, account cookies, or Facebook embeds.
+
+Useful commands:
+
+```bash
+npm run news:fb:dry-run
+npm run news:fb:sync
+npm run news:fb:backfill -- --limit 150
+```
+
+See `docs/facebook-news-import.md` for importer configuration, scheduling, storage, and limitations.
+
 ## Forms and Uploads
 
 This is a static GitHub Pages build. The quote, contact, and upload pages open an email draft to `ben@tridicodesign.com` with the form details included. File inputs cannot attach files automatically in a static site. Customers are instructed to attach files manually or paste a transfer link.

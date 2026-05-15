@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-05-14T00:00:00.000Z",
   "siteBase": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1",
-  "facebookUrl": "https://www.facebook.com/TridicoDesign",
+  "facebookUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "categories": [
     {
       "label": "Vehicle Wraps",
@@ -197,10 +197,12 @@
           "caption": "Wrap details and finished views."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-honda-passport-rally-wrap",
+      "sourceContentHash": "facebook-honda-passport-rally-wrap-2026-05-10",
       "relatedPostIds": [
         "news_2026_04_29_jacobs_restoration_fleet_wrap",
         "news_2026_05_02_cookie_dough_food_trailer",
@@ -225,13 +227,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-honda-passport-rally-wrap",
         "sourceContentHash": "facebook-honda-passport-rally-wrap-2026-05-10",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-05-10T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-honda-passport-rally-vehicle-wrap"
     },
@@ -296,10 +299,12 @@
           "caption": "Storefront and interior branding for SBC Brewing Company."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-sbc-brewing-branding",
+      "sourceContentHash": "facebook-sbc-brewing-branding-2026-05-07",
       "relatedPostIds": [
         "news_2026_04_24_honda_used_car_window_graphics",
         "news_2026_05_03_hidden_creek_sign",
@@ -324,13 +329,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-sbc-brewing-branding",
         "sourceContentHash": "facebook-sbc-brewing-branding-2026-05-07",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-05-07T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-sbc-brewing-company-interior-and-window-branding"
     },
@@ -392,10 +398,12 @@
           "caption": "Signage project for Hidden Creek Landscaping."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-hidden-creek-sign",
+      "sourceContentHash": "facebook-hidden-creek-sign-2026-05-03",
       "relatedPostIds": [
         "news_2026_04_28_honda_performance_zone_display",
         "news_2026_04_24_honda_used_car_window_graphics",
@@ -420,13 +428,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-hidden-creek-sign",
         "sourceContentHash": "facebook-hidden-creek-sign-2026-05-03",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-05-03T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-hidden-creek-landscaping-sign"
     },
@@ -490,10 +499,12 @@
           "caption": "Food trailer graphics designed for event visibility."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-cookie-dough-food-trailer",
+      "sourceContentHash": "facebook-cookie-dough-food-trailer-2026-05-02",
       "relatedPostIds": [
         "news_2026_05_10_honda_passport_rally_wrap",
         "news_2026_04_25_honda_marysville_trailer_graphics",
@@ -518,13 +529,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-cookie-dough-food-trailer",
         "sourceContentHash": "facebook-cookie-dough-food-trailer-2026-05-02",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-05-02T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-cookie-dough-food-trailer-wrap"
     },
@@ -584,10 +596,12 @@
           "caption": "Brand identity work for Polaris Wealth Management."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-polaris-brand-identity",
+      "sourceContentHash": "facebook-polaris-brand-identity-2026-04-30",
       "relatedPostIds": [
         "news_2026_05_07_sbc_brewing_branding",
         "news_2026_04_26_sat_track_print_marketing",
@@ -612,13 +626,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-polaris-brand-identity",
         "sourceContentHash": "facebook-polaris-brand-identity-2026-04-30",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-04-30T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-polaris-wealth-management-brand-identity"
     },
@@ -682,10 +697,12 @@
           "caption": "Consistent fleet graphics for a local service business."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-jacobs-restoration-fleet-wrap",
+      "sourceContentHash": "facebook-jacobs-restoration-fleet-wrap-2026-04-29",
       "relatedPostIds": [
         "news_2026_05_10_honda_passport_rally_wrap",
         "news_2026_04_27_advanced_basement_truck_wrap",
@@ -710,13 +727,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-jacobs-restoration-fleet-wrap",
         "sourceContentHash": "facebook-jacobs-restoration-fleet-wrap-2026-04-29",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-04-29T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-jacobs-restoration-fleet-wrap"
     },
@@ -778,10 +796,12 @@
           "caption": "Display graphics and signage for a branded retail zone."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-honda-performance-zone-display",
+      "sourceContentHash": "facebook-honda-performance-zone-display-2026-04-28",
       "relatedPostIds": [
         "news_2026_05_03_hidden_creek_sign",
         "news_2026_04_26_sat_track_print_marketing",
@@ -806,13 +826,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-honda-performance-zone-display",
         "sourceContentHash": "facebook-honda-performance-zone-display-2026-04-28",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-04-28T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-honda-performance-zone-pop-display"
     },
@@ -872,10 +893,12 @@
           "caption": "Contractor truck wrap for local service visibility."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-advanced-basement-truck-wrap",
+      "sourceContentHash": "facebook-advanced-basement-truck-wrap-2026-04-27",
       "relatedPostIds": [
         "news_2026_04_29_jacobs_restoration_fleet_wrap",
         "news_2026_05_10_honda_passport_rally_wrap",
@@ -900,13 +923,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-advanced-basement-truck-wrap",
         "sourceContentHash": "facebook-advanced-basement-truck-wrap-2026-04-27",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-04-27T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-advanced-basement-solutions-truck-wrap"
     },
@@ -966,10 +990,12 @@
           "caption": "Printed collateral system for Sat-Track GPS."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-sat-track-print-marketing",
+      "sourceContentHash": "facebook-sat-track-print-marketing-2026-04-26",
       "relatedPostIds": [
         "news_2026_04_30_polaris_brand_identity",
         "news_2026_04_28_honda_performance_zone_display",
@@ -994,13 +1020,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-sat-track-print-marketing",
         "sourceContentHash": "facebook-sat-track-print-marketing-2026-04-26",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-04-26T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-sat-track-gps-marketing-collateral"
     },
@@ -1060,10 +1087,12 @@
           "caption": "Trailer graphics for event and transport visibility."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-honda-marysville-trailer",
+      "sourceContentHash": "facebook-honda-marysville-trailer-2026-04-25",
       "relatedPostIds": [
         "news_2026_05_10_honda_passport_rally_wrap",
         "news_2026_05_02_cookie_dough_food_trailer",
@@ -1088,13 +1117,14 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-honda-marysville-trailer",
         "sourceContentHash": "facebook-honda-marysville-trailer-2026-04-25",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-04-25T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-honda-marysville-motorsports-trailer"
     },
@@ -1156,10 +1186,12 @@
           "caption": "Installed window graphics for a dealership storefront."
         }
       ],
+      "source": "facebook",
       "sourcePlatform": "facebook",
       "sourceLabel": "Facebook",
-      "sourceUrl": "https://www.facebook.com/TridicoDesign",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
       "sourcePostId": "tridico-fb-honda-used-car-window-graphics",
+      "sourceContentHash": "facebook-honda-used-car-window-graphics-2026-04-24",
       "relatedPostIds": [
         "news_2026_05_07_sbc_brewing_branding",
         "news_2026_04_21_storefront_signage_checklist",
@@ -1184,15 +1216,106 @@
         "isImported": true,
         "sourcePlatform": "facebook",
         "sourcePageName": "Tridico Design",
-        "sourceUrl": "https://www.facebook.com/TridicoDesign",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
         "sourcePostId": "tridico-fb-honda-used-car-window-graphics",
         "sourceContentHash": "facebook-honda-used-car-window-graphics-2026-04-24",
         "dateImported": "2026-05-14T00:00:00.000Z",
         "lastSeenAt": "2026-05-14T00:00:00.000Z",
         "originalPublishedAt": "2026-04-24T13:00:00.000Z",
-        "importNotes": "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included."
+        "datePublishedIsApproximate": false,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "facebook-honda-used-car-center-window-graphics"
+    },
+    {
+      "id": "news_fb_2026_04_22_url-e90fd8f353400211",
+      "slug": "2026-04-22-tridico-design-is-in-galion-url-e90fd8f353400211",
+      "title": "Tridico Design is in Galion.",
+      "excerpt": "Tridico Design is in Galion. #windowgraphics #ymcawindows #windowperf",
+      "body": "Tridico Design is in Galion.\n\n#windowgraphics #ymcawindows #windowperf",
+      "contentFormat": "social-import",
+      "category": "Signage",
+      "categorySlug": "signage",
+      "tags": [
+        "project spotlight",
+        "design"
+      ],
+      "tagSlugs": [
+        "project-spotlight",
+        "design"
+      ],
+      "topic": "Signage",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-04-22T04:00:00.000Z",
+      "dateImported": "2026-05-15T03:55:17.511Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_url-e90fd8f353400211_1",
+        "src": "assets/images/news/facebook/url-e90fd8f353400211/image-01.jpg",
+        "width": 540,
+        "height": 960,
+        "alt": "Tridico Design Facebook news image",
+        "caption": "Public Tridico Design project update image.",
+        "sourceUrl": "https://scontent.fluk1-1.fna.fbcdn.net/v/t15.5256-10/675517641_1508196914027489_6769904482496787058_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=DDVyoUijxm0Q7kNvwHyE8mT&_nc_oc=AdoVu0TzTgFmu8tdwTFfwDyfYO0LPhbeTl71EQhETtNTdp53MteGOL2aOHQL1aI9dGubwe0HlxEwRu0zJfamF2Yn&_nc_zt=23&_nc_ht=scontent.fluk1-1.fna&_nc_gid=bVTDfpXUfAkmGgBj3EG-oQ&_nc_ss=7c289&oh=00_Af6QRgsaSlJT1WcF-uOTlRKLZ3EDFsmCaAldcJUmaFfLJA&oe=6A0C50DA"
+      },
+      "thumbnailImage": {
+        "id": "img_url-e90fd8f353400211_1",
+        "src": "assets/images/news/facebook/url-e90fd8f353400211/image-01.jpg",
+        "width": 540,
+        "height": 960,
+        "alt": "Tridico Design Facebook news image",
+        "caption": "Public Tridico Design project update image.",
+        "sourceUrl": "https://scontent.fluk1-1.fna.fbcdn.net/v/t15.5256-10/675517641_1508196914027489_6769904482496787058_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=DDVyoUijxm0Q7kNvwHyE8mT&_nc_oc=AdoVu0TzTgFmu8tdwTFfwDyfYO0LPhbeTl71EQhETtNTdp53MteGOL2aOHQL1aI9dGubwe0HlxEwRu0zJfamF2Yn&_nc_zt=23&_nc_ht=scontent.fluk1-1.fna&_nc_gid=bVTDfpXUfAkmGgBj3EG-oQ&_nc_ss=7c289&oh=00_Af6QRgsaSlJT1WcF-uOTlRKLZ3EDFsmCaAldcJUmaFfLJA&oe=6A0C50DA"
+      },
+      "images": [
+        {
+          "id": "img_url-e90fd8f353400211_1",
+          "src": "assets/images/news/facebook/url-e90fd8f353400211/image-01.jpg",
+          "width": 540,
+          "height": 960,
+          "alt": "Tridico Design Facebook news image",
+          "caption": "Public Tridico Design project update image.",
+          "sourceUrl": "https://scontent.fluk1-1.fna.fbcdn.net/v/t15.5256-10/675517641_1508196914027489_6769904482496787058_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=DDVyoUijxm0Q7kNvwHyE8mT&_nc_oc=AdoVu0TzTgFmu8tdwTFfwDyfYO0LPhbeTl71EQhETtNTdp53MteGOL2aOHQL1aI9dGubwe0HlxEwRu0zJfamF2Yn&_nc_zt=23&_nc_ht=scontent.fluk1-1.fna&_nc_gid=bVTDfpXUfAkmGgBj3EG-oQ&_nc_ss=7c289&oh=00_Af6QRgsaSlJT1WcF-uOTlRKLZ3EDFsmCaAldcJUmaFfLJA&oe=6A0C50DA"
+        }
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
+      "sourcePostId": "url-e90fd8f353400211",
+      "sourceContentHash": "e6962225d8e02a093c9f1f9d27e1ec8dea7ff67224527f48d6c7539be52bfd12",
+      "relatedPostIds": [],
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Tridico Design is in Galion. | Tridico Design News",
+        "description": "Tridico Design is in Galion. #windowgraphics #ymcawindows #windowperf",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/2026-04-22-tridico-design-is-in-galion-url-e90fd8f353400211/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/news/facebook/url-e90fd8f353400211/image-01.jpg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
+        "sourcePostId": "url-e90fd8f353400211",
+        "sourceContentHash": "e6962225d8e02a093c9f1f9d27e1ec8dea7ff67224527f48d6c7539be52bfd12",
+        "dateImported": "2026-05-15T03:55:17.511Z",
+        "lastSeenAt": "2026-05-15T03:59:23.897Z",
+        "originalPublishedAt": "2026-04-22T04:00:00.000Z",
+        "datePublishedIsApproximate": true,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
+      },
+      "contentHash": "e6962225d8e02a093c9f1f9d27e1ec8dea7ff67224527f48d6c7539be52bfd12"
     },
     {
       "id": "news_2026_04_21_storefront_signage_checklist",
@@ -1251,6 +1374,7 @@
           "caption": "Storefront signage planning starts with measurements, material choices, and viewing distance."
         }
       ],
+      "source": "manual",
       "sourcePlatform": "manual",
       "sourceLabel": "Tridico Design",
       "sourceUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/",
@@ -1333,6 +1457,7 @@
           "caption": "Fleet wrap planning depends on repeatable graphics and controlled installation details."
         }
       ],
+      "source": "manual",
       "sourcePlatform": "manual",
       "sourceLabel": "Tridico Design",
       "sourceUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/",
@@ -1413,6 +1538,7 @@
           "caption": "Tridico connects design, print production, and installation planning."
         }
       ],
+      "source": "manual",
       "sourcePlatform": "manual",
       "sourceLabel": "Tridico Design",
       "sourceUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/",
@@ -1493,6 +1619,7 @@
           "caption": "Quality checks connect design, production, and installation."
         }
       ],
+      "source": "manual",
       "sourcePlatform": "manual",
       "sourceLabel": "Tridico Design",
       "sourceUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/",

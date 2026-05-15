@@ -3,8 +3,9 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "..");
 const siteBase = "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1";
-const facebookUrl = "https://www.facebook.com/TridicoDesign";
+const facebookUrl = process.env.FACEBOOK_PAGE_URL || "https://www.facebook.com/TridicoDesignSolutionsLlc";
 const today = "2026-05-14";
+const importedFacebookPostsPath = path.join(repoRoot, "assets", "data", "news-facebook-posts.json");
 
 const categories = [
   {
@@ -129,6 +130,13 @@ function readFile(relativePath) {
   return fs.readFileSync(path.join(repoRoot, relativePath), "utf8");
 }
 
+function readJsonIfExists(filePath, fallback) {
+  if (!fs.existsSync(filePath)) {
+    return fallback;
+  }
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
 function updateFile(relativePath, transform) {
   const fullPath = path.join(repoRoot, relativePath);
   const before = fs.readFileSync(fullPath, "utf8");
@@ -198,10 +206,13 @@ function createPost(input) {
     featuredImage,
     thumbnailImage: input.thumbnailImage || featuredImage,
     images: input.images || [featuredImage].filter(Boolean),
+    source: input.source || source.sourcePlatform,
     sourcePlatform: source.sourcePlatform,
-    sourceLabel: source.sourceLabel,
+    sourceLabel: input.sourceLabel || source.sourceLabel,
+    sourcePageName: input.sourcePageName,
     sourceUrl: input.sourceUrl || source.sourceUrl,
     sourcePostId: input.sourcePostId,
+    sourceContentHash: input.sourceContentHash,
     relatedPostIds: input.relatedPostIds || [],
     priority: input.priority || 50,
     popularityScore: input.popularityScore || input.priority || 50,
@@ -209,7 +220,7 @@ function createPost(input) {
     isPinned: Boolean(input.isPinned),
     isTrending: Boolean(input.isTrending),
     isImported,
-    status: "published",
+    status: input.status || "published",
     seo: {
       title: input.seoTitle || `${input.title} | Tridico Design News`,
       description,
@@ -225,12 +236,13 @@ function createPost(input) {
           sourcePageName: "Tridico Design",
           sourceUrl: input.sourceUrl || facebookUrl,
           sourcePostId: input.sourcePostId,
-          sourceContentHash: input.sourceContentHash,
+          sourceContentHash: input.sourceContentHash || input.contentHash,
           dateImported: normalizeDate(input.dateImported || today),
-          lastSeenAt: normalizeDate(today),
+          lastSeenAt: normalizeDate(input.lastSeenAt || today),
           originalPublishedAt: normalizeDate(input.datePublished),
+          datePublishedIsApproximate: Boolean(input.datePublishedIsApproximate),
           importNotes:
-            "Public Tridico-owned project update represented as an original Tridico summary with source attribution. No private data, tokens, captions, or embeds are included.",
+            "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used.",
         }
       : undefined,
     contentHash: input.contentHash || `${input.sourcePlatform || "manual"}-${input.slug}`,
@@ -870,6 +882,42 @@ This design-to-installation process is one reason customers can bring one projec
   }),
 ];
 
+function normalizeImportedFacebookInput(input) {
+  return {
+    ...input,
+    source: "facebook",
+    sourcePlatform: "facebook",
+    sourceLabel: input.sourceLabel || "Facebook",
+    sourcePageName: input.sourcePageName || "Tridico Design",
+    category: categories.some((category) => category.label === input.category) ? input.category : "Company Updates",
+    tags: Array.isArray(input.tags) && input.tags.length ? input.tags : ["local business"],
+    contentFormat: input.contentFormat || "social-import",
+    author: input.author || "Tridico Design",
+    sourceUrl: input.sourceUrl || facebookUrl,
+    dateImported: input.dateImported || today,
+    status: input.status || "published",
+    readingTime: input.readingTime || "1 min read",
+    featuredImage: input.featuredImage || input.images?.[0],
+    thumbnailImage: input.thumbnailImage || input.featuredImage || input.images?.[0],
+    images: Array.isArray(input.images) ? input.images : [input.featuredImage].filter(Boolean),
+    sourceContentHash: input.sourceContentHash || input.contentHash,
+    contentHash: input.contentHash || input.sourceContentHash,
+  };
+}
+
+function loadImportedFacebookPosts() {
+  const importedData = readJsonIfExists(importedFacebookPostsPath, { posts: [] });
+  if (!Array.isArray(importedData.posts)) {
+    return [];
+  }
+
+  return importedData.posts
+    .filter((post) => post && post.slug && post.title && post.datePublished)
+    .map((post) => createPost(normalizeImportedFacebookInput(post)));
+}
+
+posts.push(...loadImportedFacebookPosts());
+
 function getPublishedPosts() {
   const seenSlugs = new Set();
   const seenSourceKeys = new Set();
@@ -1008,15 +1056,22 @@ function renderSourceBadge(post) {
     return `<span class="news-source-badge news-source-badge--manual">Tridico</span>`;
   }
 
-  return `<span class="news-source-badge">Facebook import</span>`;
+  return `<span class="news-source-badge">Facebook</span>`;
 }
 
 function renderMeta(post, prefix) {
+  const items = [
+    `<a href="${categoryHref(post.categorySlug, prefix)}">${escapeHtml(post.category)}</a>`,
+    `<time datetime="${escapeHtml(post.datePublished)}">${formatDate(post.datePublished)}</time>`,
+    renderSourceBadge(post),
+  ];
+
+  if (post.serviceType) {
+    items.push(`<span>${escapeHtml(post.serviceType)}</span>`);
+  }
+
   return `<div class="news-meta">
-    <a href="${categoryHref(post.categorySlug, prefix)}">${escapeHtml(post.category)}</a>
-    <time datetime="${escapeHtml(post.datePublished)}">${formatDate(post.datePublished)}</time>
-    ${renderSourceBadge(post)}
-    ${post.serviceType ? `<span>${escapeHtml(post.serviceType)}</span>` : ""}
+    ${items.join("\n    ")}
   </div>`;
 }
 
@@ -1092,7 +1147,7 @@ function renderFilterBar(prefix, postsForCount, searchPage = false) {
       <select id="news-source-filter" data-news-source>
         <option value="all">All sources</option>
         <option value="manual">Tridico authored</option>
-        <option value="facebook">Facebook imported</option>
+        <option value="facebook">Public page updates</option>
       </select>
     </div>
     <div class="news-field">
@@ -1322,7 +1377,7 @@ function renderNewsLanding() {
       </div>
       <div class="news-route-grid">
         <a href="${prefix}news/search/"><span>Search</span><strong>Search all news updates</strong></a>
-        <a href="${prefix}news/source/facebook/"><span>Facebook</span><strong>Imported public project updates</strong></a>
+        <a href="${prefix}news/source/facebook/"><span>Public Page</span><strong>Imported Tridico project updates</strong></a>
         <a href="${prefix}news/source/manual/"><span>Manual</span><strong>Tridico-authored guides and notes</strong></a>
         <a href="${prefix}news/archive/"><span>Archive</span><strong>Chronological news archive</strong></a>
       </div>
@@ -1435,7 +1490,7 @@ function renderStoryPage(post) {
       </header>
       <figure class="news-story-hero">
         ${imageTag(post.featuredImage, prefix, "news-story-hero__image", "eager")}
-        ${post.featuredImage.caption ? `<figcaption>${escapeHtml(post.featuredImage.caption)}</figcaption>` : ""}
+        ${post.featuredImage?.caption ? `<figcaption>${escapeHtml(post.featuredImage.caption)}</figcaption>` : ""}
       </figure>
       <div class="news-story-layout">
         <div class="news-story-body">
@@ -1444,8 +1499,8 @@ function renderStoryPage(post) {
             post.isImported
               ? `<aside class="news-source-attribution">
                   <h2>Source Attribution</h2>
-                  <p>This story is an original Tridico Design summary based on a public project update from the official Tridico Design Facebook presence. No external embed, private data, or copied caption text is required for this page.</p>
-                  <a href="${escapeHtml(post.sourceUrl || facebookUrl)}" target="_blank" rel="noopener noreferrer">View Tridico Design on Facebook</a>
+                  <p>Originally posted by Tridico Design on Facebook.</p>
+                  <a href="${escapeHtml(post.sourceUrl || facebookUrl)}" target="_blank" rel="noopener noreferrer">View original post</a>
                 </aside>`
               : ""
           }
@@ -1674,7 +1729,7 @@ function renderSourcePages() {
   const sourcePages = [
     {
       source: "facebook",
-      label: "Facebook Updates",
+      label: "Public Page Updates",
       lede:
         "Public Tridico project updates represented as original local summaries with attribution and without external embeds.",
     },

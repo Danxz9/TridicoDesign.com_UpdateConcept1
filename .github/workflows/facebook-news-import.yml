@@ -1,0 +1,56 @@
+name: Import Facebook news posts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: facebook-news-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      FACEBOOK_PAGE_URL: ${{ vars.FACEBOOK_PAGE_URL || 'https://www.facebook.com/TridicoDesignSolutionsLlc' }}
+      FACEBOOK_NEWS_IMPORT_LIMIT: ${{ vars.FACEBOOK_NEWS_IMPORT_LIMIT || '20' }}
+      FACEBOOK_NEWS_MAX_SCROLLS: ${{ vars.FACEBOOK_NEWS_MAX_SCROLLS || '12' }}
+      NEWS_AUTO_PUBLISH: ${{ vars.NEWS_AUTO_PUBLISH || 'true' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium
+
+      - name: Sync public Facebook posts
+        run: npm run news:fb:sync
+
+      - name: Rebuild News pages
+        run: npm run build
+
+      - name: Commit imported News changes
+        run: |
+          if git diff --quiet; then
+            echo "No Facebook news changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/data assets/images/news news news.html sitemap.xml
+          git commit -m "Import Facebook news posts"
+          git push
