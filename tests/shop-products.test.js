@@ -14,6 +14,10 @@ function loadProducts() {
   return context.window.tridicoShopProducts;
 }
 
+function staticAssetPath(assetPath) {
+  return assetPath.split('?')[0];
+}
+
 function getStaticCustomServiceCards() {
   const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
   return Array.from(html.matchAll(/<article class="shop-card(?: reveal)?" data-shop-card([^>]*)>/g))
@@ -45,8 +49,8 @@ test('shop catalog exposes 350 customer-facing products with merchandising field
     assert.ok(product.artworkImage);
     assert.ok(Array.isArray(product.gallery));
     assert.equal(product.gallery.length, 2);
-    assert.match(product.image, new RegExp(`^assets/images/shop/(generated/${product.category}|canva-test)/${product.id}-applied\\.svg$`));
-    assert.match(product.artworkImage, new RegExp(`^assets/images/shop/(generated/${product.category}|canva-test)/${product.id}-artwork\\.svg$`));
+    assert.match(product.image, new RegExp(`^assets/images/shop/(generated/${product.category}|canva-test)/${product.id}-applied\\.svg(?:\\?v=[a-z0-9-]+)?$`));
+    assert.match(product.artworkImage, new RegExp(`^assets/images/shop/(generated/${product.category}|canva-test)/${product.id}-artwork\\.svg(?:\\?v=[a-z0-9-]+)?$`));
     assert.ok(Array.isArray(product.tags));
     assert.ok(product.tags.includes(product.category));
   }
@@ -58,8 +62,8 @@ test('shop product image decks use generated applied and artwork files', () => {
   assert.doesNotMatch(productData, /assets\/images\/placeholders/);
 
   for (const product of products) {
-    const applied = path.join(repoRoot, product.image);
-    const artwork = path.join(repoRoot, product.artworkImage);
+    const applied = path.join(repoRoot, staticAssetPath(product.image));
+    const artwork = path.join(repoRoot, staticAssetPath(product.artworkImage));
     assert.ok(fs.existsSync(applied), `${product.id} applied image missing`);
     assert.ok(fs.existsSync(artwork), `${product.id} artwork image missing`);
     assert.equal(product.gallery[0].src, product.image);
@@ -69,17 +73,19 @@ test('shop product image decks use generated applied and artwork files', () => {
   }
 });
 
-test('first two featured products use Canva test deck assets', () => {
+test('approved Canva products use Canva deck assets', () => {
   const products = loadProducts();
   const featured = [...products].sort((a, b) => b.priority - a.priority);
-  const firstTwo = featured.slice(0, 2);
+  const canvaProducts = [
+    products.find(product => product.id === 'stickers-local-pride-weatherproof-sticker-pack'),
+    products.find(product => product.id === 'stickers-milestone-moment-sticker-bundle')
+  ];
 
-  assert.deepEqual(firstTwo.map(product => product.id), [
-    'stickers-local-pride-weatherproof-sticker-pack',
-    'stickers-milestone-moment-sticker-bundle'
-  ]);
+  assert.equal(featured[0].id, 'stickers-milestone-moment-sticker-bundle');
+  const localPackRank = featured.findIndex(product => product.id === 'stickers-local-pride-weatherproof-sticker-pack') + 1;
+  assert.ok(localPackRank >= 50 && localPackRank <= 65, `expected local pack around 50th, got ${localPackRank}`);
 
-  for (const product of firstTwo) {
+  for (const product of canvaProducts) {
     assert.match(product.image, /^assets\/images\/shop\/canva-test\//);
     assert.match(product.artworkImage, /^assets\/images\/shop\/canva-test\//);
     assert.ok(product.canvaDesigns?.applied);
@@ -137,8 +143,7 @@ test('research-weighted additions follow demand allocation', () => {
   });
 
   const featured = [...products].sort((a, b) => b.priority - a.priority);
-  assert.deepEqual(featured.slice(0, 6).map(product => product.researchLine), [
-    'stickers',
+  assert.deepEqual(featured.slice(0, 5).map(product => product.researchLine), [
     'stickers',
     'stickers',
     'stickers',

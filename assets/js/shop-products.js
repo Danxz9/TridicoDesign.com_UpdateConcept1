@@ -476,7 +476,7 @@
   ].forEach(item => add('home-decor', item[0], item[1], item[2]));
 
   const weightedLaunchProducts = [
-    { category: 'stickers', line: 'stickers', weight: '12%', name: 'Local Pride Weatherproof Sticker Pack', price: 14, tags: ['local', 'water-bottle', 'gift', 'sticker-pack'], options: { count: '12-sticker local pride pack', unitPrice: '$1.17 each', priority: 946 } },
+    { category: 'stickers', line: 'stickers', weight: '12%', name: 'Local Pride Weatherproof Sticker Pack', price: 14, tags: ['local', 'water-bottle', 'gift', 'sticker-pack'], options: { count: '12-sticker local pack', unitPrice: '$1.17 each', priority: 939 } },
     { category: 'stickers', line: 'stickers', weight: '12%', name: 'Milestone Moment Sticker Bundle', price: 16, tags: ['graduation', 'birthday', 'baby-shower', 'wedding', 'bundle', 'sticker-pack'], options: { count: '20-sticker milestone bundle', unitPrice: '$0.80 each', priority: 946 } },
     { category: 'stickers', line: 'stickers', weight: '12%', name: 'Cottage Garden Bottle Sticker Pack', price: 13, tags: ['floral', 'cottagecore', 'water-bottle', 'sticker-pack'], options: { count: '15-sticker waterproof pack', unitPrice: '$0.87 each', priority: 945 } },
     { category: 'stickers', line: 'stickers', weight: '12%', name: 'Maximalist Mood Sticker Sheet', price: 12, tags: ['maximalist', 'gen-z', 'aesthetic', 'sticker-sheet'], options: { count: '1 large sticker sheet', unitPrice: '$12.00 per sheet', priority: 945 } },
@@ -554,10 +554,10 @@
 
   const canvaTestDecks = {
     'stickers-local-pride-weatherproof-sticker-pack': {
-      image: 'assets/images/shop/canva-test/stickers-local-pride-weatherproof-sticker-pack-applied.svg',
+      image: 'assets/images/shop/canva-test/stickers-local-pride-weatherproof-sticker-pack-applied.svg?v=20260528-no-pride',
       artworkImage: 'assets/images/shop/canva-test/stickers-local-pride-weatherproof-sticker-pack-artwork.svg',
       canvaDesigns: {
-        applied: 'https://www.canva.com/d/F9E5s0IIiEmnKm6',
+        applied: 'https://www.canva.com/d/dLlgH0UD-i27N09',
         artwork: 'https://www.canva.com/d/pPMNerMxWZCXeMA'
       }
     },
