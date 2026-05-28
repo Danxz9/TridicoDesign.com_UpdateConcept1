@@ -318,6 +318,251 @@
     else mobilePanelInner.append(accountMobileButton);
   }
 
+  const scheduleOptions = [
+    {
+      id: 'car-decal-install',
+      title: 'Car Decal Install',
+      duration: '45-90 min',
+      detail: 'Schedule vehicle lettering, spot decals, door graphics, or small install work.'
+    },
+    {
+      id: 'consultation',
+      title: 'Consultation',
+      duration: '30 min',
+      detail: 'Talk through a new design, wrap, sign, print, or branding project before quoting.'
+    },
+    {
+      id: 'on-site-installation',
+      title: 'On-Site Installation',
+      duration: 'Site dependent',
+      detail: 'Plan installation for storefront, wall, window, sign, or display graphics at your location.'
+    },
+    {
+      id: 'meeting',
+      title: 'Meeting',
+      duration: '30-60 min',
+      detail: 'Book a general project meeting, proof review, or production handoff conversation.'
+    },
+    {
+      id: 'vehicle-wrap-review',
+      title: 'Vehicle Wrap Review',
+      duration: '30-45 min',
+      detail: 'Review vehicle condition, measurements, placement, photos, and wrap direction.'
+    },
+    {
+      id: 'storefront-site-survey',
+      title: 'Storefront Site Survey',
+      duration: '45 min',
+      detail: 'Review windows, walls, sign placement, measurements, surfaces, and visibility goals.'
+    },
+    {
+      id: 'artwork-file-review',
+      title: 'Artwork / File Review',
+      duration: '20-30 min',
+      detail: 'Check logos, PDFs, design files, measurements, bleed, scale, and production readiness.'
+    },
+    {
+      id: 'pickup-dropoff',
+      title: 'Pickup / Drop-off',
+      duration: '15 min',
+      detail: 'Coordinate materials, samples, proofs, printed items, or project handoff.'
+    }
+  ];
+
+  const closeMobileMenu = () => {
+    const open = toggle?.getAttribute('aria-expanded') === 'true';
+    if (open && mobile) {
+      toggle.setAttribute('aria-expanded', 'false');
+      mobile.hidden = true;
+      document.body.classList.remove('menu-open');
+    }
+  };
+
+  const scheduleIcon = '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>';
+  const scheduleWrap = document.createElement('div');
+  scheduleWrap.className = 'schedule-dropdown';
+  scheduleWrap.innerHTML = `
+    <button class="btn btn-small schedule-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+      ${scheduleIcon}<span>Schedule</span>
+    </button>
+    <div class="schedule-menu" role="menu" hidden>
+      <p>Schedule an appointment</p>
+      ${scheduleOptions.map(option => `
+        <button type="button" role="menuitem" data-schedule-choice="${escapeHtml(option.id)}">
+          <strong>${escapeHtml(option.title)}</strong>
+          <span>${escapeHtml(option.duration)} - ${escapeHtml(option.detail)}</span>
+        </button>`).join('')}
+    </div>`;
+
+  const scheduleTrigger = scheduleWrap.querySelector('.schedule-trigger');
+  const scheduleMenu = scheduleWrap.querySelector('.schedule-menu');
+  const quoteButton = headerActions?.querySelector('a[href$="quote.html"], a[href*="quote.html"]');
+  if (headerActions) {
+    if (quoteButton) headerActions.insertBefore(scheduleWrap, quoteButton);
+    else headerActions.append(scheduleWrap);
+  }
+
+  let scheduleMobile = null;
+  if (mobilePanelInner) {
+    scheduleMobile = document.createElement('details');
+    scheduleMobile.className = 'schedule-mobile-dropdown';
+    scheduleMobile.innerHTML = `
+      <summary>${scheduleIcon}<span>Schedule Appointment</span></summary>
+      <div>
+        ${scheduleOptions.map(option => `
+          <button type="button" data-schedule-choice="${escapeHtml(option.id)}">
+            <strong>${escapeHtml(option.title)}</strong>
+            <span>${escapeHtml(option.duration)}</span>
+          </button>`).join('')}
+      </div>`;
+    const firstMobileCta = mobilePanelInner.querySelector('.btn');
+    if (accountMobileButton.parentElement === mobilePanelInner) mobilePanelInner.insertBefore(scheduleMobile, accountMobileButton);
+    else if (firstMobileCta) mobilePanelInner.insertBefore(scheduleMobile, firstMobileCta);
+    else mobilePanelInner.append(scheduleMobile);
+  }
+
+  const scheduleModal = document.createElement('div');
+  scheduleModal.className = 'schedule-modal';
+  scheduleModal.hidden = true;
+  scheduleModal.innerHTML = `
+    <div class="schedule-modal__backdrop" data-schedule-close></div>
+    <section class="schedule-modal__panel" role="dialog" aria-modal="true" aria-labelledby="schedule-title" tabindex="-1">
+      <button class="schedule-modal__close" type="button" data-schedule-close aria-label="Close schedule dialog">&times;</button>
+      <div class="schedule-modal__head">
+        <span class="schedule-modal__mark">${scheduleIcon}</span>
+        <div>
+          <p>Appointment request</p>
+          <h2 id="schedule-title">Schedule an Appointment</h2>
+        </div>
+      </div>
+      <form class="schedule-form" data-schedule-form novalidate>
+        <div class="schedule-choice-card" data-schedule-detail></div>
+        <label>Appointment type
+          <select name="appointmentType" data-schedule-type required>
+            ${scheduleOptions.map(option => `<option value="${escapeHtml(option.id)}">${escapeHtml(option.title)}</option>`).join('')}
+          </select>
+        </label>
+        <div class="schedule-form-row">
+          <label>Preferred date
+            <input type="date" name="preferredDate" required>
+          </label>
+          <label>Preferred time
+            <select name="preferredTime" required>
+              <option value="">Choose a time</option>
+              <option>Morning</option>
+              <option>Midday</option>
+              <option>Afternoon</option>
+              <option>First available</option>
+            </select>
+          </label>
+        </div>
+        <div class="schedule-form-row">
+          <label>Name
+            <input type="text" name="name" autocomplete="name" placeholder="Your name" required>
+          </label>
+          <label>Phone or email
+            <input type="text" name="contact" autocomplete="email" placeholder="How should Tridico reach you?" required>
+          </label>
+        </div>
+        <label>Project notes
+          <textarea name="notes" rows="4" placeholder="Vehicle, location, project type, deadline, or anything Tridico should know."></textarea>
+        </label>
+        <button class="btn btn-primary schedule-submit" type="submit">Request Appointment</button>
+        <p class="schedule-note">No appointment is confirmed until Tridico responds.</p>
+        <p class="schedule-status" data-schedule-status></p>
+      </form>
+    </section>`;
+  document.body.append(scheduleModal);
+
+  const schedulePanel = scheduleModal.querySelector('.schedule-modal__panel');
+  const scheduleForm = scheduleModal.querySelector('[data-schedule-form]');
+  const scheduleType = scheduleModal.querySelector('[data-schedule-type]');
+  const scheduleDetail = scheduleModal.querySelector('[data-schedule-detail]');
+  const scheduleStatus = scheduleModal.querySelector('[data-schedule-status]');
+  let lastFocusedScheduleTrigger = null;
+
+  const getScheduleOption = id => scheduleOptions.find(option => option.id === id) || scheduleOptions[0];
+  const renderScheduleDetail = id => {
+    const option = getScheduleOption(id);
+    if (!scheduleDetail) return;
+    scheduleDetail.innerHTML = `
+      <strong>${escapeHtml(option.title)}</strong>
+      <span>${escapeHtml(option.duration)}</span>
+      <p>${escapeHtml(option.detail)}</p>`;
+  };
+  const closeScheduleMenu = () => {
+    if (!scheduleMenu || !scheduleTrigger) return;
+    scheduleMenu.hidden = true;
+    scheduleTrigger.setAttribute('aria-expanded', 'false');
+  };
+  const toggleScheduleMenu = () => {
+    if (!scheduleMenu || !scheduleTrigger) return;
+    const open = scheduleTrigger.getAttribute('aria-expanded') === 'true';
+    scheduleMenu.hidden = open;
+    scheduleTrigger.setAttribute('aria-expanded', String(!open));
+  };
+  const openSchedule = (optionId, trigger) => {
+    const option = getScheduleOption(optionId);
+    lastFocusedScheduleTrigger = trigger || document.activeElement;
+    closeScheduleMenu();
+    closeMobileMenu();
+    if (scheduleType) scheduleType.value = option.id;
+    renderScheduleDetail(option.id);
+    if (scheduleStatus) scheduleStatus.textContent = '';
+    const dateInput = scheduleForm?.elements.preferredDate;
+    if (dateInput && !dateInput.min) dateInput.min = new Date().toISOString().slice(0, 10);
+    scheduleModal.hidden = false;
+    document.body.classList.add('schedule-modal-open');
+    window.requestAnimationFrame(() => schedulePanel?.focus());
+  };
+  const closeSchedule = () => {
+    scheduleModal.hidden = true;
+    document.body.classList.remove('schedule-modal-open');
+    if (lastFocusedScheduleTrigger && typeof lastFocusedScheduleTrigger.focus === 'function') {
+      lastFocusedScheduleTrigger.focus();
+    }
+  };
+
+  scheduleTrigger?.addEventListener('click', event => {
+    event.stopPropagation();
+    toggleScheduleMenu();
+  });
+  scheduleWrap.querySelectorAll('[data-schedule-choice]').forEach(button => {
+    button.addEventListener('click', () => openSchedule(button.dataset.scheduleChoice, button));
+  });
+  scheduleMobile?.querySelectorAll('[data-schedule-choice]').forEach(button => {
+    button.addEventListener('click', () => openSchedule(button.dataset.scheduleChoice, button));
+  });
+  document.addEventListener('click', event => {
+    if (!scheduleWrap.contains(event.target)) closeScheduleMenu();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeScheduleMenu();
+      if (!scheduleModal.hidden) closeSchedule();
+    }
+  });
+  scheduleModal.querySelectorAll('[data-schedule-close]').forEach(button => button.addEventListener('click', closeSchedule));
+  scheduleType?.addEventListener('change', () => renderScheduleDetail(scheduleType.value));
+  scheduleForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!scheduleForm.reportValidity()) return;
+    const option = getScheduleOption(scheduleType?.value);
+    const data = new FormData(scheduleForm);
+    const lines = [
+      `Appointment type: ${option.title}`,
+      `Preferred date: ${data.get('preferredDate')}`,
+      `Preferred time: ${data.get('preferredTime')}`,
+      `Name: ${data.get('name')}`,
+      `Contact: ${data.get('contact')}`,
+      `Notes: ${data.get('notes') || 'None provided'}`
+    ];
+    const href = `mailto:ben@tridicodesign.com?subject=${encodeURIComponent(`Appointment Request - ${option.title}`)}&body=${encodeURIComponent(`${lines.join('\n')}\n\nNo appointment is confirmed until Tridico responds.\n\nSubmitted from TridicoDesign.com.`)}`;
+    if (scheduleStatus) scheduleStatus.textContent = 'Opening your email app with the appointment request.';
+    window.location.href = href;
+  });
+  renderScheduleDetail(scheduleOptions[0].id);
+
   const modal = document.createElement('div');
   modal.className = 'account-modal';
   modal.dataset.accountModal = 'true';
