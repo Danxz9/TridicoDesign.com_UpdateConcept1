@@ -11,9 +11,9 @@
 
 ## Header strategy
 
-Primary nav: Work, Services, Industries, Process, About, Contact.  
+Primary nav: Work, Services, Shop, Process, About, Contact.
 Utility actions: Phone, Upload Artwork, Get Quote.  
-Mobile priority: Work, Services, Vehicle Wraps, Signs & Banners, Branding, Printing, Industries, Process, Upload, Contact, Quote.
+Mobile priority: Work, Services, Vehicle Wraps, Signs & Banners, Branding, Printing, Shop, Process, Upload, Contact, Quote.
 
 ## Image replacement map
 

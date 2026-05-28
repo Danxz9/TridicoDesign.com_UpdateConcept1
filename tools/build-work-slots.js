@@ -657,8 +657,10 @@ function prepareGeneratedAssets(slots) {
 function renderCard(slot) {
   const categories = orderedCategories(slot.categories).join(" ");
   const title = htmlEscape(slot.title);
-  const label = htmlEscape(slotLabel(slot.categories));
-  const description = htmlEscape(slotDescription(slot.categories));
+  const tags = slotDescription(slot.categories)
+    .split(" / ")
+    .map((tag) => `            <span>${htmlEscape(tag)}</span>`)
+    .join("\n");
   const slides = slot.images
     .map((image, index) => {
       const activeClass = index === 0 ? " is-active" : "";
@@ -677,10 +679,11 @@ function renderCard(slot) {
 ${slides}${arrows}
         </div>
         <div class="portfolio-info">
-          <span>${label}</span>
+          <div class="portfolio-tags" aria-label="Project tags">
+${tags}
+          </div>
           <h3>${title}</h3>
-          <p>${description}</p>
-          <a class="text-link" href="quote.html">Start similar project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg></a>
+          <a class="text-link" href="quote.html">Start Similar Project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg></a>
         </div>
       </article>`;
 }

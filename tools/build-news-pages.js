@@ -2249,7 +2249,7 @@ function updateSitemap() {
     "/",
     "/work.html",
     "/services.html",
-    "/industries.html",
+    "/shop.html",
     "/process.html",
     "/about.html",
     "/contact.html",

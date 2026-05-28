@@ -264,4 +264,499 @@
       window.location.href = href;
     });
   });
+
+  const accountStorageKey = 'tridicoMockAccount';
+  const getAccount = () => {
+    try {
+      return JSON.parse(window.localStorage.getItem(accountStorageKey) || 'null');
+    } catch {
+      return null;
+    }
+  };
+  const saveAccount = account => window.localStorage.setItem(accountStorageKey, JSON.stringify(account));
+  const clearAccount = () => window.localStorage.removeItem(accountStorageKey);
+  const getDisplayName = email => {
+    const raw = String(email || '').split('@')[0].replace(/[._-]+/g, ' ').trim();
+    return raw ? raw.replace(/\b\w/g, char => char.toUpperCase()) : 'Client';
+  };
+  const escapeHtml = value => String(value || '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[char]);
+  const homeHref = document.querySelector('.brand')?.getAttribute('href') || 'index.html';
+  const siteRoot = homeHref.replace(/index\.html(?:[#?].*)?$/, '');
+  const sitePath = path => `${siteRoot}${path}`;
+
+  const accountIcon = '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>';
+  const accountDesktopButton = document.createElement('button');
+  accountDesktopButton.className = 'btn btn-small account-trigger';
+  accountDesktopButton.type = 'button';
+  accountDesktopButton.dataset.accountOpen = 'true';
+
+  const accountMobileButton = document.createElement('button');
+  accountMobileButton.className = 'account-mobile-link';
+  accountMobileButton.type = 'button';
+  accountMobileButton.dataset.accountOpen = 'true';
+
+  const refreshAccountTriggers = () => {
+    const account = getAccount();
+    const label = account ? 'Account' : 'Login';
+    accountDesktopButton.innerHTML = `${accountIcon}<span>${label}</span>`;
+    accountDesktopButton.setAttribute('aria-label', account ? `Open account for ${account.name}` : 'Open account login');
+    accountMobileButton.innerHTML = `${accountIcon}<span>${account ? 'Client Account' : 'Account Login'}</span>`;
+  };
+
+  const headerActions = document.querySelector('.header-actions');
+  if (headerActions) headerActions.prepend(accountDesktopButton);
+  const mobilePanelInner = document.querySelector('.mobile-panel-inner');
+  if (mobilePanelInner) {
+    const firstMobileCta = mobilePanelInner.querySelector('.btn');
+    if (firstMobileCta) mobilePanelInner.insertBefore(accountMobileButton, firstMobileCta);
+    else mobilePanelInner.append(accountMobileButton);
+  }
+
+  const modal = document.createElement('div');
+  modal.className = 'account-modal';
+  modal.dataset.accountModal = 'true';
+  modal.hidden = true;
+  modal.innerHTML = `
+    <div class="account-modal__backdrop" data-account-close></div>
+    <section class="account-modal__panel" role="dialog" aria-modal="true" aria-labelledby="account-title" tabindex="-1">
+      <button class="account-modal__close" type="button" data-account-close aria-label="Close account dialog">&times;</button>
+      <div class="account-modal__brand">
+        <span class="account-modal__mark">TD</span>
+        <div>
+          <p>Client Portal</p>
+          <h2 id="account-title">Tridico Account</h2>
+        </div>
+      </div>
+      <div class="account-auth" data-account-auth>
+        <div class="account-tabs" role="tablist" aria-label="Account options">
+          <button class="account-tab is-active" type="button" data-account-tab="signin" role="tab" aria-selected="true">Sign in</button>
+          <button class="account-tab" type="button" data-account-tab="create" role="tab" aria-selected="false">Create account</button>
+        </div>
+        <form class="account-form is-active" data-account-form="signin" novalidate>
+          <label>Email address
+            <input type="email" name="email" autocomplete="email" placeholder="client@example.com" required>
+          </label>
+          <label>Password
+            <span class="account-password-field">
+              <input type="password" name="password" autocomplete="current-password" placeholder="Enter password" required>
+              <button type="button" data-password-toggle>Show</button>
+            </span>
+          </label>
+          <div class="account-form-row">
+            <label class="account-check"><input type="checkbox" name="remember" checked> Remember me</label>
+            <button class="account-link-button" type="button" data-reset-link>Forgot password?</button>
+          </div>
+          <button class="btn btn-primary account-submit" type="submit">Sign in securely</button>
+          <p class="account-status" data-account-status></p>
+        </form>
+        <form class="account-form" data-account-form="create" novalidate>
+          <label>Full name
+            <input type="text" name="name" autocomplete="name" placeholder="Your name" required>
+          </label>
+          <label>Company
+            <input type="text" name="company" autocomplete="organization" placeholder="Company or organization">
+          </label>
+          <label>Email address
+            <input type="email" name="email" autocomplete="email" placeholder="client@example.com" required>
+          </label>
+          <label>Password
+            <span class="account-password-field">
+              <input type="password" name="password" autocomplete="new-password" placeholder="Create password" required>
+              <button type="button" data-password-toggle>Show</button>
+            </span>
+          </label>
+          <button class="btn btn-primary account-submit" type="submit">Create client account</button>
+          <p class="account-status" data-account-status></p>
+        </form>
+        <p class="account-preview-note">Preview mode. No data is sent; this browser stores only a mock session until a backend is connected.</p>
+      </div>
+      <div class="account-dashboard" data-account-dashboard hidden></div>
+    </section>`;
+  document.body.append(modal);
+
+  const panel = modal.querySelector('.account-modal__panel');
+  const authArea = modal.querySelector('[data-account-auth]');
+  const dashboard = modal.querySelector('[data-account-dashboard]');
+  let lastFocusedAccountTrigger = null;
+
+  const setAccountTab = target => {
+    modal.querySelectorAll('[data-account-tab]').forEach(item => {
+      const active = item.dataset.accountTab === target;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-selected', String(active));
+    });
+    modal.querySelectorAll('[data-account-form]').forEach(form => {
+      form.classList.toggle('is-active', form.dataset.accountForm === target);
+    });
+  };
+
+  const renderDashboard = account => {
+    if (!dashboard || !account) return;
+    const safeName = escapeHtml(account.name);
+    const safeEmail = escapeHtml(account.email);
+    dashboard.innerHTML = `
+      <div class="account-welcome">
+        <div>
+          <p>Signed in as</p>
+          <h3>${safeName}</h3>
+          <span>${safeEmail}</span>
+        </div>
+        <span class="account-avatar" aria-hidden="true">${safeName.slice(0, 1).toUpperCase()}</span>
+      </div>
+      <div class="account-projects" aria-label="Client portal preview">
+        <article>
+          <span>Proof Review</span>
+          <strong>Vehicle wrap proof ready</strong>
+          <em>Awaiting approval</em>
+        </article>
+        <article>
+          <span>Quote</span>
+          <strong>Storefront signage package</strong>
+          <em>Under review</em>
+        </article>
+        <article>
+          <span>Files</span>
+          <strong>Artwork uploads received</strong>
+          <em>3 files checked in</em>
+        </article>
+      </div>
+      <div class="account-actions">
+        <a class="btn btn-primary" href="${sitePath('quote.html')}">Start a quote</a>
+        <a class="btn btn-outline account-dark-outline" href="${sitePath('upload-artwork.html')}">Upload artwork</a>
+        <button class="btn btn-ghost-light account-signout" type="button" data-account-signout>Sign out</button>
+      </div>`;
+    dashboard.querySelector('[data-account-signout]')?.addEventListener('click', () => {
+      clearAccount();
+      setAccountTab('signin');
+      renderAccountState();
+    });
+  };
+
+  function renderAccountState(){
+    const account = getAccount();
+    refreshAccountTriggers();
+    if (authArea) authArea.hidden = Boolean(account);
+    if (dashboard) dashboard.hidden = !account;
+    if (account) renderDashboard(account);
+  }
+
+  const openAccount = trigger => {
+    lastFocusedAccountTrigger = trigger || document.activeElement;
+    renderAccountState();
+    modal.hidden = false;
+    document.body.classList.add('account-modal-open');
+    window.requestAnimationFrame(() => panel?.focus());
+  };
+
+  const closeAccount = () => {
+    modal.hidden = true;
+    document.body.classList.remove('account-modal-open');
+    if (lastFocusedAccountTrigger && typeof lastFocusedAccountTrigger.focus === 'function') {
+      lastFocusedAccountTrigger.focus();
+    }
+  };
+
+  document.querySelectorAll('[data-account-open]').forEach(button => {
+    button.addEventListener('click', () => {
+      const open = toggle?.getAttribute('aria-expanded') === 'true';
+      if (open && mobile) {
+        toggle.setAttribute('aria-expanded', 'false');
+        mobile.hidden = true;
+        document.body.classList.remove('menu-open');
+      }
+      openAccount(button);
+    });
+  });
+
+  modal.querySelectorAll('[data-account-close]').forEach(button => button.addEventListener('click', closeAccount));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !modal.hidden) closeAccount();
+  });
+
+  modal.querySelectorAll('[data-account-tab]').forEach(tab => {
+    tab.addEventListener('click', () => {
+      setAccountTab(tab.dataset.accountTab);
+    });
+  });
+
+  modal.querySelectorAll('[data-password-toggle]').forEach(button => {
+    button.addEventListener('click', () => {
+      const input = button.parentElement?.querySelector('input');
+      if (!input) return;
+      const show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      button.textContent = show ? 'Hide' : 'Show';
+    });
+  });
+
+  modal.querySelector('[data-reset-link]')?.addEventListener('click', event => {
+    const form = event.currentTarget.closest('form');
+    const status = form?.querySelector('[data-account-status]');
+    const email = form?.elements.email?.value;
+    if (status) {
+      status.textContent = email
+        ? `Password reset preview prepared for ${email}.`
+        : 'Enter your email and request a reset link.';
+      status.classList.remove('is-error');
+    }
+  });
+
+  modal.querySelectorAll('[data-account-form]').forEach(form => {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const status = form.querySelector('[data-account-status]');
+      const submit = form.querySelector('.account-submit');
+      const email = form.elements.email?.value.trim();
+      const password = form.elements.password?.value;
+      if (!email || !password || !email.includes('@')) {
+        if (status) {
+          status.textContent = 'Enter a valid email and password.';
+          status.classList.add('is-error');
+        }
+        return;
+      }
+      if (password.length < 4) {
+        if (status) {
+          status.textContent = 'Use at least 4 characters for this preview.';
+          status.classList.add('is-error');
+        }
+        return;
+      }
+      if (status) {
+        status.textContent = 'Checking secure portal credentials...';
+        status.classList.remove('is-error');
+      }
+      if (submit) submit.disabled = true;
+      window.setTimeout(() => {
+        const nameField = form.elements.name?.value.trim();
+        saveAccount({
+          name: nameField || getDisplayName(email),
+          email,
+          company: form.elements.company?.value.trim() || 'Tridico Client',
+          signedInAt: new Date().toISOString()
+        });
+        if (submit) submit.disabled = false;
+        form.reset();
+        renderAccountState();
+      }, 650);
+    });
+  });
+
+  const initShop = () => {
+    const shopPage = document.querySelector('[data-shop-page]');
+    if (!shopPage) return;
+
+    const storageKey = 'tridicoShopCart';
+    const grid = document.querySelector('[data-shop-grid]');
+    const cards = Array.from(document.querySelectorAll('[data-shop-card]'));
+    const searchForm = document.querySelector('[data-shop-search-form]');
+    const queryInput = document.querySelector('[data-shop-query]');
+    const categorySelect = document.querySelector('[data-shop-category]');
+    const sortSelect = document.querySelector('[data-shop-sort]');
+    const resultCount = document.querySelector('[data-shop-result-count]');
+    const emptyState = document.querySelector('[data-shop-empty]');
+    const chips = Array.from(document.querySelectorAll('[data-shop-chip]'));
+    const filterInputs = Array.from(document.querySelectorAll('[data-shop-filter]'));
+    const clearFilters = document.querySelector('[data-shop-clear]');
+    const cartDrawer = document.querySelector('[data-shop-cart]');
+    const cartPanel = cartDrawer?.querySelector('.shop-cart-panel');
+    const cartItems = document.querySelector('[data-shop-cart-items]');
+    const cartCountEls = Array.from(document.querySelectorAll('[data-shop-cart-count]'));
+    const cartTotal = document.querySelector('[data-shop-cart-total]');
+    const cartStatus = document.querySelector('[data-shop-cart-status]');
+    const checkoutButton = document.querySelector('[data-shop-checkout]');
+    const originalOrder = new Map(cards.map((card, index) => [card, index]));
+    let selectedCategory = categorySelect?.value || 'all';
+    let cart = [];
+    let lastCartTrigger = null;
+
+    const formatCurrency = value => new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(value);
+
+    const normalize = value => String(value || '').toLowerCase();
+    const getSearchText = card => normalize([
+      card.dataset.shopName,
+      card.dataset.shopCategory,
+      card.dataset.shopTags,
+      card.textContent
+    ].join(' '));
+    const getProduct = card => ({
+      id: card.dataset.shopId,
+      name: card.dataset.shopName,
+      category: card.dataset.shopCategory,
+      price: Number(card.dataset.shopPrice) || 0,
+      image: card.querySelector('img')?.getAttribute('src') || '',
+      href: card.querySelector('a')?.getAttribute('href') || 'shop.html'
+    });
+    const loadCart = () => {
+      try {
+        const parsed = JSON.parse(window.localStorage.getItem(storageKey) || '[]');
+        cart = Array.isArray(parsed) ? parsed.filter(item => item && item.id) : [];
+      } catch {
+        cart = [];
+      }
+    };
+    const saveCart = () => window.localStorage.setItem(storageKey, JSON.stringify(cart));
+    const getFilterGroups = () => Array.from(document.querySelectorAll('.shop-filters fieldset'))
+      .map(group => Array.from(group.querySelectorAll('[data-shop-filter]:checked')).map(input => input.value))
+      .filter(values => values.length);
+    const applyChipState = () => {
+      chips.forEach(chip => chip.classList.toggle('is-active', chip.dataset.shopChip === selectedCategory));
+      if (categorySelect && categorySelect.value !== selectedCategory) categorySelect.value = selectedCategory;
+    };
+    const cardMatches = card => {
+      const text = getSearchText(card);
+      const query = normalize(queryInput?.value).trim();
+      const matchesQuery = !query || query.split(/\s+/).every(part => text.includes(part));
+      const matchesCategory = selectedCategory === 'all' || card.dataset.shopCategory === selectedCategory;
+      const matchesFilters = getFilterGroups().every(group => group.some(token => text.includes(token)));
+      return matchesQuery && matchesCategory && matchesFilters;
+    };
+    const sortCards = () => {
+      if (!grid) return;
+      const mode = sortSelect?.value || 'featured';
+      const sorted = [...cards].sort((a, b) => {
+        if (mode === 'price-low') return Number(a.dataset.shopPrice) - Number(b.dataset.shopPrice);
+        if (mode === 'price-high') return Number(b.dataset.shopPrice) - Number(a.dataset.shopPrice);
+        if (mode === 'name') return String(a.dataset.shopName).localeCompare(String(b.dataset.shopName));
+        return originalOrder.get(a) - originalOrder.get(b);
+      });
+      sorted.forEach(card => grid.append(card));
+    };
+    const applyFilters = () => {
+      sortCards();
+      const visible = cards.filter(card => {
+        const show = cardMatches(card);
+        card.classList.toggle('is-hidden', !show);
+        return show;
+      });
+      if (resultCount) resultCount.textContent = `${visible.length} ${visible.length === 1 ? 'item' : 'items'}`;
+      if (emptyState) emptyState.hidden = visible.length !== 0;
+      applyChipState();
+    };
+    const setCategory = value => {
+      selectedCategory = value || 'all';
+      applyFilters();
+    };
+    const renderCart = () => {
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+      cartCountEls.forEach(item => { item.textContent = String(totalQty); });
+      if (cartTotal) cartTotal.textContent = formatCurrency(totalPrice);
+      if (!cartItems) return;
+      if (!cart.length) {
+        cartItems.innerHTML = '<p class="shop-cart-empty">Your quote cart is empty.</p>';
+        return;
+      }
+      cartItems.innerHTML = cart.map(item => `
+        <article class="shop-cart-item">
+          <img src="${escapeHtml(item.image)}" alt="">
+          <div>
+            <h3>${escapeHtml(item.name)}</h3>
+            <p>${formatCurrency(item.price)} starting estimate</p>
+            <div class="shop-cart-controls">
+              <button type="button" data-shop-qty="${escapeHtml(item.id)}" data-delta="-1" aria-label="Decrease ${escapeHtml(item.name)} quantity">-</button>
+              <span>${item.qty}</span>
+              <button type="button" data-shop-qty="${escapeHtml(item.id)}" data-delta="1" aria-label="Increase ${escapeHtml(item.name)} quantity">+</button>
+              <button class="shop-cart-remove" type="button" data-shop-remove="${escapeHtml(item.id)}">Remove</button>
+            </div>
+          </div>
+        </article>`).join('');
+    };
+    const openCart = trigger => {
+      if (!cartDrawer) return;
+      lastCartTrigger = trigger || document.activeElement;
+      renderCart();
+      cartDrawer.hidden = false;
+      document.body.classList.add('shop-cart-open');
+      window.requestAnimationFrame(() => cartPanel?.focus());
+    };
+    const closeCart = () => {
+      if (!cartDrawer) return;
+      cartDrawer.hidden = true;
+      document.body.classList.remove('shop-cart-open');
+      if (lastCartTrigger && typeof lastCartTrigger.focus === 'function') lastCartTrigger.focus();
+    };
+    const addToCart = (card, trigger) => {
+      const product = getProduct(card);
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) existing.qty += 1;
+      else cart.push({...product, qty: 1});
+      saveCart();
+      renderCart();
+      if (cartStatus) cartStatus.textContent = `${product.name} added.`;
+      openCart(trigger);
+    };
+    const updateQty = (id, delta) => {
+      const item = cart.find(entry => entry.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) cart = cart.filter(entry => entry.id !== id);
+      saveCart();
+      renderCart();
+    };
+    const requestQuote = () => {
+      if (!cart.length) {
+        if (cartStatus) cartStatus.textContent = 'Add at least one item to request a quote.';
+        return;
+      }
+      const body = cart.map(item => `${item.qty} x ${item.name} - ${formatCurrency(item.price)} starting estimate`).join('\n');
+      const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+      const href = `mailto:ben@tridicodesign.com?subject=${encodeURIComponent('Shop Quote Cart - Tridico Design')}&body=${encodeURIComponent(`${body}\n\nEstimated starting total: ${formatCurrency(total)}\n\nSubmitted from the Tridico shop preview.`)}`;
+      if (cartStatus) cartStatus.textContent = 'Opening your email app with the quote cart.';
+      window.location.href = href;
+    };
+
+    searchForm?.addEventListener('submit', event => {
+      event.preventDefault();
+      applyFilters();
+    });
+    queryInput?.addEventListener('input', applyFilters);
+    categorySelect?.addEventListener('change', () => setCategory(categorySelect.value));
+    sortSelect?.addEventListener('change', applyFilters);
+    chips.forEach(chip => chip.addEventListener('click', () => setCategory(chip.dataset.shopChip)));
+    filterInputs.forEach(input => input.addEventListener('change', applyFilters));
+    clearFilters?.addEventListener('click', () => {
+      filterInputs.forEach(input => { input.checked = false; });
+      if (queryInput) queryInput.value = '';
+      setCategory('all');
+    });
+    cards.forEach(card => {
+      card.querySelector('[data-shop-add]')?.addEventListener('click', event => addToCart(card, event.currentTarget));
+    });
+    document.querySelectorAll('[data-shop-cart-open]').forEach(button => {
+      button.addEventListener('click', () => openCart(button));
+    });
+    cartDrawer?.querySelectorAll('[data-shop-cart-close]').forEach(button => button.addEventListener('click', closeCart));
+    cartItems?.addEventListener('click', event => {
+      const qtyButton = event.target.closest('[data-shop-qty]');
+      const removeButton = event.target.closest('[data-shop-remove]');
+      if (qtyButton) updateQty(qtyButton.dataset.shopQty, Number(qtyButton.dataset.delta));
+      if (removeButton) {
+        cart = cart.filter(item => item.id !== removeButton.dataset.shopRemove);
+        saveCart();
+        renderCart();
+      }
+    });
+    checkoutButton?.addEventListener('click', requestQuote);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && cartDrawer && !cartDrawer.hidden) closeCart();
+    });
+
+    loadCart();
+    applyFilters();
+    renderCart();
+  };
+
+  renderAccountState();
+  initShop();
 })();

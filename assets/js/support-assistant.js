@@ -22,7 +22,7 @@
     contactUrl: 'contact.html',
     servicesUrl: 'services.html',
     workUrl: 'work.html',
-    industriesUrl: 'industries.html',
+    shopUrl: 'shop.html',
     processUrl: 'process.html',
     resourcesUrl: 'resources.html',
     ticketEndpoint: '', // Optional backend endpoint. Leave blank for mailto fallback.
@@ -45,7 +45,7 @@
     navigation: {
       label: 'Find a page',
       keywords: ['navigation', 'navigate', 'page', 'where', 'find', 'website', 'menu', 'link', 'go to'],
-      html: `<p><strong>Fastest website paths:</strong></p><ul><li><a href="work.html">Work</a> - view project examples and portfolio categories.</li><li><a href="services.html">Services</a> - graphic design, print, signs, wraps, branding, and installation.</li><li><a href="industries.html">Industries</a> - contractors, restaurants, schools, retail, automotive, offices, gyms, and more.</li><li><a href="process.html">Process</a> - intake, proof, production, and installation.</li><li><a href="quote.html">Get Quote</a> - submit project details.</li><li><a href="upload-artwork.html">Upload Artwork</a> - prepare files for Tridico.</li><li><a href="contact.html">Contact</a> - phone, email, location, and hours.</li></ul>`,
+      html: `<p><strong>Fastest website paths:</strong></p><ul><li><a href="work.html">Work</a> - view project examples and portfolio categories.</li><li><a href="services.html">Services</a> - graphic design, print, signs, wraps, branding, and installation.</li><li><a href="shop.html">Shop</a> - search packages, filter by customer type, and build a quote cart.</li><li><a href="process.html">Process</a> - intake, proof, production, and installation.</li><li><a href="quote.html">Get Quote</a> - submit project details.</li><li><a href="upload-artwork.html">Upload Artwork</a> - prepare files for Tridico.</li><li><a href="contact.html">Contact</a> - phone, email, location, and hours.</li></ul>`,
       chips: ['quote', 'upload', 'services', 'website_issue', 'company']
     },
     quote: {
@@ -64,7 +64,7 @@
       label: 'Services',
       keywords: ['services', 'service', 'sign', 'signage', 'wrap', 'wraps', 'vehicle', 'printing', 'print', 'graphic design', 'branding', 'materials', 'decals', 'banner', 'installation', 'install', 'wall graphic', 'window graphic'],
       html: `<p><strong>Tridico service paths:</strong></p><ul><li><a href="graphic-design.html">Graphic Design</a> - layouts, logos, concepts, and production-ready artwork.</li><li><a href="printing.html">Printing Services</a> - cards, brochures, folders, decals, banners, display materials, and large-format print.</li><li><a href="branding-materials.html">Branding Materials</a> - branded assets that keep a business consistent across touchpoints.</li><li><a href="signage.html">Signage</a> - storefront, interior, exterior, event, wall, and window graphics.</li><li><a href="vehicle-wraps.html">Vehicle Wraps</a> - single vehicles, fleets, trailers, food trucks, and decals.</li><li><a href="installation.html">On-Site Installation</a> - install-ready planning for real locations.</li></ul>`,
-      chips: ['quote', 'work', 'industries', 'care', 'installation']
+      chips: ['quote', 'work', 'shop', 'care', 'installation']
     },
     quality: {
       label: 'Quality issue',
@@ -157,7 +157,7 @@
     rush: { label: 'Rush timeline', path: 'rush' },
     ticket: { label: 'Create ticket', path: 'ticket', primary: true },
     work: { label: 'View work', href: CONFIG.workUrl },
-    industries: { label: 'Industries', href: CONFIG.industriesUrl },
+    shop: { label: 'Shop', href: CONFIG.shopUrl },
     contact: { label: 'Contact', href: CONFIG.contactUrl },
     call: { label: 'Call Tridico', href: CONFIG.phoneHref, primary: true },
     open_quote: { label: 'Open quote page', href: CONFIG.quoteUrl, primary: true },

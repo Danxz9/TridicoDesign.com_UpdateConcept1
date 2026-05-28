@@ -5,7 +5,7 @@ Static GitHub Pages preview website for **Tridico Design LLC**.
 ## Included
 
 - `index.html` homepage
-- Portfolio, services, industries, process, about, quote, upload artwork, contact, resources, privacy, terms, and 404 pages
+- Portfolio, services, shop, process, about, quote, upload artwork, contact, resources, privacy, terms, and 404 pages
 - Service landing pages for Graphic Design, Printing Services, Branding Materials, Signage, Vehicle Wraps, and On-Site Installation
 - Fully local CSS and JavaScript; no external frameworks
 - Tridico logo mark and supplied brand reference photos
@@ -21,6 +21,12 @@ Static GitHub Pages preview website for **Tridico Design LLC**.
 - Hours: Weekdays 9am - 5pm
 
 Review these before production launch.
+
+## GitHub Sync and Publishing
+
+Before editing or pushing, fetch GitHub first and fast-forward local `main` before applying local work. If local changes already exist, stash them, pull with `--ff-only`, reapply the stash, resolve conflicts, retest, then push normally.
+
+Never force-push this site. If GitHub rejects a push because the remote changed, fetch and integrate the remote changes before trying again.
 
 ## Deployment
 
