@@ -568,6 +568,22 @@
         applied: 'https://www.canva.com/d/-VDHHuJ5hqepTrq',
         artwork: 'https://www.canva.com/d/UHGpVGSoSaghQwB'
       }
+    },
+    'stickers-cottage-garden-bottle-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-cottage-garden-bottle-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-cottage-garden-bottle-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/VSiWa_JtpsLYUVN',
+        artwork: 'https://www.canva.com/d/3j9tzmHqRYQaZiF'
+      }
+    },
+    'stickers-maximalist-mood-sticker-sheet': {
+      image: 'assets/images/shop/canva-test/stickers-maximalist-mood-sticker-sheet-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-maximalist-mood-sticker-sheet-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/t8dSUXMantnuKnA',
+        artwork: 'https://www.canva.com/d/SVA-rwUVCkzNmcm'
+      }
     }
   };
 
