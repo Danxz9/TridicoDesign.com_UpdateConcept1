@@ -1214,7 +1214,7 @@ function renderEmptyState(prefix) {
     <p>Try a different search, reset the filters, or browse project categories.</p>
     <div class="news-empty-actions">
       <a class="btn btn-primary" href="${prefix}news/">All News</a>
-      <a class="btn btn-outline" href="${prefix}work.html">View Work</a>
+      <a class="btn btn-outline" href="${prefix}work.html">View Portfolio</a>
     </div>
   </div>`;
 }
@@ -1228,7 +1228,7 @@ function renderFooterCta(prefix) {
       </div>
       <div class="news-footer-cta__actions">
         <a class="btn btn-primary btn-large" href="${prefix}quote.html">Start a Project</a>
-        <a class="btn btn-outline btn-large" href="${prefix}work.html">View Work</a>
+        <a class="btn btn-outline btn-large" href="${prefix}work.html">View Portfolio</a>
       </div>
     </div>
   </section>`;
@@ -1333,7 +1333,7 @@ function renderNewsLanding() {
         <p class="news-hero-lede">Recent wraps, signage, branding, print work, installations, and company updates from Tridico Design.</p>
         <div class="news-hero-actions">
           <a class="btn btn-primary btn-large" href="${prefix}quote.html">Start a Project</a>
-          <a class="btn btn-outline btn-large" href="${prefix}work.html">View Work</a>
+          <a class="btn btn-outline btn-large" href="${prefix}work.html">View Portfolio</a>
         </div>
       </div>
       <div class="news-hero-visual" aria-label="Latest featured Tridico update">

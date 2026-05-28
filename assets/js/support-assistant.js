@@ -45,7 +45,7 @@
     navigation: {
       label: 'Find a page',
       keywords: ['navigation', 'navigate', 'page', 'where', 'find', 'website', 'menu', 'link', 'go to'],
-      html: `<p><strong>Fastest website paths:</strong></p><ul><li><a href="work.html">Work</a> - view project examples and portfolio categories.</li><li><a href="services.html">Services</a> - graphic design, print, signs, wraps, branding, and installation.</li><li><a href="shop.html">Shop</a> - search packages, filter by customer type, and build a quote cart.</li><li><a href="process.html">Process</a> - intake, proof, production, and installation.</li><li><a href="quote.html">Get Quote</a> - submit project details.</li><li><a href="upload-artwork.html">Upload Artwork</a> - prepare files for Tridico.</li><li><a href="contact.html">Contact</a> - phone, email, location, and hours.</li></ul>`,
+      html: `<p><strong>Fastest website paths:</strong></p><ul><li><a href="work.html">Portfolio</a> - view project examples and portfolio categories.</li><li><a href="services.html">Services</a> - graphic design, print, signs, wraps, branding, and installation.</li><li><a href="shop.html">Shop</a> - search packages, filter by customer type, and build a quote cart.</li><li><a href="process.html">Process</a> - intake, proof, production, and installation.</li><li><a href="quote.html">Get Quote</a> - submit project details.</li><li><a href="upload-artwork.html">Upload Artwork</a> - prepare files for Tridico.</li><li><a href="contact.html">Contact</a> - phone, email, location, and hours.</li></ul>`,
       chips: ['quote', 'upload', 'services', 'website_issue', 'company']
     },
     quote: {
@@ -156,7 +156,7 @@
     installation: { label: 'Installation help', path: 'installation' },
     rush: { label: 'Rush timeline', path: 'rush' },
     ticket: { label: 'Create ticket', path: 'ticket', primary: true },
-    work: { label: 'View work', href: CONFIG.workUrl },
+    work: { label: 'View portfolio', href: CONFIG.workUrl },
     shop: { label: 'Shop', href: CONFIG.shopUrl },
     contact: { label: 'Contact', href: CONFIG.contactUrl },
     call: { label: 'Call Tridico', href: CONFIG.phoneHref, primary: true },

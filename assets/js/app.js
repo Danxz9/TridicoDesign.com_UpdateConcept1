@@ -894,6 +894,9 @@
     const sortSelect = document.querySelector('[data-shop-sort]');
     const resultCount = document.querySelector('[data-shop-result-count]');
     const emptyState = document.querySelector('[data-shop-empty]');
+    const loadMoreWrap = document.querySelector('[data-shop-load-more-wrap]');
+    const loadMoreButton = document.querySelector('[data-shop-load-more]');
+    const loadMoreCount = document.querySelector('[data-shop-count]');
     const chips = Array.from(document.querySelectorAll('[data-shop-chip]'));
     const filterInputs = Array.from(document.querySelectorAll('[data-shop-filter]'));
     const clearFilters = document.querySelector('[data-shop-clear]');
@@ -905,7 +908,9 @@
     const cartStatus = document.querySelector('[data-shop-cart-status]');
     const checkoutButton = document.querySelector('[data-shop-checkout]');
     const originalOrder = new Map(cards.map((card, index) => [card, index]));
+    const pageSize = Math.max(1, Number(grid?.dataset.shopPageSize) || 15);
     let selectedCategory = categorySelect?.value || 'all';
+    let visibleLimit = pageSize;
     let cart = [];
     let lastCartTrigger = null;
 
@@ -962,19 +967,47 @@
       });
       sorted.forEach(card => grid.append(card));
     };
+    const resetVisibleLimit = () => {
+      visibleLimit = pageSize;
+    };
+    const updateLoadMoreControls = matches => {
+      const total = matches.length;
+      const shown = Math.min(visibleLimit, total);
+      if (loadMoreWrap) loadMoreWrap.hidden = total === 0;
+      if (loadMoreCount) {
+        loadMoreCount.textContent = total
+          ? `Showing ${shown} of ${total} ${total === 1 ? 'product' : 'products'}`
+          : 'No matching products';
+      }
+      if (loadMoreButton) {
+        const remaining = Math.max(0, total - shown);
+        const nextCount = Math.min(pageSize, remaining);
+        loadMoreButton.hidden = remaining === 0;
+        loadMoreButton.disabled = remaining === 0;
+        loadMoreButton.textContent = nextCount ? `See ${nextCount} More` : 'See More';
+        loadMoreButton.setAttribute('aria-label', remaining
+          ? `Show ${nextCount} more products. ${remaining} remaining.`
+          : 'All matching products are shown.');
+      }
+    };
     const applyFilters = () => {
       sortCards();
-      const visible = cards.filter(card => {
-        const show = cardMatches(card);
-        card.classList.toggle('is-hidden', !show);
-        return show;
+      const matches = cards.filter(cardMatches);
+      const matchedCards = new Set(matches);
+      const visibleCards = new Set(matches.slice(0, visibleLimit));
+      cards.forEach(card => {
+        const isMatch = matchedCards.has(card);
+        card.classList.toggle('is-hidden', !isMatch);
+        card.classList.toggle('is-deferred', isMatch && !visibleCards.has(card));
       });
-      if (resultCount) resultCount.textContent = `${visible.length} ${visible.length === 1 ? 'item' : 'items'}`;
-      if (emptyState) emptyState.hidden = visible.length !== 0;
+      if (resultCount) resultCount.textContent = `${matches.length} ${matches.length === 1 ? 'item' : 'items'}`;
+      if (emptyState) emptyState.hidden = matches.length !== 0;
+      updateLoadMoreControls(matches);
       applyChipState();
     };
     const setCategory = value => {
       selectedCategory = value || 'all';
+      resetVisibleLimit();
       applyFilters();
     };
     const renderCart = () => {
@@ -1049,17 +1082,28 @@
 
     searchForm?.addEventListener('submit', event => {
       event.preventDefault();
+      resetVisibleLimit();
       applyFilters();
     });
-    queryInput?.addEventListener('input', applyFilters);
+    queryInput?.addEventListener('input', () => {
+      resetVisibleLimit();
+      applyFilters();
+    });
     categorySelect?.addEventListener('change', () => setCategory(categorySelect.value));
     sortSelect?.addEventListener('change', applyFilters);
     chips.forEach(chip => chip.addEventListener('click', () => setCategory(chip.dataset.shopChip)));
-    filterInputs.forEach(input => input.addEventListener('change', applyFilters));
+    filterInputs.forEach(input => input.addEventListener('change', () => {
+      resetVisibleLimit();
+      applyFilters();
+    }));
     clearFilters?.addEventListener('click', () => {
       filterInputs.forEach(input => { input.checked = false; });
       if (queryInput) queryInput.value = '';
       setCategory('all');
+    });
+    loadMoreButton?.addEventListener('click', () => {
+      visibleLimit += pageSize;
+      applyFilters();
     });
     cards.forEach(card => {
       card.querySelector('[data-shop-add]')?.addEventListener('click', event => addToCart(card, event.currentTarget));

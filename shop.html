@@ -39,7 +39,7 @@
         <span class="brand-text"><strong>TRIDICO DESIGN</strong><small>LLC</small></span>
       </a>
       <nav class="desktop-nav" aria-label="Primary navigation">
-        <a class="nav-link" href="work.html">Work</a>
+        <a class="nav-link" href="work.html">Portfolio</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link active" href="shop.html">Shop</a>
         <a class="nav-link" href="process.html">Process</a>
@@ -57,7 +57,7 @@
   </div>
   <div class="mobile-panel" id="mobile-menu" data-mobile-menu hidden>
     <div class="container mobile-panel-inner">
-      <a href="work.html">Work</a>
+      <a href="work.html">Portfolio</a>
       <a href="services.html">Services</a>
       <a href="vehicle-wraps.html">Vehicle Wraps</a>
       <a href="signage.html">Signs & Banners</a>
@@ -195,10 +195,10 @@
           <div class="shop-deal-strip" aria-label="Shop shortcuts">
             <a href="vehicle-wraps.html">Wrap guides</a>
             <a href="upload-artwork.html">Upload artwork</a>
-            <a href="work.html">Recent work</a>
+            <a href="work.html">Portfolio</a>
             <a href="quote.html">Custom services</a>
           </div>
-          <div class="shop-grid" data-shop-grid>
+          <div class="shop-grid" id="shop-product-grid" data-shop-grid data-shop-page-size="15">
             <article class="shop-card reveal" data-shop-card data-shop-id="fleet-wrap-package" data-shop-name="Fleet Vehicle Wrap Package" data-shop-category="custom-services" data-shop-price="1850" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after project review" data-shop-tags="custom-services wraps contractors automotive fleet trailers vehicles standard install">
               <a class="shop-card-media" href="vehicle-wraps.html"><img src="assets/images/placeholders/service-wraps.svg" alt="Fleet vehicle wrap package" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
@@ -296,6 +296,10 @@
             </article>
           </div>
           <p class="shop-empty" data-shop-empty hidden>No products match those filters.</p>
+          <div class="shop-load-more" data-shop-load-more-wrap>
+            <p data-shop-count aria-live="polite">Showing 15 products</p>
+            <button class="btn btn-primary btn-large" type="button" data-shop-load-more aria-controls="shop-product-grid">See More</button>
+          </div>
         </div>
       </div>
     </div>
@@ -351,7 +355,7 @@
     <div>
       <h2 class="footer-heading">Company</h2>
       <ul class="footer-list">
-        <li><a href="work.html">Work</a></li>
+        <li><a href="work.html">Portfolio</a></li>
         <li><a href="shop.html">Shop</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="about.html">About</a></li>

@@ -66,3 +66,33 @@ test('existing shop items are preserved as Custom Services', () => {
   assert.match(html, /Food Truck Branding Kit/);
   assert.match(html, /Contractor Trailer Graphics/);
 });
+
+test('shop grid exposes 15-product batch controls', () => {
+  const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
+  const appJs = fs.readFileSync(path.join(repoRoot, 'assets/js/app.js'), 'utf8');
+  const styles = fs.readFileSync(path.join(repoRoot, 'assets/css/styles.css'), 'utf8');
+
+  assert.match(html, /id="shop-product-grid" data-shop-grid data-shop-page-size="15"/);
+  assert.match(html, /data-shop-load-more/);
+  assert.match(html, /data-shop-count/);
+  assert.match(appJs, /visibleLimit \+= pageSize/);
+  assert.match(styles, /\.shop-card\.is-hidden,\.shop-card\.is-deferred\{display:none\}/);
+});
+
+test('portfolio replaces ambiguous Work navigation labels', () => {
+  const files = [
+    'index.html',
+    'work.html',
+    'shop.html',
+    'assets/js/support-assistant.js',
+    'tools/build-news-pages.js'
+  ];
+  for (const file of files) {
+    const contents = fs.readFileSync(path.join(repoRoot, file), 'utf8');
+    assert.doesNotMatch(contents, />Work<\/a>|View Work|Quote Similar Work|Work With Tridico/);
+  }
+
+  const workHtml = fs.readFileSync(path.join(repoRoot, 'work.html'), 'utf8');
+  assert.match(workHtml, /<title>Portfolio \| Tridico Design LLC<\/title>/);
+  assert.match(workHtml, /<p class="eyebrow">Portfolio<\/p>/);
+});
