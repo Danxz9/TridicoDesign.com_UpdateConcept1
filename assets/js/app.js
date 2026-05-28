@@ -828,7 +828,7 @@
         const demand = product.demand || 'Popular custom product';
         const rating = product.rating || '4.8';
         const reviews = product.reviews || '100+';
-        article.className = 'shop-card reveal';
+        article.className = 'shop-card';
         article.dataset.shopCard = 'true';
         article.dataset.shopGenerated = 'true';
         article.dataset.shopId = product.id;
@@ -889,6 +889,10 @@
     };
     normalizeStaticCards();
     const cards = Array.from(document.querySelectorAll('[data-shop-card]'));
+    cards.forEach(card => {
+      card.classList.remove('reveal');
+      card.classList.add('is-visible');
+    });
     const searchForm = document.querySelector('[data-shop-search-form]');
     const queryInput = document.querySelector('[data-shop-query]');
     const categorySelect = document.querySelector('[data-shop-category]');
@@ -897,7 +901,7 @@
     const emptyState = document.querySelector('[data-shop-empty]');
     const loadMoreWrap = document.querySelector('[data-shop-load-more-wrap]');
     const loadMoreButton = document.querySelector('[data-shop-load-more]');
-    const loadMoreCount = document.querySelector('[data-shop-load-more-wrap] [data-shop-count]');
+    const loadMoreCount = document.querySelector('[data-shop-load-count]');
     const chips = Array.from(document.querySelectorAll('[data-shop-chip]'));
     const filterInputs = Array.from(document.querySelectorAll('[data-shop-filter]'));
     const clearFilters = document.querySelector('[data-shop-clear]');

@@ -112,10 +112,13 @@ test('shop grid exposes 15-product batch controls', () => {
 
   assert.match(html, /id="shop-product-grid" data-shop-grid data-shop-page-size="15"/);
   assert.match(html, /data-shop-load-more/);
-  assert.match(html, /data-shop-count/);
+  assert.match(html, /data-shop-load-count/);
+  assert.doesNotMatch(html, /class="shop-card reveal"/);
   assert.match(appJs, /visibleLimit \+= pageSize/);
-  assert.match(appJs, /data-shop-load-more-wrap] \[data-shop-count]/);
+  assert.match(appJs, /data-shop-load-count/);
+  assert.match(appJs, /card\.classList\.remove\('reveal'\)/);
   assert.match(appJs, /orderedCards = sortCards\(\)/);
+  assert.match(styles, /\.shop-card\.reveal\{opacity:1;transform:none\}/);
   assert.match(styles, /\.shop-card\.is-hidden,\.shop-card\.is-deferred\{display:none\}/);
 });
 

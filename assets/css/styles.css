@@ -235,6 +235,7 @@ h1,h2,h3{line-height:1.02;margin:0;color:inherit;letter-spacing:0}h1{font-size:5
 .shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;border-top:1px solid #ececec;border-left:1px solid #ececec;background:#fff}
 .shop-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:0;border-right:1px solid #ececec;border-bottom:1px solid #ececec;border-radius:0;overflow:hidden;box-shadow:none;transition:background .18s ease}
 .shop-card:hover{background:#fffdf7}
+.shop-card.reveal{opacity:1;transform:none}
 .shop-card.is-hidden,.shop-card.is-deferred{display:none}
 .shop-card-media{display:grid;place-items:center;background:#f7f7f7;margin:.7rem .7rem 0;border-radius:12px}
 .shop-card-media img{width:100%;aspect-ratio:1/1;object-fit:contain;padding:.6rem}
