@@ -1281,7 +1281,7 @@ function pageTemplate({
 ${getHeader(prefix, true)}
 ${main}
 ${getFooter(prefix)}
-<script src="${prefix}assets/js/app.js" defer></script>
+<script src="${prefix}assets/js/app.js?v=20260528-time-dropdown" defer></script>
 <script src="${prefix}assets/js/news.js" defer></script>
 <script src="${prefix}assets/js/support-assistant.js" defer></script>
 </body>
