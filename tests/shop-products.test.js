@@ -45,8 +45,8 @@ test('shop catalog exposes 350 customer-facing products with merchandising field
     assert.ok(product.artworkImage);
     assert.ok(Array.isArray(product.gallery));
     assert.equal(product.gallery.length, 2);
-    assert.match(product.image, new RegExp(`^assets/images/shop/generated/${product.category}/${product.id}-applied\\.svg$`));
-    assert.match(product.artworkImage, new RegExp(`^assets/images/shop/generated/${product.category}/${product.id}-artwork\\.svg$`));
+    assert.match(product.image, new RegExp(`^assets/images/shop/(generated/${product.category}|canva-test)/${product.id}-applied\\.svg$`));
+    assert.match(product.artworkImage, new RegExp(`^assets/images/shop/(generated/${product.category}|canva-test)/${product.id}-artwork\\.svg$`));
     assert.ok(Array.isArray(product.tags));
     assert.ok(product.tags.includes(product.category));
   }
@@ -66,6 +66,26 @@ test('shop product image decks use generated applied and artwork files', () => {
     assert.equal(product.gallery[0].label, 'Applied');
     assert.equal(product.gallery[1].src, product.artworkImage);
     assert.equal(product.gallery[1].label, 'Artwork');
+  }
+});
+
+test('first two featured products use Canva test deck assets', () => {
+  const products = loadProducts();
+  const featured = [...products].sort((a, b) => b.priority - a.priority);
+  const firstTwo = featured.slice(0, 2);
+
+  assert.deepEqual(firstTwo.map(product => product.id), [
+    'stickers-local-pride-weatherproof-sticker-pack',
+    'stickers-milestone-moment-sticker-bundle'
+  ]);
+
+  for (const product of firstTwo) {
+    assert.match(product.image, /^assets\/images\/shop\/canva-test\//);
+    assert.match(product.artworkImage, /^assets\/images\/shop\/canva-test\//);
+    assert.ok(product.canvaDesigns?.applied);
+    assert.ok(product.canvaDesigns?.artwork);
+    assert.ok(!fs.existsSync(path.join(repoRoot, 'assets/images/shop/generated/stickers', `${product.id}-applied.svg`)));
+    assert.ok(!fs.existsSync(path.join(repoRoot, 'assets/images/shop/generated/stickers', `${product.id}-artwork.svg`)));
   }
 });
 

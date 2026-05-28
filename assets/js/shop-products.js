@@ -552,10 +552,31 @@
     throw new Error('Expected 350 shop products, generated ' + products.length);
   }
 
+  const canvaTestDecks = {
+    'stickers-local-pride-weatherproof-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-local-pride-weatherproof-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-local-pride-weatherproof-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/F9E5s0IIiEmnKm6',
+        artwork: 'https://www.canva.com/d/pPMNerMxWZCXeMA'
+      }
+    },
+    'stickers-milestone-moment-sticker-bundle': {
+      image: 'assets/images/shop/canva-test/stickers-milestone-moment-sticker-bundle-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-milestone-moment-sticker-bundle-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/-VDHHuJ5hqepTrq',
+        artwork: 'https://www.canva.com/d/UHGpVGSoSaghQwB'
+      }
+    }
+  };
+
   products.forEach(product => {
     const imageBase = 'assets/images/shop/generated/' + product.category + '/' + product.id;
-    product.image = imageBase + '-applied.svg';
-    product.artworkImage = imageBase + '-artwork.svg';
+    const canvaTestDeck = canvaTestDecks[product.id];
+    product.image = canvaTestDeck?.image || imageBase + '-applied.svg';
+    product.artworkImage = canvaTestDeck?.artworkImage || imageBase + '-artwork.svg';
+    if (canvaTestDeck?.canvaDesigns) product.canvaDesigns = canvaTestDeck.canvaDesigns;
     product.gallery = [
       {
         src: product.image,
