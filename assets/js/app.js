@@ -805,6 +805,88 @@
 
     const storageKey = 'tridicoShopCart';
     const grid = document.querySelector('[data-shop-grid]');
+    const catalogProducts = Array.isArray(window.tridicoShopProducts) ? window.tridicoShopProducts : [];
+    const formatCurrency = value => new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(value);
+    const renderCatalogProducts = () => {
+      if (!grid || !catalogProducts.length) return;
+      const existingIds = new Set(Array.from(grid.querySelectorAll('[data-shop-card]')).map(card => card.dataset.shopId));
+      const fragment = document.createDocumentFragment();
+      catalogProducts.forEach(product => {
+        if (!product || !product.id || existingIds.has(product.id)) return;
+        const article = document.createElement('article');
+        const tags = Array.isArray(product.tags) ? product.tags.join(' ') : String(product.tags || '');
+        const price = Number(product.price) || 0;
+        const href = product.href || 'quote.html';
+        const image = product.image || 'assets/images/placeholders/service-printing.svg';
+        const count = product.count || product.unit || '1 item';
+        const turnaround = product.turnaround || 'Made to order';
+        const unitPrice = product.unitPrice || '';
+        const demand = product.demand || 'Popular custom product';
+        const rating = product.rating || '4.8';
+        const reviews = product.reviews || '100+';
+        article.className = 'shop-card reveal';
+        article.dataset.shopCard = 'true';
+        article.dataset.shopGenerated = 'true';
+        article.dataset.shopId = product.id;
+        article.dataset.shopName = product.name || product.id;
+        article.dataset.shopCategory = product.category || 'custom-services';
+        article.dataset.shopPrice = String(price);
+        article.dataset.shopTags = tags;
+        article.dataset.shopCount = count;
+        article.dataset.shopTurnaround = turnaround;
+        article.dataset.shopUnitPrice = unitPrice;
+        article.innerHTML = `
+          <a class="shop-card-media" href="${escapeHtml(href)}"><img src="${escapeHtml(image)}" alt="${escapeHtml(product.name || 'Shop product')}" loading="lazy" decoding="async"></a>
+          <div class="shop-card-body">
+            <span class="shop-badge">${escapeHtml(product.badge || 'Made to order')}</span>
+            <h2><a href="${escapeHtml(href)}">${escapeHtml(product.name || product.id)}</a></h2>
+            <div class="shop-rating" aria-label="${escapeHtml(rating)} out of 5 stars"><strong>${escapeHtml(rating)}</strong><span aria-hidden="true">★</span><em>(${escapeHtml(reviews)})</em></div>
+            <p class="shop-demand">${escapeHtml(demand)}</p>
+            <strong class="shop-price">${price ? formatCurrency(price) : 'Request quote'}</strong>
+            <p class="shop-count">${escapeHtml(count)}${unitPrice ? ` · ${escapeHtml(unitPrice)}` : ''}</p>
+            <p class="shop-turnaround">Turnaround: ${escapeHtml(turnaround)}</p>
+            <p class="shop-desc">${escapeHtml(product.description || 'Custom printed product prepared by Tridico Design.')}</p>
+            <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
+          </div>`;
+        fragment.append(article);
+        existingIds.add(product.id);
+      });
+      grid.append(fragment);
+    };
+    renderCatalogProducts();
+    const normalizeStaticCards = () => {
+      if (!grid) return;
+      grid.querySelectorAll('[data-shop-card]:not([data-shop-generated])').forEach(card => {
+        const body = card.querySelector('.shop-card-body');
+        if (!body || card.dataset.shopNormalized === 'true') return;
+        const link = body.querySelector('h2 a');
+        const name = card.dataset.shopName || link?.textContent?.trim() || 'Custom service';
+        const href = link?.getAttribute('href') || 'quote.html';
+        const description = body.querySelector('p')?.textContent?.trim() || 'Custom Tridico service quoted after project details are reviewed.';
+        const badge = body.querySelector('.shop-badge')?.textContent?.trim() || 'Custom Services';
+        const price = Number(card.dataset.shopPrice) || 0;
+        const count = card.dataset.shopCount || '1 custom service package';
+        const unitPrice = card.dataset.shopUnitPrice || 'Project-priced';
+        const turnaround = card.dataset.shopTurnaround || 'Quote after review';
+        const detail = body.querySelector('.shop-rating em')?.textContent?.trim() || 'Custom quote package';
+        body.innerHTML = `
+          <span class="shop-badge">${escapeHtml(badge)}</span>
+          <h2><a href="${escapeHtml(href)}">${escapeHtml(name)}</a></h2>
+          <div class="shop-rating" aria-label="Custom service package"><strong>4.9</strong><span aria-hidden="true">★</span><em>(custom)</em></div>
+          <p class="shop-demand">${escapeHtml(detail)}</p>
+          <strong class="shop-price">${price ? `From ${formatCurrency(price)}` : 'Request quote'}</strong>
+          <p class="shop-count">${escapeHtml(count)} · ${escapeHtml(unitPrice)}</p>
+          <p class="shop-turnaround">Turnaround: ${escapeHtml(turnaround)}</p>
+          <p class="shop-desc">${escapeHtml(description)}</p>
+          <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>`;
+        card.dataset.shopNormalized = 'true';
+      });
+    };
+    normalizeStaticCards();
     const cards = Array.from(document.querySelectorAll('[data-shop-card]'));
     const searchForm = document.querySelector('[data-shop-search-form]');
     const queryInput = document.querySelector('[data-shop-query]');
@@ -827,12 +909,6 @@
     let cart = [];
     let lastCartTrigger = null;
 
-    const formatCurrency = value => new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0
-    }).format(value);
-
     const normalize = value => String(value || '').toLowerCase();
     const getSearchText = card => normalize([
       card.dataset.shopName,
@@ -846,7 +922,10 @@
       category: card.dataset.shopCategory,
       price: Number(card.dataset.shopPrice) || 0,
       image: card.querySelector('img')?.getAttribute('src') || '',
-      href: card.querySelector('a')?.getAttribute('href') || 'shop.html'
+      href: card.querySelector('a')?.getAttribute('href') || 'shop.html',
+      count: card.dataset.shopCount || '',
+      turnaround: card.dataset.shopTurnaround || '',
+      unitPrice: card.dataset.shopUnitPrice || ''
     });
     const loadCart = () => {
       try {
@@ -913,7 +992,8 @@
           <img src="${escapeHtml(item.image)}" alt="">
           <div>
             <h3>${escapeHtml(item.name)}</h3>
-            <p>${formatCurrency(item.price)} starting estimate</p>
+            <p>${formatCurrency(item.price)}${item.count ? ` · ${escapeHtml(item.count)}` : ''}</p>
+            ${item.turnaround ? `<p class="shop-cart-meta">Turnaround: ${escapeHtml(item.turnaround)}</p>` : ''}
             <div class="shop-cart-controls">
               <button type="button" data-shop-qty="${escapeHtml(item.id)}" data-delta="-1" aria-label="Decrease ${escapeHtml(item.name)} quantity">-</button>
               <span>${item.qty}</span>
@@ -960,7 +1040,7 @@
         if (cartStatus) cartStatus.textContent = 'Add at least one item to request a quote.';
         return;
       }
-      const body = cart.map(item => `${item.qty} x ${item.name} - ${formatCurrency(item.price)} starting estimate`).join('\n');
+      const body = cart.map(item => `${item.qty} x ${item.name} - ${formatCurrency(item.price)}${item.count ? ` (${item.count})` : ''}${item.turnaround ? ` - Turnaround: ${item.turnaround}` : ''}`).join('\n');
       const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
       const href = `mailto:ben@tridicodesign.com?subject=${encodeURIComponent('Shop Quote Cart - Tridico Design')}&body=${encodeURIComponent(`${body}\n\nEstimated starting total: ${formatCurrency(total)}\n\nSubmitted from the Tridico shop preview.`)}`;
       if (cartStatus) cartStatus.textContent = 'Opening your email app with the quote cart.';

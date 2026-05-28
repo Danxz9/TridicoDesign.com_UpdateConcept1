@@ -1,0 +1,458 @@
+(function(){
+  const productImages = {
+    'car-decals': 'assets/images/placeholders/portfolio-window-graphics.svg',
+    'car-vinyl': 'assets/images/placeholders/service-wraps.svg',
+    'wrap-vinyl': 'assets/images/placeholders/portfolio-fleet-wrap.svg',
+    'stickers': 'assets/images/placeholders/service-graphic-design.svg',
+    'mug-stickers': 'assets/images/placeholders/service-printing.svg',
+    'business-decals': 'assets/images/placeholders/portfolio-storefront-sign.svg',
+    'signs': 'assets/images/placeholders/service-signage.svg',
+    'tech-decals': 'assets/images/placeholders/portfolio-logo-system.svg',
+    'posters-wall-art': 'assets/images/placeholders/portfolio-print-collateral.svg',
+    'home-decor': 'assets/images/placeholders/portfolio-interior-wall.svg'
+  };
+
+  const categoryDetails = {
+    'car-decals': {
+      badge: 'Car decal',
+      rating: 'Outdoor vinyl',
+      detail: 'Bumper, window, toolbox, and cooler friendly',
+      description: name => name + ' printed on outdoor-ready vinyl for cars, trucks, laptops, coolers, and daily-use gear.'
+    },
+    'car-vinyl': {
+      badge: 'Easy install',
+      rating: 'Peel-and-apply',
+      detail: 'Small-format vinyl for car enthusiasts',
+      description: name => name + ' is a simple end-user vinyl accent for quarter windows, side skirts, mirrors, bumpers, or interior panels.'
+    },
+    'wrap-vinyl': {
+      badge: 'Wrap vinyl',
+      rating: 'Color-change finish',
+      detail: 'Order material samples or project sheets',
+      description: name => name + ' gives DIY builders and car owners a color-change vinyl option for samples, accent panels, trims, mirrors, roofs, or wrap planning.'
+    },
+    'stickers': {
+      badge: 'Sticker pack',
+      rating: 'Waterproof vinyl',
+      detail: 'Great for kids, water bottles, notebooks, and gifts',
+      description: name => name + ' is a durable sticker product designed for bottles, notebooks, lockers, gift bags, party favors, and everyday personal gear.'
+    },
+    'mug-stickers': {
+      badge: 'Mug sticker',
+      rating: 'Mug-ready vinyl',
+      detail: 'Sized for cups, tumblers, jars, and kitchen gifts',
+      description: name => name + ' is sized for mugs, tumblers, jars, coffee bars, teacher gifts, and small branded drinkware runs.'
+    },
+    'business-decals': {
+      badge: 'Business decal',
+      rating: 'Storefront ready',
+      detail: 'Useful for windows, doors, counters, and facilities',
+      description: name => name + ' helps businesses label doors, windows, counters, safety areas, customer zones, and everyday operating details clearly.'
+    },
+    'signs': {
+      badge: 'Signage',
+      rating: 'Event and facility ready',
+      detail: 'Directional, retail, yard, event, and table signs',
+      description: name => name + ' gives customers, guests, staff, or event visitors clear direction with a clean Tridico-produced sign.'
+    },
+    'tech-decals': {
+      badge: 'Tech decal',
+      rating: 'Device friendly',
+      detail: 'Laptop, phone, tablet, and console personalization',
+      description: name => name + ' adds personality to laptops, tablets, phone cases, consoles, chargers, desk gear, and creator setups.'
+    },
+    'posters-wall-art': {
+      badge: 'Wall print',
+      rating: 'Decor print',
+      detail: 'Posters, art prints, photo prints, and wallpaper panels',
+      description: name => name + ' brings print-shop quality to walls, events, bedrooms, offices, studios, dorms, gallery walls, and branded interiors.'
+    },
+    'home-decor': {
+      badge: 'Home decor',
+      rating: 'Personalized decor',
+      detail: 'Room signs, wall decals, garage signs, and labels',
+      description: name => name + ' is a decor-ready product for bedrooms, playrooms, kitchens, garages, bars, home offices, and giftable spaces.'
+    }
+  };
+
+  const products = [];
+  const seenIds = new Set();
+  const slugify = value => String(value).toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70);
+  const merch = {
+    'car-decals': { count: '1 outdoor vinyl decal', turnaround: '2-4 business days', unit: price => '$' + price.toFixed(2) + ' each', demand: '300+ bought in past month' },
+    'car-vinyl': { count: '2-piece easy install kit', turnaround: '3-5 business days', unit: price => '$' + (price / 2).toFixed(2) + ' per piece', demand: '150+ bought in past month' },
+    'wrap-vinyl': { count: '12 in x 24 in vinyl sheet', turnaround: '3-6 business days', unit: price => '$' + price.toFixed(2) + ' per sheet', demand: '80+ bought in past month' },
+    'stickers': { count: '24-sticker pack', turnaround: '2-4 business days', unit: price => '$' + (price / 24).toFixed(2) + ' each', demand: '1K+ bought in past month' },
+    'mug-stickers': { count: '2 mug decals', turnaround: '2-4 business days', unit: price => '$' + (price / 2).toFixed(2) + ' each', demand: '200+ bought in past month' },
+    'business-decals': { count: '1 business decal set', turnaround: '3-5 business days', unit: price => '$' + price.toFixed(2) + ' per set', demand: '100+ bought in past month' },
+    'signs': { count: '1 printed sign', turnaround: '3-6 business days', unit: price => '$' + price.toFixed(2) + ' each', demand: '75+ bought in past month' },
+    'tech-decals': { count: '1 device decal set', turnaround: '2-4 business days', unit: price => '$' + price.toFixed(2) + ' per set', demand: '250+ bought in past month' },
+    'posters-wall-art': { count: '1 wall print', turnaround: '3-6 business days', unit: price => '$' + price.toFixed(2) + ' each', demand: '120+ bought in past month' },
+    'home-decor': { count: '1 decor piece', turnaround: '3-6 business days', unit: price => '$' + price.toFixed(2) + ' each', demand: '90+ bought in past month' }
+  };
+  const reviewBuckets = ['128', '246', '333', '518', '739', '1.1K', '1.7K', '2.4K'];
+  const starValues = ['4.6', '4.7', '4.8', '4.9', '5.0'];
+  const add = (category, name, price, tags = [], options = {}) => {
+    let id = slugify(category + '-' + name);
+    let suffix = 2;
+    while (seenIds.has(id)) id = slugify(category + '-' + name + '-' + suffix++);
+    seenIds.add(id);
+    const defaults = categoryDetails[category];
+    const merchandising = merch[category];
+    const index = products.length;
+    products.push({
+      id,
+      category,
+      name,
+      price,
+      badge: options.badge || defaults.badge,
+      rating: options.rating || starValues[index % starValues.length],
+      reviews: options.reviews || reviewBuckets[index % reviewBuckets.length],
+      demand: options.demand || merchandising.demand,
+      detail: options.detail || defaults.detail,
+      count: options.count || merchandising.count,
+      turnaround: options.turnaround || merchandising.turnaround,
+      unitPrice: options.unitPrice || merchandising.unit(price),
+      description: options.description || defaults.description(name),
+      tags: Array.from(new Set([category, ...tags, options.badge || defaults.badge, options.rating || defaults.rating].join(' ').toLowerCase().split(/\s+/).map(tag => tag.replace(/[^a-z0-9-]/g, '')).filter(Boolean))),
+      image: options.image || productImages[category],
+      href: options.href || 'quote.html'
+    });
+  };
+
+  [
+    ['Clean Driver Oval Bumper Sticker', 8, ['bumper', 'classic', 'driver']],
+    ['Weekend Road Trip Bumper Sticker', 9, ['bumper', 'travel', 'outdoor']],
+    ['Local Legend Vinyl Car Decal', 10, ['bumper', 'local', 'fun']],
+    ['Tiny Warning Huge Personality Sticker', 8, ['bumper', 'funny', 'gift']],
+    ['Coffee Fueled Driver Bumper Sticker', 9, ['bumper', 'coffee', 'daily-driver']],
+    ['Dog Co-Pilot Rear Window Decal', 12, ['pets', 'dogs', 'rear-window']],
+    ['Cat Hair Everywhere Car Sticker', 10, ['pets', 'cats', 'funny']],
+    ['Adventure Rig Badge Decal', 14, ['outdoor', 'truck', 'suv']],
+    ['Lake Day Tailgate Sticker', 9, ['summer', 'outdoor', 'bumper']],
+    ['Soft Smile Daisy Car Decal', 11, ['girly', 'floral', 'cute']],
+    ['Mini Lightning Bolt Bumper Decal', 8, ['lightning', 'bold', 'sport']],
+    ['Retro Sunset Road Sticker', 12, ['retro', 'vibrant', 'travel']],
+    ['No Bad Days Car Sticker', 9, ['positive', 'gift', 'bumper']],
+    ['Little Shop Supporter Decal', 10, ['small-business', 'local', 'retail']],
+    ['Proud Coach Bumper Sticker', 9, ['sports', 'family', 'school']],
+    ['Band Parent Road Crew Sticker', 9, ['school', 'music', 'family']],
+    ['Plant Parent On Board Decal', 10, ['plant', 'cute', 'green']],
+    ['Kindness Is Cool Bumper Sticker', 8, ['positive', 'school', 'gift']],
+    ['Weekend Warrior Truck Decal', 12, ['truck', 'outdoor', 'sport']],
+    ['Tiny Racer Big Dreams Sticker', 11, ['kids', 'car', 'racing']],
+    ['Bookstore Detour Bumper Sticker', 9, ['books', 'cozy', 'gift']],
+    ['Farm Market Cruiser Decal', 10, ['local', 'farm', 'truck']],
+    ['Stay Weird Window Sticker', 8, ['fun', 'vibrant', 'bumper']],
+    ['Clean Hands Dirty Garage Sticker', 10, ['garage', 'tools', 'car']],
+    ['Good Vibes Only Car Decal', 9, ['positive', 'vibrant', 'bumper']],
+    ['Mom Taxi Premium Bumper Sticker', 9, ['family', 'funny', 'daily-driver']],
+    ['Dad Joke Delivery Vehicle Decal', 9, ['family', 'funny', 'bumper']],
+    ['Hometown Pride Oval Decal', 10, ['local', 'classic', 'custom-text']],
+    ['Quiet Car Loud Playlist Sticker', 9, ['music', 'funny', 'daily-driver']],
+    ['First Car Memory Decal', 12, ['gift', 'personalized', 'car']]
+  ].forEach(item => add('car-decals', item[0], item[1], item[2]));
+
+  [
+    ['Manga Speed Line Side Stripe Kit', 34, ['anime-style', 'street-racer', 'side-stripe']],
+    ['Neon Drift Kanji-Inspired Door Decal', 28, ['anime-style', 'drift', 'vibrant']],
+    ['Comic Burst Quarter Window Decal', 18, ['comic-style', 'cartoon', 'window']],
+    ['Halftone Hero Mirror Accent Pair', 22, ['comic-style', 'mirror', 'bold']],
+    ['Bubble Pop Cartoon Door Mini Kit', 24, ['cartoon', 'fun', 'vibrant']],
+    ['Goth Thorn Rocker Panel Vinyl', 32, ['goth', 'dark', 'side-skirt']],
+    ['Black Rose Rear Glass Decal', 24, ['goth', 'floral', 'rear-window']],
+    ['Pastel Heart Fender Accent Set', 18, ['girly', 'pastel', 'cute']],
+    ['Pearl Bow Side Mirror Decals', 16, ['girly', 'cute', 'mirror']],
+    ['Rainbow Unicorn Door Accent Kit', 26, ['unicorns', 'vibrant', 'kids']],
+    ['Cosmic Cat Window Decal Pack', 20, ['cats', 'space', 'cute']],
+    ['Dog Pack Paw Trail Side Decal', 22, ['dogs', 'pets', 'fun']],
+    ['Flame Fade Fender Decal Pair', 26, ['flames', 'sport', 'classic']],
+    ['Lightning Split Hood Accent', 38, ['lightning', 'hood', 'bold']],
+    ['Pixel Grid Cyber Side Stripe', 34, ['digital', 'cyber', 'street-racer']],
+    ['Glitch Neon Rear Quarter Kit', 30, ['digital', 'glitch', 'vibrant']],
+    ['Y2K Chrome Star Door Decals', 24, ['y2k', 'chrome-look', 'stars']],
+    ['Vaporwave Palm Window Decal', 19, ['vaporwave', 'retro', 'window']],
+    ['Retro Arcade Side Marker Kit', 24, ['retro', 'arcade', 'digital']],
+    ['Kawaii Cloud Gas Cap Decal', 12, ['kawaii', 'cute', 'small']],
+    ['Angry Cloud Cartoon Hood Mini', 20, ['cartoon', 'fun', 'hood']],
+    ['Dark Moon Rear Window Decal', 21, ['dark', 'moon', 'goth']],
+    ['Solar Flare Door Sweep Decal', 29, ['flames', 'sun', 'vibrant']],
+    ['Electric Bolt Rocker Stripe', 32, ['lightning', 'racer', 'side-skirt']],
+    ['Carbon Tech Hexagon Accent Kit', 35, ['digital', 'tech', 'motorsport']],
+    ['Street Sakura Fender Decals', 24, ['anime-style', 'floral', 'jdm-inspired']],
+    ['Purple Galaxy Side Accent Set', 31, ['space', 'vibrant', 'dark']],
+    ['Bubblegum Star Mirror Decals', 15, ['girly', 'stars', 'pastel']],
+    ['Skull Bloom Window Decal', 19, ['goth', 'floral', 'dark']],
+    ['Cartoon Lightning Door Slash', 24, ['cartoon', 'lightning', 'bold']],
+    ['Pixel Heart Gas Cap Decal', 12, ['digital', 'heart', 'cute']],
+    ['Turbo Snail Funny Fender Decal', 14, ['funny', 'racing', 'car']],
+    ['Low-Key Racer Windshield Corner', 16, ['minimal', 'street-racer', 'window']],
+    ['Nocturne Wave Side Stripe', 32, ['dark', 'minimal', 'side-stripe']],
+    ['Candy Splash Rocker Decals', 30, ['vibrant', 'paint-splash', 'fun']],
+    ['Chrome Look Butterfly Window Pair', 18, ['girly', 'butterfly', 'chrome-look']],
+    ['Wildflower Cruiser Door Decal', 22, ['floral', 'soft', 'cute']],
+    ['Blue Flame Mini Hood Accent', 25, ['flames', 'hood', 'sport']],
+    ['Circuit Board Window Decal', 18, ['digital', 'tech', 'cyber']],
+    ['Mecha Panel Line Accent Kit', 34, ['anime-style', 'robot', 'digital']],
+    ['Gamer Respawn Rear Window Decal', 20, ['gamer', 'digital', 'fun']],
+    ['Celestial Bat Quarter Window Decal', 17, ['goth', 'moon', 'dark']],
+    ['Pink Lightning Mirror Decals', 15, ['girly', 'lightning', 'vibrant']],
+    ['Dog Mom Tailgate Decal', 16, ['dogs', 'pets', 'rear-window']],
+    ['Cat Dad Rear Window Decal', 16, ['cats', 'pets', 'rear-window']],
+    ['Alien Arcade Side Stripe', 32, ['alien-core', 'arcade', 'digital']],
+    ['Heat Map Drift Door Decal', 27, ['street-racer', 'vibrant', 'motorsport']],
+    ['Matte Black Ghost Stripe Kit', 36, ['dark', 'minimal', 'stealth']],
+    ['Anime Sparkle Door Handle Decals', 14, ['anime-style', 'sparkle', 'cute']],
+    ['Comic Panel Rear Window Strip', 22, ['comic-style', 'window', 'bold']]
+  ].forEach(item => add('car-vinyl', item[0], item[1], item[2]));
+
+  [
+    ['Satin Obsidian Black Color Change Vinyl Sheet', 42, ['satin', 'black', 'wrap-material']],
+    ['Gloss Candy Red Wrap Vinyl Sheet', 39, ['gloss', 'red', 'wrap-material']],
+    ['Matte Army Green Wrap Vinyl Sheet', 44, ['matte', 'green', 'wrap-material']],
+    ['Satin Stealth Gray Wrap Vinyl Sheet', 42, ['satin', 'gray', 'wrap-material']],
+    ['Pearl White Color Change Vinyl Sheet', 45, ['pearl', 'white', 'wrap-material']],
+    ['Gloss Piano Black Roof Vinyl Sheet', 49, ['gloss', 'black', 'roof']],
+    ['Carbon Fiber Look Accent Vinyl Sheet', 34, ['carbon-look', 'accent', 'trim']],
+    ['Brushed Metal Silver Vinyl Sheet', 38, ['metallic', 'silver', 'trim']],
+    ['Satin Bronze Accent Vinyl Sheet', 46, ['satin', 'bronze', 'premium']],
+    ['Metallic Copper Wrap Vinyl Sheet', 48, ['metallic', 'copper', 'premium']],
+    ['Deep Navy Gloss Wrap Vinyl Sheet', 42, ['gloss', 'blue', 'premium']],
+    ['Satin Metallic Blue Vinyl Sheet', 45, ['satin', 'blue', 'metallic']],
+    ['Color Shift Purple Teal Vinyl Sheet', 58, ['color-shift', 'purple', 'teal']],
+    ['Iridescent Pearl Accent Vinyl Sheet', 55, ['iridescent', 'pearl', 'accent']],
+    ['Chrome Mirror Silver Trim Vinyl Sheet', 64, ['chrome', 'mirror', 'trim']],
+    ['Gloss Metallic Gold Vinyl Sheet', 60, ['metallic', 'gold', 'premium']],
+    ['Biophilic Sage Green Wrap Vinyl Sheet', 44, ['green', 'sage', 'trend']],
+    ['Matte Sandstorm Tan Vinyl Sheet', 41, ['matte', 'tan', 'truck']],
+    ['Satin Burgundy Wrap Vinyl Sheet', 43, ['satin', 'burgundy', 'premium']],
+    ['Frozen Blue Pearl Vinyl Sheet', 52, ['pearl', 'blue', 'premium']],
+    ['Neon Lime Accent Vinyl Sheet', 36, ['neon', 'lime', 'accent']],
+    ['Fluorescent Pink Accent Vinyl Sheet', 36, ['neon', 'pink', 'accent']],
+    ['Smoked Headlight Tint Vinyl Sheet', 24, ['tint', 'smoked', 'accent']],
+    ['Amber Lens Tint Vinyl Sheet', 22, ['tint', 'amber', 'accent']],
+    ['Matte Clear Paint Protection Sample Sheet', 28, ['clear', 'protection', 'sample']],
+    ['Gloss Clear Paint Protection Sample Sheet', 28, ['clear', 'protection', 'sample']],
+    ['Black Camouflage Accent Vinyl Sheet', 39, ['camo', 'black', 'truck']],
+    ['Digital Camo Gray Vinyl Sheet', 39, ['camo', 'digital', 'gray']],
+    ['Holographic Flake Accent Vinyl Sheet', 48, ['holographic', 'sparkle', 'accent']],
+    ['Wrap Color Sample Starter Pack', 29, ['sample-pack', 'color-change', 'starter']]
+  ].forEach(item => add('wrap-vinyl', item[0], item[1], item[2]));
+
+  [
+    ['Kawaii Snack Sticker Pack', 12, ['kawaii', 'food', 'kids']],
+    ['Cute Animal Friends Sticker Pack', 12, ['animals', 'kids', 'cute']],
+    ['Dino Explorer Sticker Pack', 10, ['kids', 'dinosaurs', 'school']],
+    ['Space Club Sticker Pack', 11, ['kids', 'space', 'science']],
+    ['Mermaid Lagoon Sticker Pack', 12, ['kids', 'girly', 'fantasy']],
+    ['Unicorn Sparkle Sticker Pack', 12, ['unicorns', 'kids', 'vibrant']],
+    ['Cats With Attitude Sticker Pack', 13, ['cats', 'funny', 'pets']],
+    ['Dogs Doing Jobs Sticker Pack', 13, ['dogs', 'pets', 'funny']],
+    ['Gamer Quest Sticker Pack', 12, ['gamer', 'kids', 'digital']],
+    ['Retro Arcade Sticker Pack', 12, ['retro', 'arcade', 'digital']],
+    ['Cottage Garden Sticker Pack', 13, ['cottagecore', 'floral', 'soft']],
+    ['Mushroom Forest Sticker Pack', 13, ['cottagecore', 'nature', 'kids']],
+    ['Dark Academia Desk Sticker Pack', 14, ['dark-academia', 'books', 'school']],
+    ['Goth Garden Sticker Pack', 14, ['goth', 'floral', 'dark']],
+    ['Motivational Mini Sticker Sheet', 9, ['positive', 'planner', 'school']],
+    ['Teacher Reward Sticker Sheet', 10, ['teacher', 'school', 'kids']],
+    ['Planner Icon Sticker Sheet', 9, ['planner', 'organization', 'office']],
+    ['Water Bottle Adventure Stickers', 11, ['water-bottle', 'outdoor', 'travel']],
+    ['Campfire Weekend Sticker Pack', 12, ['outdoor', 'camping', 'travel']],
+    ['Sports Season Sticker Sheet', 12, ['sports', 'school', 'team']],
+    ['Cheer Team Sticker Sheet', 12, ['sports', 'school', 'team']],
+    ['Graduation Cap Sticker Set', 13, ['graduation', 'party', 'school']],
+    ['Birthday Party Favor Stickers', 14, ['birthday', 'party', 'kids']],
+    ['Baby Shower Favor Stickers', 14, ['baby-shower', 'party', 'gift']],
+    ['Wedding Favor Sticker Set', 15, ['wedding', 'party', 'gift']],
+    ['Small Business Thank You Stickers', 16, ['small-business', 'packaging', 'custom-text']],
+    ['Logo Seal Sticker Roll Starter', 22, ['business', 'logo', 'packaging']],
+    ['QR Code Promo Sticker Set', 18, ['qr-code', 'business', 'marketing']],
+    ['Handmade With Care Sticker Roll', 16, ['small-business', 'packaging', 'maker']],
+    ['Bakery Box Label Sticker Set', 18, ['bakery', 'business', 'packaging']],
+    ['Salon Appointment Sticker Set', 15, ['salon', 'business', 'appointment']],
+    ['Farmers Market Label Stickers', 18, ['farm', 'market', 'packaging']],
+    ['Library Bookplate Sticker Set', 12, ['books', 'school', 'personalized']],
+    ['Name Label School Sticker Pack', 15, ['kids', 'school', 'custom-text']],
+    ['Allergy Alert Kids Sticker Set', 14, ['kids', 'school', 'safety']],
+    ['Chore Chart Sticker Sheet', 12, ['kids', 'home', 'organization']],
+    ['Reward Star Sticker Sheet', 9, ['kids', 'school', 'teacher']],
+    ['Holiday Gift Tag Sticker Set', 13, ['holiday', 'gift', 'packaging']],
+    ['Pet Name Label Sticker Pack', 12, ['pets', 'custom-text', 'home']],
+    ['Sticker Bomb Starter Pack', 18, ['sticker-bomb', 'vibrant', 'maximalist']]
+  ].forEach(item => add('stickers', item[0], item[1], item[2]));
+
+  [
+    ['Coffee First Mug Sticker', 7, ['coffee', 'mug', 'gift']],
+    ['Tea Time Floral Mug Decal', 7, ['tea', 'floral', 'gift']],
+    ['Teacher Fuel Mug Sticker', 8, ['teacher', 'school', 'gift']],
+    ['Nurse Shift Mug Decal', 8, ['nurse', 'work', 'gift']],
+    ['Mama Bear Mug Sticker', 8, ['family', 'gift', 'custom-text']],
+    ['Dad Garage Mug Decal', 8, ['garage', 'gift', 'family']],
+    ['Book Club Mug Sticker', 7, ['books', 'club', 'gift']],
+    ['Game Night Mug Decal', 7, ['gamer', 'party', 'gift']],
+    ['Pet Portrait Mug Sticker', 10, ['pets', 'personalized', 'gift']],
+    ['Small Business Logo Mug Decal', 12, ['business', 'logo', 'branded']],
+    ['Cafe Brand Mug Sticker Set', 16, ['cafe', 'business', 'bulk-ready']],
+    ['Bridesmaid Name Mug Decal', 9, ['wedding', 'custom-text', 'gift']],
+    ['Birthday Name Mug Sticker', 9, ['birthday', 'custom-text', 'gift']],
+    ['Camping Mug Adventure Decal', 8, ['camping', 'outdoor', 'gift']],
+    ['Motivational Quote Mug Sticker', 7, ['positive', 'quote', 'gift']],
+    ['Office Humor Mug Decal', 7, ['office', 'funny', 'gift']],
+    ['Bakery Cup Label Decal Set', 15, ['bakery', 'business', 'packaging']],
+    ['QR Code Tip Jar Mug Sticker', 10, ['qr-code', 'business', 'cafe']],
+    ['Holiday Cocoa Mug Sticker Set', 14, ['holiday', 'gift', 'seasonal']],
+    ['Minimal Monogram Mug Decal', 9, ['monogram', 'custom-text', 'gift']]
+  ].forEach(item => add('mug-stickers', item[0], item[1], item[2]));
+
+  [
+    ['Store Hours Window Decal', 38, ['hours', 'window', 'retail', 'custom-text']],
+    ['Open Closed Door Decal Set', 28, ['open-closed', 'door', 'retail']],
+    ['Restroom Door Icon Decal', 18, ['restroom', 'door', 'facility']],
+    ['Men Women Restroom Decal Pair', 26, ['restroom', 'facility', 'door']],
+    ['All Gender Restroom Door Decal', 20, ['restroom', 'facility', 'door']],
+    ['Employees Only Door Decal', 18, ['facility', 'door', 'business']],
+    ['Exit Arrow Door Decal', 16, ['exit', 'wayfinding', 'facility']],
+    ['Emergency Exit Keep Clear Decal', 22, ['exit', 'safety', 'facility']],
+    ['Caution Stripe Floor Marker Set', 34, ['caution', 'safety', 'yellow-black']],
+    ['Watch Your Step Decal', 18, ['safety', 'stairs', 'facility']],
+    ['Authorized Personnel Only Decal', 20, ['facility', 'safety', 'door']],
+    ['No Smoking Window Decal', 16, ['facility', 'window', 'policy']],
+    ['Delivery Pickup Window Decal', 24, ['pickup', 'retail', 'window']],
+    ['Order Here Counter Decal', 24, ['restaurant', 'counter', 'business']],
+    ['Pick Up Here Counter Decal', 24, ['restaurant', 'pickup', 'counter']],
+    ['QR Code Menu Window Decal', 32, ['qr-code', 'restaurant', 'window']],
+    ['QR Code Review Us Decal', 28, ['qr-code', 'reviews', 'business']],
+    ['Accepted Payments Door Decal Set', 22, ['payment', 'retail', 'door']],
+    ['WiFi Password Table Decal', 18, ['wifi', 'restaurant', 'table']],
+    ['Please Wait To Be Seated Decal', 22, ['restaurant', 'front-door', 'business']],
+    ['Private Office Door Decal', 18, ['office', 'door', 'facility']],
+    ['Conference Room Door Decal', 18, ['office', 'door', 'facility']],
+    ['Reception Window Decal', 24, ['office', 'window', 'business']],
+    ['Logo Door Vinyl Lettering', 48, ['logo', 'door', 'custom-text']],
+    ['Suite Number Door Decal', 24, ['office', 'door', 'custom-text']],
+    ['Vehicle DOT Number Decal Pair', 30, ['vehicle', 'fleet', 'custom-text']],
+    ['Food Truck Menu QR Decal', 35, ['food-truck', 'qr-code', 'restaurant']],
+    ['Salon Service Menu Window Decal', 42, ['salon', 'window', 'business']],
+    ['Gym Rules Wall Decal', 40, ['gym', 'wall', 'business']],
+    ['Warehouse Zone Label Decal Set', 46, ['warehouse', 'safety', 'labels']],
+    ['Loading Dock Caution Decal', 28, ['warehouse', 'caution', 'safety']],
+    ['No Parking Loading Zone Decal', 24, ['parking', 'facility', 'safety']],
+    ['Reserved Parking Window Decal', 22, ['parking', 'facility', 'business']],
+    ['Storefront Logo Window Cling', 55, ['logo', 'window', 'custom-text']],
+    ['Seasonal Sale Window Decal Kit', 45, ['retail', 'sale', 'seasonal']]
+  ].forEach(item => add('business-decals', item[0], item[1], item[2]));
+
+  [
+    ['Event This Way Arrow Sign', 32, ['event', 'directional', 'arrow']],
+    ['Restroom This Way Sign', 28, ['restroom', 'directional', 'event']],
+    ['Check-In This Way Sign', 30, ['event', 'directional', 'check-in']],
+    ['Parking This Way Yard Sign', 29, ['parking', 'yard-sign', 'event']],
+    ['Open House Yard Sign', 35, ['real-estate', 'yard-sign', 'open-house']],
+    ['Real Estate Rider Sign', 24, ['real-estate', 'yard-sign', 'custom-text']],
+    ['Graduation Yard Sign', 32, ['graduation', 'yard-sign', 'celebration']],
+    ['Birthday Yard Sign', 32, ['birthday', 'yard-sign', 'party']],
+    ['Sports Player Yard Sign', 34, ['sports', 'yard-sign', 'team']],
+    ['Team Banner Sign', 85, ['sports', 'banner', 'team']],
+    ['Wedding Welcome Sign', 72, ['wedding', 'event', 'welcome']],
+    ['Wedding Seating Chart Sign', 95, ['wedding', 'event', 'custom-text']],
+    ['Baby Shower Welcome Sign', 62, ['baby-shower', 'event', 'welcome']],
+    ['Market Vendor Table Sign', 45, ['market', 'vendor', 'table']],
+    ['Food Truck Menu Board Print', 85, ['food-truck', 'menu', 'restaurant']],
+    ['Cafe Counter Menu Sign', 65, ['cafe', 'menu', 'counter']],
+    ['Retail Sale A-Frame Insert', 48, ['retail', 'sale', 'a-frame']],
+    ['Now Hiring Window Sign', 28, ['hiring', 'business', 'window']],
+    ['Closed for Private Event Sign', 28, ['event', 'business', 'door']],
+    ['Please Use Other Door Sign', 24, ['wayfinding', 'door', 'facility']],
+    ['No Public Restroom Sign', 24, ['restroom', 'facility', 'business']],
+    ['Quiet Zone Sign', 24, ['office', 'school', 'facility']],
+    ['Reserved Table Sign Set', 30, ['restaurant', 'table', 'event']],
+    ['Photo Booth This Way Sign', 32, ['event', 'party', 'directional']],
+    ['Custom QR Code Table Display', 36, ['qr-code', 'table', 'restaurant']],
+    ['Donation QR Code Sign', 38, ['qr-code', 'fundraiser', 'event']],
+    ['Sponsor Logo Event Board', 115, ['event', 'sponsor', 'logo']],
+    ['Step and Repeat Mini Backdrop', 145, ['event', 'photo', 'banner']],
+    ['Directional Arrow Floor Decal Sign', 26, ['floor', 'directional', 'event']],
+    ['Curbside Pickup Yard Sign', 30, ['pickup', 'yard-sign', 'retail']]
+  ].forEach(item => add('signs', item[0], item[1], item[2]));
+
+  [
+    ['Laptop Name Decal', 12, ['laptop', 'custom-text', 'school']],
+    ['Minimal Monogram Laptop Decal', 14, ['laptop', 'monogram', 'custom-text']],
+    ['Cyber Grid Laptop Skin Decal', 18, ['laptop', 'digital', 'cyber']],
+    ['Dark Academia Laptop Sticker Set', 16, ['laptop', 'dark-academia', 'books']],
+    ['Kawaii Desk Tech Sticker Pack', 15, ['laptop', 'kawaii', 'cute']],
+    ['Gamer Tag Laptop Decal', 16, ['gamer', 'custom-text', 'laptop']],
+    ['Streamer Handle Decal Set', 18, ['creator', 'custom-text', 'tech']],
+    ['QR Code Laptop Promo Decal', 16, ['qr-code', 'business', 'laptop']],
+    ['Company Logo Laptop Decal Pack', 24, ['business', 'logo', 'bulk-ready']],
+    ['Tablet Classroom Name Sticker Set', 20, ['school', 'tablet', 'custom-text']],
+    ['Phone Case Mini Sticker Pack', 10, ['phone', 'mini', 'cute']],
+    ['Cellphone Aesthetic Sticker Sheet', 11, ['phone', 'aesthetic', 'vibrant']],
+    ['Webcam Reminder Sticker Set', 8, ['office', 'laptop', 'privacy']],
+    ['Keyboard Shortcut Sticker Strip', 9, ['keyboard', 'office', 'productivity']],
+    ['Charger Label Sticker Set', 9, ['organization', 'tech', 'custom-text']],
+    ['Console Controller Decal Pair', 14, ['gamer', 'console', 'controller']],
+    ['Gaming Console Skin Accent', 24, ['gamer', 'console', 'digital']],
+    ['Desk Cable Label Sticker Pack', 9, ['organization', 'desk', 'office']],
+    ['Creator Studio Label Set', 16, ['creator', 'studio', 'organization']],
+    ['Podcast Gear Label Decals', 18, ['podcast', 'studio', 'custom-text']],
+    ['Camera Case Name Decal', 12, ['camera', 'creator', 'custom-text']],
+    ['Toolbox Tech Logo Decal', 14, ['tools', 'logo', 'custom-text']],
+    ['Drone Case ID Decal', 14, ['drone', 'custom-text', 'gear']],
+    ['VR Headset Accent Decal', 16, ['gamer', 'vr', 'tech']],
+    ['Digital Sticker Bomb Laptop Pack', 22, ['sticker-bomb', 'laptop', 'maximalist']]
+  ].forEach(item => add('tech-decals', item[0], item[1], item[2]));
+
+  [
+    ['Premium Photo Poster Print', 28, ['poster', 'photo', 'gift']],
+    ['Custom Event Poster', 34, ['poster', 'event', 'custom-text']],
+    ['Band Night Poster Print', 32, ['poster', 'music', 'event']],
+    ['Sports Team Poster', 34, ['poster', 'sports', 'team']],
+    ['Graduation Photo Poster', 36, ['poster', 'graduation', 'gift']],
+    ['Birthday Milestone Poster', 34, ['poster', 'birthday', 'party']],
+    ['Wedding Welcome Poster', 45, ['wedding', 'poster', 'event']],
+    ['Pet Portrait Poster', 42, ['pets', 'poster', 'gift']],
+    ['Nursery Name Poster', 32, ['kids', 'nursery', 'custom-text']],
+    ['Game Room Poster Set', 55, ['gamer', 'poster', 'home']],
+    ['Garage Blueprint Poster', 45, ['garage', 'poster', 'home']],
+    ['Vintage Travel Style Poster', 38, ['travel', 'retro', 'poster']],
+    ['Local Landmark Art Print', 42, ['local', 'art-print', 'home']],
+    ['Office Motivation Poster Set', 48, ['office', 'poster', 'business']],
+    ['Menu Poster Print', 40, ['restaurant', 'menu', 'poster']],
+    ['Retail Promotion Poster', 32, ['retail', 'sale', 'poster']],
+    ['Canvas-Style Family Wall Print', 68, ['family', 'wall-art', 'gift']],
+    ['Canvas-Style Logo Lobby Print', 78, ['business', 'logo', 'office']],
+    ['Gallery Wall Mini Print Set', 65, ['gallery-wall', 'home', 'decor']],
+    ['Removable Wallpaper Sample Panel', 35, ['wallpaper', 'sample', 'home']],
+    ['Peel and Stick Accent Wallpaper Panel', 58, ['wallpaper', 'home', 'removable']],
+    ['Kids Room Pattern Wallpaper Panel', 58, ['wallpaper', 'kids', 'home']],
+    ['Game Room Mural Panel', 95, ['wallpaper', 'gamer', 'home']],
+    ['Cafe Feature Wall Print Panel', 120, ['wallpaper', 'business', 'cafe']],
+    ['Trade Show Back Wall Poster Panel', 125, ['poster', 'business', 'event']]
+  ].forEach(item => add('posters-wall-art', item[0], item[1], item[2]));
+
+  [
+    ['Personalized Bedroom Name Sign', 32, ['bedroom', 'custom-text', 'kids']],
+    ['Kids Room Wall Name Decal', 28, ['kids', 'bedroom', 'custom-text']],
+    ['Game Room Door Sign', 30, ['gamer', 'room-sign', 'home']],
+    ['Home Office Door Sign', 28, ['office', 'room-sign', 'home']],
+    ['Garage Shop Wall Sign', 38, ['garage', 'man-cave', 'home']],
+    ['Man Cave Bar Sign', 40, ['bar', 'man-cave', 'home']],
+    ['She Shed Floral Sign', 36, ['floral', 'home', 'custom-text']],
+    ['Laundry Room Label Decal Set', 24, ['laundry', 'organization', 'home']],
+    ['Pantry Label Sticker Set', 22, ['pantry', 'organization', 'kitchen']],
+    ['Toy Bin Label Sticker Set', 22, ['kids', 'organization', 'home']],
+    ['Family Rules Wall Decal', 35, ['family', 'wall-decal', 'home']],
+    ['Script Quote Wall Decal', 32, ['quote', 'wall-decal', 'home']],
+    ['Entryway Welcome Wall Decal', 32, ['welcome', 'entryway', 'home']],
+    ['Pet Station Label Decal Set', 20, ['pets', 'organization', 'home']],
+    ['Holiday Window Decor Decal Set', 28, ['holiday', 'seasonal', 'window']]
+  ].forEach(item => add('home-decor', item[0], item[1], item[2]));
+
+  if (products.length !== 300) {
+    throw new Error('Expected 300 shop products, generated ' + products.length);
+  }
+
+  window.tridicoShopProducts = products;
+})();

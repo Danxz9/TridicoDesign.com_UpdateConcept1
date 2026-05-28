@@ -80,31 +80,42 @@
     <div class="container shop-hero-inner">
       <div class="shop-hero-copy">
         <p class="eyebrow">Shop</p>
-        <h1>Build a quote cart for wraps, signs, print, branding, and install-ready packages.</h1>
-        <p>Search by product, business type, vehicle, storefront, event, or material, then add the pieces you want quoted.</p>
+        <h1>Shop decals, stickers, signs, wall graphics, wrap vinyl, and custom production services.</h1>
+        <p>Browse ready-to-quote products for vehicles, businesses, events, devices, mugs, homes, and custom Tridico production work.</p>
       </div>
       <form class="shop-search" data-shop-search-form role="search">
         <label class="sr-only" for="shop-category">Category</label>
         <select id="shop-category" data-shop-category aria-label="Shop category">
           <option value="all">All departments</option>
-          <option value="wraps">Vehicle wraps</option>
-          <option value="signs">Signs and displays</option>
-          <option value="print">Print materials</option>
-          <option value="branding">Branding</option>
-          <option value="install">Installation</option>
-          <option value="bundles">Bundles</option>
+          <option value="custom-services">Custom Services</option>
+          <option value="car-decals">Car Decals</option>
+          <option value="car-vinyl">Car Vinyl</option>
+          <option value="wrap-vinyl">Wrap Vinyl</option>
+          <option value="stickers">Stickers</option>
+          <option value="mug-stickers">Mug Stickers</option>
+          <option value="business-decals">Business Decals</option>
+          <option value="signs">Signs</option>
+          <option value="tech-decals">Tech Decals</option>
+          <option value="posters-wall-art">Posters & Wall Art</option>
+          <option value="home-decor">Home Decor</option>
         </select>
         <label class="sr-only" for="shop-query">Search products</label>
-        <input id="shop-query" type="search" data-shop-query placeholder="Search wraps, banners, food trucks, storefront signs..." autocomplete="off">
+        <input id="shop-query" type="search" data-shop-query placeholder="Search anime vinyl, bumper stickers, hours decals, posters..." autocomplete="off">
         <button class="btn btn-primary" type="submit">Search</button>
       </form>
       <div class="shop-category-rail" aria-label="Shop departments">
         <button class="shop-category-pill is-active" type="button" data-shop-chip="all">All</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="wraps">Wraps</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="custom-services">Custom Services</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="car-decals">Car Decals</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="car-vinyl">Car Vinyl</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="wrap-vinyl">Wrap Vinyl</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="stickers">Stickers</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="mug-stickers">Mug Stickers</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="business-decals">Business</button>
         <button class="shop-category-pill" type="button" data-shop-chip="signs">Signs</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="print">Print</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="branding">Branding</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="bundles">Bundles</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="tech-decals">Tech</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="posters-wall-art">Posters</button>
+        <button class="shop-category-pill" type="button" data-shop-chip="home-decor">Home Decor</button>
       </div>
     </div>
   </section>
@@ -114,7 +125,7 @@
       <div class="shop-market-bar">
         <div>
           <span class="shop-service-area">Lewis Center, OH service area</span>
-          <strong data-shop-result-count>8 items</strong>
+          <strong data-shop-result-count>308 items</strong>
         </div>
         <div class="shop-market-actions">
           <label>Sort
@@ -141,24 +152,41 @@
           </div>
           <fieldset>
             <legend>Department</legend>
-            <label><input type="checkbox" data-shop-filter value="wraps"> Vehicle wraps</label>
-            <label><input type="checkbox" data-shop-filter value="signs"> Signs and displays</label>
-            <label><input type="checkbox" data-shop-filter value="print"> Print materials</label>
-            <label><input type="checkbox" data-shop-filter value="branding"> Branding</label>
-            <label><input type="checkbox" data-shop-filter value="bundles"> Bundles</label>
+            <label><input type="checkbox" data-shop-filter value="custom-services"> Custom services</label>
+            <label><input type="checkbox" data-shop-filter value="car-decals"> Car decals</label>
+            <label><input type="checkbox" data-shop-filter value="car-vinyl"> Car vinyl graphics</label>
+            <label><input type="checkbox" data-shop-filter value="wrap-vinyl"> Wrap vinyl material</label>
+            <label><input type="checkbox" data-shop-filter value="stickers"> Stickers</label>
+            <label><input type="checkbox" data-shop-filter value="mug-stickers"> Mug stickers</label>
+            <label><input type="checkbox" data-shop-filter value="business-decals"> Business decals</label>
+            <label><input type="checkbox" data-shop-filter value="signs"> Signs</label>
+            <label><input type="checkbox" data-shop-filter value="tech-decals"> Tech decals</label>
+            <label><input type="checkbox" data-shop-filter value="posters-wall-art"> Posters and wall art</label>
+            <label><input type="checkbox" data-shop-filter value="home-decor"> Home decor</label>
           </fieldset>
           <fieldset>
-            <legend>Customer type</legend>
-            <label><input type="checkbox" data-shop-filter value="contractors"> Contractors</label>
-            <label><input type="checkbox" data-shop-filter value="restaurants"> Restaurants and food trucks</label>
-            <label><input type="checkbox" data-shop-filter value="automotive"> Automotive</label>
-            <label><input type="checkbox" data-shop-filter value="retail"> Retail and storefronts</label>
-            <label><input type="checkbox" data-shop-filter value="offices"> Offices and interiors</label>
+            <legend>Style / use</legend>
+            <label><input type="checkbox" data-shop-filter value="anime-style"> Anime-inspired</label>
+            <label><input type="checkbox" data-shop-filter value="street-racer"> Street racer</label>
+            <label><input type="checkbox" data-shop-filter value="cute"> Cute / kawaii</label>
+            <label><input type="checkbox" data-shop-filter value="goth"> Goth / dark</label>
+            <label><input type="checkbox" data-shop-filter value="vibrant"> Vibrant</label>
+            <label><input type="checkbox" data-shop-filter value="kids"> Kids</label>
+            <label><input type="checkbox" data-shop-filter value="pets"> Pets</label>
+            <label><input type="checkbox" data-shop-filter value="business"> Business</label>
+            <label><input type="checkbox" data-shop-filter value="event"> Events</label>
+            <label><input type="checkbox" data-shop-filter value="home"> Home</label>
           </fieldset>
           <fieldset>
-            <legend>Turnaround</legend>
-            <label><input type="checkbox" data-shop-filter value="standard"> Standard</label>
-            <label><input type="checkbox" data-shop-filter value="rush"> Rush available</label>
+            <legend>Features</legend>
+            <label><input type="checkbox" data-shop-filter value="custom-text"> Custom text</label>
+            <label><input type="checkbox" data-shop-filter value="qr-code"> QR code</label>
+            <label><input type="checkbox" data-shop-filter value="safety"> Safety / facility</label>
+            <label><input type="checkbox" data-shop-filter value="window"> Window-ready</label>
+            <label><input type="checkbox" data-shop-filter value="water-bottle"> Water bottle</label>
+            <label><input type="checkbox" data-shop-filter value="laptop"> Laptop</label>
+            <label><input type="checkbox" data-shop-filter value="gift"> Giftable</label>
+            <label><input type="checkbox" data-shop-filter value="bulk-ready"> Bulk-ready</label>
             <label><input type="checkbox" data-shop-filter value="install"> Install available</label>
           </fieldset>
         </aside>
@@ -168,10 +196,10 @@
             <a href="vehicle-wraps.html">Wrap guides</a>
             <a href="upload-artwork.html">Upload artwork</a>
             <a href="work.html">Recent work</a>
-            <a href="quote.html">Custom quote</a>
+            <a href="quote.html">Custom services</a>
           </div>
           <div class="shop-grid" data-shop-grid>
-            <article class="shop-card reveal" data-shop-card data-shop-id="fleet-wrap-package" data-shop-name="Fleet Vehicle Wrap Package" data-shop-category="wraps" data-shop-price="1850" data-shop-tags="wraps contractors automotive fleet trailers vehicles standard install">
+            <article class="shop-card reveal" data-shop-card data-shop-id="fleet-wrap-package" data-shop-name="Fleet Vehicle Wrap Package" data-shop-category="custom-services" data-shop-price="1850" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after project review" data-shop-tags="custom-services wraps contractors automotive fleet trailers vehicles standard install">
               <a class="shop-card-media" href="vehicle-wraps.html"><img src="assets/images/placeholders/service-wraps.svg" alt="Fleet vehicle wrap package" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
                 <span class="shop-badge">Popular</span>
@@ -183,7 +211,7 @@
               </div>
             </article>
 
-            <article class="shop-card reveal" data-shop-card data-shop-id="storefront-signage-starter" data-shop-name="Storefront Signage Starter" data-shop-category="signs" data-shop-price="975" data-shop-tags="signs retail storefront exterior window standard install">
+            <article class="shop-card reveal" data-shop-card data-shop-id="storefront-signage-starter" data-shop-name="Storefront Signage Starter" data-shop-category="custom-services" data-shop-price="975" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after site details" data-shop-tags="custom-services signs retail storefront exterior window standard install">
               <a class="shop-card-media" href="signage.html"><img src="assets/images/placeholders/service-signage.svg" alt="Storefront signage starter" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
                 <span class="shop-badge">Storefront</span>
@@ -195,7 +223,7 @@
               </div>
             </article>
 
-            <article class="shop-card reveal" data-shop-card data-shop-id="food-truck-branding-kit" data-shop-name="Food Truck Branding Kit" data-shop-category="wraps" data-shop-price="2400" data-shop-tags="wraps restaurants food trucks menus banners rush install">
+            <article class="shop-card reveal" data-shop-card data-shop-id="food-truck-branding-kit" data-shop-name="Food Truck Branding Kit" data-shop-category="custom-services" data-shop-price="2400" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after vehicle review" data-shop-tags="custom-services wraps restaurants food trucks menus banners rush install">
               <a class="shop-card-media" href="vehicle-wraps.html"><img src="assets/images/placeholders/industry-restaurants.svg" alt="Food truck branding kit" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
                 <span class="shop-badge">Mobile food</span>
@@ -207,7 +235,7 @@
               </div>
             </article>
 
-            <article class="shop-card reveal" data-shop-card data-shop-id="window-graphics-decals" data-shop-name="Window Graphics & Decals" data-shop-category="signs" data-shop-price="425" data-shop-tags="signs decals retail restaurants offices storefront rush install">
+            <article class="shop-card reveal" data-shop-card data-shop-id="window-graphics-decals" data-shop-name="Window Graphics & Decals" data-shop-category="custom-services" data-shop-price="425" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="3-7 business days after approval" data-shop-tags="custom-services signs decals retail restaurants offices storefront rush install">
               <a class="shop-card-media" href="signage.html"><img src="assets/images/placeholders/portfolio-window-graphics.svg" alt="Window graphics and decals" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
                 <span class="shop-badge">Fast quote</span>
@@ -219,7 +247,7 @@
               </div>
             </article>
 
-            <article class="shop-card reveal" data-shop-card data-shop-id="business-card-brochure-set" data-shop-name="Business Card + Brochure Set" data-shop-category="print" data-shop-price="320" data-shop-tags="print branding offices retail contractors standard">
+            <article class="shop-card reveal" data-shop-card data-shop-id="business-card-brochure-set" data-shop-name="Business Card + Brochure Set" data-shop-category="custom-services" data-shop-price="320" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="3-6 business days after proof approval" data-shop-tags="custom-services print branding offices retail contractors standard">
               <a class="shop-card-media" href="printing.html"><img src="assets/images/placeholders/service-printing.svg" alt="Business card and brochure print set" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
                 <span class="shop-badge">Print</span>
@@ -231,7 +259,7 @@
               </div>
             </article>
 
-            <article class="shop-card reveal" data-shop-card data-shop-id="banner-event-display-bundle" data-shop-name="Banner & Event Display Bundle" data-shop-category="bundles" data-shop-price="690" data-shop-tags="bundles signs print schools events contractors rush standard">
+            <article class="shop-card reveal" data-shop-card data-shop-id="banner-event-display-bundle" data-shop-name="Banner & Event Display Bundle" data-shop-category="custom-services" data-shop-price="690" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="4-8 business days after proof approval" data-shop-tags="custom-services bundles signs print schools events contractors rush standard">
               <a class="shop-card-media" href="signage.html"><img src="assets/images/placeholders/industry-schools.svg" alt="Banner and event display bundle" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
                 <span class="shop-badge">Events</span>
@@ -243,7 +271,7 @@
               </div>
             </article>
 
-            <article class="shop-card reveal" data-shop-card data-shop-id="lobby-wall-graphics" data-shop-name="Lobby Wall Graphics" data-shop-category="branding" data-shop-price="780" data-shop-tags="branding offices interiors wall graphics standard install">
+            <article class="shop-card reveal" data-shop-card data-shop-id="lobby-wall-graphics" data-shop-name="Lobby Wall Graphics" data-shop-category="custom-services" data-shop-price="780" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after wall measurements" data-shop-tags="custom-services branding offices interiors wall graphics standard install">
               <a class="shop-card-media" href="branding-materials.html"><img src="assets/images/placeholders/industry-office.svg" alt="Lobby wall graphics" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
                 <span class="shop-badge">Interior</span>
@@ -255,7 +283,7 @@
               </div>
             </article>
 
-            <article class="shop-card reveal" data-shop-card data-shop-id="contractor-trailer-graphics" data-shop-name="Contractor Trailer Graphics" data-shop-category="wraps" data-shop-price="875" data-shop-tags="wraps contractors trailers decals standard install">
+            <article class="shop-card reveal" data-shop-card data-shop-id="contractor-trailer-graphics" data-shop-name="Contractor Trailer Graphics" data-shop-category="custom-services" data-shop-price="875" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after trailer review" data-shop-tags="custom-services wraps contractors trailers decals standard install">
               <a class="shop-card-media" href="vehicle-wraps.html"><img src="assets/images/placeholders/industry-contractors.svg" alt="Contractor trailer graphics" loading="lazy" decoding="async"></a>
               <div class="shop-card-body">
                 <span class="shop-badge">Trades</span>
@@ -350,7 +378,8 @@
     <p><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
   </div>
 </footer>
-<script src="assets/js/app.js?v=20260528-time-dropdown" defer></script>
+<script src="assets/js/shop-products.js?v=20260528-shop-catalog" defer></script>
+<script src="assets/js/app.js?v=20260528-shop-catalog" defer></script>
 <script src="assets/js/support-assistant.js" defer></script>
 </body>
 </html>
