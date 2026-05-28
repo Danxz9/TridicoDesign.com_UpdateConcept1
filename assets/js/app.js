@@ -811,6 +811,87 @@
       currency: 'USD',
       maximumFractionDigits: 0
     }).format(value);
+    const getGeneratedShopImageBase = product => `assets/images/shop/generated/${product.category || 'custom-services'}/${product.id || 'custom-product'}`;
+    const getShopGallery = product => {
+      const base = getGeneratedShopImageBase(product);
+      const name = product.name || product.id || 'Shop product';
+      return [
+        {
+          src: product.image || `${base}-applied.svg`,
+          label: 'Applied',
+          alt: `${name} shown applied in a realistic setting`
+        },
+        {
+          src: product.artworkImage || `${base}-artwork.svg`,
+          label: 'Artwork',
+          alt: `${name} standalone print-ready graphic`
+        }
+      ];
+    };
+    const renderShopMediaDeck = product => {
+      const name = product.name || product.id || 'Shop product';
+      const href = product.href || 'quote.html';
+      const slides = getShopGallery(product);
+      return `<div class="shop-card-media shop-media-deck" data-shop-media-deck aria-label="${escapeHtml(name)} product image deck" tabindex="0">
+          ${slides.map((slide, index) => `<a class="shop-media-slide${index === 0 ? ' is-active' : ''}" data-shop-media-slide href="${escapeHtml(href)}" aria-hidden="${index === 0 ? 'false' : 'true'}" tabindex="${index === 0 ? '0' : '-1'}"><img src="${escapeHtml(slide.src)}" alt="${escapeHtml(slide.alt)}" loading="lazy" decoding="async"></a>`).join('')}
+          <button class="shop-media-arrow shop-media-arrow--prev" type="button" data-shop-media-prev aria-label="Show previous ${escapeHtml(name)} image">&lt;</button>
+          <button class="shop-media-arrow shop-media-arrow--next" type="button" data-shop-media-next aria-label="Show next ${escapeHtml(name)} image">&gt;</button>
+          <div class="shop-media-tabs" aria-label="${escapeHtml(name)} image views">
+            ${slides.map((slide, index) => `<button class="shop-media-tab${index === 0 ? ' is-active' : ''}" type="button" data-shop-media-tab aria-label="Show ${escapeHtml(slide.label)} image" aria-current="${index === 0 ? 'true' : 'false'}">${escapeHtml(slide.label)}</button>`).join('')}
+          </div>
+        </div>`;
+    };
+    const initShopMediaDecks = (root = document) => {
+      root.querySelectorAll('[data-shop-media-deck]').forEach(deck => {
+        if (deck.dataset.shopMediaReady === 'true') return;
+        const slides = Array.from(deck.querySelectorAll('[data-shop-media-slide]'));
+        const tabs = Array.from(deck.querySelectorAll('[data-shop-media-tab]'));
+        const prev = deck.querySelector('[data-shop-media-prev]');
+        const next = deck.querySelector('[data-shop-media-next]');
+        if (!slides.length) return;
+        let active = 0;
+        const setActive = index => {
+          active = (index + slides.length) % slides.length;
+          slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === active;
+            slide.classList.toggle('is-active', isActive);
+            slide.setAttribute('aria-hidden', String(!isActive));
+            slide.tabIndex = isActive ? 0 : -1;
+          });
+          tabs.forEach((tab, tabIndex) => {
+            const isActive = tabIndex === active;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-current', String(isActive));
+          });
+        };
+        prev?.addEventListener('click', event => {
+          event.preventDefault();
+          setActive(active - 1);
+        });
+        next?.addEventListener('click', event => {
+          event.preventDefault();
+          setActive(active + 1);
+        });
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', event => {
+            event.preventDefault();
+            setActive(index);
+          });
+        });
+        deck.addEventListener('keydown', event => {
+          if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            setActive(active - 1);
+          }
+          if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            setActive(active + 1);
+          }
+        });
+        deck.dataset.shopMediaReady = 'true';
+        setActive(active);
+      });
+    };
     const renderCatalogProducts = () => {
       if (!grid || !catalogProducts.length) return;
       const existingIds = new Set(Array.from(grid.querySelectorAll('[data-shop-card]')).map(card => card.dataset.shopId));
@@ -821,7 +902,6 @@
         const tags = Array.isArray(product.tags) ? product.tags.join(' ') : String(product.tags || '');
         const price = Number(product.price) || 0;
         const href = product.href || 'quote.html';
-        const image = product.image || 'assets/images/placeholders/service-printing.svg';
         const count = product.count || product.unit || '1 item';
         const turnaround = product.turnaround || 'Made to order';
         const unitPrice = product.unitPrice || '';
@@ -841,7 +921,14 @@
         article.dataset.shopTurnaround = turnaround;
         article.dataset.shopUnitPrice = unitPrice;
         article.innerHTML = `
-          <a class="shop-card-media" href="${escapeHtml(href)}"><img src="${escapeHtml(image)}" alt="${escapeHtml(product.name || 'Shop product')}" loading="lazy" decoding="async"></a>
+          ${renderShopMediaDeck({
+            id: product.id,
+            category: product.category || 'custom-services',
+            name: product.name || product.id,
+            href,
+            image: product.image,
+            artworkImage: product.artworkImage
+          })}
           <div class="shop-card-body">
             <span class="shop-badge">${escapeHtml(product.badge || 'Made to order')}</span>
             <h2><a href="${escapeHtml(href)}">${escapeHtml(product.name || product.id)}</a></h2>
@@ -867,6 +954,7 @@
         const link = body.querySelector('h2 a');
         const name = card.dataset.shopName || link?.textContent?.trim() || 'Custom service';
         const href = link?.getAttribute('href') || 'quote.html';
+        const category = card.dataset.shopCategory || 'custom-services';
         const description = body.querySelector('p')?.textContent?.trim() || 'Custom Tridico service quoted after project details are reviewed.';
         const badge = body.querySelector('.shop-badge')?.textContent?.trim() || 'Custom Services';
         const price = Number(card.dataset.shopPrice) || 0;
@@ -874,6 +962,15 @@
         const unitPrice = card.dataset.shopUnitPrice || 'Project-priced';
         const turnaround = card.dataset.shopTurnaround || 'Quote after review';
         const detail = body.querySelector('.shop-rating em')?.textContent?.trim() || 'Custom quote package';
+        const media = card.querySelector('.shop-card-media');
+        if (media) {
+          media.outerHTML = renderShopMediaDeck({
+            id: card.dataset.shopId,
+            category,
+            name,
+            href
+          });
+        }
         body.innerHTML = `
           <span class="shop-badge">${escapeHtml(badge)}</span>
           <h2><a href="${escapeHtml(href)}">${escapeHtml(name)}</a></h2>
@@ -888,6 +985,7 @@
       });
     };
     normalizeStaticCards();
+    initShopMediaDecks(grid || document);
     const cards = Array.from(document.querySelectorAll('[data-shop-card]'));
     cards.forEach(card => {
       card.classList.remove('reveal');

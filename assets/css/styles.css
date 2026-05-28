@@ -239,6 +239,17 @@ h1,h2,h3{line-height:1.02;margin:0;color:inherit;letter-spacing:0}h1{font-size:5
 .shop-card.is-hidden,.shop-card.is-deferred{display:none}
 .shop-card-media{display:grid;place-items:center;background:#f7f7f7;margin:.7rem .7rem 0;border-radius:12px}
 .shop-card-media img{width:100%;aspect-ratio:1/1;object-fit:contain;padding:.6rem}
+.shop-media-deck{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:#ececec;isolation:isolate}
+.shop-media-deck:focus-visible{outline:3px solid rgba(255,204,24,.72);outline-offset:3px}
+.shop-media-slide{position:absolute;inset:0;display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .22s ease}
+.shop-media-slide.is-active{opacity:1;pointer-events:auto}
+.shop-media-slide img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;padding:0}
+.shop-media-arrow{position:absolute;top:50%;z-index:3;display:grid;place-items:center;width:30px;height:42px;border:1px solid rgba(0,0,0,.12);background:rgba(255,255,255,.82);color:#111;font-size:1.45rem;font-weight:800;line-height:1;transform:translateY(-50%);box-shadow:0 10px 22px rgba(0,0,0,.12)}
+.shop-media-arrow:hover,.shop-media-arrow:focus-visible{background:var(--yellow);outline:none}
+.shop-media-arrow--prev{left:.45rem;border-radius:999px 8px 8px 999px}.shop-media-arrow--next{right:.45rem;border-radius:8px 999px 999px 8px}
+.shop-media-tabs{position:absolute;left:.55rem;right:.55rem;bottom:.55rem;z-index:4;display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+.shop-media-tab{min-height:26px;border:1px solid rgba(0,0,0,.14);border-radius:999px;background:rgba(255,255,255,.86);color:#222;font-size:.68rem;font-weight:900;backdrop-filter:blur(8px)}
+.shop-media-tab.is-active{background:#050505;color:#fff;border-color:#050505}
 .shop-card-body{display:flex;flex:1;flex-direction:column;gap:.38rem;padding:.78rem .8rem .95rem}
 .shop-badge{align-self:flex-start;display:inline-flex;align-items:center;min-height:22px;border-radius:5px;background:#3f464d;color:#fff;padding:.25rem .42rem;font-size:.68rem;text-transform:none;letter-spacing:0;font-weight:850}
 .shop-card h2{font-size:1rem;line-height:1.28;font-weight:750}

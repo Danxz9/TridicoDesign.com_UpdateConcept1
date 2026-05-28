@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Soft Smile Daisy Car Decal standalone artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff7ed"/><stop offset="1" stop-color="#d7dde7"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#db2777"/><stop offset="1" stop-color="#84cc16"/></linearGradient>
+    <linearGradient id="darkGloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".26"/><stop offset=".35" stop-color="#ffffff" stop-opacity=".05"/><stop offset="1" stop-color="#000000" stop-opacity=".16"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#0f172a" flood-opacity=".24"/></filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#0f172a" flood-opacity=".2"/></filter>
+    <filter id="paperNoise"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" seed="62" result="noise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect x="90" y="90" width="1020" height="1020" rx="64" fill="#fff" filter="url(#shadow)"/>
+  <rect x="130" y="130" width="940" height="940" rx="42" fill="#fff7ed"/>
+  <rect x="160" y="160" width="880" height="70" rx="35" fill="#fff" opacity=".78"/>
+  <text x="600" y="207" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900" fill="#111827">PRINT READY ARTWORK</text>
+  <g transform="translate(210 252)"><path d="M15.6 313.20000000000005C140.4 104.39999999999999 405.6 58 764.4 162.4C624 290 530.4000000000001 429.2 140.4 487.2C78 440.8 46.8 382.8 15.6 313.20000000000005Z" fill="url(#accent)" filter="url(#softShadow)"/><path d="M109.20000000000002 301.6C296.4 243.6 468 220.4 670.8 243.6" fill="none" stroke="#fff" stroke-width="27.300000000000004" stroke-linecap="round" opacity=".84"/><g transform="translate(530.4000000000001 278.4) scale(1.08)"><circle cx="65" cy="65" r="16" fill="#84cc16"/><g fill="#db2777"><ellipse cx="65" cy="25" rx="18" ry="28"/><ellipse cx="65" cy="105" rx="18" ry="28"/><ellipse cx="25" cy="65" rx="28" ry="18"/><ellipse cx="105" cy="65" rx="28" ry="18"/><ellipse cx="36" cy="36" rx="16" ry="25" transform="rotate(-45 36 36)"/><ellipse cx="94" cy="36" rx="16" ry="25" transform="rotate(45 94 36)"/></g><path d="M66 113c18 14 35 21 51 20" fill="none" stroke="#84cc16" stroke-width="8" stroke-linecap="round"/></g><text x="288.6" y="353.8" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="900" fill="#fff">SOFT SMILE</text><text x="288.6" y="390.92" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="900" fill="#fff">DAISY CAR</text></g>
+  <rect x="220" y="910" width="760" height="96" rx="48" fill="#fff" opacity=".86"/>
+  <text x="600" y="953" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="850" fill="#111827">Soft Smile Daisy Car Decal</text>
+  <text x="600" y="1044" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="800" fill="#64748b">1 outdoor vinyl decal</text>
+  <rect width="1200" height="1200" fill="#fff" filter="url(#paperNoise)" opacity=".35"/>
+</svg>

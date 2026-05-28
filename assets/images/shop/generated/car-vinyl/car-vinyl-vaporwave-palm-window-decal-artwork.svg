@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Vaporwave Palm Window Decal standalone artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff7ed"/><stop offset="1" stop-color="#d7dde7"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+    <linearGradient id="darkGloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".26"/><stop offset=".35" stop-color="#ffffff" stop-opacity=".05"/><stop offset="1" stop-color="#000000" stop-opacity=".16"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#0f172a" flood-opacity=".24"/></filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#0f172a" flood-opacity=".2"/></filter>
+    <filter id="paperNoise"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" seed="96" result="noise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect x="90" y="90" width="1020" height="1020" rx="64" fill="#fff" filter="url(#shadow)"/>
+  <rect x="130" y="130" width="940" height="940" rx="42" fill="#fff7ed"/>
+  <rect x="160" y="160" width="880" height="70" rx="35" fill="#fff" opacity=".78"/>
+  <text x="600" y="207" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900" fill="#111827">PRINT READY ARTWORK</text>
+  <g transform="translate(210 252)"><path d="M15.6 313.20000000000005C140.4 104.39999999999999 405.6 58 764.4 162.4C624 290 530.4000000000001 429.2 140.4 487.2C78 440.8 46.8 382.8 15.6 313.20000000000005Z" fill="url(#accent)" filter="url(#softShadow)"/><path d="M109.20000000000002 301.6C296.4 243.6 468 220.4 670.8 243.6" fill="none" stroke="#fff" stroke-width="27.300000000000004" stroke-linecap="round" opacity=".84"/><polygon points="600.6000000000001,278.4 621.2312623554659,320.2035034974393 667.3641674439199,326.90700699487866 633.9820837219601,359.44649650256065 641.8625247109318,405.3929930051213 600.6000000000001,383.7 559.3374752890685,405.3929930051213 567.2179162780402,359.44649650256065 533.8358325560804,326.90700699487866 579.9687376445344,320.2035034974393" fill="#22d3ee" filter="url(#softShadow)"/><text x="288.6" y="353.8" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="900" fill="#fff">VAPORWAVE PALM</text><text x="288.6" y="390.92" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="900" fill="#fff">WINDOW</text></g>
+  <rect x="220" y="910" width="760" height="96" rx="48" fill="#fff" opacity=".86"/>
+  <text x="600" y="953" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="850" fill="#111827">Vaporwave Palm Window Decal</text>
+  <text x="600" y="1044" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="800" fill="#64748b">2-piece easy install kit</text>
+  <rect width="1200" height="1200" fill="#fff" filter="url(#paperNoise)" opacity=".35"/>
+</svg>

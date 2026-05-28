@@ -14,6 +14,16 @@ function loadProducts() {
   return context.window.tridicoShopProducts;
 }
 
+function getStaticCustomServiceCards() {
+  const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
+  return Array.from(html.matchAll(/<article class="shop-card(?: reveal)?" data-shop-card([^>]*)>/g))
+    .map(match => Object.fromEntries(
+      Array.from(match[1].matchAll(/data-shop-([\w-]+)="([^"]*)"/g))
+        .map(([, key, value]) => [key, value])
+    ))
+    .filter(card => card.category === 'custom-services');
+}
+
 test('shop catalog exposes 350 customer-facing products with merchandising fields', () => {
   const products = loadProducts();
   assert.equal(products.length, 350);
@@ -32,8 +42,30 @@ test('shop catalog exposes 350 customer-facing products with merchandising field
     assert.ok(product.demand);
     assert.ok(Number.isFinite(product.priority));
     assert.ok(product.image);
+    assert.ok(product.artworkImage);
+    assert.ok(Array.isArray(product.gallery));
+    assert.equal(product.gallery.length, 2);
+    assert.match(product.image, new RegExp(`^assets/images/shop/generated/${product.category}/${product.id}-applied\\.svg$`));
+    assert.match(product.artworkImage, new RegExp(`^assets/images/shop/generated/${product.category}/${product.id}-artwork\\.svg$`));
     assert.ok(Array.isArray(product.tags));
     assert.ok(product.tags.includes(product.category));
+  }
+});
+
+test('shop product image decks use generated applied and artwork files', () => {
+  const products = loadProducts();
+  const productData = fs.readFileSync(path.join(repoRoot, 'assets/js/shop-products.js'), 'utf8');
+  assert.doesNotMatch(productData, /assets\/images\/placeholders/);
+
+  for (const product of products) {
+    const applied = path.join(repoRoot, product.image);
+    const artwork = path.join(repoRoot, product.artworkImage);
+    assert.ok(fs.existsSync(applied), `${product.id} applied image missing`);
+    assert.ok(fs.existsSync(artwork), `${product.id} artwork image missing`);
+    assert.equal(product.gallery[0].src, product.image);
+    assert.equal(product.gallery[0].label, 'Applied');
+    assert.equal(product.gallery[1].src, product.artworkImage);
+    assert.equal(product.gallery[1].label, 'Artwork');
   }
 });
 
@@ -105,6 +137,20 @@ test('existing shop items are preserved as Custom Services', () => {
   assert.match(html, /Contractor Trailer Graphics/);
 });
 
+test('static custom services also have generated image decks', () => {
+  const customServiceCards = getStaticCustomServiceCards();
+  const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
+  assert.doesNotMatch(html, /assets\/images\/placeholders/);
+  assert.equal(customServiceCards.length, 8);
+
+  for (const card of customServiceCards) {
+    const applied = path.join(repoRoot, 'assets/images/shop/generated/custom-services', `${card.id}-applied.svg`);
+    const artwork = path.join(repoRoot, 'assets/images/shop/generated/custom-services', `${card.id}-artwork.svg`);
+    assert.ok(fs.existsSync(applied), `${card.id} applied image missing`);
+    assert.ok(fs.existsSync(artwork), `${card.id} artwork image missing`);
+  }
+});
+
 test('shop grid exposes 15-product batch controls', () => {
   const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
   const appJs = fs.readFileSync(path.join(repoRoot, 'assets/js/app.js'), 'utf8');
@@ -118,8 +164,11 @@ test('shop grid exposes 15-product batch controls', () => {
   assert.match(appJs, /data-shop-load-count/);
   assert.match(appJs, /card\.classList\.remove\('reveal'\)/);
   assert.match(appJs, /orderedCards = sortCards\(\)/);
+  assert.match(appJs, /data-shop-media-deck/);
+  assert.match(appJs, /initShopMediaDecks/);
   assert.match(styles, /\.shop-card\.reveal\{opacity:1;transform:none\}/);
   assert.match(styles, /\.shop-card\.is-hidden,\.shop-card\.is-deferred\{display:none\}/);
+  assert.match(styles, /\.shop-media-slide\.is-active\{opacity:1;pointer-events:auto\}/);
 });
 
 test('portfolio replaces ambiguous Work navigation labels', () => {

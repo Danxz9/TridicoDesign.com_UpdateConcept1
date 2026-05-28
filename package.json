@@ -9,6 +9,7 @@
     "news:fb:backfill": "node scripts/facebook-news-import.js --mode backfill",
     "news:fb:sync": "node scripts/facebook-news-import.js --mode sync",
     "news:fb:dry-run": "node scripts/facebook-news-import.js --mode sync --dry-run",
+    "shop:images": "node tools/generate-shop-product-images.js",
     "test": "node --test tests/*.test.js"
   },
   "devDependencies": {

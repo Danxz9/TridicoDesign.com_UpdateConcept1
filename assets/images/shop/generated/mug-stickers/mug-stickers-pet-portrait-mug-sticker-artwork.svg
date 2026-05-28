@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Pet Portrait Mug Sticker standalone artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef2ff"/><stop offset="1" stop-color="#d7dde7"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c2d12"/><stop offset="1" stop-color="#fb7185"/></linearGradient>
+    <linearGradient id="darkGloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".26"/><stop offset=".35" stop-color="#ffffff" stop-opacity=".05"/><stop offset="1" stop-color="#000000" stop-opacity=".16"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#0f172a" flood-opacity=".24"/></filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#0f172a" flood-opacity=".2"/></filter>
+    <filter id="paperNoise"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" seed="3" result="noise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect x="90" y="90" width="1020" height="1020" rx="64" fill="#fff" filter="url(#shadow)"/>
+  <rect x="130" y="130" width="940" height="940" rx="42" fill="#eef2ff"/>
+  <rect x="160" y="160" width="880" height="70" rx="35" fill="#fff" opacity=".78"/>
+  <text x="600" y="207" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900" fill="#111827">PRINT READY ARTWORK</text>
+  <g transform="translate(210 252)"><g fill="#fff" stroke="#e5e7eb" stroke-width="15.6" filter="url(#softShadow)"><path d="M109.20000000000002 92.8C249.6 11.6 483.6 46.4 639.5999999999999 121.8C764.4 220.4 733.1999999999999 382.8 608.4 475.59999999999997C452.4 574.2 218.40000000000003 545.1999999999999 93.6 440.8C-31.2 336.4 -15.6 174 109.20000000000002 92.8Z"/></g><g transform="translate(62.4 46.4)"><g transform="translate(390 75.4) scale(1.6900000000000002)"><circle cx="60" cy="68" r="34" fill="#fb7185" opacity=".95"/><circle cx="28" cy="34" r="17" fill="#7c2d12"/><circle cx="52" cy="22" r="17" fill="#7c2d12"/><circle cx="78" cy="22" r="17" fill="#7c2d12"/><circle cx="96" cy="42" r="17" fill="#7c2d12"/><path d="M44 76q16 16 32 0" fill="none" stroke="#fff7ed" stroke-width="8" stroke-linecap="round"/></g></g><rect x="156" y="359.6" width="468" height="92.8" rx="46.4" fill="url(#accent)"/><text x="390" y="423.4" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900" fill="#fff">PET PORTRAIT</text><text x="390" y="455.88" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900" fill="#fff">MUG</text></g>
+  <rect x="220" y="910" width="760" height="96" rx="48" fill="#fff" opacity=".86"/>
+  <text x="600" y="953" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="850" fill="#111827">Pet Portrait Mug Sticker</text>
+  <text x="600" y="1044" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="800" fill="#64748b">2 mug decals</text>
+  <rect width="1200" height="1200" fill="#fff" filter="url(#paperNoise)" opacity=".35"/>
+</svg>

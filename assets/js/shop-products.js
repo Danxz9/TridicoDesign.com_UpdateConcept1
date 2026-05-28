@@ -1,17 +1,4 @@
 (function(){
-  const productImages = {
-    'car-decals': 'assets/images/placeholders/portfolio-window-graphics.svg',
-    'car-vinyl': 'assets/images/placeholders/service-wraps.svg',
-    'wrap-vinyl': 'assets/images/placeholders/portfolio-fleet-wrap.svg',
-    'stickers': 'assets/images/placeholders/service-graphic-design.svg',
-    'mug-stickers': 'assets/images/placeholders/service-printing.svg',
-    'business-decals': 'assets/images/placeholders/portfolio-storefront-sign.svg',
-    'signs': 'assets/images/placeholders/service-signage.svg',
-    'tech-decals': 'assets/images/placeholders/portfolio-logo-system.svg',
-    'posters-wall-art': 'assets/images/placeholders/portfolio-print-collateral.svg',
-    'home-decor': 'assets/images/placeholders/portfolio-interior-wall.svg'
-  };
-
   const categoryDetails = {
     'car-decals': {
       badge: 'Car decal',
@@ -153,7 +140,7 @@
       unitPrice: options.unitPrice || merchandising.unit(price),
       description: options.description || defaults.description(name),
       tags: normalizedTags,
-      image: options.image || productImages[category],
+      image: options.image || '',
       href: options.href || 'quote.html'
     });
   };
@@ -564,6 +551,24 @@
   if (products.length !== 350) {
     throw new Error('Expected 350 shop products, generated ' + products.length);
   }
+
+  products.forEach(product => {
+    const imageBase = 'assets/images/shop/generated/' + product.category + '/' + product.id;
+    product.image = imageBase + '-applied.svg';
+    product.artworkImage = imageBase + '-artwork.svg';
+    product.gallery = [
+      {
+        src: product.image,
+        label: 'Applied',
+        alt: product.name + ' shown applied in a realistic setting'
+      },
+      {
+        src: product.artworkImage,
+        label: 'Artwork',
+        alt: product.name + ' standalone print-ready graphic'
+      }
+    ];
+  });
 
   window.tridicoShopProducts = products;
 })();

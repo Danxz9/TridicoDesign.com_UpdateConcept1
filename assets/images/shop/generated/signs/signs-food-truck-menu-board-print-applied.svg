@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="Food Truck Menu Board Print applied product mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef2ff"/><stop offset="1" stop-color="#d7dde7"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111827"/><stop offset="1" stop-color="#facc15"/></linearGradient>
+    <linearGradient id="darkGloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".26"/><stop offset=".35" stop-color="#ffffff" stop-opacity=".05"/><stop offset="1" stop-color="#000000" stop-opacity=".16"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#0f172a" flood-opacity=".24"/></filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#0f172a" flood-opacity=".2"/></filter>
+    <filter id="paperNoise"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" seed="49" result="noise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1200" height="1200" fill="#f4efe7"/><rect y="790" width="1200" height="410" fill="#c4a484"/><rect x="236" y="270" width="728" height="560" rx="28" fill="#e5ded2" filter="url(#shadow)"/><path d="M336 830l-84 210M864 830l84 210" stroke="#7c5f44" stroke-width="18" stroke-linecap="round"/><g transform="translate(304 350)"><g transform="translate(0 0)"><rect width="592" height="388" rx="38.800000000000004" fill="#fff" stroke="#ffffff" stroke-width="14.8" filter="url(#softShadow)"/><rect x="29.6" y="19.400000000000002" width="532.8000000000001" height="69.84" rx="17.46" fill="url(#accent)"/><rect x="47.36" y="294.88" width="497.28" height="31.04" rx="11.639999999999999" fill="#ffffff" opacity=".12"/><text x="296" y="166.84" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900" fill="#ffffff">FOOD TRUCK</text><text x="296" y="194.68" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900" fill="#ffffff">MENU BOARD</text></g></g>
+  <rect width="1200" height="1200" fill="#fff" filter="url(#paperNoise)" opacity=".55"/>
+  <text x="72" y="94" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="900" fill="#111827">Event display</text>
+  <text x="72" y="136" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#475569">Food Truck Menu Board Print</text>
+</svg>
