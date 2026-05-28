@@ -1281,7 +1281,7 @@ function pageTemplate({
 ${getHeader(prefix, true)}
 ${main}
 ${getFooter(prefix)}
-<script src="${prefix}assets/js/app.js?v=20260528-shop-batches" defer></script>
+<script src="${prefix}assets/js/app.js?v=20260528-dtc-order" defer></script>
 <script src="${prefix}assets/js/news.js" defer></script>
 <script src="${prefix}assets/js/support-assistant.js?v=20260528-portfolio" defer></script>
 </body>

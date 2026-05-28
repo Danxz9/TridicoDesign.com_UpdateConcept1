@@ -14,9 +14,9 @@ function loadProducts() {
   return context.window.tridicoShopProducts;
 }
 
-test('shop catalog exposes 300 customer-facing products with merchandising fields', () => {
+test('shop catalog exposes 350 customer-facing products with merchandising fields', () => {
   const products = loadProducts();
-  assert.equal(products.length, 300);
+  assert.equal(products.length, 350);
   assert.equal(new Set(products.map(product => product.id)).size, products.length);
 
   for (const product of products) {
@@ -30,6 +30,7 @@ test('shop catalog exposes 300 customer-facing products with merchandising field
     assert.ok(product.rating);
     assert.ok(product.reviews);
     assert.ok(product.demand);
+    assert.ok(Number.isFinite(product.priority));
     assert.ok(product.image);
     assert.ok(Array.isArray(product.tags));
     assert.ok(product.tags.includes(product.category));
@@ -44,17 +45,54 @@ test('shop catalog covers requested product lines', () => {
   }, {});
 
   assert.deepEqual(counts, {
-    'car-decals': 30,
+    'car-decals': 36,
     'car-vinyl': 50,
     'wrap-vinyl': 30,
-    stickers: 40,
+    stickers: 46,
     'mug-stickers': 20,
     'business-decals': 35,
-    signs: 30,
+    signs: 53,
     'tech-decals': 25,
-    'posters-wall-art': 25,
-    'home-decor': 15
+    'posters-wall-art': 33,
+    'home-decor': 22
   });
+});
+
+test('research-weighted additions follow demand allocation', () => {
+  const products = loadProducts();
+  const weighted = products.filter(product => product.tags.includes('research-weighted'));
+  assert.equal(weighted.length, 50);
+  assert.ok(weighted.every(product => product.researchLine && product.researchWeight));
+
+  const byLine = weighted.reduce((summary, product) => {
+    summary[product.researchLine] = (summary[product.researchLine] || 0) + 1;
+    return summary;
+  }, {});
+
+  assert.deepEqual(byLine, {
+    stickers: 6,
+    'wedding-signage': 6,
+    'poster-gallery': 5,
+    'celebration-yard-signs': 5,
+    'wall-decals': 4,
+    'banners-backdrops': 4,
+    'acrylic-signs': 4,
+    'mounted-boards': 4,
+    'automotive-decals': 3,
+    'dorm-fandom': 3,
+    'decorative-signs': 3,
+    'car-magnets': 3
+  });
+
+  const featured = [...products].sort((a, b) => b.priority - a.priority);
+  assert.deepEqual(featured.slice(0, 6).map(product => product.researchLine), [
+    'stickers',
+    'stickers',
+    'stickers',
+    'stickers',
+    'stickers',
+    'stickers'
+  ]);
 });
 
 test('existing shop items are preserved as Custom Services', () => {
@@ -76,6 +114,8 @@ test('shop grid exposes 15-product batch controls', () => {
   assert.match(html, /data-shop-load-more/);
   assert.match(html, /data-shop-count/);
   assert.match(appJs, /visibleLimit \+= pageSize/);
+  assert.match(appJs, /data-shop-load-more-wrap] \[data-shop-count]/);
+  assert.match(appJs, /orderedCards = sortCards\(\)/);
   assert.match(styles, /\.shop-card\.is-hidden,\.shop-card\.is-deferred\{display:none\}/);
 });
 

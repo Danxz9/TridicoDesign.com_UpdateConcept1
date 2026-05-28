@@ -835,6 +835,7 @@
         article.dataset.shopName = product.name || product.id;
         article.dataset.shopCategory = product.category || 'custom-services';
         article.dataset.shopPrice = String(price);
+        article.dataset.shopPriority = String(Number(product.priority) || 0);
         article.dataset.shopTags = tags;
         article.dataset.shopCount = count;
         article.dataset.shopTurnaround = turnaround;
@@ -896,7 +897,7 @@
     const emptyState = document.querySelector('[data-shop-empty]');
     const loadMoreWrap = document.querySelector('[data-shop-load-more-wrap]');
     const loadMoreButton = document.querySelector('[data-shop-load-more]');
-    const loadMoreCount = document.querySelector('[data-shop-count]');
+    const loadMoreCount = document.querySelector('[data-shop-load-more-wrap] [data-shop-count]');
     const chips = Array.from(document.querySelectorAll('[data-shop-chip]'));
     const filterInputs = Array.from(document.querySelectorAll('[data-shop-filter]'));
     const clearFilters = document.querySelector('[data-shop-clear]');
@@ -957,15 +958,19 @@
       return matchesQuery && matchesCategory && matchesFilters;
     };
     const sortCards = () => {
-      if (!grid) return;
+      if (!grid) return cards;
       const mode = sortSelect?.value || 'featured';
+      const getFeaturedPriority = card => Number(card.dataset.shopPriority) || 0;
       const sorted = [...cards].sort((a, b) => {
         if (mode === 'price-low') return Number(a.dataset.shopPrice) - Number(b.dataset.shopPrice);
         if (mode === 'price-high') return Number(b.dataset.shopPrice) - Number(a.dataset.shopPrice);
         if (mode === 'name') return String(a.dataset.shopName).localeCompare(String(b.dataset.shopName));
+        const priorityDiff = getFeaturedPriority(b) - getFeaturedPriority(a);
+        if (priorityDiff) return priorityDiff;
         return originalOrder.get(a) - originalOrder.get(b);
       });
       sorted.forEach(card => grid.append(card));
+      return sorted;
     };
     const resetVisibleLimit = () => {
       visibleLimit = pageSize;
@@ -991,11 +996,11 @@
       }
     };
     const applyFilters = () => {
-      sortCards();
-      const matches = cards.filter(cardMatches);
+      const orderedCards = sortCards();
+      const matches = orderedCards.filter(cardMatches);
       const matchedCards = new Set(matches);
       const visibleCards = new Set(matches.slice(0, visibleLimit));
-      cards.forEach(card => {
+      orderedCards.forEach(card => {
         const isMatch = matchedCards.has(card);
         card.classList.toggle('is-hidden', !isMatch);
         card.classList.toggle('is-deferred', isMatch && !visibleCards.has(card));

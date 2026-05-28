@@ -92,6 +92,40 @@
   };
   const reviewBuckets = ['128', '246', '333', '518', '739', '1.1K', '1.7K', '2.4K'];
   const starValues = ['4.6', '4.7', '4.8', '4.9', '5.0'];
+  const categoryPriority = {
+    stickers: 940,
+    signs: 780,
+    'posters-wall-art': 900,
+    'home-decor': 700,
+    'car-decals': 740,
+    'car-vinyl': 740,
+    'wrap-vinyl': 720,
+    'mug-stickers': 820,
+    'tech-decals': 720,
+    'business-decals': 580,
+    'custom-services': 500
+  };
+  const tagPriorityRules = [
+    { score: 940, tokens: ['sticker-pack', 'sticker-sheet', 'water-bottle', 'reward', 'label', 'sticker-bomb'] },
+    { score: 930, tokens: ['wedding', 'bridal', 'ceremony', 'seating-chart', 'bar-sign'] },
+    { score: 900, tokens: ['poster', 'gallery-wall', 'wall-art', 'art-print', 'canvas-style'] },
+    { score: 870, tokens: ['yard-sign', 'graduation', 'birthday', 'baby-announcement', 'senior-night', 'open-house'] },
+    { score: 830, tokens: ['wall-decal', 'nursery', 'kids-room', 'bedroom', 'renter-friendly'] },
+    { score: 810, tokens: ['banner', 'backdrop', 'photo-moment', 'step-and-repeat'] },
+    { score: 780, tokens: ['acrylic', 'frosted', 'tabletop', 'table-number'] },
+    { score: 760, tokens: ['foam-board', 'mounted', 'photo-board', 'easel-ready', 'collage-board'] },
+    { score: 740, tokens: ['car', 'automotive', 'rear-window', 'boat', 'vehicle'] },
+    { score: 720, tokens: ['dorm', 'fandom', 'fan-cave', 'gamer'] },
+    { score: 700, tokens: ['decorative-sign', 'home-sign', 'garage', 'classroom'] },
+    { score: 650, tokens: ['car-magnet', 'removable-magnet'] }
+  ];
+  const getPriority = (category, name, tags, options = {}) => {
+    if (Number.isFinite(options.priority)) return options.priority;
+    const haystack = [category, name, ...tags].join(' ').toLowerCase();
+    return tagPriorityRules.reduce((score, rule) => (
+      rule.tokens.some(token => haystack.includes(token)) ? Math.max(score, rule.score) : score
+    ), categoryPriority[category] || 500);
+  };
   const add = (category, name, price, tags = [], options = {}) => {
     let id = slugify(category + '-' + name);
     let suffix = 2;
@@ -100,6 +134,7 @@
     const defaults = categoryDetails[category];
     const merchandising = merch[category];
     const index = products.length;
+    const normalizedTags = Array.from(new Set([category, ...tags, options.badge || defaults.badge, options.rating || defaults.rating].join(' ').toLowerCase().split(/\s+/).map(tag => tag.replace(/[^a-z0-9-]/g, '')).filter(Boolean)));
     products.push({
       id,
       category,
@@ -110,11 +145,14 @@
       reviews: options.reviews || reviewBuckets[index % reviewBuckets.length],
       demand: options.demand || merchandising.demand,
       detail: options.detail || defaults.detail,
+      researchLine: options.researchLine || '',
+      researchWeight: options.researchWeight || '',
+      priority: getPriority(category, name, normalizedTags, options),
       count: options.count || merchandising.count,
       turnaround: options.turnaround || merchandising.turnaround,
       unitPrice: options.unitPrice || merchandising.unit(price),
       description: options.description || defaults.description(name),
-      tags: Array.from(new Set([category, ...tags, options.badge || defaults.badge, options.rating || defaults.rating].join(' ').toLowerCase().split(/\s+/).map(tag => tag.replace(/[^a-z0-9-]/g, '')).filter(Boolean))),
+      tags: normalizedTags,
       image: options.image || productImages[category],
       href: options.href || 'quote.html'
     });
@@ -450,8 +488,81 @@
     ['Holiday Window Decor Decal Set', 28, ['holiday', 'seasonal', 'window']]
   ].forEach(item => add('home-decor', item[0], item[1], item[2]));
 
-  if (products.length !== 300) {
-    throw new Error('Expected 300 shop products, generated ' + products.length);
+  const weightedLaunchProducts = [
+    { category: 'stickers', line: 'stickers', weight: '12%', name: 'Local Pride Weatherproof Sticker Pack', price: 14, tags: ['local', 'water-bottle', 'gift', 'sticker-pack'], options: { count: '12-sticker local pride pack', unitPrice: '$1.17 each', priority: 946 } },
+    { category: 'stickers', line: 'stickers', weight: '12%', name: 'Milestone Moment Sticker Bundle', price: 16, tags: ['graduation', 'birthday', 'baby-shower', 'wedding', 'bundle', 'sticker-pack'], options: { count: '20-sticker milestone bundle', unitPrice: '$0.80 each', priority: 946 } },
+    { category: 'stickers', line: 'stickers', weight: '12%', name: 'Cottage Garden Bottle Sticker Pack', price: 13, tags: ['floral', 'cottagecore', 'water-bottle', 'sticker-pack'], options: { count: '15-sticker waterproof pack', unitPrice: '$0.87 each', priority: 945 } },
+    { category: 'stickers', line: 'stickers', weight: '12%', name: 'Maximalist Mood Sticker Sheet', price: 12, tags: ['maximalist', 'gen-z', 'aesthetic', 'sticker-sheet'], options: { count: '1 large sticker sheet', unitPrice: '$12.00 per sheet', priority: 945 } },
+    { category: 'stickers', line: 'stickers', weight: '12%', name: 'Teacher Reward Mega Sticker Sheet', price: 14, tags: ['teacher', 'school', 'reward', 'sticker-sheet'], options: { count: '2 reward sticker sheets', unitPrice: '$7.00 per sheet', priority: 944 } },
+    { category: 'stickers', line: 'stickers', weight: '12%', name: 'Custom Name Label Five-Pack', price: 15, tags: ['kids', 'school', 'personalized', 'label', 'bundle'], options: { count: '5 personalized name labels', unitPrice: '$3.00 each', priority: 944 } },
+
+    { category: 'signs', line: 'wedding-signage', weight: '12%', name: 'Botanical Wedding Welcome Sign', price: 78, tags: ['wedding', 'welcome', 'botanical', 'event'], options: { count: '1 18 in x 24 in wedding sign', turnaround: '3-5 business days after proof approval', priority: 936 } },
+    { category: 'signs', line: 'wedding-signage', weight: '12%', name: 'Gothic Romance Wedding Welcome Sign', price: 84, tags: ['wedding', 'welcome', 'gothic-romance', 'event'], options: { count: '1 18 in x 24 in wedding sign', turnaround: '3-5 business days after proof approval', priority: 935 } },
+    { category: 'signs', line: 'wedding-signage', weight: '12%', name: 'Wildflower Seating Chart Sign', price: 115, tags: ['wedding', 'seating-chart', 'wildflower', 'custom-text'], options: { count: '1 large seating chart sign', turnaround: '4-7 business days after proof approval', priority: 934 } },
+    { category: 'signs', line: 'wedding-signage', weight: '12%', name: 'Stained Glass Style Wedding Bar Sign', price: 68, tags: ['wedding', 'bar-sign', 'stained-glass', 'tabletop'], options: { count: '1 wedding bar sign', turnaround: '3-5 business days after proof approval', priority: 934 } },
+    { category: 'signs', line: 'wedding-signage', weight: '12%', name: 'Minimal Ceremony Directional Sign Set', price: 72, tags: ['wedding', 'ceremony', 'directional', 'event'], options: { count: '2 ceremony directional signs', unitPrice: '$36.00 each', priority: 933 } },
+    { category: 'signs', line: 'wedding-signage', weight: '12%', name: 'Wedding Menu Table Sign Set', price: 55, tags: ['wedding', 'menu', 'tabletop', 'custom-text'], options: { count: '3 matching table signs', unitPrice: '$18.33 each', priority: 933 } },
+
+    { category: 'posters-wall-art', line: 'poster-gallery', weight: '10%', name: 'Eclectic Gallery Wall Three-Print Set', price: 58, tags: ['gallery-wall', 'maximalist', 'wall-art', 'home'], options: { count: '3 coordinated wall prints', unitPrice: '$19.33 each', priority: 906 } },
+    { category: 'posters-wall-art', line: 'poster-gallery', weight: '10%', name: 'Local Landmark Gallery Print Set', price: 52, tags: ['local', 'art-print', 'gallery-wall', 'gift'], options: { count: '2 local landmark prints', unitPrice: '$26.00 each', priority: 905 } },
+    { category: 'posters-wall-art', line: 'poster-gallery', weight: '10%', name: 'Coastal Apartment Art Print Pair', price: 46, tags: ['coastal', 'apartment', 'art-print', 'wall-art'], options: { count: '2 apartment art prints', unitPrice: '$23.00 each', priority: 904 } },
+    { category: 'posters-wall-art', line: 'poster-gallery', weight: '10%', name: 'Literary Quote Gallery Print Set', price: 48, tags: ['books', 'quote', 'gallery-wall', 'art-print'], options: { count: '3 literary quote prints', unitPrice: '$16.00 each', priority: 904 } },
+    { category: 'posters-wall-art', line: 'poster-gallery', weight: '10%', name: 'Abstract Color Story Poster Trio', price: 54, tags: ['abstract', 'poster', 'gallery-wall', 'decor'], options: { count: '3 abstract poster prints', unitPrice: '$18.00 each', priority: 903 } },
+
+    { category: 'signs', line: 'celebration-yard-signs', weight: '10%', name: 'Graduation Photo Yard Sign with H-Stake', price: 38, tags: ['graduation', 'yard-sign', 'photo', 'celebration'], options: { count: '1 24 in x 18 in yard sign with stake', unitPrice: '$38.00 each', priority: 876 } },
+    { category: 'signs', line: 'celebration-yard-signs', weight: '10%', name: 'Birthday Milestone Yard Sign', price: 36, tags: ['birthday', 'yard-sign', 'celebration', 'custom-text'], options: { count: '1 24 in x 18 in yard sign with stake', unitPrice: '$36.00 each', priority: 875 } },
+    { category: 'signs', line: 'celebration-yard-signs', weight: '10%', name: 'Baby Announcement Yard Sign', price: 34, tags: ['baby-announcement', 'yard-sign', 'celebration', 'custom-text'], options: { count: '1 24 in x 18 in yard sign with stake', unitPrice: '$34.00 each', priority: 874 } },
+    { category: 'signs', line: 'celebration-yard-signs', weight: '10%', name: 'Senior Night Sports Yard Sign', price: 39, tags: ['senior-night', 'sports', 'yard-sign', 'team'], options: { count: '1 player yard sign with stake', unitPrice: '$39.00 each', priority: 873 } },
+    { category: 'signs', line: 'celebration-yard-signs', weight: '10%', name: 'Open House Welcome Yard Sign Bundle', price: 45, tags: ['open-house', 'yard-sign', 'real-estate', 'bundle'], options: { count: '1 yard sign plus rider', unitPrice: '$45.00 per bundle', priority: 872 } },
+
+    { category: 'home-decor', line: 'wall-decals', weight: '8%', name: 'Nursery Name Wall Decal Kit', price: 34, tags: ['nursery', 'wall-decal', 'kids-room', 'custom-text'], options: { count: '1 personalized wall decal kit', unitPrice: '$34.00 per kit', priority: 836 } },
+    { category: 'home-decor', line: 'wall-decals', weight: '8%', name: 'Dorm Quote Removable Wall Decal', price: 29, tags: ['dorm', 'wall-decal', 'renter-friendly', 'quote'], options: { count: '1 removable wall decal', unitPrice: '$29.00 each', priority: 835 } },
+    { category: 'home-decor', line: 'wall-decals', weight: '8%', name: 'Kids Sports Room Name Decal', price: 32, tags: ['kids-room', 'sports', 'wall-decal', 'custom-text'], options: { count: '1 room name wall decal', unitPrice: '$32.00 each', priority: 834 } },
+    { category: 'home-decor', line: 'wall-decals', weight: '8%', name: 'Renter Friendly Accent Decal Set', price: 36, tags: ['renter-friendly', 'wall-decal', 'apartment', 'decor'], options: { count: '1 removable accent decal set', unitPrice: '$36.00 per set', priority: 833 } },
+
+    { category: 'signs', line: 'banners-backdrops', weight: '8%', name: 'First Birthday Photo Backdrop Banner', price: 88, tags: ['birthday', 'backdrop', 'photo-moment', 'banner'], options: { count: '1 4 ft x 6 ft backdrop banner', unitPrice: '$88.00 each', priority: 816 } },
+    { category: 'signs', line: 'banners-backdrops', weight: '8%', name: 'Graduation Photo Moment Banner', price: 92, tags: ['graduation', 'backdrop', 'photo-moment', 'banner'], options: { count: '1 4 ft x 6 ft photo banner', unitPrice: '$92.00 each', priority: 815 } },
+    { category: 'signs', line: 'banners-backdrops', weight: '8%', name: 'Bridal Shower Floral Backdrop', price: 96, tags: ['bridal', 'backdrop', 'floral', 'banner'], options: { count: '1 4 ft x 6 ft shower backdrop', unitPrice: '$96.00 each', priority: 814 } },
+    { category: 'signs', line: 'banners-backdrops', weight: '8%', name: 'Sports Banquet Sponsor Banner', price: 115, tags: ['sports', 'banquet', 'sponsor', 'banner'], options: { count: '1 sponsor banner', unitPrice: '$115.00 each', priority: 813 } },
+
+    { category: 'signs', line: 'acrylic-signs', weight: '8%', name: 'Frosted Acrylic Welcome Sign', price: 105, tags: ['acrylic', 'frosted', 'welcome', 'event'], options: { count: '1 premium acrylic sign', turnaround: '4-7 business days after proof approval', priority: 786 } },
+    { category: 'signs', line: 'acrylic-signs', weight: '8%', name: 'Acrylic Table Number Sign Set', price: 75, tags: ['acrylic', 'table-number', 'wedding', 'event'], options: { count: '10 acrylic table signs', unitPrice: '$7.50 each', priority: 785 } },
+    { category: 'signs', line: 'acrylic-signs', weight: '8%', name: 'Clear Acrylic Bar Menu Sign', price: 64, tags: ['acrylic', 'bar-sign', 'menu', 'tabletop'], options: { count: '1 acrylic tabletop sign', unitPrice: '$64.00 each', priority: 784 } },
+    { category: 'signs', line: 'acrylic-signs', weight: '8%', name: 'Color Backed Acrylic Baby Shower Sign', price: 82, tags: ['acrylic', 'baby-shower', 'welcome', 'event'], options: { count: '1 color-backed acrylic sign', unitPrice: '$82.00 each', priority: 783 } },
+
+    { category: 'signs', line: 'mounted-boards', weight: '8%', name: 'Graduation Photo Collage Foam Board', price: 55, tags: ['graduation', 'foam-board', 'photo-board', 'collage-board'], options: { count: '1 easel-ready foam board', unitPrice: '$55.00 each', priority: 766 } },
+    { category: 'signs', line: 'mounted-boards', weight: '8%', name: 'Memorial Celebration Photo Board', price: 62, tags: ['memorial', 'foam-board', 'photo-board', 'easel-ready'], options: { count: '1 mounted photo board', unitPrice: '$62.00 each', priority: 765 } },
+    { category: 'signs', line: 'mounted-boards', weight: '8%', name: 'Wedding Welcome Foam Board Sign', price: 58, tags: ['wedding', 'foam-board', 'mounted', 'welcome'], options: { count: '1 mounted wedding sign', unitPrice: '$58.00 each', priority: 764 } },
+    { category: 'signs', line: 'mounted-boards', weight: '8%', name: 'Retirement Timeline Mounted Board', price: 64, tags: ['retirement', 'mounted', 'photo-board', 'easel-ready'], options: { count: '1 mounted timeline board', unitPrice: '$64.00 each', priority: 763 } },
+
+    { category: 'car-decals', line: 'automotive-decals', weight: '6%', name: 'Family Name Rear Window Decal', price: 18, tags: ['family', 'rear-window', 'custom-text', 'automotive'], options: { count: '1 personalized rear window decal', unitPrice: '$18.00 each', priority: 746 } },
+    { category: 'car-decals', line: 'automotive-decals', weight: '6%', name: 'Lake Life Boat and Car Decal', price: 16, tags: ['boat', 'car', 'outdoor', 'automotive'], options: { count: '1 outdoor vinyl decal', unitPrice: '$16.00 each', priority: 745 } },
+    { category: 'car-decals', line: 'automotive-decals', weight: '6%', name: 'Memorial Ribbon Car Decal', price: 15, tags: ['memorial', 'car', 'rear-window', 'automotive'], options: { count: '1 outdoor vinyl decal', unitPrice: '$15.00 each', priority: 744 } },
+
+    { category: 'posters-wall-art', line: 'dorm-fandom', weight: '6%', name: 'Dorm Refresh Poster Mini Set', price: 38, tags: ['dorm', 'poster', 'move-in', 'bundle'], options: { count: '3 dorm poster prints', unitPrice: '$12.67 each', priority: 726 } },
+    { category: 'posters-wall-art', line: 'dorm-fandom', weight: '6%', name: 'Travel Statement Dorm Print Pair', price: 42, tags: ['dorm', 'travel', 'statement', 'poster'], options: { count: '2 statement dorm prints', unitPrice: '$21.00 each', priority: 725 } },
+    { category: 'posters-wall-art', line: 'dorm-fandom', weight: '6%', name: 'Fan Cave Wall Art Poster Set', price: 45, tags: ['fandom', 'fan-cave', 'poster', 'gamer'], options: { count: '3 fan-cave posters', unitPrice: '$15.00 each', priority: 724 } },
+
+    { category: 'home-decor', line: 'decorative-signs', weight: '6%', name: 'Personalized Family Entry Sign', price: 48, tags: ['decorative-sign', 'home-sign', 'family', 'custom-text'], options: { count: '1 personalized home sign', unitPrice: '$48.00 each', priority: 706 } },
+    { category: 'home-decor', line: 'decorative-signs', weight: '6%', name: 'Garage Coordinates Wall Sign', price: 44, tags: ['decorative-sign', 'garage', 'coordinates', 'custom-text'], options: { count: '1 garage wall sign', unitPrice: '$44.00 each', priority: 705 } },
+    { category: 'home-decor', line: 'decorative-signs', weight: '6%', name: 'Classroom Name Door Sign', price: 36, tags: ['decorative-sign', 'classroom', 'teacher', 'custom-text'], options: { count: '1 classroom door sign', unitPrice: '$36.00 each', priority: 704 } },
+
+    { category: 'car-decals', line: 'car-magnets', weight: '6%', name: 'Graduation Parade Car Magnet', price: 58, tags: ['graduation', 'car-magnet', 'removable-magnet', 'celebration'], options: { badge: 'Car magnet', count: '2 removable car magnets', unitPrice: '$29.00 each', priority: 656 } },
+    { category: 'car-decals', line: 'car-magnets', weight: '6%', name: 'Small Business Removable Car Magnet Pair', price: 72, tags: ['small-business', 'car-magnet', 'removable-magnet', 'logo'], options: { badge: 'Car magnet', count: '2 removable car magnets', unitPrice: '$36.00 each', priority: 655 } },
+    { category: 'car-decals', line: 'car-magnets', weight: '6%', name: 'Student Driver Removable Car Magnet', price: 48, tags: ['student-driver', 'car-magnet', 'removable-magnet', 'family'], options: { badge: 'Car magnet', count: '2 removable car magnets', unitPrice: '$24.00 each', priority: 654 } }
+  ];
+
+  weightedLaunchProducts.forEach(item => {
+    add(item.category, item.name, item.price, [...item.tags, 'research-weighted', 'line-' + item.line, 'weight-' + item.weight.replace('%', '')], {
+      ...item.options,
+      demand: item.options.demand || 'High-fit launch product',
+      researchLine: item.line,
+      researchWeight: item.weight
+    });
+  });
+
+  if (products.length !== 350) {
+    throw new Error('Expected 350 shop products, generated ' + products.length);
   }
 
   window.tridicoShopProducts = products;
