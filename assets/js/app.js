@@ -449,10 +449,16 @@
           <label>Preferred time
             <select name="preferredTime" required>
               <option value="">Choose a time</option>
-              <option>Morning</option>
-              <option>Midday</option>
-              <option>Afternoon</option>
-              <option>First available</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+              <option>First Available</option>
             </select>
           </label>
         </div>
