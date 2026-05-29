@@ -594,6 +594,31 @@
         }
       }
     },
+    'stickers-dark-academia-desk-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/YpYx46zoisrov6m',
+        artwork: 'https://www.canva.com/d/HkRAb4Dd50BfUBM'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-011',
+        applied: {
+          jobId: '512f8b38-ad7f-4714-ad69-f2b1124e045c',
+          candidateId: 'dg-e442be7d-c101-439d-ba0b-2d595a9c2e69',
+          designId: 'DAHLA4JPuU8',
+          editUrl: 'https://www.canva.com/d/YpYx46zoisrov6m',
+          viewUrl: 'https://www.canva.com/d/_DEafFrkuLPL3jA'
+        },
+        artwork: {
+          jobId: '025fb2ee-6e35-4c13-806a-405efa81942d',
+          candidateId: 'dg-19b83ea1-a11a-45b7-8fae-a8aa02a065b3',
+          designId: 'DAHLAxZwPPk',
+          editUrl: 'https://www.canva.com/d/HkRAb4Dd50BfUBM',
+          viewUrl: 'https://www.canva.com/d/YBzXekgu4k2DZmi'
+        }
+      }
+    },
     'stickers-milestone-moment-sticker-bundle': {
       image: 'assets/images/shop/canva-test/stickers-milestone-moment-sticker-bundle-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-milestone-moment-sticker-bundle-artwork.svg',
