@@ -671,6 +671,31 @@
         }
       }
     },
+    'stickers-gamer-quest-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-gamer-quest-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-gamer-quest-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/sVwK7sx0rpRqobs',
+        artwork: 'https://www.canva.com/d/xuPKeUiklyI-_uk'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-018',
+        applied: {
+          jobId: '6293cfa5-b940-4793-9797-f7533d444c66',
+          candidateId: 'dg-25b18cde-b704-4951-a0f3-96d599e35b7c',
+          designId: 'DAHLBYF1j7E',
+          editUrl: 'https://www.canva.com/d/sVwK7sx0rpRqobs',
+          viewUrl: 'https://www.canva.com/d/1t3Tr_POSURA1mg'
+        },
+        artwork: {
+          jobId: 'c22cc404-21ed-4495-9923-8b3282a1a891',
+          candidateId: 'dg-43d79217-5a99-4591-94ee-ba038123a1cc',
+          designId: 'DAHLBS9loPo',
+          editUrl: 'https://www.canva.com/d/xuPKeUiklyI-_uk',
+          viewUrl: 'https://www.canva.com/d/MF2lPGfnm2Bek--'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
