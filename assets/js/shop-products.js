@@ -584,6 +584,36 @@
         applied: 'https://www.canva.com/d/t8dSUXMantnuKnA',
         artwork: 'https://www.canva.com/d/SVA-rwUVCkzNmcm'
       }
+    },
+    'stickers-custom-name-label-five-pack': {
+      image: 'assets/images/shop/canva-test/stickers-custom-name-label-five-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-custom-name-label-five-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/0YSoW0ATVWuxdq3',
+        artwork: 'https://www.canva.com/d/jY8WzGnjtkrcUHR'
+      }
+    },
+    'stickers-teacher-reward-mega-sticker-sheet': {
+      image: 'assets/images/shop/canva-test/stickers-teacher-reward-mega-sticker-sheet-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-teacher-reward-mega-sticker-sheet-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/OALalTP-A_4hf-f',
+        artwork: 'https://www.canva.com/d/-QKVY7UIU25dV7Z'
+      }
+    },
+    'stickers-allergy-alert-kids-sticker-set': {
+      image: 'assets/images/shop/canva-test/stickers-allergy-alert-kids-sticker-set-applied.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/aMQvIDRXYbiqKSE'
+      }
+    },
+    'stickers-baby-shower-favor-stickers': {
+      image: 'assets/images/shop/canva-test/stickers-baby-shower-favor-stickers-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-baby-shower-favor-stickers-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/FD6nDtHcYcizWAN',
+        artwork: 'https://www.canva.com/d/uhW-9b_kAl8Z1yk'
+      }
     }
   };
 
