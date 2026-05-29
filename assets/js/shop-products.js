@@ -698,6 +698,31 @@
         }
       }
     },
+    'stickers-goth-garden-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-goth-garden-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-goth-garden-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/MKIkeYzpssIvVk8',
+        artwork: 'https://www.canva.com/d/kq2KmwKlDXuMysP'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-020-goth-garden',
+        applied: {
+          jobId: '0fef9886-2916-462b-8c82-a5623b6bbbf9',
+          candidateId: 'dg-1cd5711f-9b8c-43d4-baa8-d0c0be581529',
+          designId: 'DAHLBSqNPZ8',
+          editUrl: 'https://www.canva.com/d/MKIkeYzpssIvVk8',
+          viewUrl: 'https://www.canva.com/d/Aq7MBzE33FYcgrQ'
+        },
+        artwork: {
+          jobId: 'c9baddd1-f7c8-47e5-92fb-ff675d17a7db',
+          candidateId: 'dg-d662b9ab-5b25-44d3-b639-b02ca5076bf0',
+          designId: 'DAHLBc7RTtM',
+          editUrl: 'https://www.canva.com/d/kq2KmwKlDXuMysP',
+          viewUrl: 'https://www.canva.com/d/zr5psTqu7emGY1d'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
