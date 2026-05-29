@@ -616,6 +616,36 @@
         applied: 'https://www.canva.com/d/FD6nDtHcYcizWAN',
         artwork: 'https://www.canva.com/d/uhW-9b_kAl8Z1yk'
       }
+    },
+    'stickers-bakery-box-label-sticker-set': {
+      image: 'assets/images/shop/canva-test/stickers-bakery-box-label-sticker-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-bakery-box-label-sticker-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/CnPsaB-QffqjhcT',
+        artwork: 'https://www.canva.com/d/Ef5OKjr6K8BqLAR'
+      }
+    },
+    'mug-stickers-bakery-cup-label-decal-set': {
+      image: 'assets/images/shop/canva-test/mug-stickers-bakery-cup-label-decal-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/mug-stickers-bakery-cup-label-decal-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/ts3qbXFCB7llor-',
+        artwork: 'https://www.canva.com/d/F-Xkqa9af-N7xRF'
+      }
+    },
+    'stickers-birthday-party-favor-stickers': {
+      artworkImage: 'assets/images/shop/canva-test/stickers-birthday-party-favor-stickers-artwork.svg',
+      canvaDesigns: {
+        artwork: 'https://www.canva.com/d/ld7XHjtyujfmDPz'
+      }
+    },
+    'stickers-campfire-weekend-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-campfire-weekend-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-campfire-weekend-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/RgasuIe_8xqsnPB',
+        artwork: 'https://www.canva.com/d/_WedFcQXlAINdt4'
+      }
     }
   };
 
