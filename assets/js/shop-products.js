@@ -740,6 +740,31 @@
         }
       }
     },
+    'tech-decals-digital-sticker-bomb-laptop-pack': {
+      image: 'assets/images/shop/canva-test/tech-decals-digital-sticker-bomb-laptop-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/tech-decals-digital-sticker-bomb-laptop-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/GQQu1ornhsZBXhQ',
+        artwork: 'https://www.canva.com/d/8YfCqypCHB0TZvc'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-015',
+        applied: {
+          jobId: '17f3a08a-0b7f-436c-a76a-17b1dacb9fe4',
+          candidateId: 'dg-8376c8db-cf82-4f1a-ada9-c63df9c2f6af',
+          designId: 'DAHLA6QBYaM',
+          editUrl: 'https://www.canva.com/d/GQQu1ornhsZBXhQ',
+          viewUrl: 'https://www.canva.com/d/BPCxaAE5WMWpDDT'
+        },
+        artwork: {
+          jobId: 'f8dfd4a6-ec84-4368-aea1-ed457a2896b1',
+          candidateId: 'dg-2230a142-2178-4991-b286-1768f8364f61',
+          designId: 'DAHLBHYNkZo',
+          editUrl: 'https://www.canva.com/d/8YfCqypCHB0TZvc',
+          viewUrl: 'https://www.canva.com/d/xtBHTMD8lw_KVtW'
+        }
+      }
+    },
     'tech-decals-desk-cable-label-sticker-pack': {
       image: 'assets/images/shop/canva-test/tech-decals-desk-cable-label-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/tech-decals-desk-cable-label-sticker-pack-artwork.svg',
