@@ -698,6 +698,57 @@
         }
       }
     },
+    'tech-decals-podcast-gear-label-decals': {
+      image: 'assets/images/shop/canva-test/tech-decals-podcast-gear-label-decals-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/tech-decals-podcast-gear-label-decals-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/tfC7VJSQ1znpKXK',
+        artwork: 'https://www.canva.com/d/Eh99LNbxE0eAsFr'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-037-podcast-gear-existing-canva',
+        applied: {
+          source: 'existing owned Canva design signed document-export thumbnail',
+          designId: 'DAHLA5eXAyA',
+          editUrl: 'https://www.canva.com/d/tfC7VJSQ1znpKXK',
+          viewUrl: 'https://www.canva.com/d/aMvNXaMvH5yhElw',
+          sourceSha256: '121AB17287E1E41FC88B5B06B5B98944EC2E5954E3AAAFFD3A21610D136A77F9'
+        },
+        artwork: {
+          source: 'existing owned Canva design signed document-export thumbnail',
+          designId: 'DAHLA8cr27k',
+          editUrl: 'https://www.canva.com/d/Eh99LNbxE0eAsFr',
+          viewUrl: 'https://www.canva.com/d/7QKrTUiT89tcchn',
+          sourceSha256: '8C048882E922FA680D63111D4A18FEDA9267561276C2201ABB0EEE7AE0532C92'
+        }
+      }
+    },
+    'stickers-name-label-school-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-name-label-school-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-name-label-school-sticker-pack-artwork.svg',
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-037-name-label-school-existing-canva',
+        applied: {
+          source: 'existing owned Canva thumbnail saved by C2 in review_work',
+          jobId: null,
+          candidateId: null,
+          designId: null,
+          editUrl: null,
+          viewUrl: null,
+          sourceSha256: 'D1D8791691AC9384DEDBC7EB59FD1DF56C2B5E4AC96B54242FF1257FDDD40607'
+        },
+        artwork: {
+          source: 'C1 crop of existing owned Canva thumbnail removing incorrect five-pack headline/footer while retaining the product-photo sticker composition',
+          jobId: null,
+          candidateId: null,
+          designId: null,
+          editUrl: null,
+          viewUrl: null,
+          sourceSha256: 'A7DD35CBAB645C82063B9BCB7DDDA9B71FBAAA1623A922F0A415A6F10700549E',
+          originalSourceSha256: 'BA8C147B7D9E915077FAD1EAD5D52DE154728B073DD7F4E06C31B3BBD677B5FF'
+        }
+      }
+    },
     'stickers-goth-garden-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-goth-garden-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-goth-garden-sticker-pack-artwork.svg',
@@ -1317,6 +1368,31 @@
           editUrl: 'https://www.canva.com/d/hnvDrrJ2ZZahVOT',
           viewUrl: 'https://www.canva.com/d/5OfVZBdqtPk3-5z',
           sourceSha256: '3E861C66A1C87416FD0E8FBC53FBB3421A38392233BB679326875B21F09E7F20'
+        }
+      }
+    },
+    'stickers-teacher-reward-sticker-sheet': {
+      image: 'assets/images/shop/canva-test/stickers-teacher-reward-sticker-sheet-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-teacher-reward-sticker-sheet-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/L34HFQdEMcAp7hc',
+        artwork: 'https://www.canva.com/d/xyAWsBWbpVpdB4s'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-036-teacher-reward-existing-canva',
+        applied: {
+          source: 'existing owned Canva design signed document-export thumbnail',
+          designId: 'DAHLAMZoOPs',
+          editUrl: 'https://www.canva.com/d/L34HFQdEMcAp7hc',
+          viewUrl: 'https://www.canva.com/d/xIfwD4qY7eKgZss',
+          sourceSha256: 'ACEEB3587FFB26275337604174B9B7E656F1E5DA297CCB59F480564F4EDCE5A4'
+        },
+        artwork: {
+          source: 'existing owned Canva design signed document-export thumbnail cropped locally to remove non-product promo text',
+          designId: 'DAHLAAazY6k',
+          editUrl: 'https://www.canva.com/d/xyAWsBWbpVpdB4s',
+          viewUrl: 'https://www.canva.com/d/n7q_qflybS-_vAq',
+          sourceSha256: '58332FDA99F41E497D22048B262484AB0698EFF87A48F88D9E99AB2E83AAF10D'
         }
       }
     },

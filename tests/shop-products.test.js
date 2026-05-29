@@ -124,9 +124,12 @@ test('featured shop order groups upgraded decks before custom and standard produ
     return a.originalOrder - b.originalOrder;
   });
   const upgradedCount = [...staticCustomCards, ...products].filter(product => product.canvaDeck).length;
+  const firstStandardRank = sorted.findIndex(product => !product.canvaDeck) + 1;
 
-  assert.ok(upgradedCount > 0);
+  assert.ok(upgradedCount >= 50, `expected at least 50 upgraded Canva decks, got ${upgradedCount}`);
+  assert.ok(firstStandardRank > 50, `expected standard products to start after rank 50, got ${firstStandardRank}`);
   assert.ok(sorted.slice(0, upgradedCount).every(product => product.canvaDeck), 'upgraded Canva decks should occupy the first featured positions');
+  assert.ok(sorted.slice(0, 50).every(product => product.canvaDeck), 'the first 50 featured positions should be upgraded Canva decks');
   assert.ok(sorted.slice(0, upgradedCount).some(product => product.category === 'custom-services'), 'Custom Services should stay categorized while included in the upgraded deck block');
   assert.ok(sorted.slice(upgradedCount).every(product => !product.canvaDeck), 'standard products should start after the upgraded deck block');
 });
