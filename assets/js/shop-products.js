@@ -620,6 +620,31 @@
         }
       }
     },
+    'stickers-dogs-doing-jobs-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-dogs-doing-jobs-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-dogs-doing-jobs-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/Rv74HMhI275cJJ4',
+        artwork: 'https://www.canva.com/d/-uAhdHKjBhyCcam'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-017',
+        applied: {
+          jobId: '1f414d2d-6dc1-497a-8763-dc29bfcb0710',
+          candidateId: 'dg-c0d418af-d6af-45d3-b093-cd1696b95c78',
+          designId: 'DAHLBFchJNk',
+          editUrl: 'https://www.canva.com/d/Rv74HMhI275cJJ4',
+          viewUrl: 'https://www.canva.com/d/Iz1Qxvd053uQYnb'
+        },
+        artwork: {
+          jobId: '8d5e741a-1386-4342-be1e-2c798c37fe78',
+          candidateId: 'dg-6cb9914c-4f5d-4797-817a-00ca627bb151',
+          designId: 'DAHLBHxazZo',
+          editUrl: 'https://www.canva.com/d/-uAhdHKjBhyCcam',
+          viewUrl: 'https://www.canva.com/d/wQaQofERHnNtBtn'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
