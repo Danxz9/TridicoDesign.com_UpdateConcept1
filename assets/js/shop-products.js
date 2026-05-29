@@ -727,25 +727,24 @@
       image: 'assets/images/shop/canva-test/stickers-graduation-cap-sticker-set-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-graduation-cap-sticker-set-artwork.svg',
       canvaDesigns: {
-        applied: 'https://www.canva.com/d/ZWjfOboLR6pb357',
-        artwork: 'https://www.canva.com/d/XkXNMYipGwUq6aE'
+        applied: 'https://www.canva.com/d/jn6fSNvh0Fcv3vw',
+        artwork: 'https://www.canva.com/d/LwDGVZfa-XM_oSg'
       },
       canvaTrace: {
-        sourceBatch: '2026-05-29_batch-022-graduation-cap',
+        sourceBatch: '2026-05-29_batch-021-graduation-cap',
         applied: {
-          jobId: 'c9611fc8-7c4e-4c69-b985-8b2b66765e32',
-          candidateId: 'dg-d1a39baf-2791-4e0d-9ef1-9dbad6714a23',
-          designId: 'DAHLBrRq618',
-          editUrl: 'https://www.canva.com/d/ZWjfOboLR6pb357',
-          viewUrl: 'https://www.canva.com/d/-38QsjUXm7gSkXB'
+          jobId: 'b29eaf33-9370-4905-8159-1eaf527fc980',
+          candidateId: 'dg-9291b4eb-7617-4303-937f-9568123fbceb',
+          designId: 'DAHLBoGfQVs',
+          editUrl: 'https://www.canva.com/d/jn6fSNvh0Fcv3vw',
+          viewUrl: 'https://www.canva.com/d/G89QqUgKzNWLJSE'
         },
         artwork: {
-          source: 'owned Canva design search after artwork quota block',
-          jobId: null,
-          candidateId: null,
+          jobId: '31c7f8d3-7886-4be7-a6de-005a757667b3',
+          candidateId: 'dg-127b3ce1-c20b-43a1-9a7a-c9e58292ac8e',
           designId: 'DAHLBq-hWc4',
-          editUrl: 'https://www.canva.com/d/XkXNMYipGwUq6aE',
-          viewUrl: 'https://www.canva.com/d/LdXk0D2CnktdfJz'
+          editUrl: 'https://www.canva.com/d/LwDGVZfa-XM_oSg',
+          viewUrl: 'https://www.canva.com/d/5MEkZvXacAXL5Z9'
         }
       }
     },
