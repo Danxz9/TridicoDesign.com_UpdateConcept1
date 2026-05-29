@@ -715,6 +715,31 @@
         artwork: 'https://www.canva.com/d/ksyJurpPYznYVEk'
       }
     },
+    'tech-decals-creator-studio-label-set': {
+      image: 'assets/images/shop/canva-test/tech-decals-creator-studio-label-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/tech-decals-creator-studio-label-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/j_QtchyBOH32hzd',
+        artwork: 'https://www.canva.com/d/ysrNDUQI-Cf26xu'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-014',
+        applied: {
+          jobId: 'ac8c18c5-ee2c-4b0c-9d33-c69f2daab895',
+          candidateId: 'dg-2b204eef-f502-4d3d-bb4a-d04ce351643a',
+          designId: 'DAHLAzFkPnY',
+          editUrl: 'https://www.canva.com/d/j_QtchyBOH32hzd',
+          viewUrl: 'https://www.canva.com/d/IRwHLkydHOHQPzv'
+        },
+        artwork: {
+          jobId: '5381501a-4a7a-424f-8c8d-a0b402edb4d4',
+          candidateId: 'dg-478728a8-8ab8-45fd-96d1-f92fea2cab0d',
+          designId: 'DAHLA0Yy1Yk',
+          editUrl: 'https://www.canva.com/d/ysrNDUQI-Cf26xu',
+          viewUrl: 'https://www.canva.com/d/VKoRTdMlJB8P-bf'
+        }
+      }
+    },
     'tech-decals-desk-cable-label-sticker-pack': {
       image: 'assets/images/shop/canva-test/tech-decals-desk-cable-label-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/tech-decals-desk-cable-label-sticker-pack-artwork.svg',
