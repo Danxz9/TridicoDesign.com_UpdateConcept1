@@ -858,26 +858,26 @@
       image: 'assets/images/shop/canva-test/stickers-library-bookplate-sticker-set-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-library-bookplate-sticker-set-artwork.svg',
       canvaDesigns: {
-        applied: 'https://www.canva.com/d/v9RNsG81d-dzMYk',
-        artwork: 'https://www.canva.com/d/v9RNsG81d-dzMYk'
+        applied: 'https://www.canva.com/d/yJ1UqqyafgwmKye',
+        artwork: 'https://www.canva.com/d/5nkYpvi5YrW20v9'
       },
       canvaTrace: {
         sourceBatch: '2026-05-29_batch-027-library-bookplate',
         applied: {
-          source: 'current-turn Canva generation',
-          jobId: '5b624d57-fcfc-413b-b5e0-7f4e3e6e339c',
-          candidateId: 'dg-d74f387d-a1cc-4c6b-b217-f848774860ba',
+          source: 'existing owned Canva design search, signed document-export thumbnail',
+          jobId: null,
+          candidateId: null,
           designId: 'DAHLB9QZWw4',
-          editUrl: 'https://www.canva.com/d/v9RNsG81d-dzMYk',
-          viewUrl: 'https://www.canva.com/d/KXyXHWW1YJ_w2T8'
+          editUrl: 'https://www.canva.com/d/yJ1UqqyafgwmKye',
+          viewUrl: 'https://www.canva.com/d/eB4U1H0eSxOPyhQ'
         },
         artwork: {
-          source: 'Canva-derived crop from selected Canva candidate',
-          jobId: '5b624d57-fcfc-413b-b5e0-7f4e3e6e339c',
-          candidateId: 'dg-d74f387d-a1cc-4c6b-b217-f848774860ba',
-          designId: 'DAHLB9QZWw4',
-          editUrl: 'https://www.canva.com/d/v9RNsG81d-dzMYk',
-          viewUrl: 'https://www.canva.com/d/KXyXHWW1YJ_w2T8'
+          source: 'existing owned Canva design search, cropped product-photo area from signed document-export thumbnail',
+          jobId: null,
+          candidateId: null,
+          designId: 'DAHLByPdt2Q',
+          editUrl: 'https://www.canva.com/d/5nkYpvi5YrW20v9',
+          viewUrl: 'https://www.canva.com/d/p6AEeLDlL1H6CS4'
         }
       }
     },
