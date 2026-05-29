@@ -723,6 +723,32 @@
         }
       }
     },
+    'stickers-graduation-cap-sticker-set': {
+      image: 'assets/images/shop/canva-test/stickers-graduation-cap-sticker-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-graduation-cap-sticker-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/ZWjfOboLR6pb357',
+        artwork: 'https://www.canva.com/d/XkXNMYipGwUq6aE'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-022-graduation-cap',
+        applied: {
+          jobId: 'c9611fc8-7c4e-4c69-b985-8b2b66765e32',
+          candidateId: 'dg-d1a39baf-2791-4e0d-9ef1-9dbad6714a23',
+          designId: 'DAHLBrRq618',
+          editUrl: 'https://www.canva.com/d/ZWjfOboLR6pb357',
+          viewUrl: 'https://www.canva.com/d/-38QsjUXm7gSkXB'
+        },
+        artwork: {
+          source: 'owned Canva design search after artwork quota block',
+          jobId: null,
+          candidateId: null,
+          designId: 'DAHLBq-hWc4',
+          editUrl: 'https://www.canva.com/d/XkXNMYipGwUq6aE',
+          viewUrl: 'https://www.canva.com/d/LdXk0D2CnktdfJz'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
