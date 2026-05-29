@@ -101,7 +101,7 @@ test('featured shop order groups upgraded decks before custom and standard produ
     id: card.id,
     category: card.category,
     priority: 0,
-    canvaDeck: false,
+    canvaDeck: true,
     originalOrder: index
   }));
   const catalogCards = products.map((product, index) => ({
@@ -123,11 +123,12 @@ test('featured shop order groups upgraded decks before custom and standard produ
     if (priorityDiff) return priorityDiff;
     return a.originalOrder - b.originalOrder;
   });
-  const upgradedCount = products.filter(product => product.canvaDeck).length;
+  const upgradedCount = [...staticCustomCards, ...products].filter(product => product.canvaDeck).length;
 
   assert.ok(upgradedCount > 0);
   assert.ok(sorted.slice(0, upgradedCount).every(product => product.canvaDeck), 'upgraded Canva decks should occupy the first featured positions');
-  assert.ok(sorted.slice(upgradedCount, upgradedCount + staticCustomCards.length).every(product => product.category === 'custom-services'), 'Custom Services should sit directly after upgraded decks');
+  assert.ok(sorted.slice(0, upgradedCount).some(product => product.category === 'custom-services'), 'Custom Services should stay categorized while included in the upgraded deck block');
+  assert.ok(sorted.slice(upgradedCount).every(product => !product.canvaDeck), 'standard products should start after the upgraded deck block');
 });
 
 test('shop catalog covers requested product lines', () => {

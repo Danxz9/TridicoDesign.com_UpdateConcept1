@@ -972,6 +972,7 @@
             href
           });
         }
+        if (category === 'custom-services') card.dataset.shopCanvaDeck = 'true';
         body.innerHTML = `
           <span class="shop-badge">${escapeHtml(badge)}</span>
           <h2><a href="${escapeHtml(href)}">${escapeHtml(name)}</a></h2>
