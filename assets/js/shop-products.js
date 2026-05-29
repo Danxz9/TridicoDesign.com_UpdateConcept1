@@ -715,6 +715,31 @@
         artwork: 'https://www.canva.com/d/ksyJurpPYznYVEk'
       }
     },
+    'tech-decals-desk-cable-label-sticker-pack': {
+      image: 'assets/images/shop/canva-test/tech-decals-desk-cable-label-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/tech-decals-desk-cable-label-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/nqHmLA72BvnAU0p',
+        artwork: 'https://www.canva.com/d/HFGr2PYUIwI5rg6'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-012',
+        applied: {
+          jobId: 'f0a94cf0-0974-4020-a925-5b779d862ded',
+          candidateId: 'dg-7ce1bc89-3a82-470b-b8bb-32a75b4df286',
+          designId: 'DAHLAw8_wBA',
+          editUrl: 'https://www.canva.com/d/nqHmLA72BvnAU0p',
+          viewUrl: 'https://www.canva.com/d/VtARAslNhs0bcbi'
+        },
+        artwork: {
+          jobId: '3a75347b-f582-4002-879b-5df94bbcc1a9',
+          candidateId: 'dg-c27732e5-62c1-4d1c-814c-47b41bbeb550',
+          designId: 'DAHLAyab7mA',
+          editUrl: 'https://www.canva.com/d/HFGr2PYUIwI5rg6',
+          viewUrl: 'https://www.canva.com/d/mJ1N6xZPdLe5tZP'
+        }
+      }
+    },
     'stickers-chore-chart-sticker-sheet': {
       image: 'assets/images/shop/canva-test/stickers-chore-chart-sticker-sheet-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-chore-chart-sticker-sheet-artwork.svg',
