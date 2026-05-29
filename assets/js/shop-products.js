@@ -665,6 +665,32 @@
         artwork: 'https://www.canva.com/d/ksyJurpPYznYVEk'
       }
     },
+    'tech-decals-creator-studio-label-set': {
+      image: 'assets/images/shop/canva-test/tech-decals-creator-studio-label-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/tech-decals-creator-studio-label-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/dqn4uBJQn_Jj9nd',
+        artwork: 'https://www.canva.com/d/5kIWzvGobLnyxxX'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-011',
+        applied: {
+          sourceBatch: '2026-05-28_batch-010',
+          jobId: 'f85e1f27-5e8e-4a0b-a10f-2036e801fc39',
+          candidateId: 'dg-f38fe7b2-18f5-48a6-a14f-8326b5ac3c22',
+          designId: 'DAHLAmHHizE',
+          editUrl: 'https://www.canva.com/d/dqn4uBJQn_Jj9nd',
+          viewUrl: 'https://www.canva.com/d/KYLePMDmk8WPnv5'
+        },
+        artwork: {
+          jobId: '3f6bbc49-4ec2-4679-b1f1-10e42188c831',
+          candidateId: 'dg-26d20e90-a344-416e-befc-565579d66f3a',
+          designId: 'DAHLAu4cEec',
+          editUrl: 'https://www.canva.com/d/5kIWzvGobLnyxxX',
+          viewUrl: 'https://www.canva.com/d/Zg5bMN4KEO856xv'
+        }
+      }
+    },
     'stickers-chore-chart-sticker-sheet': {
       image: 'assets/images/shop/canva-test/stickers-chore-chart-sticker-sheet-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-chore-chart-sticker-sheet-artwork.svg',
