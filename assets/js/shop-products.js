@@ -800,6 +800,33 @@
         }
       }
     },
+    'stickers-kawaii-snack-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-kawaii-snack-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-kawaii-snack-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/jG4xQa90adCrv1v',
+        artwork: 'https://www.canva.com/d/YN_oiGuX3JMRMkB'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-025-kawaii-snack',
+        applied: {
+          source: 'current-turn Canva generation',
+          jobId: '71c70118-0c3a-4952-8c5c-e932fb1b26bb',
+          candidateId: 'dg-d7dbb386-fbd8-405b-a0f0-452046b66172',
+          designId: 'DAHLBx7DDfE',
+          editUrl: 'https://www.canva.com/d/jG4xQa90adCrv1v',
+          viewUrl: 'https://www.canva.com/d/ZP53WBzCtl9EJ-s'
+        },
+        artwork: {
+          source: 'current-turn Canva generation cropped product-photo area',
+          jobId: '71c70118-0c3a-4952-8c5c-e932fb1b26bb',
+          candidateId: 'dg-7e691d67-a2fd-4a39-aba7-18edec4fe368',
+          designId: 'DAHLB8QQnk8',
+          editUrl: 'https://www.canva.com/d/YN_oiGuX3JMRMkB',
+          viewUrl: 'https://www.canva.com/d/wrPLZZsmJAJfWnW'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
