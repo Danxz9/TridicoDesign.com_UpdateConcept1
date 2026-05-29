@@ -1291,6 +1291,35 @@
         }
       }
     },
+    'stickers-sports-season-sticker-sheet': {
+      image: 'assets/images/shop/canva-test/stickers-sports-season-sticker-sheet-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-sports-season-sticker-sheet-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/Wvued8p5-4_dOZw',
+        artwork: 'https://www.canva.com/d/hnvDrrJ2ZZahVOT'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-033-sports-season',
+        applied: {
+          source: 'current-turn Canva generation converted to editable design, signed document-export thumbnail',
+          jobId: '610b0733-4896-40f8-8227-65a4d924587a',
+          candidateId: 'dg-7c5c6ef0-1ea7-4ca0-9fe2-ed7148a9391a',
+          designId: 'DAHLCJ7DORw',
+          editUrl: 'https://www.canva.com/d/Wvued8p5-4_dOZw',
+          viewUrl: 'https://www.canva.com/d/_YkHFLpDDvUgRlH',
+          sourceSha256: 'D6F86B8AF06FAC2A16AC08F8F47D4A8A6573686E5AA989F1E979A8F3B74553C6'
+        },
+        artwork: {
+          source: 'current-turn Canva generation converted to editable design, signed document-export thumbnail',
+          jobId: '9fb136aa-a769-4d0d-81d2-66f3aa05f877',
+          candidateId: 'dg-bf973bd9-1530-4114-b1ed-08c31dcb5b50',
+          designId: 'DAHLCBh0jcc',
+          editUrl: 'https://www.canva.com/d/hnvDrrJ2ZZahVOT',
+          viewUrl: 'https://www.canva.com/d/5OfVZBdqtPk3-5z',
+          sourceSha256: '3E861C66A1C87416FD0E8FBC53FBB3421A38392233BB679326875B21F09E7F20'
+        }
+      }
+    },
     'fleet-wrap-package': {
       image: 'assets/images/shop/generated/custom-services/fleet-wrap-package-applied.svg',
       artworkImage: 'assets/images/shop/generated/custom-services/fleet-wrap-package-artwork.svg',
