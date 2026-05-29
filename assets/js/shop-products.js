@@ -594,6 +594,32 @@
         }
       }
     },
+    'stickers-dino-explorer-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-dino-explorer-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-dino-explorer-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/ZmVQLGXs3jsGtq2',
+        artwork: 'https://www.canva.com/d/LCVacR1XYGD14i4'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-017',
+        applied: {
+          sourceBatch: '2026-05-29_batch-016',
+          jobId: 'e188019d-9cf3-4d53-8bf7-cfa534b1e857',
+          candidateId: 'dg-43c2bfcd-ef1b-4b7d-8517-7f906cb5bd35',
+          designId: 'DAHLBJinM3A',
+          editUrl: 'https://www.canva.com/d/ZmVQLGXs3jsGtq2',
+          viewUrl: 'https://www.canva.com/d/kHMBr8uQbiYuD-1'
+        },
+        artwork: {
+          jobId: '85d0785b-6182-4c19-abe1-4d3b729aa0d5',
+          candidateId: 'dg-06ea0d27-8129-40f3-8aea-47e3f4429e30',
+          designId: 'DAHLBLDK1Hw',
+          editUrl: 'https://www.canva.com/d/LCVacR1XYGD14i4',
+          viewUrl: 'https://www.canva.com/d/ZwfHyID3VE3KUef'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
