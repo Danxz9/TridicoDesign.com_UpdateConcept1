@@ -854,6 +854,33 @@
         }
       }
     },
+    'stickers-library-bookplate-sticker-set': {
+      image: 'assets/images/shop/canva-test/stickers-library-bookplate-sticker-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-library-bookplate-sticker-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/v9RNsG81d-dzMYk',
+        artwork: 'https://www.canva.com/d/v9RNsG81d-dzMYk'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-027-library-bookplate',
+        applied: {
+          source: 'current-turn Canva generation',
+          jobId: '5b624d57-fcfc-413b-b5e0-7f4e3e6e339c',
+          candidateId: 'dg-d74f387d-a1cc-4c6b-b217-f848774860ba',
+          designId: 'DAHLB9QZWw4',
+          editUrl: 'https://www.canva.com/d/v9RNsG81d-dzMYk',
+          viewUrl: 'https://www.canva.com/d/KXyXHWW1YJ_w2T8'
+        },
+        artwork: {
+          source: 'Canva-derived crop from selected Canva candidate',
+          jobId: '5b624d57-fcfc-413b-b5e0-7f4e3e6e339c',
+          candidateId: 'dg-d74f387d-a1cc-4c6b-b217-f848774860ba',
+          designId: 'DAHLB9QZWw4',
+          editUrl: 'https://www.canva.com/d/v9RNsG81d-dzMYk',
+          viewUrl: 'https://www.canva.com/d/KXyXHWW1YJ_w2T8'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
