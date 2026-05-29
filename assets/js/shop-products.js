@@ -569,6 +569,31 @@
         artwork: 'https://www.canva.com/d/-42IuWALTnfiKjS'
       }
     },
+    'stickers-cute-animal-friends-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-cute-animal-friends-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-cute-animal-friends-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/expLCFIGenB6O2M',
+        artwork: 'https://www.canva.com/d/apUNhdc-LL_JAPD'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-011',
+        applied: {
+          jobId: '7dc102c6-6ab4-43a2-9617-bd1884f2fb94',
+          candidateId: 'dg-d3837a13-e9fd-467e-baaa-e4e95ed9b68e',
+          designId: 'DAHLAkcjM4c',
+          editUrl: 'https://www.canva.com/d/expLCFIGenB6O2M',
+          viewUrl: 'https://www.canva.com/d/S6NpaMlmLgF8wPz'
+        },
+        artwork: {
+          jobId: '11ef7aa1-f4bf-4711-87ab-06e067370623',
+          candidateId: 'dg-b06c21f5-7176-4838-bc14-299433352473',
+          designId: 'DAHLAqRql4Y',
+          editUrl: 'https://www.canva.com/d/apUNhdc-LL_JAPD',
+          viewUrl: 'https://www.canva.com/d/mnZtVC_ADMc3l7G'
+        }
+      }
+    },
     'stickers-milestone-moment-sticker-bundle': {
       image: 'assets/images/shop/canva-test/stickers-milestone-moment-sticker-bundle-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-milestone-moment-sticker-bundle-artwork.svg',
