@@ -715,6 +715,31 @@
         }
       }
     },
+    'stickers-cottage-garden-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-cottage-garden-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-cottage-garden-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/Mk5XVajluEPiiXO',
+        artwork: 'https://www.canva.com/d/8r3m_lANWWyHDBz'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-28_batch-009',
+        applied: {
+          jobId: 'b37819d2-e68b-4dff-b694-a57ebf6537fc',
+          candidateId: 'dg-5b8a49e3-31ec-4669-9fff-4bc0a887911f',
+          designId: 'DAHLAQA1rqU',
+          editUrl: 'https://www.canva.com/d/Mk5XVajluEPiiXO',
+          viewUrl: 'https://www.canva.com/d/aA5lZut0IGvsQEh'
+        },
+        artwork: {
+          jobId: '129e3245-ec77-4c32-9953-07c8de5f4a69',
+          candidateId: 'dg-a6d1e799-1986-4280-8257-426c7b2c4c61',
+          designId: 'DAHLAvjqbKc',
+          editUrl: 'https://www.canva.com/d/8r3m_lANWWyHDBz',
+          viewUrl: 'https://www.canva.com/d/S6fcVyoda9R2zPE'
+        }
+      }
+    },
     'fleet-wrap-package': {
       image: 'assets/images/shop/generated/custom-services/fleet-wrap-package-applied.svg',
       artworkImage: 'assets/images/shop/generated/custom-services/fleet-wrap-package-artwork.svg',
