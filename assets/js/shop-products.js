@@ -603,8 +603,10 @@
     },
     'stickers-allergy-alert-kids-sticker-set': {
       image: 'assets/images/shop/canva-test/stickers-allergy-alert-kids-sticker-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-allergy-alert-kids-sticker-set-artwork.svg',
       canvaDesigns: {
-        applied: 'https://www.canva.com/d/aMQvIDRXYbiqKSE'
+        applied: 'https://www.canva.com/d/aMQvIDRXYbiqKSE',
+        artwork: 'https://www.canva.com/d/IRlZ8PaH_SD1vG7'
       }
     },
     'stickers-baby-shower-favor-stickers': {
