@@ -773,6 +773,33 @@
         }
       }
     },
+    'stickers-holiday-gift-tag-sticker-set': {
+      image: 'assets/images/shop/canva-test/stickers-holiday-gift-tag-sticker-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-holiday-gift-tag-sticker-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/-0akB7KJQTANzbY',
+        artwork: 'https://www.canva.com/d/KvUIapVEiMKe5iU'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-024-holiday-gift-tags',
+        applied: {
+          source: 'existing owned Canva design search result',
+          jobId: null,
+          candidateId: null,
+          designId: 'DAHLBmDJrUY',
+          editUrl: 'https://www.canva.com/d/-0akB7KJQTANzbY',
+          viewUrl: 'https://www.canva.com/d/uL4hzMTwKZV0Aen'
+        },
+        artwork: {
+          source: 'current-turn Canva generation',
+          jobId: '927c990c-3b2f-4732-a2e8-f87327fa73a7',
+          candidateId: 'dg-f688eb65-9626-47e1-8572-7ed505b940e3',
+          designId: 'DAHLBooLbok',
+          editUrl: 'https://www.canva.com/d/KvUIapVEiMKe5iU',
+          viewUrl: 'https://www.canva.com/d/luckpFMFKIF-Eld'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
