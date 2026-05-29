@@ -1233,6 +1233,35 @@
         }
       }
     },
+    'stickers-mushroom-forest-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-mushroom-forest-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-mushroom-forest-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/WGGdKGc1DMdO2Cg',
+        artwork: 'https://www.canva.com/d/U9BhN-KLvi3uqPr'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-031-mushroom-forest',
+        applied: {
+          source: 'current-turn Canva generation converted to editable design, signed document-export thumbnail',
+          jobId: 'd8f4ad6d-777c-401c-b6b9-85be627b6d6b',
+          candidateId: 'dg-1f219950-9dc2-4c14-b7ea-97210ff48db2',
+          designId: 'DAHLCFsuYnY',
+          editUrl: 'https://www.canva.com/d/WGGdKGc1DMdO2Cg',
+          viewUrl: 'https://www.canva.com/d/jjNAskIyqPexvs_',
+          sourceSha256: '00EAB88F09FBCF07A139E92DBFE6C25A00D62C8647BAB45F0EF5DFF9B61213D7'
+        },
+        artwork: {
+          source: 'current-turn Canva generation converted to editable design, signed document-export thumbnail',
+          jobId: '445eaaea-a76c-401c-968c-a57d4a7250fa',
+          candidateId: 'dg-3a43d576-f550-4221-90c2-99302cdc3c56',
+          designId: 'DAHLCIqiqRk',
+          editUrl: 'https://www.canva.com/d/U9BhN-KLvi3uqPr',
+          viewUrl: 'https://www.canva.com/d/O5PeTfHojXfyXHb',
+          sourceSha256: 'CA0C73830FFBEDD2FD49CB326B1CFBFF5BDBF4E94E5F9F6F927A895C1B06C505'
+        }
+      }
+    },
     'fleet-wrap-package': {
       image: 'assets/images/shop/generated/custom-services/fleet-wrap-package-applied.svg',
       artworkImage: 'assets/images/shop/generated/custom-services/fleet-wrap-package-artwork.svg',
