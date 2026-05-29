@@ -908,6 +908,33 @@
         }
       }
     },
+    'stickers-mermaid-lagoon-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-mermaid-lagoon-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-mermaid-lagoon-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/CYwEa1T13b963Nj',
+        artwork: 'https://www.canva.com/d/vJNDRnbQ5REYZyH'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-029-mermaid-lagoon',
+        applied: {
+          source: 'current-turn Canva generation',
+          jobId: '9138cff0-8fe8-4a83-999d-8c879b519a8d',
+          candidateId: 'dg-b656f055-6b55-435f-a697-e65f2e1f9b3c',
+          designId: 'DAHLB4sLAjw',
+          editUrl: 'https://www.canva.com/d/CYwEa1T13b963Nj',
+          viewUrl: 'https://www.canva.com/d/0Y8I-u53J8vUza8'
+        },
+        artwork: {
+          source: 'current-turn Canva generation',
+          jobId: '0a9a79f5-e67d-448f-b388-91b694f07843',
+          candidateId: 'dg-d7143f67-fab0-442f-a676-489ac7af678c',
+          designId: 'DAHLB0V5NQE',
+          editUrl: 'https://www.canva.com/d/vJNDRnbQ5REYZyH',
+          viewUrl: 'https://www.canva.com/d/Nsb26IgayqVAOVl'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
