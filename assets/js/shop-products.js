@@ -675,24 +675,26 @@
       image: 'assets/images/shop/canva-test/stickers-gamer-quest-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-gamer-quest-sticker-pack-artwork.svg',
       canvaDesigns: {
-        applied: 'https://www.canva.com/d/sVwK7sx0rpRqobs',
-        artwork: 'https://www.canva.com/d/xuPKeUiklyI-_uk'
+        applied: 'https://www.canva.com/d/chz2KEaa8UslKEf',
+        artwork: 'https://www.canva.com/d/IO4YFtTVZm2CPC-'
       },
       canvaTrace: {
-        sourceBatch: '2026-05-29_batch-018',
+        sourceBatch: '2026-05-29_batch-020-existing-inventory',
         applied: {
-          jobId: '6293cfa5-b940-4793-9797-f7533d444c66',
-          candidateId: 'dg-25b18cde-b704-4951-a0f3-96d599e35b7c',
+          source: 'non-generating Canva owned-design search result',
+          jobId: null,
+          candidateId: null,
           designId: 'DAHLBYF1j7E',
-          editUrl: 'https://www.canva.com/d/sVwK7sx0rpRqobs',
-          viewUrl: 'https://www.canva.com/d/1t3Tr_POSURA1mg'
+          editUrl: 'https://www.canva.com/d/chz2KEaa8UslKEf',
+          viewUrl: 'https://www.canva.com/d/ic6BKXNagt5yFUG'
         },
         artwork: {
-          jobId: 'c22cc404-21ed-4495-9923-8b3282a1a891',
-          candidateId: 'dg-43d79217-5a99-4591-94ee-ba038123a1cc',
-          designId: 'DAHLBS9loPo',
-          editUrl: 'https://www.canva.com/d/xuPKeUiklyI-_uk',
-          viewUrl: 'https://www.canva.com/d/MF2lPGfnm2Bek--'
+          source: 'non-generating Canva owned-design search result',
+          jobId: null,
+          candidateId: null,
+          designId: 'DAHLBUgChWU',
+          editUrl: 'https://www.canva.com/d/IO4YFtTVZm2CPC-',
+          viewUrl: 'https://www.canva.com/d/RKVO-XQzYCgV6X8'
         }
       }
     },
