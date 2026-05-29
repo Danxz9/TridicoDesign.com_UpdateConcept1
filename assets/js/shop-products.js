@@ -935,6 +935,33 @@
         }
       }
     },
+    'stickers-motivational-mini-sticker-sheet': {
+      image: 'assets/images/shop/canva-test/stickers-motivational-mini-sticker-sheet-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-motivational-mini-sticker-sheet-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/T2HMe30Q26mtmVC',
+        artwork: 'https://www.canva.com/d/A_EJnIzRrWGul4d'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-030-motivational-mini',
+        applied: {
+          source: 'existing owned Canva design search, signed document-export thumbnail',
+          jobId: null,
+          candidateId: null,
+          designId: 'DAHLCFsuYnY',
+          editUrl: 'https://www.canva.com/d/T2HMe30Q26mtmVC',
+          viewUrl: 'https://www.canva.com/d/BfppK5ljLrt2Zwq'
+        },
+        artwork: {
+          source: 'owned Canva design edited in current turn; poster text/header removed in Canva and saved, then signed Canva manipulation thumbnail exported',
+          jobId: null,
+          candidateId: null,
+          designId: 'DAHK_ofYgyI',
+          editUrl: 'https://www.canva.com/d/A_EJnIzRrWGul4d',
+          viewUrl: 'https://www.canva.com/d/448ZbfRpBpcCHCl'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
