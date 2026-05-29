@@ -561,6 +561,14 @@
         artwork: 'https://www.canva.com/d/pPMNerMxWZCXeMA'
       }
     },
+    'stickers-cats-with-attitude-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-cats-with-attitude-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-cats-with-attitude-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/CCA8R9vFZdZoSMG',
+        artwork: 'https://www.canva.com/d/-42IuWALTnfiKjS'
+      }
+    },
     'stickers-milestone-moment-sticker-bundle': {
       image: 'assets/images/shop/canva-test/stickers-milestone-moment-sticker-bundle-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-milestone-moment-sticker-bundle-artwork.svg',
