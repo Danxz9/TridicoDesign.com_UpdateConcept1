@@ -645,6 +645,32 @@
         }
       }
     },
+    'stickers-farmers-market-label-stickers': {
+      image: 'assets/images/shop/canva-test/stickers-farmers-market-label-stickers-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-farmers-market-label-stickers-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/6VM8zfYcrB8ccv3',
+        artwork: 'https://www.canva.com/d/PvlO27-h0ZsBDVt'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-018',
+        applied: {
+          jobId: '48b1778b-5159-4f6c-bbab-34a3dc9d0dd8',
+          candidateId: 'dg-c64b7d27-72c1-43c5-93b1-53051b9908de',
+          designId: 'DAHLBCWHNvk',
+          editUrl: 'https://www.canva.com/d/6VM8zfYcrB8ccv3',
+          viewUrl: 'https://www.canva.com/d/HateKch_n5zwr5t'
+        },
+        artwork: {
+          source: 'canva_search-designs',
+          jobId: null,
+          candidateId: null,
+          designId: 'DAHLBM2FiGk',
+          editUrl: 'https://www.canva.com/d/PvlO27-h0ZsBDVt',
+          viewUrl: 'https://www.canva.com/d/VMpOu5zXBZFcbNC'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
