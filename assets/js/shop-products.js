@@ -657,6 +657,14 @@
         artwork: 'https://www.canva.com/d/_WedFcQXlAINdt4'
       }
     },
+    'tech-decals-charger-label-sticker-set': {
+      image: 'assets/images/shop/canva-test/tech-decals-charger-label-sticker-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/tech-decals-charger-label-sticker-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/smwtXAGDYfa7QhU',
+        artwork: 'https://www.canva.com/d/ksyJurpPYznYVEk'
+      }
+    },
     'fleet-wrap-package': {
       image: 'assets/images/shop/generated/custom-services/fleet-wrap-package-applied.svg',
       artworkImage: 'assets/images/shop/generated/custom-services/fleet-wrap-package-artwork.svg',
