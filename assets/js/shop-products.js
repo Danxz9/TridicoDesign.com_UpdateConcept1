@@ -1262,6 +1262,35 @@
         }
       }
     },
+    'stickers-unicorn-sparkle-sticker-pack': {
+      image: 'assets/images/shop/canva-test/stickers-unicorn-sparkle-sticker-pack-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-unicorn-sparkle-sticker-pack-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/iyN9OHzGMVDEnhJ',
+        artwork: 'https://www.canva.com/d/1tNTx4QlkdLBEdC'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-032-unicorn-sparkle',
+        applied: {
+          source: 'current-turn Canva generation converted to editable design, signed document-export thumbnail',
+          jobId: 'be57dbe2-da60-4f75-b3c0-08f48010d1b0',
+          candidateId: 'dg-c19b65ba-5ea1-404b-83de-0537ef169ff9',
+          designId: 'DAHLCO3dp0Q',
+          editUrl: 'https://www.canva.com/d/iyN9OHzGMVDEnhJ',
+          viewUrl: 'https://www.canva.com/d/rgbD-Ri4r4tgnsQ',
+          sourceSha256: '45507A82492F03FA71C81A5773C8E1BA16C191653DE7352B887528EF91395E9E'
+        },
+        artwork: {
+          source: 'current-turn Canva generation converted to editable design, signed document-export thumbnail',
+          jobId: '0dc9b20b-1277-4fdc-a2a1-c1a9f3cb1c0b',
+          candidateId: 'dg-2a2537da-50f6-4aee-9a00-f1c3e119d8c5',
+          designId: 'DAHLCO2Mmgw',
+          editUrl: 'https://www.canva.com/d/1tNTx4QlkdLBEdC',
+          viewUrl: 'https://www.canva.com/d/2UVtZATWo0c5qfX',
+          sourceSha256: '20C9B5C8A9F49C6486AACF76C781A9DB1331C004EB57B00F0290D3062C60B3B9'
+        }
+      }
+    },
     'fleet-wrap-package': {
       image: 'assets/images/shop/generated/custom-services/fleet-wrap-package-applied.svg',
       artworkImage: 'assets/images/shop/generated/custom-services/fleet-wrap-package-artwork.svg',
