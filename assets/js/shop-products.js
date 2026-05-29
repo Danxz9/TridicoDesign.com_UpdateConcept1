@@ -748,6 +748,31 @@
         }
       }
     },
+    'stickers-handmade-with-care-sticker-roll': {
+      image: 'assets/images/shop/canva-test/stickers-handmade-with-care-sticker-roll-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-handmade-with-care-sticker-roll-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/lClvun12KXql4_M',
+        artwork: 'https://www.canva.com/d/t8JndgmAoUZdmFa'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-023-handmade-care',
+        applied: {
+          jobId: '420bb666-5c45-4e8f-89f5-53ea6e0f6c61',
+          candidateId: 'dg-ada2897f-9905-468e-b5d4-cb8bf7e30be9',
+          designId: 'DAHLBkhyWwg',
+          editUrl: 'https://www.canva.com/d/lClvun12KXql4_M',
+          viewUrl: 'https://www.canva.com/d/JpKZIZiRtfPTCqz'
+        },
+        artwork: {
+          jobId: '42e9d4cd-371c-4297-96e2-3063ec366599',
+          candidateId: 'dg-b61a40e2-85a1-4284-9862-b76adb181dbe',
+          designId: 'DAHLBklgqAE',
+          editUrl: 'https://www.canva.com/d/t8JndgmAoUZdmFa',
+          viewUrl: 'https://www.canva.com/d/L5LPLyFKDOcxuLs'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
