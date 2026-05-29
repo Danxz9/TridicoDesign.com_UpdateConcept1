@@ -665,6 +665,31 @@
         artwork: 'https://www.canva.com/d/ksyJurpPYznYVEk'
       }
     },
+    'stickers-cheer-team-sticker-sheet': {
+      image: 'assets/images/shop/canva-test/stickers-cheer-team-sticker-sheet-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-cheer-team-sticker-sheet-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/YdUkfzXP30MoXTn',
+        artwork: 'https://www.canva.com/d/UGCpKF6ACV1xB6M'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-28_batch-007',
+        applied: {
+          jobId: '3d6d0b68-4cf2-4f1c-8a1e-b76befc8e52e',
+          candidateId: 'dg-366250d3-c095-47cf-8e6f-90bff32ec50c',
+          designId: 'DAHLAaDGRss',
+          editUrl: 'https://www.canva.com/d/YdUkfzXP30MoXTn',
+          viewUrl: 'https://www.canva.com/d/07Suqaut8LRfHPL'
+        },
+        artwork: {
+          jobId: '878d6300-ef32-4a2f-9b6f-7185abe097bf',
+          candidateId: 'dg-05972da9-0d2f-4e1a-9005-0af17d89aa90',
+          designId: 'DAHLAbOzRPA',
+          editUrl: 'https://www.canva.com/d/UGCpKF6ACV1xB6M',
+          viewUrl: 'https://www.canva.com/d/YBkefY11jEoaiMp'
+        }
+      }
+    },
     'fleet-wrap-package': {
       image: 'assets/images/shop/generated/custom-services/fleet-wrap-package-applied.svg',
       artworkImage: 'assets/images/shop/generated/custom-services/fleet-wrap-package-artwork.svg',
@@ -737,6 +762,7 @@
     product.image = canvaTestDeck?.image || imageBase + '-applied.svg';
     product.artworkImage = canvaTestDeck?.artworkImage || imageBase + '-artwork.svg';
     if (canvaTestDeck?.canvaDesigns) product.canvaDesigns = canvaTestDeck.canvaDesigns;
+    if (canvaTestDeck?.canvaTrace) product.canvaTrace = canvaTestDeck.canvaTrace;
     product.gallery = [
       {
         src: product.image,
