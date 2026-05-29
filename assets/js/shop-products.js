@@ -886,6 +886,7 @@
     const canvaTestDeck = canvaTestDecks[product.id];
     product.image = canvaTestDeck?.image || imageBase + '-applied.svg';
     product.artworkImage = canvaTestDeck?.artworkImage || imageBase + '-artwork.svg';
+    product.canvaDeck = Boolean(canvaTestDeck);
     if (canvaTestDeck?.canvaDesigns) product.canvaDesigns = canvaTestDeck.canvaDesigns;
     if (canvaTestDeck?.canvaTrace) product.canvaTrace = canvaTestDeck.canvaTrace;
     product.gallery = [

@@ -916,6 +916,7 @@
         article.dataset.shopCategory = product.category || 'custom-services';
         article.dataset.shopPrice = String(price);
         article.dataset.shopPriority = String(Number(product.priority) || 0);
+        article.dataset.shopCanvaDeck = product.canvaDeck ? 'true' : 'false';
         article.dataset.shopTags = tags;
         article.dataset.shopCount = count;
         article.dataset.shopTurnaround = turnaround;
@@ -1011,7 +1012,7 @@
     const cartStatus = document.querySelector('[data-shop-cart-status]');
     const checkoutButton = document.querySelector('[data-shop-checkout]');
     const originalOrder = new Map(cards.map((card, index) => [card, index]));
-    const pageSize = Math.max(1, Number(grid?.dataset.shopPageSize) || 15);
+    const pageSize = Math.max(1, Number(grid?.dataset.shopPageSize) || 24);
     let selectedCategory = categorySelect?.value || 'all';
     let visibleLimit = pageSize;
     let cart = [];
@@ -1063,10 +1064,15 @@
       if (!grid) return cards;
       const mode = sortSelect?.value || 'featured';
       const getFeaturedPriority = card => Number(card.dataset.shopPriority) || 0;
+      const getFeaturedGroup = card => (
+        card.dataset.shopCategory === 'custom-services' || card.dataset.shopCanvaDeck === 'true' ? 1 : 0
+      );
       const sorted = [...cards].sort((a, b) => {
         if (mode === 'price-low') return Number(a.dataset.shopPrice) - Number(b.dataset.shopPrice);
         if (mode === 'price-high') return Number(b.dataset.shopPrice) - Number(a.dataset.shopPrice);
         if (mode === 'name') return String(a.dataset.shopName).localeCompare(String(b.dataset.shopName));
+        const groupDiff = getFeaturedGroup(b) - getFeaturedGroup(a);
+        if (groupDiff) return groupDiff;
         const priorityDiff = getFeaturedPriority(b) - getFeaturedPriority(a);
         if (priorityDiff) return priorityDiff;
         return originalOrder.get(a) - originalOrder.get(b);

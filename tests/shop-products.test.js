@@ -176,12 +176,12 @@ test('static custom services also have generated image decks', () => {
   }
 });
 
-test('shop grid exposes 15-product batch controls', () => {
+test('shop grid exposes 24-product batch controls', () => {
   const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
   const appJs = fs.readFileSync(path.join(repoRoot, 'assets/js/app.js'), 'utf8');
   const styles = fs.readFileSync(path.join(repoRoot, 'assets/css/styles.css'), 'utf8');
 
-  assert.match(html, /id="shop-product-grid" data-shop-grid data-shop-page-size="15"/);
+  assert.match(html, /id="shop-product-grid" data-shop-grid data-shop-page-size="24"/);
   assert.match(html, /data-shop-load-more/);
   assert.match(html, /data-shop-load-count/);
   assert.doesNotMatch(html, /class="shop-card reveal"/);
@@ -189,6 +189,7 @@ test('shop grid exposes 15-product batch controls', () => {
   assert.match(appJs, /data-shop-load-count/);
   assert.match(appJs, /card\.classList\.remove\('reveal'\)/);
   assert.match(appJs, /orderedCards = sortCards\(\)/);
+  assert.match(appJs, /dataset\.shopCanvaDeck/);
   assert.match(appJs, /data-shop-media-deck/);
   assert.match(appJs, /initShopMediaDecks/);
   assert.match(styles, /\.shop-card\.reveal\{opacity:1;transform:none\}/);
