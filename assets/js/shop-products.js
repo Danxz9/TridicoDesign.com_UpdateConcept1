@@ -827,6 +827,33 @@
         }
       }
     },
+    'home-decor-laundry-room-label-decal-set': {
+      image: 'assets/images/shop/canva-test/home-decor-laundry-room-label-decal-set-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/home-decor-laundry-room-label-decal-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/vjGlPET20DZmVT2',
+        artwork: 'https://www.canva.com/d/AKlns2Fjwzdwgg8'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-29_batch-026-laundry-labels',
+        applied: {
+          source: 'current-turn Canva generation',
+          jobId: 'b4ad5c15-e61b-424d-b64d-de8e7836a882',
+          candidateId: 'dg-07a5b7aa-2433-4a28-a576-15489d49139a',
+          designId: 'DAHLB8sZis8',
+          editUrl: 'https://www.canva.com/d/vjGlPET20DZmVT2',
+          viewUrl: 'https://www.canva.com/d/hB4dLatCL-zaISX'
+        },
+        artwork: {
+          source: 'current-turn Canva generation',
+          jobId: 'f8426ca5-2006-4c41-92e0-866bdacf3e1f',
+          candidateId: 'dg-7f890d08-1f29-403e-9944-e9810567c42d',
+          designId: 'DAHLB1Cfn84',
+          editUrl: 'https://www.canva.com/d/AKlns2Fjwzdwgg8',
+          viewUrl: 'https://www.canva.com/d/6EPyvwkyqZJOGf0'
+        }
+      }
+    },
     'stickers-dark-academia-desk-sticker-pack': {
       image: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-dark-academia-desk-sticker-pack-artwork.svg',
