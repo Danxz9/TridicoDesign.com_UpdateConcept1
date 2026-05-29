@@ -665,6 +665,31 @@
         artwork: 'https://www.canva.com/d/ksyJurpPYznYVEk'
       }
     },
+    'stickers-chore-chart-sticker-sheet': {
+      image: 'assets/images/shop/canva-test/stickers-chore-chart-sticker-sheet-applied.svg',
+      artworkImage: 'assets/images/shop/canva-test/stickers-chore-chart-sticker-sheet-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/uMR2UMj2CA2NSgA',
+        artwork: 'https://www.canva.com/d/pXIekjFu4LzbXdU'
+      },
+      canvaTrace: {
+        sourceBatch: '2026-05-28_batch-008',
+        applied: {
+          jobId: 'd737b479-8880-4d70-9e44-d9dd62f0eed2',
+          candidateId: 'dg-7ba15bfc-2be5-4b24-9047-154ff98bede4',
+          designId: 'DAHLAZ_3wAI',
+          editUrl: 'https://www.canva.com/d/uMR2UMj2CA2NSgA',
+          viewUrl: 'https://www.canva.com/d/M7B27o0ErbQxVWc'
+        },
+        artwork: {
+          jobId: '253b61ac-26d1-454d-b5d0-f6d528e17c0e',
+          candidateId: 'dg-28fbc472-e577-446e-9357-209f2070c1bf',
+          designId: 'DAHLAZBE-QI',
+          editUrl: 'https://www.canva.com/d/pXIekjFu4LzbXdU',
+          viewUrl: 'https://www.canva.com/d/NvmkV8sMKHGWJdb'
+        }
+      }
+    },
     'stickers-cheer-team-sticker-sheet': {
       image: 'assets/images/shop/canva-test/stickers-cheer-team-sticker-sheet-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-cheer-team-sticker-sheet-artwork.svg',
