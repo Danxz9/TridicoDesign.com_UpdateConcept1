@@ -95,6 +95,41 @@ test('approved Canva products use Canva deck assets', () => {
   }
 });
 
+test('featured shop order groups upgraded decks before custom and standard products', () => {
+  const products = loadProducts();
+  const staticCustomCards = getStaticCustomServiceCards().map((card, index) => ({
+    id: card.id,
+    category: card.category,
+    priority: 0,
+    canvaDeck: false,
+    originalOrder: index
+  }));
+  const catalogCards = products.map((product, index) => ({
+    id: product.id,
+    category: product.category,
+    priority: product.priority,
+    canvaDeck: product.canvaDeck,
+    originalOrder: staticCustomCards.length + index
+  }));
+  const sorted = [...staticCustomCards, ...catalogCards].sort((a, b) => {
+    const getGroup = product => {
+      if (product.canvaDeck) return 2;
+      if (product.category === 'custom-services') return 1;
+      return 0;
+    };
+    const groupDiff = getGroup(b) - getGroup(a);
+    if (groupDiff) return groupDiff;
+    const priorityDiff = (Number(b.priority) || 0) - (Number(a.priority) || 0);
+    if (priorityDiff) return priorityDiff;
+    return a.originalOrder - b.originalOrder;
+  });
+  const upgradedCount = products.filter(product => product.canvaDeck).length;
+
+  assert.ok(upgradedCount > 0);
+  assert.ok(sorted.slice(0, upgradedCount).every(product => product.canvaDeck), 'upgraded Canva decks should occupy the first featured positions');
+  assert.ok(sorted.slice(upgradedCount, upgradedCount + staticCustomCards.length).every(product => product.category === 'custom-services'), 'Custom Services should sit directly after upgraded decks');
+});
+
 test('shop catalog covers requested product lines', () => {
   const products = loadProducts();
   const counts = products.reduce((summary, product) => {
@@ -182,6 +217,7 @@ test('shop grid exposes 24-product batch controls', () => {
   const styles = fs.readFileSync(path.join(repoRoot, 'assets/css/styles.css'), 'utf8');
 
   assert.match(html, /id="shop-product-grid" data-shop-grid data-shop-page-size="24"/);
+  assert.match(html, /data-shop-load-more[^>]*>See 24 More<\/button>/);
   assert.match(html, /data-shop-load-more/);
   assert.match(html, /data-shop-load-count/);
   assert.doesNotMatch(html, /class="shop-card reveal"/);
@@ -190,6 +226,9 @@ test('shop grid exposes 24-product batch controls', () => {
   assert.match(appJs, /card\.classList\.remove\('reveal'\)/);
   assert.match(appJs, /orderedCards = sortCards\(\)/);
   assert.match(appJs, /dataset\.shopCanvaDeck/);
+  assert.match(appJs, /if \(card\.dataset\.shopCanvaDeck === 'true'\) return 2/);
+  assert.match(appJs, /if \(card\.dataset\.shopCategory === 'custom-services'\) return 1/);
+  assert.match(appJs, /Show \$\{nextCount\} more products/);
   assert.match(appJs, /data-shop-media-deck/);
   assert.match(appJs, /initShopMediaDecks/);
   assert.match(styles, /\.shop-card\.reveal\{opacity:1;transform:none\}/);

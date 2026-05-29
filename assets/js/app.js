@@ -1064,9 +1064,11 @@
       if (!grid) return cards;
       const mode = sortSelect?.value || 'featured';
       const getFeaturedPriority = card => Number(card.dataset.shopPriority) || 0;
-      const getFeaturedGroup = card => (
-        card.dataset.shopCategory === 'custom-services' || card.dataset.shopCanvaDeck === 'true' ? 1 : 0
-      );
+      const getFeaturedGroup = card => {
+        if (card.dataset.shopCanvaDeck === 'true') return 2;
+        if (card.dataset.shopCategory === 'custom-services') return 1;
+        return 0;
+      };
       const sorted = [...cards].sort((a, b) => {
         if (mode === 'price-low') return Number(a.dataset.shopPrice) - Number(b.dataset.shopPrice);
         if (mode === 'price-high') return Number(b.dataset.shopPrice) - Number(a.dataset.shopPrice);
