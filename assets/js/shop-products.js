@@ -634,8 +634,10 @@
       }
     },
     'stickers-birthday-party-favor-stickers': {
+      image: 'assets/images/shop/canva-test/stickers-birthday-party-favor-stickers-applied.svg',
       artworkImage: 'assets/images/shop/canva-test/stickers-birthday-party-favor-stickers-artwork.svg',
       canvaDesigns: {
+        applied: 'https://www.canva.com/d/3s0Rm00W6lWouHm',
         artwork: 'https://www.canva.com/d/ld7XHjtyujfmDPz'
       }
     },
