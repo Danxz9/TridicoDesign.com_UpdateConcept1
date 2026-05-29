@@ -648,6 +648,70 @@
         applied: 'https://www.canva.com/d/RgasuIe_8xqsnPB',
         artwork: 'https://www.canva.com/d/_WedFcQXlAINdt4'
       }
+    },
+    'fleet-wrap-package': {
+      image: 'assets/images/shop/generated/custom-services/fleet-wrap-package-applied.svg',
+      artworkImage: 'assets/images/shop/generated/custom-services/fleet-wrap-package-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/0AyZRjXTD_Bzk-X',
+        artwork: 'https://www.canva.com/d/a2SG2H0sWs7Mibh'
+      }
+    },
+    'storefront-signage-starter': {
+      image: 'assets/images/shop/generated/custom-services/storefront-signage-starter-applied.svg',
+      artworkImage: 'assets/images/shop/generated/custom-services/storefront-signage-starter-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/sb0PwQk7KRw7old',
+        artwork: 'https://www.canva.com/d/yf6C3BfWHT5NqbS'
+      }
+    },
+    'food-truck-branding-kit': {
+      image: 'assets/images/shop/generated/custom-services/food-truck-branding-kit-applied.svg',
+      artworkImage: 'assets/images/shop/generated/custom-services/food-truck-branding-kit-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/KSMAy5I9LF8YmRX',
+        artwork: 'https://www.canva.com/d/4_2G573tIwzxyfN'
+      }
+    },
+    'window-graphics-decals': {
+      image: 'assets/images/shop/generated/custom-services/window-graphics-decals-applied.svg',
+      artworkImage: 'assets/images/shop/generated/custom-services/window-graphics-decals-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/X1iskQqzcjempw9',
+        artwork: 'https://www.canva.com/d/uGu2UlhCcAWfyAK'
+      }
+    },
+    'business-card-brochure-set': {
+      image: 'assets/images/shop/generated/custom-services/business-card-brochure-set-applied.svg',
+      artworkImage: 'assets/images/shop/generated/custom-services/business-card-brochure-set-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/rF8UUaJnnkm_ri0',
+        artwork: 'https://www.canva.com/d/ZQbV0EcLlOvKVau'
+      }
+    },
+    'banner-event-display-bundle': {
+      image: 'assets/images/shop/generated/custom-services/banner-event-display-bundle-applied.svg',
+      artworkImage: 'assets/images/shop/generated/custom-services/banner-event-display-bundle-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/0fnVkglxGy5Q6rh',
+        artwork: 'https://www.canva.com/d/3qZsx1cAczwh0ua'
+      }
+    },
+    'lobby-wall-graphics': {
+      image: 'assets/images/shop/generated/custom-services/lobby-wall-graphics-applied.svg',
+      artworkImage: 'assets/images/shop/generated/custom-services/lobby-wall-graphics-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/UUikta5reuWbrv3',
+        artwork: 'https://www.canva.com/d/-T6jl6kjMmaABRW'
+      }
+    },
+    'contractor-trailer-graphics': {
+      image: 'assets/images/shop/generated/custom-services/contractor-trailer-graphics-applied.svg',
+      artworkImage: 'assets/images/shop/generated/custom-services/contractor-trailer-graphics-artwork.svg',
+      canvaDesigns: {
+        applied: 'https://www.canva.com/d/41bSyPSdd3crOAm',
+        artwork: 'https://www.canva.com/d/vhFDHKvqSkP6Wp5'
+      }
     }
   };
 
