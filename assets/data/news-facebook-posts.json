@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T10:42:16.631Z",
+  "generatedAt": "2026-06-12T15:43:49.671Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
@@ -826,6 +826,105 @@
       "isPinned": false,
       "isTrending": false,
       "contentHash": "2d21666e950d25f4f24779f2f2a5114cdeb7ac77b4c66a2133bf794768666626"
+    },
+    {
+      "id": "news_fb_2026_06_05_pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zr",
+      "slug": "2026-06-05-tridico-design-pfbid02x1vwbgquxgcdxy2ubkxkk",
+      "title": "Tridico Design",
+      "excerpt": "Tridico Design Happy Friday!! Did you know… We also do shirts!! Kristin is overseeing/double checking our shipment of 530 quantity batch. These are silk...",
+      "body": "Tridico Design\n\nHappy Friday!! Did you know… We also do shirts!! Kristin is overseeing/double checking our shipment of 530 quantity batch. These are silk screened in the family… by Aar… See more",
+      "contentFormat": "social-import",
+      "category": "Signage",
+      "tags": [
+        "project spotlight",
+        "design"
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02X1VwbGqUXGcdxY2UBKXKKU4eCEhrbD9ZrBTbXdueUUF7njPTsVu7stWzUEBRiFBPl",
+      "sourcePostId": "pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl",
+      "sourceContentHash": "cdd9d1fcbefbc799fa8138b40db1faae3a40ad482d7f706e1c524786e99e5c58",
+      "datePublished": "2026-06-05T00:00:00.000Z",
+      "datePublishedIsApproximate": true,
+      "dateImported": "2026-06-12T15:43:49.671Z",
+      "lastSeenAt": "2026-06-12T15:43:49.671Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl_1",
+        "src": "assets/images/news/facebook/pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl/image-01.jpg",
+        "width": 590,
+        "height": 443,
+        "alt": "Tridico Design Facebook news image",
+        "caption": "Public Tridico Design project update image.",
+        "sourceUrl": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/717337703_1535949888324593_7857271471069987019_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=YQm5nykEv8sQ7kNvwE-1PtY&_nc_oc=AdqzCVFn82dfQh8H8Nr3FW4kdoK15GnbJWnOW35iXHWc4f_ysfoasQys9Qf-ET2X1cs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&_nc_gid=kFbUk7Q98OfoPwOfc0xddg&_nc_ss=7f289&oh=00_Af-ym1N-lR0VfXBS6qpFU9ZB-RlOBevQSkp_l3gXhoDPmA&oe=6A32155A"
+      },
+      "thumbnailImage": {
+        "id": "img_pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl_1",
+        "src": "assets/images/news/facebook/pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl/image-01.jpg",
+        "width": 590,
+        "height": 443,
+        "alt": "Tridico Design Facebook news image",
+        "caption": "Public Tridico Design project update image.",
+        "sourceUrl": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/717337703_1535949888324593_7857271471069987019_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=YQm5nykEv8sQ7kNvwE-1PtY&_nc_oc=AdqzCVFn82dfQh8H8Nr3FW4kdoK15GnbJWnOW35iXHWc4f_ysfoasQys9Qf-ET2X1cs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&_nc_gid=kFbUk7Q98OfoPwOfc0xddg&_nc_ss=7f289&oh=00_Af-ym1N-lR0VfXBS6qpFU9ZB-RlOBevQSkp_l3gXhoDPmA&oe=6A32155A"
+      },
+      "images": [
+        {
+          "id": "img_pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl_1",
+          "src": "assets/images/news/facebook/pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl/image-01.jpg",
+          "width": 590,
+          "height": 443,
+          "alt": "Tridico Design Facebook news image",
+          "caption": "Public Tridico Design project update image.",
+          "sourceUrl": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/717337703_1535949888324593_7857271471069987019_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=YQm5nykEv8sQ7kNvwE-1PtY&_nc_oc=AdqzCVFn82dfQh8H8Nr3FW4kdoK15GnbJWnOW35iXHWc4f_ysfoasQys9Qf-ET2X1cs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&_nc_gid=kFbUk7Q98OfoPwOfc0xddg&_nc_ss=7f289&oh=00_Af-ym1N-lR0VfXBS6qpFU9ZB-RlOBevQSkp_l3gXhoDPmA&oe=6A32155A"
+        },
+        {
+          "id": "img_pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl_2",
+          "src": "assets/images/news/facebook/pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl/image-02.jpg",
+          "width": 590,
+          "height": 384,
+          "alt": "Tridico Design Facebook news image",
+          "caption": "Public Tridico Design project update image.",
+          "sourceUrl": "https://scontent-ord5-3.xx.fbcdn.net/v/t39.30808-6/714830638_1535949881657927_2968987617997986935_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1334&ctp=s590x590&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=_k9Rs-FSEa8Q7kNvwEz2U-o&_nc_oc=Adr6uCOTeFyYqVSidkuFO8qZmUXJ_Ewx_YLVSS8vrYRr2wnNFe0p4nXrlq-JX9D3TNw&_nc_zt=23&_nc_ht=scontent-ord5-3.xx&_nc_gid=kFbUk7Q98OfoPwOfc0xddg&_nc_ss=7f289&oh=00_Af9LWmU5hpKvfgNt38gxdemiyrnYUjNhJR78nGv_pjQPag&oe=6A31F635"
+        },
+        {
+          "id": "img_pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl_3",
+          "src": "assets/images/news/facebook/pfbid02x1vwbgquxgcdxy2ubkxkku4ecehrbd9zrbtbxdueuuf7njptsvu7stwzuebrifbpl/image-03.jpg",
+          "width": 590,
+          "height": 443,
+          "alt": "Tridico Design Facebook news image",
+          "caption": "Public Tridico Design project update image.",
+          "sourceUrl": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/716859597_1535998994986349_3109396282366275573_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=tI1CVzF7brEQ7kNvwFoIW-B&_nc_oc=AdrQxJv8h6UyKPU63JoAsWjcxiKXuUCGX-dIq54ej5riTHR3q5PJTNyxpWhGYh-2IPs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&_nc_gid=kFbUk7Q98OfoPwOfc0xddg&_nc_ss=7f289&oh=00_Af9EM5oYK_TsdOjKGzdK8PMYvxrE9PKAuTUJZW1A5OpjCg&oe=6A32017C"
+        }
+      ],
+      "sourceImages": [
+        {
+          "src": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/717337703_1535949888324593_7857271471069987019_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=YQm5nykEv8sQ7kNvwE-1PtY&_nc_oc=AdqzCVFn82dfQh8H8Nr3FW4kdoK15GnbJWnOW35iXHWc4f_ysfoasQys9Qf-ET2X1cs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&_nc_gid=kFbUk7Q98OfoPwOfc0xddg&_nc_ss=7f289&oh=00_Af-ym1N-lR0VfXBS6qpFU9ZB-RlOBevQSkp_l3gXhoDPmA&oe=6A32155A",
+          "alt": "",
+          "width": 590,
+          "height": 443
+        },
+        {
+          "src": "https://scontent-ord5-3.xx.fbcdn.net/v/t39.30808-6/714830638_1535949881657927_2968987617997986935_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1334&ctp=s590x590&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=_k9Rs-FSEa8Q7kNvwEz2U-o&_nc_oc=Adr6uCOTeFyYqVSidkuFO8qZmUXJ_Ewx_YLVSS8vrYRr2wnNFe0p4nXrlq-JX9D3TNw&_nc_zt=23&_nc_ht=scontent-ord5-3.xx&_nc_gid=kFbUk7Q98OfoPwOfc0xddg&_nc_ss=7f289&oh=00_Af9LWmU5hpKvfgNt38gxdemiyrnYUjNhJR78nGv_pjQPag&oe=6A31F635",
+          "alt": "",
+          "width": 590,
+          "height": 384
+        },
+        {
+          "src": "https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/716859597_1535998994986349_3109396282366275573_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx2048x1536&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=tI1CVzF7brEQ7kNvwFoIW-B&_nc_oc=AdrQxJv8h6UyKPU63JoAsWjcxiKXuUCGX-dIq54ej5riTHR3q5PJTNyxpWhGYh-2IPs&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&_nc_gid=kFbUk7Q98OfoPwOfc0xddg&_nc_ss=7f289&oh=00_Af9EM5oYK_TsdOjKGzdK8PMYvxrE9PKAuTUJZW1A5OpjCg&oe=6A32017C",
+          "alt": "",
+          "width": 590,
+          "height": 443
+        }
+      ],
+      "status": "published",
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "contentHash": "cdd9d1fcbefbc799fa8138b40db1faae3a40ad482d7f706e1c524786e99e5c58"
     },
     {
       "id": "news_fb_2026_04_22_url-e90fd8f353400211",
