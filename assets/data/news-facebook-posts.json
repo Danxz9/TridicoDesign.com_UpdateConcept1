@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T04:56:43.341Z",
+  "generatedAt": "2026-07-01T10:17:48.406Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
@@ -1264,6 +1264,76 @@
       "isPinned": false,
       "isTrending": false,
       "contentHash": "7148c269f01c399a32ed70fc09c302ae685fe0d1840ac29674f5dfe72279da3c"
+    },
+    {
+      "id": "news_fb_2026_06_13_pfbid0uwag7felzem2zkwhkadsv9dtccnnwj7knm",
+      "slug": "2026-06-13-tridico-design-pfbid0uwag7felzem2zkwhkadsv9",
+      "title": "Tridico Design",
+      "excerpt": "Tridico Design Spot on. While Ai is very helpful, this is a very quick explanation on this. He did a great job bringing clarity to this. CW Wraps February...",
+      "body": "Tridico Design\n\nSpot on. While Ai is very helpful, this is a very quick explanation on this. He did a great job bringing clarity to this.\n\nCW Wraps\n\nFebruary 18\n\nThe truth about using AI in a wrap business",
+      "contentFormat": "social-import",
+      "category": "Vehicle Wraps",
+      "tags": [
+        "project spotlight",
+        "design",
+        "local business"
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid0uwag7feLZEm2zkwHkAdSV9dTCcNnWj7kNm1J4cKSELzsR5rvFMjop7tuv1X5xYYVl",
+      "sourcePostId": "pfbid0uwag7felzem2zkwhkadsv9dtccnnwj7knm1j4ckselzsr5rvfmjop7tuv1x5xyyvl",
+      "sourceContentHash": "0bfcc5346deff56769e8f900eddf2da785e376c9ca630c9e1e047cb10fda6016",
+      "datePublished": "2026-06-13T00:00:00.000Z",
+      "datePublishedIsApproximate": true,
+      "dateImported": "2026-07-01T10:17:48.406Z",
+      "lastSeenAt": "2026-07-01T10:17:48.406Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_pfbid0uwag7felzem2zkwhkadsv9dtccnnwj7knm1j4ckselzsr5rvfmjop7tuv1x5xyyvl_1",
+        "src": "assets/images/news/facebook/pfbid0uwag7felzem2zkwhkadsv9dtccnnwj7knm1j4ckselzsr5rvfmjop7tuv1x5xyyvl/image-01.jpg",
+        "width": 540,
+        "height": 960,
+        "alt": "Tridico Design Facebook news image",
+        "caption": "Public Tridico Design project update image.",
+        "sourceUrl": "https://scontent-ams2-1.xx.fbcdn.net/v/t15.5256-10/633511394_1387290009390802_1750884942913983957_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=OvLRHQxrNSkQ7kNvwFOwi5h&_nc_oc=AdqBJoJ1dsROOHHLdDUxQwHfRCqfC_s0Madf5ViZrtMdil5SrLsnBO7LIHoTpCRDWJY&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=D7O_YLGS50ihvOb9W2mE7A&_nc_ss=7f289&oh=00_AQDbuK3CegfzX3ZdhKZDjaYDcEjXnsqK89xq_irQ09mK2A&oe=6A4AA07C"
+      },
+      "thumbnailImage": {
+        "id": "img_pfbid0uwag7felzem2zkwhkadsv9dtccnnwj7knm1j4ckselzsr5rvfmjop7tuv1x5xyyvl_1",
+        "src": "assets/images/news/facebook/pfbid0uwag7felzem2zkwhkadsv9dtccnnwj7knm1j4ckselzsr5rvfmjop7tuv1x5xyyvl/image-01.jpg",
+        "width": 540,
+        "height": 960,
+        "alt": "Tridico Design Facebook news image",
+        "caption": "Public Tridico Design project update image.",
+        "sourceUrl": "https://scontent-ams2-1.xx.fbcdn.net/v/t15.5256-10/633511394_1387290009390802_1750884942913983957_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=OvLRHQxrNSkQ7kNvwFOwi5h&_nc_oc=AdqBJoJ1dsROOHHLdDUxQwHfRCqfC_s0Madf5ViZrtMdil5SrLsnBO7LIHoTpCRDWJY&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=D7O_YLGS50ihvOb9W2mE7A&_nc_ss=7f289&oh=00_AQDbuK3CegfzX3ZdhKZDjaYDcEjXnsqK89xq_irQ09mK2A&oe=6A4AA07C"
+      },
+      "images": [
+        {
+          "id": "img_pfbid0uwag7felzem2zkwhkadsv9dtccnnwj7knm1j4ckselzsr5rvfmjop7tuv1x5xyyvl_1",
+          "src": "assets/images/news/facebook/pfbid0uwag7felzem2zkwhkadsv9dtccnnwj7knm1j4ckselzsr5rvfmjop7tuv1x5xyyvl/image-01.jpg",
+          "width": 540,
+          "height": 960,
+          "alt": "Tridico Design Facebook news image",
+          "caption": "Public Tridico Design project update image.",
+          "sourceUrl": "https://scontent-ams2-1.xx.fbcdn.net/v/t15.5256-10/633511394_1387290009390802_1750884942913983957_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=OvLRHQxrNSkQ7kNvwFOwi5h&_nc_oc=AdqBJoJ1dsROOHHLdDUxQwHfRCqfC_s0Madf5ViZrtMdil5SrLsnBO7LIHoTpCRDWJY&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=D7O_YLGS50ihvOb9W2mE7A&_nc_ss=7f289&oh=00_AQDbuK3CegfzX3ZdhKZDjaYDcEjXnsqK89xq_irQ09mK2A&oe=6A4AA07C"
+        }
+      ],
+      "sourceImages": [
+        {
+          "src": "https://scontent-ams2-1.xx.fbcdn.net/v/t15.5256-10/633511394_1387290009390802_1750884942913983957_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1920&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=OvLRHQxrNSkQ7kNvwFOwi5h&_nc_oc=AdqBJoJ1dsROOHHLdDUxQwHfRCqfC_s0Madf5ViZrtMdil5SrLsnBO7LIHoTpCRDWJY&_nc_zt=23&_nc_ht=scontent-ams2-1.xx&_nc_gid=D7O_YLGS50ihvOb9W2mE7A&_nc_ss=7f289&oh=00_AQDbuK3CegfzX3ZdhKZDjaYDcEjXnsqK89xq_irQ09mK2A&oe=6A4AA07C",
+          "alt": "",
+          "width": 540,
+          "height": 960
+        }
+      ],
+      "status": "published",
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "contentHash": "0bfcc5346deff56769e8f900eddf2da785e376c9ca630c9e1e047cb10fda6016"
     },
     {
       "id": "news_fb_2026_06_11_pfbid0ta4eqbuefqtw8ttem7krkps3nkxhgvnb9t",
