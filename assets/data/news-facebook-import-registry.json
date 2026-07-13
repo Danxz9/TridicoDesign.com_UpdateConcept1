@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-07-13T04:04:33.165Z",
+  "generatedAt": "2026-07-13T09:50:06.799Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "pfbid02wskhb7eds3tqq4xhxb5qrttyhnssvyinze6p3w7fp8s2rti7gphp4q5d9dggyhvzl",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02WSkhb7eDS3TQq4xhxb5qRTTyHNSsvYiNZE6p3W7Fp8S2rti7GphP4Q5D9DggyHvZl",
+      "contentHash": "765cb0a0880dd19168754df130cebc9cd7846b45c7e750b44ee3a6882fa62274",
+      "importedSlug": "2026-07-04-tridico-design-pfbid02wskhb7eds3tqq4xhxb5qr",
+      "dateImported": "2026-07-13T09:50:06.799Z",
+      "lastSeenAt": "2026-07-13T09:50:06.799Z"
+    },
     {
       "sourcePostId": "pfbid0sbjzqsipajyxzhudn19ovvauixdybv73lxazux9yq3wwdi26pb5j9gzzmjicl1tql",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid0SbJzQSiPajyXZHUDN19ovvAUiXdyBv73LxaZUx9Yq3wWdi26pB5j9gZZmjiCL1tQl",
