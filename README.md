@@ -2,6 +2,18 @@
 
 Static GitHub Pages preview website for **Tridico Design LLC**.
 
+## Canonical Workspace
+
+`C:\Codex_WorkSpace\Projects\TridicoDesign.com` is the canonical local workspace. `_project/00_START_HERE.md` routes local project context; the `_project/` corpus stays local and is not part of the published site.
+
+To preview the exact GitHub Pages payload locally, build the isolated artifact and serve `_site/` with a static-file server of your choice:
+
+```bash
+npm run build:pages
+```
+
+This copies only the public site pages, approved root files, `assets/`, and `news/` into `_site/`.
+
 ## Included
 
 - `index.html` homepage

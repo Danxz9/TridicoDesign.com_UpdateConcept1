@@ -2,6 +2,12 @@
 
 These instructions apply to this repository.
 
+## Canonical Workspace and Local Corpus
+
+`C:\Codex_WorkSpace\Projects\TridicoDesign.com` is the canonical destination root for this site. Start local-context work from `_project/00_START_HERE.md`; `_project` is local-only material and must never be force-added or published.
+
+The portfolio source corpus lives at `_project/reference/updated-portfolio`. On this Windows machine, run test and build commands with `npm.cmd` (for example, `npm.cmd test` and `npm.cmd run build:pages`).
+
 ## GitHub Sync Rule
 
 Before making website edits or publishing changes, treat the GitHub remote as the current source of truth and sync safely:
@@ -13,12 +19,14 @@ Before making website edits or publishing changes, treat the GitHub remote as th
 5. Never use `git push --force`, `git reset --hard`, or any destructive overwrite to make local match remote or remote match local.
 6. Before pushing, fetch again and confirm the push will be a normal fast-forward update.
 
+Remote publishing still requires fetch/divergence checks, and force pushes are never allowed.
+
 ## Publish Rule
 
 For launch/push requests:
 
 1. Sync from GitHub first using the rule above.
-2. Run the relevant checks, at minimum `node --check` for edited JavaScript and `npm test`.
+2. Run the relevant checks, at minimum `node --check` for edited JavaScript and `npm.cmd test`.
 3. Commit the intended local changes with a clear message.
 4. Push with normal `git push origin main`.
 5. If GitHub rejects the push because the remote moved, fetch, integrate, retest, recommit if needed, and push again.

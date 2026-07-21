@@ -1,6 +1,11 @@
 node_modules/
+/_project/
+/_site/
 .env
 .env.*
 playwright-report/
 test-results/
 npm-debug.log*
+coverage/
+.nyc_output/
+*.log

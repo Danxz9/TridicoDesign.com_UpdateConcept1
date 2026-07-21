@@ -7,7 +7,16 @@ const crypto = require("crypto");
 const writeFiles = process.argv.includes("--write");
 
 const repoRoot = path.resolve(__dirname, "..");
-const sourceRoot = path.resolve(repoRoot, "..", "..", "Updated Portfolio");
+function resolvePortfolioSource(rootPath, environment = process.env) {
+  const configuredSource = environment.TRIDICO_PORTFOLIO_SOURCE;
+  if (typeof configuredSource === "string" && configuredSource !== "") {
+    return configuredSource;
+  }
+
+  return path.join(rootPath, "_project", "reference", "updated-portfolio");
+}
+
+const sourceRoot = resolvePortfolioSource(repoRoot);
 const facebookRoot = path.join(sourceRoot, "FaceBook");
 const oldRoot = path.join(sourceRoot, "Old");
 const workHtmlPath = path.join(repoRoot, "work.html");
@@ -770,4 +779,8 @@ function main() {
   console.log(JSON.stringify(summary, null, 2));
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = { resolvePortfolioSource };

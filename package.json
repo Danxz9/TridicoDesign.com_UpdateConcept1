@@ -5,6 +5,7 @@
   "description": "Static Tridico Design website and News generator.",
   "scripts": {
     "build": "node tools/build-news-pages.js",
+    "build:pages": "node tools/build-pages-artifact.js",
     "news:build": "node tools/build-news-pages.js",
     "news:fb:backfill": "node scripts/facebook-news-import.js --mode backfill",
     "news:fb:sync": "node scripts/facebook-news-import.js --mode sync",
