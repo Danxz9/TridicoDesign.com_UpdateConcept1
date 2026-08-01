@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-08-01T08:35:55.903Z",
+  "generatedAt": "2026-08-01T14:00:06.714Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "url-e90fd8f353400211",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
+      "contentHash": "51b53dbb6252f26fcbc6435493fdae3f8886245b03ef02d9e259ee0cbabc04e1",
+      "importedSlug": "2026-04-22-tridico-design-is-in-galion-url-e90fd8f353400211",
+      "dateImported": "2026-05-15T03:55:17.511Z",
+      "lastSeenAt": "2026-08-01T14:00:06.714Z"
+    },
     {
       "sourcePostId": "pfbid0smb3hchpg5tlcbgwhzyft4vaqxlmahptth1bgkdlykyvvspbsah2aakfalweh2grl",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid0Smb3hcHpg5tLCBGWhzyFT4VAqxLmAhPTth1bGKdLykyvvSPbSAh2AAkFaLWEh2GRl",
@@ -500,14 +508,6 @@
       "importedSlug": "2026-06-05-tridico-design-pfbid05wordfhfsqtdrtbaltf7hf",
       "dateImported": "2026-06-05T04:50:48.624Z",
       "lastSeenAt": "2026-06-05T10:18:40.336Z"
-    },
-    {
-      "sourcePostId": "url-e90fd8f353400211",
-      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
-      "contentHash": "ca7dbc7c6e752f4c5ffaddf89911b81afb94bf7ad2597fd0847364dc009090ee",
-      "importedSlug": "2026-04-22-tridico-design-is-in-galion-url-e90fd8f353400211",
-      "dateImported": "2026-05-15T03:55:17.511Z",
-      "lastSeenAt": "2026-06-04T20:26:46.368Z"
     }
   ]
 }
