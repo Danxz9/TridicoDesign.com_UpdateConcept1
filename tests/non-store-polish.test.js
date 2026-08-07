@@ -51,3 +51,20 @@ test("polished non-store pages load the isolated override stylesheet", async () 
 
   assert.deepEqual(offenders, []);
 });
+
+test("mobile non-store support root retains viewport width", async () => {
+  const css = await readFile(
+    path.join(repositoryRoot, "assets", "css", "site-polish.css"),
+    "utf8",
+  );
+  const mobileRootRule = css.match(
+    /@media \(max-width: 680px\) \{[\s\S]*?body:not\(\.vehicle-shop-page\) \.tdsa-root \{(?<declarations>[^}]*)\}/,
+  );
+
+  assert.ok(mobileRootRule, "expected the non-store mobile .tdsa-root rule");
+  assert.match(
+    mobileRootRule.groups.declarations,
+    /^\s*left: max\(\.6rem, env\(safe-area-inset-left\)\);\s*$/m,
+  );
+  assert.doesNotMatch(mobileRootRule.groups.declarations, /^\s*left:\s*auto;\s*$/m);
+});

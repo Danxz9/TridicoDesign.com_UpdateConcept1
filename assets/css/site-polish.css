@@ -112,7 +112,7 @@ body:not(.vehicle-shop-page) .tdsa-close { min-width: 44px; }
   body:not(.vehicle-shop-page) .tdsa-root {
     right: max(.6rem, env(safe-area-inset-right));
     bottom: max(.6rem, env(safe-area-inset-bottom));
-    left: auto;
+    left: max(.6rem, env(safe-area-inset-left));
   }
   body:not(.vehicle-shop-page) .tdsa-launcher {
     width: 52px;
