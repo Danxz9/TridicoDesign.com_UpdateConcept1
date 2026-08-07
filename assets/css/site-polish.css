@@ -28,6 +28,17 @@ body:not(.vehicle-shop-page) .page-hero-grid > img {
   object-fit: cover;
   object-position: center;
 }
+body:not(.vehicle-shop-page) .contact-hero::before {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, .95) 0%, rgba(5, 5, 5, .8) 48%, rgba(5, 5, 5, .28) 100%),
+    linear-gradient(115deg, rgba(239, 29, 36, .2), transparent 42%, rgba(255, 210, 29, .14)),
+    var(--page-hero-image) var(--page-hero-position) / var(--page-hero-size) no-repeat;
+  opacity: 1;
+}
+body:not(.vehicle-shop-page) .contact-hero .page-hero-grid {
+  grid-template-columns: minmax(0, 52rem);
+  min-height: clamp(430px, 46vw, 570px);
+}
 body:not(.vehicle-shop-page) :is(.eyebrow, .kicker) { color: var(--red-dark); }
 body:not(.vehicle-shop-page) :is(.hero, .page-hero, .dark-panel, .cta-band, .vehicle-store-hero, .vehicle-proof) :is(.eyebrow, .kicker) {
   color: var(--yellow);
@@ -110,6 +121,7 @@ body:not(.vehicle-shop-page) .tdsa-close { min-width: 44px; }
     gap: 1.5rem;
     padding-block: 2.5rem;
   }
+  body:not(.vehicle-shop-page) .contact-hero .page-hero-grid { min-height: auto; }
   body:not(.vehicle-shop-page) .page-hero-grid > img { max-height: 260px; }
   body:not(.vehicle-shop-page) .project-compare { grid-template-columns: 1fr; }
   body:not(.vehicle-shop-page) .tdsa-root {

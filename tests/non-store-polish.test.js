@@ -150,3 +150,32 @@ test("project comparison media preserves full photos in figure-owned 4:3 frames"
     /@media \(max-width: 680px\) \{[\s\S]*?\.project-compare img \{\s*height: 260px;/,
   );
 });
+
+test("contact desktop navigation retains the News destination", async () => {
+  const html = await readFile(path.join(repositoryRoot, "contact.html"), "utf8");
+  const { document } = parseHTML(html);
+  const primaryNavigation = document.querySelector(
+    'nav.desktop-nav[aria-label="Primary navigation"]',
+  );
+
+  assert.ok(primaryNavigation, "expected Contact to include desktop primary navigation");
+  const links = [...primaryNavigation.querySelectorAll("a")].map((link) => ({
+    href: link.getAttribute("href"),
+    label: link.textContent.trim(),
+  }));
+
+  assert.deepEqual(links.at(-1), { href: "news/", label: "News" });
+});
+
+test("contact hero uses the bridge once as a full-bleed background", async () => {
+  const html = await readFile(path.join(repositoryRoot, "contact.html"), "utf8");
+  const { document } = parseHTML(html);
+  const hero = document.querySelector(".contact-hero");
+
+  assert.ok(hero, "expected the Contact hero");
+  assert.equal(
+    hero.querySelectorAll('img[src*="columbus-bridge-brand-bg.jpg"]').length,
+    0,
+    "the full-bleed bridge background should not be repeated as inset media",
+  );
+});
