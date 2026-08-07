@@ -29,6 +29,9 @@ body:not(.vehicle-shop-page) .page-hero-grid > img {
   object-position: center;
 }
 body:not(.vehicle-shop-page) :is(.eyebrow, .kicker) { color: var(--red-dark); }
+body:not(.vehicle-shop-page) :is(.hero, .page-hero, .dark-panel, .cta-band) :is(.eyebrow, .kicker) {
+  color: var(--yellow);
+}
 body:not(.vehicle-shop-page) :is(.legal, .resource-card, .contact-panel) a:not(.btn) {
   text-decoration: underline;
   text-underline-offset: .18em;
@@ -49,6 +52,7 @@ body:not(.vehicle-shop-page) .project-compare {
 body:not(.vehicle-shop-page) .project-compare figure {
   position: relative;
   margin: 0;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -56,8 +60,8 @@ body:not(.vehicle-shop-page) .project-compare figure {
 }
 body:not(.vehicle-shop-page) .project-compare img {
   width: 100%;
-  height: clamp(260px, 34vw, 520px);
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
 }
 body:not(.vehicle-shop-page) .project-compare figcaption {
   position: absolute;
@@ -108,7 +112,6 @@ body:not(.vehicle-shop-page) .tdsa-close { min-width: 44px; }
   }
   body:not(.vehicle-shop-page) .page-hero-grid > img { max-height: 260px; }
   body:not(.vehicle-shop-page) .project-compare { grid-template-columns: 1fr; }
-  body:not(.vehicle-shop-page) .project-compare img { height: 260px; }
   body:not(.vehicle-shop-page) .tdsa-root {
     right: max(.6rem, env(safe-area-inset-right));
     bottom: max(.6rem, env(safe-area-inset-bottom));
