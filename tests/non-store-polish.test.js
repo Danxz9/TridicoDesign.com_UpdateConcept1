@@ -127,7 +127,7 @@ test("dark hero contexts keep eyebrow and kicker text yellow", async () => {
 
   assert.match(
     css,
-    /body:not\(\.vehicle-shop-page\) :is\(\.hero, \.page-hero, \.dark-panel, \.cta-band\) :is\(\.eyebrow, \.kicker\) \{\s*color: var\(--yellow\);\s*\}/,
+    /body:not\(\.vehicle-shop-page\) :is\(\.hero, \.page-hero, \.dark-panel, \.cta-band, \.vehicle-store-hero, \.vehicle-proof\) :is\(\.eyebrow, \.kicker\) \{\s*color: var\(--yellow\);\s*\}/,
   );
 });
 

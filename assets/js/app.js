@@ -265,6 +265,33 @@
     });
   });
 
+  const quoteOfferPrefills = {
+    'vehicle-decals': {
+      label: 'Custom Vehicle Decals',
+      details: 'Vehicle graphics request: Custom Vehicle Decals.\n\nVehicle year, make, and model:\nTarget area / coverage:\nColor or finish direction:\nInstallation needed:'
+    },
+    'vehicle-accent': {
+      label: 'Accent Stripe & Panel Graphics',
+      details: 'Vehicle graphics request: Accent Stripe & Panel Graphics.\n\nVehicle year, make, and model:\nTarget area / coverage:\nColor or finish direction:\nInstallation needed:'
+    },
+    'vehicle-specialty': {
+      label: 'Specialty Color & Accent Vinyl',
+      details: 'Vehicle graphics request: Specialty Color & Accent Vinyl.\n\nVehicle year, make, and model:\nTarget area / coverage:\nColor or finish direction:\nInstallation needed:'
+    },
+    'vehicle-coverage': {
+      label: 'Partial & Full Vehicle Graphics',
+      details: 'Vehicle graphics request: Partial & Full Vehicle Graphics.\n\nVehicle year, make, and model:\nTarget area / coverage:\nColor or finish direction:\nInstallation needed:'
+    }
+  };
+  const quoteForm = document.querySelector('#quoteForm');
+  const selectedQuoteOffer = quoteOfferPrefills[new URLSearchParams(window.location.search).get('offer')];
+  if (quoteForm && selectedQuoteOffer) {
+    const projectType = quoteForm.elements['Project type'];
+    const projectDetails = quoteForm.elements['Project details'];
+    if (projectType) projectType.value = 'Vehicle Wraps';
+    if (projectDetails && !projectDetails.value.trim()) projectDetails.value = selectedQuoteOffer.details;
+  }
+
   const accountStorageKey = 'tridicoMockAccount';
   const getAccount = () => {
     try {
@@ -310,9 +337,10 @@
   };
 
   const headerActions = document.querySelector('.header-actions');
-  if (headerActions) headerActions.prepend(accountDesktopButton);
+  const suppressMockCommerce = document.body.classList.contains('vehicle-shop-page') || Boolean(quoteForm);
+  if (headerActions && !suppressMockCommerce) headerActions.prepend(accountDesktopButton);
   const mobilePanelInner = document.querySelector('.mobile-panel-inner');
-  if (mobilePanelInner) {
+  if (mobilePanelInner && !suppressMockCommerce) {
     const firstMobileCta = mobilePanelInner.querySelector('.btn');
     if (firstMobileCta) mobilePanelInner.insertBefore(accountMobileButton, firstMobileCta);
     else mobilePanelInner.append(accountMobileButton);
@@ -397,13 +425,13 @@
   const scheduleTrigger = scheduleWrap.querySelector('.schedule-trigger');
   const scheduleMenu = scheduleWrap.querySelector('.schedule-menu');
   const quoteButton = headerActions?.querySelector('a[href$="quote.html"], a[href*="quote.html"]');
-  if (headerActions) {
+  if (headerActions && !suppressMockCommerce) {
     if (quoteButton) headerActions.insertBefore(scheduleWrap, quoteButton);
     else headerActions.append(scheduleWrap);
   }
 
   let scheduleMobile = null;
-  if (mobilePanelInner) {
+  if (mobilePanelInner && !suppressMockCommerce) {
     scheduleMobile = document.createElement('details');
     scheduleMobile.className = 'schedule-mobile-dropdown';
     scheduleMobile.innerHTML = `
@@ -478,7 +506,7 @@
         <p class="schedule-status" data-schedule-status></p>
       </form>
     </section>`;
-  document.body.append(scheduleModal);
+  if (!suppressMockCommerce) document.body.append(scheduleModal);
 
   const schedulePanel = scheduleModal.querySelector('.schedule-modal__panel');
   const scheduleForm = scheduleModal.querySelector('[data-schedule-form]');
@@ -629,7 +657,7 @@
       </div>
       <div class="account-dashboard" data-account-dashboard hidden></div>
     </section>`;
-  document.body.append(modal);
+  if (!suppressMockCommerce) document.body.append(modal);
 
   const panel = modal.querySelector('.account-modal__panel');
   const authArea = modal.querySelector('[data-account-auth]');

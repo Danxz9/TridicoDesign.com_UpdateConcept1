@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shop | Tridico Design LLC</title>
-  <meta name="description" content="Shop Tridico Design service packages for wraps, signs, print, branding materials, storefront graphics, installation, and business graphics bundles.">
+  <title>Stickers, Decals & Labels Shop | Tridico Design LLC</title>
+  <meta name="description" content="Browse 30 ready-to-order sticker packs, laptop decals, bike and helmet graphics, car decals, business labels, signage decals, and surface wrap kits from Tridico Design.">
   <meta name="theme-color" content="#050505">
-  <meta property="og:title" content="Shop | Tridico Design LLC">
-  <meta property="og:description" content="Search, filter, compare, and build a quote cart for Tridico Design wraps, signs, print, branding, and installation packages.">
+  <meta property="og:title" content="Stickers, Decals & Labels Shop | Tridico Design LLC">
+  <meta property="og:description" content="Shop ready-to-order stickers, decals, labels, and personalized graphics from Tridico Design.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/brand/columbus-bridge-brand-bg.jpg">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" href="assets/css/styles.css?v=20260528-product-images" as="style">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260528-product-images">
+  <link rel="preload" href="assets/css/styles.css?v=20260807-batch040" as="style">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260807-batch040">
+  <link rel="stylesheet" href="assets/css/store.css?v=20260807-batch040">
   <link rel="stylesheet" href="assets/css/support-assistant.css">
 </head>
-<body class="shop-page" data-shop-page>
+<body class="store-page" data-retail-catalog-page>
 
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header" data-site-header>
@@ -48,7 +49,10 @@
         <a class="nav-link" href="news/">News</a>
       </nav>
       <div class="header-actions">
-        <a class="btn btn-small btn-primary" href="quote.html">Get Quote</a>
+        <a class="store-header-cart" href="cart.html" aria-label="Open shopping cart">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 7H7"/><circle cx="10" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+          <span>Cart</span><strong data-retail-cart-count>0</strong>
+        </a>
       </div>
       <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -60,10 +64,11 @@
       <a href="work.html">Portfolio</a>
       <a href="services.html">Services</a>
       <a href="vehicle-wraps.html">Vehicle Wraps</a>
-      <a href="signage.html">Signs & Banners</a>
+      <a href="signage.html">Signs &amp; Banners</a>
       <a href="branding-materials.html">Branding Materials</a>
       <a href="printing.html">Printing</a>
       <a class="active" href="shop.html">Shop</a>
+      <a href="cart.html">Cart (<span data-retail-cart-count>0</span>)</a>
       <a href="process.html">Process</a>
       <a href="about.html">About</a>
       <a href="upload-artwork.html">Upload Artwork</a>
@@ -76,266 +81,102 @@
 </header>
 
 <main id="main">
-  <section class="shop-hero">
-    <div class="container shop-hero-inner">
-      <div class="shop-hero-copy">
-        <p class="eyebrow">Shop</p>
-        <h1>Shop decals, stickers, signs, wall graphics, wrap vinyl, and custom production services.</h1>
-        <p>Browse ready-to-quote products for vehicles, businesses, events, devices, mugs, homes, and custom Tridico production work.</p>
-      </div>
-      <form class="shop-search" data-shop-search-form role="search">
-        <label class="sr-only" for="shop-category">Category</label>
-        <select id="shop-category" data-shop-category aria-label="Shop category">
-          <option value="all">All departments</option>
-          <option value="stickers">Stickers</option>
-          <option value="signs">Signs & Event Signage</option>
-          <option value="posters-wall-art">Posters & Wall Art</option>
-          <option value="home-decor">Home Decor & Wall Decals</option>
-          <option value="car-decals">Car Decals</option>
-          <option value="car-vinyl">Car Vinyl</option>
-          <option value="wrap-vinyl">Wrap Vinyl</option>
-          <option value="mug-stickers">Mug Stickers</option>
-          <option value="tech-decals">Tech Decals</option>
-          <option value="business-decals">Business Decals</option>
-          <option value="custom-services">Custom Services</option>
-        </select>
-        <label class="sr-only" for="shop-query">Search products</label>
-        <input id="shop-query" type="search" data-shop-query placeholder="Search anime vinyl, bumper stickers, hours decals, posters..." autocomplete="off">
-        <button class="btn btn-primary" type="submit">Search</button>
+  <section class="store-search-band" aria-label="Store search">
+    <div class="container store-search-row">
+      <a class="store-search-label" href="#products"><span>Browse</span><strong>All products</strong></a>
+      <form class="store-search-form" data-retail-search-form role="search">
+        <label class="sr-only" for="store-search">Search the Tridico shop</label>
+        <input id="store-search" type="search" placeholder="Search stickers, laptop decals, labels, bike graphics..." autocomplete="off" data-retail-search>
+        <button type="submit" aria-label="Search products"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
       </form>
-      <div class="shop-category-rail" aria-label="Shop departments">
-        <button class="shop-category-pill is-active" type="button" data-shop-chip="all">All</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="stickers">Stickers</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="signs">Signs & Events</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="posters-wall-art">Posters</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="home-decor">Home Decor</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="car-decals">Car Decals</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="car-vinyl">Car Vinyl</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="wrap-vinyl">Wrap Vinyl</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="mug-stickers">Mug Stickers</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="tech-decals">Tech</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="business-decals">Business</button>
-        <button class="shop-category-pill" type="button" data-shop-chip="custom-services">Custom Services</button>
+      <a class="store-search-cart" href="cart.html"><span>Cart</span><strong data-retail-cart-count>0</strong></a>
+    </div>
+  </section>
+
+  <nav class="store-category-bar" aria-label="Shop departments">
+    <div class="container store-category-bar__inner" data-retail-categories></div>
+  </nav>
+
+  <section class="store-masthead">
+    <div class="container store-masthead__grid">
+      <div class="store-masthead__copy">
+        <p class="eyebrow">Tridico shop</p>
+        <h1>Stickers and decals for the places you make your own.</h1>
+        <p>Browse 30 ready-to-order sticker packs, labels, decals, magnets, and surface kits for laptops, bikes, helmets, kids, businesses, cars, and motorcycles. Every card shows the item price and current delivery estimate.</p>
+        <div class="store-masthead__links" aria-label="Featured categories">
+          <button type="button" data-retail-category="tech-decals">Laptop stickers</button>
+          <button type="button" data-retail-category="helmet-decals">Helmet decals</button>
+          <button type="button" data-retail-category="car-decals">Car decals</button>
+          <button type="button" data-retail-category="business-signage">Business signage</button>
+        </div>
+      </div>
+      <div class="store-masthead__feature" aria-label="Featured collections">
+        <a class="store-feature-tile" href="shop.html?category=stickers#products">
+          <img src="assets/images/shop/catalog/batch-040/stickers-ocean-pals-sticker-pack/02-real-world-use.png" alt="Ocean Pals stickers shown on everyday kids gear" width="1254" height="1254" loading="eager" decoding="async">
+          <span><small>Kids &amp; fun</small><strong>Sticker packs</strong></span>
+        </a>
+        <a class="store-feature-tile" href="shop.html?category=car-decals#products">
+          <img src="assets/images/shop/catalog/batch-040/car-decals-minimal-route-line-window-set/02-real-world-use.png" alt="Minimal Route Line decals applied to car glass" width="1254" height="1254" loading="lazy" decoding="async">
+          <span><small>For cars and trucks</small><strong>Vehicle decals</strong></span>
+        </a>
+        <a class="store-feature-tile" href="shop.html?category=business-signage#products">
+          <img src="assets/images/shop/catalog/batch-040/business-signage-open-closed-storefront-door-set/02-real-world-use.png" alt="Open and Closed decals applied to a storefront door" width="1254" height="1254" loading="lazy" decoding="async">
+          <span><small>For customer-facing spaces</small><strong>Business signage</strong></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="shop-market section-pad-sm">
+  <section class="store-benefits" aria-label="Store information">
+    <div class="container store-benefits__grid">
+      <div><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 13 4 4L20 5"/></svg><p><strong>Clear product pricing</strong><span>The displayed item price goes into your cart.</span></p></div>
+      <div><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v10H3z"/><path d="M14 10h3l3 3v4h-6"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg><p><strong>Delivery estimate on every item</strong><span>See the expected business-day window before adding.</span></p></div>
+      <div><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4z"/><path d="m9 12 2 2 4-4"/></svg><p><strong>Reviewed by Tridico</strong><span>Personalized items are proofed before production.</span></p></div>
+    </div>
+  </section>
+
+  <section class="store-catalog-section" id="products">
     <div class="container">
-      <div class="shop-market-bar">
+      <div class="store-catalog-heading">
         <div>
-          <span class="shop-service-area">Lewis Center, OH service area</span>
-          <strong data-shop-result-count>358 items</strong>
+          <h2 id="store-results-heading" tabindex="-1" data-retail-results-heading>Shop products</h2>
+          <p data-retail-result-count>Loading products...</p>
         </div>
-        <div class="shop-market-actions">
-          <label>Sort
-            <select data-shop-sort>
-              <option value="featured">Featured</option>
-              <option value="price-low">Estimated price: low to high</option>
-              <option value="price-high">Estimated price: high to low</option>
-              <option value="name">Name</option>
-            </select>
-          </label>
-          <button class="shop-cart-button" type="button" data-shop-cart-open aria-label="Open quote cart">
-            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.4 12.3a2 2 0 0 0 2 1.65h9.8a2 2 0 0 0 2-1.65l1.35-7.1H5.12"/></svg>
-            <span>Cart</span>
-            <strong data-shop-cart-count>0</strong>
-          </button>
-        </div>
+        <label class="store-sort">Sort by
+          <select data-retail-sort>
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="delivery">Fastest delivery</option>
+            <option value="name">Product name</option>
+          </select>
+        </label>
       </div>
 
-      <div class="shop-layout">
-        <aside class="shop-filters" aria-label="Shop filters">
-          <div class="shop-filter-head">
-            <h2>Filters</h2>
-            <button type="button" data-shop-clear>Clear</button>
+      <div class="store-catalog-layout">
+        <aside class="store-departments" aria-label="Product departments">
+          <h2>Departments</h2>
+          <div data-retail-categories></div>
+          <div class="store-departments__service">
+            <strong>Need custom vehicle coverage?</strong>
+            <span>Wraps, stripes, specialty finishes, and fitted vehicle graphics now live with Tridico's services.</span>
+            <a href="services.html#vehicle-offers">Explore vehicle graphics services</a>
           </div>
-          <fieldset>
-            <legend>Department</legend>
-            <label><input type="checkbox" data-shop-filter value="custom-services"> Custom services</label>
-            <label><input type="checkbox" data-shop-filter value="car-decals"> Car decals</label>
-            <label><input type="checkbox" data-shop-filter value="car-vinyl"> Car vinyl graphics</label>
-            <label><input type="checkbox" data-shop-filter value="wrap-vinyl"> Wrap vinyl material</label>
-            <label><input type="checkbox" data-shop-filter value="stickers"> Stickers</label>
-            <label><input type="checkbox" data-shop-filter value="mug-stickers"> Mug stickers</label>
-            <label><input type="checkbox" data-shop-filter value="business-decals"> Business decals</label>
-            <label><input type="checkbox" data-shop-filter value="signs"> Signs</label>
-            <label><input type="checkbox" data-shop-filter value="tech-decals"> Tech decals</label>
-            <label><input type="checkbox" data-shop-filter value="posters-wall-art"> Posters and wall art</label>
-            <label><input type="checkbox" data-shop-filter value="home-decor"> Home decor</label>
-          </fieldset>
-          <fieldset>
-            <legend>Style / use</legend>
-            <label><input type="checkbox" data-shop-filter value="anime-style"> Anime-inspired</label>
-            <label><input type="checkbox" data-shop-filter value="street-racer"> Street racer</label>
-            <label><input type="checkbox" data-shop-filter value="cute"> Cute / kawaii</label>
-            <label><input type="checkbox" data-shop-filter value="goth"> Goth / dark</label>
-            <label><input type="checkbox" data-shop-filter value="vibrant"> Vibrant</label>
-            <label><input type="checkbox" data-shop-filter value="kids"> Kids</label>
-            <label><input type="checkbox" data-shop-filter value="pets"> Pets</label>
-            <label><input type="checkbox" data-shop-filter value="business"> Business</label>
-            <label><input type="checkbox" data-shop-filter value="event"> Events</label>
-            <label><input type="checkbox" data-shop-filter value="home"> Home</label>
-          </fieldset>
-          <fieldset>
-            <legend>Features</legend>
-            <label><input type="checkbox" data-shop-filter value="custom-text"> Custom text</label>
-            <label><input type="checkbox" data-shop-filter value="qr-code"> QR code</label>
-            <label><input type="checkbox" data-shop-filter value="safety"> Safety / facility</label>
-            <label><input type="checkbox" data-shop-filter value="window"> Window-ready</label>
-            <label><input type="checkbox" data-shop-filter value="water-bottle"> Water bottle</label>
-            <label><input type="checkbox" data-shop-filter value="laptop"> Laptop</label>
-            <label><input type="checkbox" data-shop-filter value="gift"> Giftable</label>
-            <label><input type="checkbox" data-shop-filter value="bulk-ready"> Bulk-ready</label>
-            <label><input type="checkbox" data-shop-filter value="install"> Install available</label>
-          </fieldset>
         </aside>
 
-        <div class="shop-product-area">
-          <div class="shop-deal-strip" aria-label="Shop shortcuts">
-            <a href="vehicle-wraps.html">Wrap guides</a>
-            <a href="upload-artwork.html">Upload artwork</a>
-            <a href="work.html">Portfolio</a>
-            <a href="quote.html">Custom services</a>
-          </div>
-          <div class="shop-grid" id="shop-product-grid" data-shop-grid data-shop-page-size="24">
-            <article class="shop-card" data-shop-card data-shop-id="fleet-wrap-package" data-shop-name="Fleet Vehicle Wrap Package" data-shop-category="custom-services" data-shop-price="1850" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after project review" data-shop-tags="custom-services wraps contractors automotive fleet trailers vehicles standard install">
-              <a class="shop-card-media" href="vehicle-wraps.html"><img src="assets/images/shop/generated/custom-services/fleet-wrap-package-applied.svg" alt="Fleet vehicle wrap package shown applied" loading="lazy" decoding="async"></a>
-              <div class="shop-card-body">
-                <span class="shop-badge">Popular</span>
-                <h2><a href="vehicle-wraps.html">Fleet Vehicle Wrap Package</a></h2>
-                <p>Design, proofing, print production, vehicle decals, and installation planning for one or more service vehicles.</p>
-                <div class="shop-rating" aria-label="High confidence package"><span>★★★★★</span><em>Best for fleet visibility</em></div>
-                <strong class="shop-price">From $1,850</strong>
-                <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
-              </div>
-            </article>
-
-            <article class="shop-card" data-shop-card data-shop-id="storefront-signage-starter" data-shop-name="Storefront Signage Starter" data-shop-category="custom-services" data-shop-price="975" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after site details" data-shop-tags="custom-services signs retail storefront exterior window standard install">
-              <a class="shop-card-media" href="signage.html"><img src="assets/images/shop/generated/custom-services/storefront-signage-starter-applied.svg" alt="Storefront signage starter shown applied" loading="lazy" decoding="async"></a>
-              <div class="shop-card-body">
-                <span class="shop-badge">Storefront</span>
-                <h2><a href="signage.html">Storefront Signage Starter</a></h2>
-                <p>Exterior sign direction, window graphics, entry decals, and a coordinated first impression for local businesses.</p>
-                <div class="shop-rating" aria-label="High confidence package"><span>★★★★☆</span><em>Exterior and window-ready</em></div>
-                <strong class="shop-price">From $975</strong>
-                <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
-              </div>
-            </article>
-
-            <article class="shop-card" data-shop-card data-shop-id="food-truck-branding-kit" data-shop-name="Food Truck Branding Kit" data-shop-category="custom-services" data-shop-price="2400" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after vehicle review" data-shop-tags="custom-services wraps restaurants food trucks menus banners rush install">
-              <a class="shop-card-media" href="vehicle-wraps.html"><img src="assets/images/shop/generated/custom-services/food-truck-branding-kit-applied.svg" alt="Food truck branding kit shown applied" loading="lazy" decoding="async"></a>
-              <div class="shop-card-body">
-                <span class="shop-badge">Mobile food</span>
-                <h2><a href="vehicle-wraps.html">Food Truck Branding Kit</a></h2>
-                <p>Vehicle wrap planning, menu graphics, service-window decals, event banners, and launch-ready visual consistency.</p>
-                <div class="shop-rating" aria-label="High confidence package"><span>★★★★★</span><em>Wrap plus menu support</em></div>
-                <strong class="shop-price">From $2,400</strong>
-                <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
-              </div>
-            </article>
-
-            <article class="shop-card" data-shop-card data-shop-id="window-graphics-decals" data-shop-name="Window Graphics & Decals" data-shop-category="custom-services" data-shop-price="425" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="3-7 business days after approval" data-shop-tags="custom-services signs decals retail restaurants offices storefront rush install">
-              <a class="shop-card-media" href="signage.html"><img src="assets/images/shop/generated/custom-services/window-graphics-decals-applied.svg" alt="Window graphics and decals shown applied" loading="lazy" decoding="async"></a>
-              <div class="shop-card-body">
-                <span class="shop-badge">Fast quote</span>
-                <h2><a href="signage.html">Window Graphics & Decals</a></h2>
-                <p>Hours, branding, privacy graphics, promotions, and cut-vinyl decals sized for doors, windows, and glass walls.</p>
-                <div class="shop-rating" aria-label="High confidence package"><span>★★★★☆</span><em>Great for storefronts</em></div>
-                <strong class="shop-price">From $425</strong>
-                <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
-              </div>
-            </article>
-
-            <article class="shop-card" data-shop-card data-shop-id="business-card-brochure-set" data-shop-name="Business Card + Brochure Set" data-shop-category="custom-services" data-shop-price="320" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="3-6 business days after proof approval" data-shop-tags="custom-services print branding offices retail contractors standard">
-              <a class="shop-card-media" href="printing.html"><img src="assets/images/shop/generated/custom-services/business-card-brochure-set-applied.svg" alt="Business card and brochure print set shown applied" loading="lazy" decoding="async"></a>
-              <div class="shop-card-body">
-                <span class="shop-badge">Print</span>
-                <h2><a href="printing.html">Business Card + Brochure Set</a></h2>
-                <p>Sales-ready printed materials with layout support, proofing, and brand-consistent production files.</p>
-                <div class="shop-rating" aria-label="High confidence package"><span>★★★★☆</span><em>Great for sales teams</em></div>
-                <strong class="shop-price">From $320</strong>
-                <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
-              </div>
-            </article>
-
-            <article class="shop-card" data-shop-card data-shop-id="banner-event-display-bundle" data-shop-name="Banner & Event Display Bundle" data-shop-category="custom-services" data-shop-price="690" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="4-8 business days after proof approval" data-shop-tags="custom-services bundles signs print schools events contractors rush standard">
-              <a class="shop-card-media" href="signage.html"><img src="assets/images/shop/generated/custom-services/banner-event-display-bundle-applied.svg" alt="Banner and event display bundle shown applied" loading="lazy" decoding="async"></a>
-              <div class="shop-card-body">
-                <span class="shop-badge">Events</span>
-                <h2><a href="signage.html">Banner & Event Display Bundle</a></h2>
-                <p>Banners, stands, directional signs, sponsor graphics, and portable display materials for events and teams.</p>
-                <div class="shop-rating" aria-label="High confidence package"><span>★★★★☆</span><em>Portable and repeatable</em></div>
-                <strong class="shop-price">From $690</strong>
-                <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
-              </div>
-            </article>
-
-            <article class="shop-card" data-shop-card data-shop-id="lobby-wall-graphics" data-shop-name="Lobby Wall Graphics" data-shop-category="custom-services" data-shop-price="780" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after wall measurements" data-shop-tags="custom-services branding offices interiors wall graphics standard install">
-              <a class="shop-card-media" href="branding-materials.html"><img src="assets/images/shop/generated/custom-services/lobby-wall-graphics-applied.svg" alt="Lobby wall graphics shown applied" loading="lazy" decoding="async"></a>
-              <div class="shop-card-body">
-                <span class="shop-badge">Interior</span>
-                <h2><a href="branding-materials.html">Lobby Wall Graphics</a></h2>
-                <p>Reception graphics, wall murals, dimensional brand moments, and install planning for interior spaces.</p>
-                <div class="shop-rating" aria-label="High confidence package"><span>★★★★★</span><em>High visual impact</em></div>
-                <strong class="shop-price">From $780</strong>
-                <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
-              </div>
-            </article>
-
-            <article class="shop-card" data-shop-card data-shop-id="contractor-trailer-graphics" data-shop-name="Contractor Trailer Graphics" data-shop-category="custom-services" data-shop-price="875" data-shop-count="1 custom service package" data-shop-unit-price="Project-priced" data-shop-turnaround="Quote after trailer review" data-shop-tags="custom-services wraps contractors trailers decals standard install">
-              <a class="shop-card-media" href="vehicle-wraps.html"><img src="assets/images/shop/generated/custom-services/contractor-trailer-graphics-applied.svg" alt="Contractor trailer graphics shown applied" loading="lazy" decoding="async"></a>
-              <div class="shop-card-body">
-                <span class="shop-badge">Trades</span>
-                <h2><a href="vehicle-wraps.html">Contractor Trailer Graphics</a></h2>
-                <p>Trailer lettering, partial wraps, service lists, phone numbers, DOT details, and durable jobsite branding.</p>
-                <div class="shop-rating" aria-label="High confidence package"><span>★★★★☆</span><em>Jobsite visibility</em></div>
-                <strong class="shop-price">From $875</strong>
-                <button class="btn btn-primary" type="button" data-shop-add>Add to cart</button>
-              </div>
-            </article>
-          </div>
-          <p class="shop-empty" data-shop-empty hidden>No products match those filters.</p>
-          <div class="shop-load-more" data-shop-load-more-wrap>
-            <p data-shop-load-count aria-live="polite">Showing 24 products</p>
-            <button class="btn btn-primary btn-large" type="button" data-shop-load-more aria-controls="shop-product-grid">See 24 More</button>
+        <div>
+          <div class="store-product-grid" data-retail-catalog aria-live="polite"></div>
+          <div class="store-empty" data-retail-empty hidden>
+            <h2>No products match that search.</h2>
+            <p>Try a broader phrase or choose another department.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="cta-band">
-    <div class="container cta-grid">
-      <div><p class="kicker">Need a custom combination?</p><h2>Build the cart, then send it as one quote request.</h2></div>
-      <a class="btn btn-primary btn-large" href="quote.html">Start a Custom Quote</a>
     </div>
   </section>
 </main>
 
-<div class="shop-cart-drawer" data-shop-cart hidden>
-  <div class="shop-cart-backdrop" data-shop-cart-close></div>
-  <aside class="shop-cart-panel" role="dialog" aria-modal="true" aria-labelledby="shop-cart-title" tabindex="-1">
-    <div class="shop-cart-head">
-      <div>
-        <p>Quote cart</p>
-        <h2 id="shop-cart-title">Selected items</h2>
-      </div>
-      <button type="button" data-shop-cart-close aria-label="Close quote cart">&times;</button>
-    </div>
-    <div class="shop-cart-items" data-shop-cart-items></div>
-    <div class="shop-cart-summary">
-      <span>Estimated starting total</span>
-      <strong data-shop-cart-total>$0</strong>
-    </div>
-    <p class="shop-cart-note">Final pricing depends on measurements, material, artwork condition, production timing, and installation details.</p>
-    <div class="shop-cart-actions">
-      <button class="btn btn-primary" type="button" data-shop-checkout>Request quote for cart</button>
-      <a class="btn btn-outline account-dark-outline" href="upload-artwork.html">Upload artwork</a>
-    </div>
-    <p class="shop-cart-status" data-shop-cart-status></p>
-  </aside>
-</div>
+<p class="store-toast" data-retail-toast role="status" aria-live="polite" hidden></p>
 
 <footer class="site-footer">
   <div class="footer-ribbon" aria-hidden="true"><span>DESIGN</span><span>PRINT</span><span>WRAPS</span><span>SIGNS</span><span>BRANDING</span><span>INSTALL</span></div>
@@ -357,6 +198,7 @@
       <ul class="footer-list">
         <li><a href="work.html">Portfolio</a></li>
         <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="resources.html">Resources</a></li>
@@ -382,8 +224,9 @@
     <p><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
   </div>
 </footer>
-<script src="assets/js/shop-products.js?v=20260529-canva-top-50-batch-24" defer></script>
-<script src="assets/js/app.js?v=20260529-upgraded-top-24-custom" defer></script>
-<script src="assets/js/support-assistant.js?v=20260528-portfolio" defer></script>
+<script src="assets/js/shop-products.js?v=20260807-batch040" defer></script>
+<script src="assets/js/app.js?v=20260807-batch040" defer></script>
+<script src="assets/js/store.js?v=20260807-batch040" defer></script>
+<script src="assets/js/support-assistant.js?v=20260807-batch040" defer></script>
 </body>
 </html>

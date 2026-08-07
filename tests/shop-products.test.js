@@ -3,257 +3,314 @@ const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
 const vm = require('node:vm');
+const { parseHTML } = require('linkedom');
 
 const repoRoot = path.join(__dirname, '..');
 
-function loadProducts() {
-  const code = fs.readFileSync(path.join(repoRoot, 'assets/js/shop-products.js'), 'utf8');
+const read = relativePath => fs.readFileSync(path.join(repoRoot, relativePath), 'utf8');
+
+const loadCatalog = () => {
   const context = { window: {} };
-  vm.createContext(context);
-  vm.runInContext(code, context);
-  return context.window.tridicoShopProducts;
-}
+  vm.runInNewContext(read('assets/js/shop-products.js'), context, { filename: 'shop-products.js' });
+  return {
+    categories: context.window.tridicoShopCategories,
+    products: context.window.tridicoShopProducts,
+    vehicleOffers: context.window.tridicoVehicleOffers
+  };
+};
 
-function staticAssetPath(assetPath) {
-  return assetPath.split('?')[0];
-}
+const loadStoreApi = () => {
+  const context = {};
+  vm.runInNewContext(read('assets/js/store.js'), context, { filename: 'store.js' });
+  return context.TridicoRetailStore;
+};
 
-function getStaticCustomServiceCards() {
-  const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
-  return Array.from(html.matchAll(/<article class="shop-card(?: reveal)?" data-shop-card([^>]*)>/g))
-    .map(match => Object.fromEntries(
-      Array.from(match[1].matchAll(/data-shop-([\w-]+)="([^"]*)"/g))
-        .map(([, key, value]) => [key, value])
-    ))
-    .filter(card => card.category === 'custom-services');
-}
-
-test('shop catalog exposes 350 customer-facing products with merchandising fields', () => {
-  const products = loadProducts();
-  assert.equal(products.length, 350);
-  assert.equal(new Set(products.map(product => product.id)).size, products.length);
-
-  for (const product of products) {
-    assert.match(product.id, /^[a-z0-9-]+$/);
-    assert.ok(product.name);
-    assert.ok(product.description);
-    assert.ok(product.price > 0);
-    assert.ok(product.count);
-    assert.ok(product.unitPrice);
-    assert.ok(product.turnaround);
-    assert.ok(product.rating);
-    assert.ok(product.reviews);
-    assert.ok(product.demand);
-    assert.ok(Number.isFinite(product.priority));
-    assert.ok(product.image);
-    assert.ok(product.artworkImage);
-    assert.ok(Array.isArray(product.gallery));
-    assert.equal(product.gallery.length, 2);
-    assert.match(product.image, new RegExp(`^assets/images/shop/(generated/${product.category}|canva-test)/${product.id}-applied\\.svg(?:\\?v=[a-z0-9-]+)?$`));
-    assert.match(product.artworkImage, new RegExp(`^assets/images/shop/(generated/${product.category}|canva-test)/${product.id}-artwork\\.svg(?:\\?v=[a-z0-9-]+)?$`));
-    assert.ok(Array.isArray(product.tags));
-    assert.ok(product.tags.includes(product.category));
-  }
-});
-
-test('shop product image decks use generated applied and artwork files', () => {
-  const products = loadProducts();
-  const productData = fs.readFileSync(path.join(repoRoot, 'assets/js/shop-products.js'), 'utf8');
-  assert.doesNotMatch(productData, /assets\/images\/placeholders/);
-
-  for (const product of products) {
-    const applied = path.join(repoRoot, staticAssetPath(product.image));
-    const artwork = path.join(repoRoot, staticAssetPath(product.artworkImage));
-    assert.ok(fs.existsSync(applied), `${product.id} applied image missing`);
-    assert.ok(fs.existsSync(artwork), `${product.id} artwork image missing`);
-    assert.equal(product.gallery[0].src, product.image);
-    assert.equal(product.gallery[0].label, 'Applied');
-    assert.equal(product.gallery[1].src, product.artworkImage);
-    assert.equal(product.gallery[1].label, 'Artwork');
-  }
-});
-
-test('approved Canva products use Canva deck assets', () => {
-  const products = loadProducts();
-  const featured = [...products].sort((a, b) => b.priority - a.priority);
-  const canvaProducts = [
-    products.find(product => product.id === 'stickers-local-pride-weatherproof-sticker-pack'),
-    products.find(product => product.id === 'stickers-milestone-moment-sticker-bundle')
+test('retail catalog is a browseable set of fixed-price products with image decks and delivery estimates', () => {
+  const { categories, products } = loadCatalog();
+  const requiredCategories = [
+    'stickers',
+    'tech-decals',
+    'car-decals',
+    'helmet-decals',
+    'motorcycle-decals',
+    'bike-decals',
+    'business-decals',
+    'business-signage',
+    'clever-decals',
+    'surface-wraps'
+  ];
+  const expectedProductIds = [
+    'stickers-ocean-pals-sticker-pack',
+    'clever-decals-family-height-history-tracker-wall-kit',
+    'stickers-friendly-monster-mood-sticker-set',
+    'clever-decals-everyday-device-ruler-strip-set',
+    'stickers-rainbow-weather-sticker-sheet',
+    'stickers-tiny-builder-construction-sticker-pack',
+    'tech-decals-geometric-color-block-laptop-sticker-set',
+    'tech-decals-botanical-linework-laptop-decal-kit',
+    'tech-decals-creative-coder-laptop-sticker-pack',
+    'tech-decals-night-sky-minimal-laptop-decal-set',
+    'tech-decals-remote-work-badge-sticker-sheet',
+    'motorcycle-decals-retro-racing-stripe-tank-kit',
+    'bike-decals-wildflower-bicycle-frame-sticker-set',
+    'bike-decals-kids-alphabet-number-decal-set',
+    'motorcycle-decals-adventure-pannier-decal-pack',
+    'car-decals-minimal-route-line-window-set',
+    'helmet-decals-retro-checkered-helmet-kit',
+    'helmet-decals-topographic-line-helmet-sticker-set',
+    'helmet-decals-cosmic-orbit-helmet-accent-pack',
+    'helmet-decals-neon-blade-helmet-decal-set',
+    'business-decals-branded-equipment-id-set',
+    'business-signage-men-women-restroom-door-decal-pair',
+    'business-signage-open-closed-storefront-door-set',
+    'business-signage-business-hours-window-decal',
+    'business-decals-vendor-order-pickup-label-roll',
+    'surface-wraps-tool-chest-drawer-front-kit',
+    'surface-wraps-retail-countertop-accent-kit',
+    'car-decals-mountain-road-window-decal-set',
+    'car-decals-student-driver-removable-magnet-pair',
+    'car-decals-retro-road-trip-bumper-decal-trio'
   ];
 
-  assert.equal(featured[0].id, 'stickers-milestone-moment-sticker-bundle');
-  const localPackRank = featured.findIndex(product => product.id === 'stickers-local-pride-weatherproof-sticker-pack') + 1;
-  assert.ok(localPackRank >= 50 && localPackRank <= 65, `expected local pack around 50th, got ${localPackRank}`);
+  assert.ok(Array.isArray(categories));
+  assert.ok(Array.isArray(products));
+  assert.equal(products.length, 30, `expected the approved 30-product catalog, received ${products.length}`);
+  assert.deepEqual(Array.from(products, product => product.id), expectedProductIds);
+  assert.deepEqual([...new Set(categories.map(category => category.id))].sort(), requiredCategories.sort());
 
-  for (const product of canvaProducts) {
-    assert.match(product.image, /^assets\/images\/shop\/canva-test\//);
-    assert.match(product.artworkImage, /^assets\/images\/shop\/canva-test\//);
-    assert.ok(product.canvaDesigns?.applied);
-    assert.ok(product.canvaDesigns?.artwork);
-    assert.ok(!fs.existsSync(path.join(repoRoot, 'assets/images/shop/generated/stickers', `${product.id}-applied.svg`)));
-    assert.ok(!fs.existsSync(path.join(repoRoot, 'assets/images/shop/generated/stickers', `${product.id}-artwork.svg`)));
-  }
-});
+  const ids = new Set();
+  const publicImages = new Set();
+  const coveredCategories = new Set();
 
-test('featured shop order groups upgraded decks before custom and standard products', () => {
-  const products = loadProducts();
-  const staticCustomCards = getStaticCustomServiceCards().map((card, index) => ({
-    id: card.id,
-    category: card.category,
-    priority: 0,
-    canvaDeck: true,
-    originalOrder: index
-  }));
-  const catalogCards = products.map((product, index) => ({
-    id: product.id,
-    category: product.category,
-    priority: product.priority,
-    canvaDeck: product.canvaDeck,
-    originalOrder: staticCustomCards.length + index
-  }));
-  const sorted = [...staticCustomCards, ...catalogCards].sort((a, b) => {
-    const getGroup = product => {
-      if (product.canvaDeck) return 2;
-      if (product.category === 'custom-services') return 1;
-      return 0;
-    };
-    const groupDiff = getGroup(b) - getGroup(a);
-    if (groupDiff) return groupDiff;
-    const priorityDiff = (Number(b.priority) || 0) - (Number(a.priority) || 0);
-    if (priorityDiff) return priorityDiff;
-    return a.originalOrder - b.originalOrder;
-  });
-  const upgradedCount = [...staticCustomCards, ...products].filter(product => product.canvaDeck).length;
-  const firstStandardRank = sorted.findIndex(product => !product.canvaDeck) + 1;
+  products.forEach(product => {
+    assert.ok(product.id && !ids.has(product.id), `duplicate or missing product id: ${product.id}`);
+    ids.add(product.id);
+    coveredCategories.add(product.category);
 
-  assert.ok(upgradedCount >= 50, `expected at least 50 upgraded Canva decks, got ${upgradedCount}`);
-  assert.ok(firstStandardRank > 50, `expected standard products to start after rank 50, got ${firstStandardRank}`);
-  assert.ok(sorted.slice(0, upgradedCount).every(product => product.canvaDeck), 'upgraded Canva decks should occupy the first featured positions');
-  assert.ok(sorted.slice(0, 50).every(product => product.canvaDeck), 'the first 50 featured positions should be upgraded Canva decks');
-  assert.ok(sorted.slice(0, upgradedCount).some(product => product.category === 'custom-services'), 'Custom Services should stay categorized while included in the upgraded deck block');
-  assert.ok(sorted.slice(upgradedCount).every(product => !product.canvaDeck), 'standard products should start after the upgraded deck block');
-});
+    assert.equal(product.availability, 'active', `${product.id} must be active to appear in the retail catalog`);
+    assert.equal(product.quoteOnly, undefined, `${product.id} must be a retail item, not a quote-only service`);
+    assert.ok(Number.isInteger(product.priceCents) && product.priceCents > 0, `${product.id} needs an integer cents price`);
+    assert.ok(product.description?.length >= 40, `${product.id} needs a useful description`);
+    assert.ok(product.pack, `${product.id} needs a count or pack description`);
+    assert.ok(Number.isInteger(product.delivery?.minBusinessDays), `${product.id} needs minimum delivery days`);
+    assert.ok(Number.isInteger(product.delivery?.maxBusinessDays), `${product.id} needs maximum delivery days`);
+    assert.ok(product.delivery.maxBusinessDays >= product.delivery.minBusinessDays, `${product.id} has an invalid delivery window`);
+    assert.match(product.delivery.label, /business days/);
+    assert.equal(product.images.length, 2, `${product.id} needs its approved two-image public deck`);
 
-test('shop catalog covers requested product lines', () => {
-  const products = loadProducts();
-  const counts = products.reduce((summary, product) => {
-    summary[product.category] = (summary[product.category] || 0) + 1;
-    return summary;
-  }, {});
+    assert.deepEqual(
+      Array.from(product.images, image => image.src),
+      [
+        `assets/images/shop/catalog/batch-040/${product.id}/01-white-background.png`,
+        `assets/images/shop/catalog/batch-040/${product.id}/02-real-world-use.png`
+      ]
+    );
 
-  assert.deepEqual(counts, {
-    'car-decals': 36,
-    'car-vinyl': 50,
-    'wrap-vinyl': 30,
-    stickers: 46,
-    'mug-stickers': 20,
-    'business-decals': 35,
-    signs: 53,
-    'tech-decals': 25,
-    'posters-wall-art': 33,
-    'home-decor': 22
-  });
-});
+    product.images.forEach(image => {
+      assert.ok(image.alt, `${product.id} image needs alt text`);
+      assert.ok(fs.existsSync(path.join(repoRoot, image.src)), `missing product image: ${image.src}`);
+      assert.ok(!publicImages.has(image.src), `duplicate public image reference: ${image.src}`);
+      publicImages.add(image.src);
+    });
 
-test('research-weighted additions follow demand allocation', () => {
-  const products = loadProducts();
-  const weighted = products.filter(product => product.tags.includes('research-weighted'));
-  assert.equal(weighted.length, 50);
-  assert.ok(weighted.every(product => product.researchLine && product.researchWeight));
-
-  const byLine = weighted.reduce((summary, product) => {
-    summary[product.researchLine] = (summary[product.researchLine] || 0) + 1;
-    return summary;
-  }, {});
-
-  assert.deepEqual(byLine, {
-    stickers: 6,
-    'wedding-signage': 6,
-    'poster-gallery': 5,
-    'celebration-yard-signs': 5,
-    'wall-decals': 4,
-    'banners-backdrops': 4,
-    'acrylic-signs': 4,
-    'mounted-boards': 4,
-    'automotive-decals': 3,
-    'dorm-fandom': 3,
-    'decorative-signs': 3,
-    'car-magnets': 3
+    ['sku', 'stock', 'rating', 'reviews', 'demand', 'bought', 'printerArtwork'].forEach(field => {
+      assert.equal(product[field], undefined, `${product.id} must not contain fabricated ${field}`);
+    });
+    assert.equal(
+      fs.existsSync(path.join(repoRoot, 'assets/images/shop/catalog/batch-040', product.id, '03-print-flat.png')),
+      false,
+      `${product.id} production print flat must remain private`
+    );
   });
 
-  const featured = [...products].sort((a, b) => b.priority - a.priority);
-  assert.deepEqual(featured.slice(0, 5).map(product => product.researchLine), [
-    'stickers',
-    'stickers',
-    'stickers',
-    'stickers',
-    'stickers'
-  ]);
+  assert.equal(publicImages.size, 60);
+  requiredCategories.forEach(category => assert.ok(coveredCategories.has(category), `catalog is missing ${category} products`));
 });
 
-test('existing shop items are preserved as Custom Services', () => {
-  const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
-  const customServiceCards = html.match(/data-shop-category="custom-services"/g) || [];
-  assert.equal(customServiceCards.length, 8);
-  assert.match(html, /Fleet Vehicle Wrap Package/);
-  assert.match(html, /Storefront Signage Starter/);
-  assert.match(html, /Food Truck Branding Kit/);
-  assert.match(html, /Contractor Trailer Graphics/);
+test('cart persists only catalog identities and always resolves current product price and imagery', () => {
+  const { products } = loadCatalog();
+  const store = loadStoreApi();
+  const product = products[0];
+  const injected = {
+    version: 1,
+    items: [
+      { productId: product.id, qty: 2, name: 'Injected name', priceCents: 1, image: 'https://invalid.example/bad.png' },
+      { productId: 'does-not-exist', qty: 50 }
+    ]
+  };
+
+  const normalized = store.normalizeCart(injected, products);
+  assert.equal(normalized.items.length, 1);
+  assert.equal(normalized.items[0].productId, product.id);
+  assert.equal(normalized.items[0].qty, 2);
+  assert.equal(normalized.items[0].name, undefined);
+  assert.equal(normalized.items[0].priceCents, undefined);
+
+  const lines = store.resolveCartLines(normalized, products);
+  assert.equal(lines[0].product.name, product.name);
+  assert.equal(lines[0].unitPriceCents, product.priceCents);
+  assert.equal(lines[0].lineTotalCents, product.priceCents * 2);
+
+  const added = store.addCartItem(normalized, product.id, '', 3, products);
+  assert.equal(added.items[0].qty, 5);
+  const updated = store.setCartQuantity(added, product.id, '', 4, products);
+  assert.equal(updated.items[0].qty, 4);
+  const removed = store.removeCartItem(updated, product.id, '', products);
+  assert.equal(removed.items.length, 0);
 });
 
-test('static custom services also have generated image decks', () => {
-  const customServiceCards = getStaticCustomServiceCards();
-  const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
-  assert.doesNotMatch(html, /assets\/images\/placeholders/);
-  assert.equal(customServiceCards.length, 8);
+test('shop page provides conventional catalog search, departments, sorting, product grid, and cart entry points', () => {
+  const html = read('shop.html');
+  const storeSource = read('assets/js/store.js');
 
-  for (const card of customServiceCards) {
-    const applied = path.join(repoRoot, 'assets/images/shop/generated/custom-services', `${card.id}-applied.svg`);
-    const artwork = path.join(repoRoot, 'assets/images/shop/generated/custom-services', `${card.id}-artwork.svg`);
-    assert.ok(fs.existsSync(applied), `${card.id} applied image missing`);
-    assert.ok(fs.existsSync(artwork), `${card.id} artwork image missing`);
-  }
+  assert.match(html, /<body class="store-page" data-retail-catalog-page>/);
+  assert.match(html, /data-retail-search/);
+  assert.match(html, /data-retail-categories/);
+  assert.match(html, /data-retail-sort/);
+  assert.match(html, /data-retail-catalog/);
+  assert.match(html, /data-retail-result-count/);
+  assert.match(html, /href="cart\.html"/);
+  assert.match(html, /assets\/js\/shop-products\.js/);
+  assert.match(html, /assets\/js\/store\.js/);
+  assert.match(html, /Every card shows the item price and current delivery estimate/);
+  assert.match(storeSource, /Estimated delivery:/);
+  assert.match(storeSource, /Add to cart/);
+  assert.match(storeSource, /data-retail-card-qty-action="decrease"/);
+  assert.match(storeSource, /data-retail-card-qty-action="increase"/);
+  assert.match(storeSource, /Remove \$\{product\.name\} from cart/);
+  assert.doesNotMatch(html, /class="vehicle-store-hero|<section class="vehicle-offers|false checkout/);
+  assert.doesNotMatch(storeSource, /bought in past month|out of 5 stars|shop-rating/);
 });
 
-test('shop grid exposes 24-product batch controls', () => {
-  const html = fs.readFileSync(path.join(repoRoot, 'shop.html'), 'utf8');
-  const appJs = fs.readFileSync(path.join(repoRoot, 'assets/js/app.js'), 'utf8');
-  const styles = fs.readFileSync(path.join(repoRoot, 'assets/css/styles.css'), 'utf8');
+test('catalog cards replace Add to cart with synchronized minus, quantity, and plus controls', () => {
+  const { window } = parseHTML(`<!doctype html><html><body data-retail-catalog-page>
+    <span data-retail-cart-count>0</span>
+    <input data-retail-search>
+    <select data-retail-sort><option value="featured" selected>Featured</option></select>
+    <div data-retail-categories></div>
+    <p data-retail-result-count></p>
+    <div data-retail-empty hidden></div>
+    <div data-retail-catalog></div>
+    <p data-retail-toast hidden></p>
+  </body></html>`);
+  let focusedElement = null;
+  window.HTMLElement.prototype.focus = function focus() {
+    focusedElement = this;
+  };
+  const stored = new Map();
+  const storage = {
+    getItem: key => stored.has(key) ? stored.get(key) : null,
+    setItem: (key, value) => stored.set(key, String(value))
+  };
+  const context = {
+    window: null,
+    globalThis: null,
+    document: window.document,
+    localStorage: storage,
+    location: { search: '' },
+    URLSearchParams,
+    Intl,
+    Event: window.Event,
+    setTimeout,
+    clearTimeout
+  };
+  context.window = context;
+  context.globalThis = context;
+  vm.runInNewContext(read('assets/js/shop-products.js'), context, { filename: 'shop-products.js' });
+  vm.runInNewContext(read('assets/js/store.js'), context, { filename: 'store.js' });
+  context.document.dispatchEvent(new window.Event('DOMContentLoaded'));
 
-  assert.match(html, /id="shop-product-grid" data-shop-grid data-shop-page-size="24"/);
-  assert.match(html, /data-shop-load-more[^>]*>See 24 More<\/button>/);
-  assert.match(html, /data-shop-load-more/);
-  assert.match(html, /data-shop-load-count/);
-  assert.doesNotMatch(html, /class="shop-card reveal"/);
-  assert.match(appJs, /visibleLimit \+= pageSize/);
-  assert.match(appJs, /data-shop-load-count/);
-  assert.match(appJs, /card\.classList\.remove\('reveal'\)/);
-  assert.match(appJs, /orderedCards = sortCards\(\)/);
-  assert.match(appJs, /dataset\.shopCanvaDeck/);
-  assert.match(appJs, /if \(card\.dataset\.shopCanvaDeck === 'true'\) return 2/);
-  assert.match(appJs, /if \(card\.dataset\.shopCategory === 'custom-services'\) return 1/);
-  assert.match(appJs, /Show \$\{nextCount\} more products/);
-  assert.match(appJs, /data-shop-media-deck/);
-  assert.match(appJs, /initShopMediaDecks/);
-  assert.match(styles, /\.shop-card\.reveal\{opacity:1;transform:none\}/);
-  assert.match(styles, /\.shop-card\.is-hidden,\.shop-card\.is-deferred\{display:none\}/);
-  assert.match(styles, /\.shop-media-slide\.is-active\{opacity:1;pointer-events:auto\}/);
+  const product = context.tridicoShopProducts[0];
+  const purchaseSelector = `[data-retail-purchase-control="${product.id}"]`;
+  const click = element => element.dispatchEvent(new window.Event('click', { bubbles: true }));
+  const quantity = () => Number(context.document.querySelector(`${purchaseSelector} [data-retail-card-quantity]`)?.textContent || 0);
+
+  const addButton = context.document.querySelector(`${purchaseSelector} [data-retail-add]`);
+  assert.ok(addButton, 'card starts with Add to cart');
+  click(addButton);
+  assert.equal(quantity(), 1);
+  assert.match(context.document.querySelector(`${purchaseSelector} [data-retail-card-qty-action="decrease"]`).getAttribute('aria-label'), /^Remove /);
+  assert.equal(context.document.querySelector('[data-retail-cart-count]').textContent, '1');
+  assert.equal(focusedElement.getAttribute('aria-label'), `Increase quantity of ${product.name}`);
+
+  click(context.document.querySelector(`${purchaseSelector} [data-retail-card-qty-action="increase"]`));
+  assert.equal(quantity(), 2);
+  assert.equal(context.document.querySelector('[data-retail-cart-count]').textContent, '2');
+  assert.equal(focusedElement.getAttribute('aria-label'), `Increase quantity of ${product.name}`);
+
+  click(context.document.querySelector(`${purchaseSelector} [data-retail-card-qty-action="decrease"]`));
+  assert.equal(quantity(), 1);
+  assert.equal(focusedElement.getAttribute('aria-label'), `Remove ${product.name} from cart`);
+  click(context.document.querySelector(`${purchaseSelector} [data-retail-card-qty-action="decrease"]`));
+  assert.ok(context.document.querySelector(`${purchaseSelector} [data-retail-add]`), 'zero quantity restores Add to cart');
+  assert.equal(context.document.querySelector('[data-retail-cart-count]').textContent, '0');
+  assert.equal(focusedElement.getAttribute('aria-label'), `Add ${product.name} to cart`);
+  assert.deepEqual(JSON.parse(stored.get('tridicoRetailCart:v1')).items, []);
 });
 
-test('portfolio replaces ambiguous Work navigation labels', () => {
-  const files = [
-    'index.html',
-    'work.html',
-    'shop.html',
-    'assets/js/support-assistant.js',
-    'tools/build-news-pages.js'
-  ];
-  for (const file of files) {
-    const contents = fs.readFileSync(path.join(repoRoot, file), 'utf8');
-    assert.doesNotMatch(contents, />Work<\/a>|View Work|Quote Similar Work|Work With Tridico/);
-  }
+test('vehicle-focused shop content is preserved inside Services as a quote-led service path', () => {
+  const html = read('services.html');
 
-  const workHtml = fs.readFileSync(path.join(repoRoot, 'work.html'), 'utf8');
-  assert.match(workHtml, /<title>Portfolio \| Tridico Design LLC<\/title>/);
-  assert.match(workHtml, /<p class="eyebrow">Portfolio<\/p>/);
+  assert.match(html, /id="personal-vehicle-graphics"/);
+  assert.match(html, /Personalize the vehicle you already love\./);
+  assert.match(html, /vehicle-shop-intro/);
+  assert.match(html, /id="vehicle-offers"/);
+  assert.match(html, /vehicle-proof/);
+  assert.match(html, /vehicle-shop-process/);
+  assert.match(html, /vehicle-shop-cta/);
+  assert.match(html, /custom-cut-vehicle-decal-kit-v1\.png/);
+  assert.match(html, /consumer-accent-stripe-kit-v1\.png/);
+  assert.match(html, /specialty-color-accent-vinyl-v1\.png/);
+  assert.match(html, /fleet-parts-truck\/01-01-perf-cjd-delaware-2\.jpg/);
+  assert.match(html, /color-change-vinyl\/01-01-mtn-shaker-1\.jpg/);
+  assert.match(html, /formacars-trailer\/01-01-formacars-1\.jpg/);
+  assert.match(html, /quote\.html\?offer=vehicle-decals#quoteForm/);
+  assert.match(html, /quote\.html\?offer=vehicle-accent#quoteForm/);
+  assert.match(html, /quote\.html\?offer=vehicle-specialty#quoteForm/);
+  assert.match(html, /quote\.html\?offer=vehicle-coverage#quoteForm/);
+  assert.doesNotMatch(html, /data-retail-add|data-retail-cart-page/);
+});
+
+test('cart page supports persistent quantities, removal, subtotal, delivery summary, and order handoff', () => {
+  const html = read('cart.html');
+  const quote = read('quote.html');
+  const storeSource = read('assets/js/store.js');
+
+  assert.match(html, /data-retail-cart-page/);
+  assert.match(html, /data-retail-cart-items/);
+  assert.match(html, /data-retail-cart-empty/);
+  assert.match(html, /data-retail-cart-subtotal/);
+  assert.match(html, /data-retail-cart-delivery/);
+  assert.match(html, /data-retail-cart-clear/);
+  assert.match(html, /data-retail-cart-request/);
+  assert.match(html, /quote\.html\?cart=retail#quoteForm/);
+  assert.match(html, /not a completed purchase/);
+  assert.match(storeSource, /tridicoRetailCart:v1/);
+  assert.match(storeSource, /data-retail-cart-qty/);
+  assert.match(storeSource, /data-retail-cart-qty-action="decrease"/);
+  assert.match(storeSource, /line\.qty >= MAX_QUANTITY \? ' disabled' : ''/);
+  assert.match(storeSource, /global\.addEventListener\?\.\('storage'/);
+  assert.match(storeSource, /data-retail-cart-remove/);
+  assert.match(storeSource, /Online shop order request/);
+  assert.match(quote, /<option>Online Shop Order<\/option>/);
+  assert.match(quote, /assets\/js\/store\.js/);
+});
+
+test('vehicle offer registry remains source-bounded for Services integrations', () => {
+  const { vehicleOffers } = loadCatalog();
+  assert.equal(vehicleOffers.length, 4);
+  assert.deepEqual(
+    Array.from(vehicleOffers, offer => offer.id),
+    [
+      'custom-vehicle-decals',
+      'accent-stripe-panel-graphics',
+      'specialty-color-accent-vinyl',
+      'partial-full-vehicle-graphics'
+    ]
+  );
+  vehicleOffers.forEach(offer => {
+    assert.equal(offer.quoteOnly, true);
+    assert.match(offer.href, /^quote\.html\?offer=vehicle-(decals|accent|specialty|coverage)#quoteForm$/);
+    assert.ok(fs.existsSync(path.join(repoRoot, offer.image)), `missing vehicle service image: ${offer.image}`);
+  });
 });

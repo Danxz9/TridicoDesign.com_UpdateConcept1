@@ -11,7 +11,9 @@
     "news:fb:sync": "node scripts/facebook-news-import.js --mode sync",
     "news:fb:dry-run": "node scripts/facebook-news-import.js --mode sync --dry-run",
     "shop:images": "node tools/generate-shop-product-images.js",
-    "test": "node --test tests/*.test.js"
+    "shop:svg:privacy": "node tools/check-shop-svg-privacy.js --check",
+    "shop:svg:privacy:fix": "node tools/check-shop-svg-privacy.js --write",
+    "test": "node --test tests/*.test.js && node tools/check-shop-svg-privacy.js --check"
   },
   "devDependencies": {
     "linkedom": "^0.18.9",

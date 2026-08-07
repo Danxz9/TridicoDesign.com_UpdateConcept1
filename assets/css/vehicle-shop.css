@@ -1,0 +1,57 @@
+/* Focused additions for the vehicle-graphics storefront. */
+.services-vehicle-hero .vehicle-store-hero__layout {
+  min-height: clamp(560px, 68vh, 760px);
+}
+
+.services-vehicle-hero h2 {
+  max-width: 11ch;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(3rem, 6.3vw, 6.7rem);
+  line-height: 0.93;
+  letter-spacing: -0.065em;
+}
+
+.vehicle-shop-intro__other-label {
+  margin: 1.1rem 0 -0.55rem !important;
+  color: #111 !important;
+  font-size: 0.75rem !important;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.vehicle-shop-service-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.vehicle-shop-service-links a {
+  padding: 0.48rem 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: #f6f2ea;
+  color: #111;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.vehicle-shop-service-links a:hover {
+  border-color: #111;
+  background: #111;
+  color: var(--yellow);
+}
+
+@media (max-width: 980px) {
+  .services-vehicle-hero h2 {
+    max-width: 13ch;
+  }
+}
+
+@media (max-width: 720px) {
+  .services-vehicle-hero h2 {
+    font-size: clamp(3rem, 15vw, 4.65rem);
+  }
+}

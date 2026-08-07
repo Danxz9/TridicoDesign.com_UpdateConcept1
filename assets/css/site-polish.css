@@ -29,7 +29,7 @@ body:not(.vehicle-shop-page) .page-hero-grid > img {
   object-position: center;
 }
 body:not(.vehicle-shop-page) :is(.eyebrow, .kicker) { color: var(--red-dark); }
-body:not(.vehicle-shop-page) :is(.hero, .page-hero, .dark-panel, .cta-band) :is(.eyebrow, .kicker) {
+body:not(.vehicle-shop-page) :is(.hero, .page-hero, .dark-panel, .cta-band, .vehicle-store-hero, .vehicle-proof) :is(.eyebrow, .kicker) {
   color: var(--yellow);
 }
 body:not(.vehicle-shop-page) :is(.legal, .resource-card, .contact-panel) a:not(.btn) {
