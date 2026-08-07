@@ -27,6 +27,7 @@ Use a focused proof-and-clarity polish rather than either a cosmetic CSS-only pa
 - Fix responsive typography where compact-page headings overflow on small screens.
 - Reduce the support launcher footprint so it does not cover calls to action or project proof, while preserving its accessible name and function.
 - Replace the faux map placeholder with an honest, linked Lewis Center location card.
+- Isolate all new layout overrides in `assets/css/site-polish.css`, loaded only by the non-store pages in scope, so concurrent Terra store styling remains untouched.
 
 ## Page Treatment
 
@@ -59,4 +60,3 @@ The contact page will link directly to directions rather than simulating an embe
 Add a repository test that scans non-store root HTML pages and fails if they reference `assets/images/placeholders/`. The test must explicitly exclude protected store surfaces.
 
 Run the full test suite and static Pages build. Then compare before-and-after browser captures at matching desktop and mobile viewports, checking image crops, heading fit, spacing, button visibility, and browser console errors. No deployment is included in this task.
-

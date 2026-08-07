@@ -4,7 +4,7 @@
 
 **Goal:** Replace unfinished marketing-site placeholders and internal copy with real Tridico work, customer-facing language, and responsive polish without touching the web store.
 
-**Architecture:** Keep the existing static HTML, shared CSS, and vanilla JavaScript architecture. Apply source-only substitutions in non-store pages, append narrowly scoped CSS overrides using `body:not(.vehicle-shop-page)`, and protect the boundary with a Node test that scans only top-level non-store HTML.
+**Architecture:** Keep the existing static HTML, shared CSS, and vanilla JavaScript architecture. Apply source-only substitutions in non-store pages, load a dedicated `assets/css/site-polish.css` override only on the pages in scope, and protect the boundary with Node tests that scan top-level non-store HTML. The dedicated file avoids modifying Terra's concurrent `assets/css/styles.css` work.
 
 **Tech Stack:** Static HTML5, CSS3, vanilla JavaScript, Node.js built-in test runner, Windows `npm.cmd`, GitHub Pages artifact builder.
 
@@ -18,6 +18,7 @@
 - Preserve existing semantic headings, labels, focus behavior, and the support assistant's accessible name.
 - Use `npm.cmd` for package scripts on this Windows machine.
 - Stage and commit only the files named in each task; concurrent Terra store changes are user-owned and must remain unmodified and unstaged.
+- Do not modify the dirty shared `assets/css/styles.css`; place every new non-store override in `assets/css/site-polish.css`.
 
 ---
 
@@ -40,6 +41,23 @@ const test = require("node:test");
 
 const repositoryRoot = path.resolve(__dirname, "..");
 const excludedPages = new Set(["shop.html", "support-assistant-snippet.html"]);
+const polishedPages = [
+  "about.html",
+  "branding-materials.html",
+  "contact.html",
+  "graphic-design.html",
+  "index.html",
+  "installation.html",
+  "printing.html",
+  "process.html",
+  "quote.html",
+  "resources.html",
+  "services.html",
+  "signage.html",
+  "upload-artwork.html",
+  "vehicle-wraps.html",
+  "work.html",
+];
 
 test("non-store root pages use real imagery instead of placeholder artwork", async () => {
   const pageNames = (await readdir(repositoryRoot))
@@ -56,13 +74,26 @@ test("non-store root pages use real imagery instead of placeholder artwork", asy
 
   assert.deepEqual(offenders, []);
 });
+
+test("polished non-store pages load the isolated override stylesheet", async () => {
+  const offenders = [];
+
+  for (const pageName of polishedPages) {
+    const html = await readFile(path.join(repositoryRoot, pageName), "utf8");
+    if (!html.includes('href="assets/css/site-polish.css"')) {
+      offenders.push(pageName);
+    }
+  }
+
+  assert.deepEqual(offenders, []);
+});
 ```
 
 - [ ] **Step 2: Run the focused test and confirm the intended failure**
 
 Run: `node --test tests/non-store-polish.test.js`
 
-Expected: FAIL with the current non-store pages listed in `offenders`, including `index.html`, `services.html`, and the service-detail pages.
+Expected: two intentional failures: current placeholder-bearing pages appear in the first test's `offenders`, and every page in `polishedPages` appears in the second test's `offenders` because the isolated stylesheet has not been linked yet.
 
 - [ ] **Step 3: Commit only the failing guardrail**
 
@@ -193,7 +224,7 @@ Use these replacement paragraphs in section order:
 
 Run: `node --test tests/non-store-polish.test.js`
 
-Expected: FAIL only because later non-store pages still reference placeholder artwork; `index.html` and `services.html` must not appear in `offenders`.
+Expected: FAIL. The placeholder test must no longer list `index.html` or `services.html`; the isolated-stylesheet test remains intentionally red until Task 5.
 
 - [ ] **Step 6: Commit only the homepage and services hub**
 
@@ -257,7 +288,7 @@ Use the `project-compare` markup from Task 2 in `vehicle-wraps.html`. Apply thes
 
 Run: `node --test tests/non-store-polish.test.js`
 
-Expected: FAIL because the process, quote, resources, and artwork pages still reference placeholder artwork; none of the six service-detail pages may appear in `offenders`.
+Expected: FAIL. The placeholder test may still list process, quote, resources, and artwork pages, but none of the six service-detail pages; the isolated-stylesheet test remains intentionally red until Task 5.
 
 - [ ] **Step 5: Commit only the six service pages**
 
@@ -405,11 +436,11 @@ Set the job-details placeholder to `Job name, order ID, new project, or not sure
 
 In `resources.html`, set the hero image to `assets/images/work/sat-track-gps-print-marketing.jpg` with alt `Coordinated Sat Track GPS print marketing materials`, replace the hero paragraph with `Use these quick tips to prepare files, plan your project, and request a more accurate quote.`, change all `Guide` and `Checklist` badges to `Quick Tip`, and use link labels `Send Your Artwork`, `Plan a Vehicle Wrap`, and `Plan a Sign Project` in card order.
 
-- [ ] **Step 7: Run the guardrail and verify it passes**
+- [ ] **Step 7: Run the guardrails and verify the placeholder behavior is green**
 
 Run: `node --test tests/non-store-polish.test.js`
 
-Expected: PASS with no non-store root HTML referencing `assets/images/placeholders/`.
+Expected: the placeholder-artwork test passes with no non-store root HTML referencing `assets/images/placeholders/`; the isolated-stylesheet test remains intentionally red until Task 5.
 
 - [ ] **Step 8: Commit only the supporting pages**
 
@@ -420,19 +451,33 @@ git commit -m "Finish non-store supporting pages"
 
 ---
 
-### Task 5: Apply Scoped Responsive and Accessibility Polish
+### Task 5: Apply Isolated Responsive and Accessibility Polish
 
 **Files:**
-- Modify: `assets/css/styles.css`
-- Modify: `assets/css/support-assistant.css`
+- Create: `assets/css/site-polish.css`
+- Modify: `index.html`
+- Modify: `services.html`
+- Modify: `graphic-design.html`
+- Modify: `printing.html`
+- Modify: `branding-materials.html`
+- Modify: `signage.html`
+- Modify: `vehicle-wraps.html`
+- Modify: `installation.html`
+- Modify: `work.html`
+- Modify: `process.html`
+- Modify: `about.html`
+- Modify: `quote.html`
+- Modify: `contact.html`
+- Modify: `upload-artwork.html`
+- Modify: `resources.html`
 
 **Interfaces:**
 - Consumes: `project-compare` and `location-card` markup from Tasks 2–4.
-- Produces: non-store-only responsive typography, image crops, accessible targets, and reduced support-launcher overlap.
+- Produces: a non-store-only stylesheet with responsive typography, image crops, accessible targets, and reduced support-launcher overlap.
 
-- [ ] **Step 1: Append non-store layout and typography overrides to `styles.css`**
+- [ ] **Step 1: Create the isolated non-store stylesheet**
 
-Append this block after the existing rules; do not alter global rules shared by the store:
+Create `assets/css/site-polish.css` with this complete content; do not modify `assets/css/styles.css` or `assets/css/support-assistant.css`:
 
 ```css
 /* Non-store polish: preserve Terra's vehicle-shop surface. */
@@ -522,6 +567,10 @@ body:not(.vehicle-shop-page) .location-card {
 body:not(.vehicle-shop-page) .location-card span,
 body:not(.vehicle-shop-page) .location-card small { color: var(--yellow); }
 body:not(.vehicle-shop-page) .location-card strong { font-size: clamp(1.25rem, 2vw, 1.7rem); }
+body:not(.vehicle-shop-page) .tdsa-close,
+body:not(.vehicle-shop-page) .tdsa-chip,
+body:not(.vehicle-shop-page) .tdsa-action { min-height: 44px; }
+body:not(.vehicle-shop-page) .tdsa-close { min-width: 44px; }
 
 @media (max-width: 1180px) and (min-width: 1051px) {
   body:not(.vehicle-shop-page) .desktop-nav,
@@ -542,20 +591,6 @@ body:not(.vehicle-shop-page) .location-card strong { font-size: clamp(1.25rem, 2
   body:not(.vehicle-shop-page) .page-hero-grid > img { max-height: 260px; }
   body:not(.vehicle-shop-page) .project-compare { grid-template-columns: 1fr; }
   body:not(.vehicle-shop-page) .project-compare img { height: 260px; }
-}
-```
-
-- [ ] **Step 2: Append non-store support-assistant overrides**
-
-Append to `assets/css/support-assistant.css`:
-
-```css
-body:not(.vehicle-shop-page) .tdsa-close,
-body:not(.vehicle-shop-page) .tdsa-chip,
-body:not(.vehicle-shop-page) .tdsa-action { min-height: 44px; }
-body:not(.vehicle-shop-page) .tdsa-close { min-width: 44px; }
-
-@media (max-width: 680px) {
   body:not(.vehicle-shop-page) .tdsa-root {
     right: max(.6rem, env(safe-area-inset-right));
     bottom: max(.6rem, env(safe-area-inset-bottom));
@@ -576,21 +611,38 @@ body:not(.vehicle-shop-page) .tdsa-close { min-width: 44px; }
 }
 ```
 
-- [ ] **Step 3: Confirm the CSS contains no store selector changes**
+- [ ] **Step 2: Link the isolated stylesheet only from the 15 pages in scope**
+
+In every HTML file listed under this task, insert this tag immediately after the existing `assets/css/support-assistant.css` link:
+
+```html
+<link rel="stylesheet" href="assets/css/site-polish.css">
+```
+
+Do not add the tag to `shop.html`, `support-assistant-snippet.html`, generated news routes, or any store-owned page.
+
+- [ ] **Step 3: Run both focused guardrails**
+
+Run: `node --test tests/non-store-polish.test.js`
+
+Expected: PASS; no non-store root page references placeholder artwork and every page in `polishedPages` loads the isolated stylesheet.
+
+- [ ] **Step 4: Confirm the CSS remains isolated from Terra's store work**
 
 Run:
 
 ```powershell
-git diff -- assets/css/styles.css assets/css/support-assistant.css
-rg -n "vehicle-shop-page|shop-|cart|checkout|account" assets/css/styles.css assets/css/support-assistant.css
+git diff -- assets/css/site-polish.css
+rg -n "vehicle-shop-page|shop-|cart|checkout|account" assets/css/site-polish.css
+git diff --cached --name-only
 ```
 
-Expected: all new rules are guarded by `body:not(.vehicle-shop-page)`; no new `.shop-*`, cart, checkout, or account rule exists.
+Expected: all selectors in the new file are guarded by `body:not(.vehicle-shop-page)`; no `.shop-*`, cart, checkout, or account rule exists; `assets/css/styles.css` is absent from this task's staged files.
 
-- [ ] **Step 4: Commit only the CSS polish**
+- [ ] **Step 5: Commit only the isolated stylesheet and its non-store links**
 
 ```powershell
-git add -- assets/css/styles.css assets/css/support-assistant.css
+git add -- assets/css/site-polish.css index.html services.html graphic-design.html printing.html branding-materials.html signage.html vehicle-wraps.html installation.html work.html process.html about.html quote.html contact.html upload-artwork.html resources.html
 git commit -m "Polish non-store responsive layouts"
 ```
 
@@ -664,4 +716,3 @@ git commit -m "Document non-store site polish plan"
 ```
 
 Do not push or deploy; the user did not request publication.
-
