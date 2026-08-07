@@ -23,6 +23,19 @@ Dry run recent public posts without writing files:
 npm run news:fb:dry-run
 ```
 
+Audit the local Facebook dataset for ambiguous page snapshots or cloned posts:
+
+```bash
+npm run news:fb:audit
+```
+
+Repair a previously contaminated dataset, then rebuild News pages:
+
+```bash
+npm run news:fb:repair
+npm run news:build
+```
+
 Sync recent/new posts:
 
 ```bash
@@ -88,6 +101,14 @@ sitemap.xml
 
 Manual News posts are not deleted or overwritten.
 
+## Import integrity
+
+The importer fails closed unless a candidate has both a unique Facebook post permalink and a parseable publication date. Page-wide snapshots, ambiguous nested feed wrappers, profile/avatar media, repeated CDN variants, and content/image clones are rejected rather than published as new stories.
+
+Listing cards select alternate gallery media when needed. If a later filter or sort would place the same image on adjacent cards and no alternate is available, the second card becomes a clean text-only card so the feed never repeats the same visual in sequence.
+
+No-op syncs leave the JSON timestamps untouched. This prevents the scheduled workflow from creating a commit when Facebook exposes no verified new or changed post.
+
 ## Scheduling
 
 This repo is a static GitHub Pages site, so scheduled importing runs through:
@@ -96,7 +117,7 @@ This repo is a static GitHub Pages site, so scheduled importing runs through:
 .github/workflows/facebook-news-import.yml
 ```
 
-The workflow runs every 6 hours and can also be started manually with `workflow_dispatch`. It installs dependencies, installs standard Playwright Chromium, runs `npm run news:fb:sync`, rebuilds News pages, and commits generated changes only when files changed. The commit message is:
+The workflow runs every 6 hours and can also be started manually with `workflow_dispatch`. It installs dependencies, installs standard Playwright Chromium, runs `npm run news:fb:sync`, audits the imported dataset, rebuilds News pages, and commits generated changes only when files changed. The commit message is:
 
 ```text
 Import Facebook news posts
@@ -113,6 +134,8 @@ Facebook public page content could not be loaded. No login/API fallback is used 
 ```
 
 Existing imported posts are preserved when a scrape fails. The importer does not attempt a login or any access-control workaround.
+
+If Facebook returns visible page content without a trustworthy post permalink or date, the importer reports zero verified candidates and makes no file changes. This is intentional: a missed automated update is safer than publishing a mislabeled or cloned story.
 
 ## Disable
 

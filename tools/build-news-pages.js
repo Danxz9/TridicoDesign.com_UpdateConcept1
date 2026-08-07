@@ -1,11 +1,14 @@
+const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
+const { planListingMedia } = require("../scripts/lib/facebook-news-importer");
 
 const repoRoot = path.resolve(__dirname, "..");
 const siteBase = "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1";
 const facebookUrl = process.env.FACEBOOK_PAGE_URL || "https://www.facebook.com/TridicoDesignSolutionsLlc";
 const today = "2026-05-14";
 const importedFacebookPostsPath = path.join(repoRoot, "assets", "data", "news-facebook-posts.json");
+const listingImageIdentityCache = new Map();
 
 const categories = [
   {
@@ -1027,6 +1030,35 @@ function getFooter(prefix) {
   return prefixLocalUrls(injectNewsNavigation(match[0], false), prefix);
 }
 
+function listingImageIdentity(image) {
+  const src = String(image?.src || "");
+  if (!src) {
+    return "";
+  }
+  if (listingImageIdentityCache.has(src)) {
+    return listingImageIdentityCache.get(src);
+  }
+
+  let identity = image.sourceUrl || src;
+  if (!/^[a-z]+:/i.test(src)) {
+    const absolute = path.resolve(repoRoot, src);
+    const relative = path.relative(repoRoot, absolute);
+    if (relative && !relative.startsWith("..") && !path.isAbsolute(relative) && fs.existsSync(absolute)) {
+      const stats = fs.statSync(absolute);
+      if (stats.isFile()) {
+        identity = `sha256:${crypto.createHash("sha256").update(fs.readFileSync(absolute)).digest("hex")}`;
+      }
+    }
+  }
+
+  listingImageIdentityCache.set(src, identity);
+  return identity;
+}
+
+function planCardSequence(posts) {
+  return planListingMedia(posts, listingImageIdentity);
+}
+
 function imageTag(img, prefix, className, loading = "lazy") {
   if (!img) {
     return "";
@@ -1079,12 +1111,18 @@ function renderCard(post, prefix, options = {}) {
   const variant = options.variant || "standard";
   const loading = options.loading || "lazy";
   const tagSummary = post.tags.join(" ");
+  const hasPlannedImage = Object.prototype.hasOwnProperty.call(post, "listingImage");
+  const cardImage = hasPlannedImage ? post.listingImage : (post.thumbnailImage || post.featuredImage);
+  const imageIdentity = hasPlannedImage ? post.listingImageIdentity : listingImageIdentity(cardImage);
+  const textOnlyClass = cardImage ? "" : " news-card--text-only";
+  const media = cardImage
+    ? `<a class="news-card__media" href="${postHref(post, prefix)}" aria-label="Read ${escapeHtml(post.title)}">
+      ${imageTag(cardImage, prefix, "news-card__image", loading)}
+    </a>`
+    : "";
 
-  return `<article class="news-card news-card--${variant}" data-news-item data-category="${escapeHtml(post.categorySlug)}" data-source="${escapeHtml(post.sourcePlatform)}" data-tags="${escapeHtml(tagSummary)}" data-title="${escapeHtml(post.title)}" data-excerpt="${escapeHtml(post.excerpt)}" data-date="${escapeHtml(post.datePublished)}" data-priority="${post.priority || 0}">
-    <a class="news-card__media" href="${postHref(post, prefix)}" aria-label="Read ${escapeHtml(post.title)}">
-      ${imageTag(post.thumbnailImage || post.featuredImage, prefix, "news-card__image", loading)}
-    </a>
-    <div class="news-card__body">
+  return `<article class="news-card news-card--${variant}${textOnlyClass}" data-news-item data-category="${escapeHtml(post.categorySlug)}" data-source="${escapeHtml(post.sourcePlatform)}" data-tags="${escapeHtml(tagSummary)}" data-title="${escapeHtml(post.title)}" data-excerpt="${escapeHtml(post.excerpt)}" data-date="${escapeHtml(post.datePublished)}" data-priority="${post.priority || 0}" data-image-key="${escapeHtml(imageIdentity || "")}">
+${media ? `    ${media}\n` : ""}    <div class="news-card__body">
       ${renderMeta(post, prefix)}
       <h3><a href="${postHref(post, prefix)}">${escapeHtml(post.title)}</a></h3>
       <p>${escapeHtml(post.excerpt)}</p>
@@ -1096,11 +1134,16 @@ function renderCard(post, prefix, options = {}) {
 }
 
 function renderCompactCard(post, prefix) {
-  return `<article class="news-compact-card">
-    <a class="news-compact-card__media" href="${postHref(post, prefix)}" aria-label="Read ${escapeHtml(post.title)}">
-      ${imageTag(post.thumbnailImage || post.featuredImage, prefix, "news-compact-card__image", "lazy")}
-    </a>
-    <div>
+  const hasPlannedImage = Object.prototype.hasOwnProperty.call(post, "listingImage");
+  const cardImage = hasPlannedImage ? post.listingImage : (post.thumbnailImage || post.featuredImage);
+  const imageIdentity = hasPlannedImage ? post.listingImageIdentity : listingImageIdentity(cardImage);
+  const media = cardImage
+    ? `<a class="news-compact-card__media" href="${postHref(post, prefix)}" aria-label="Read ${escapeHtml(post.title)}">
+      ${imageTag(cardImage, prefix, "news-compact-card__image", "lazy")}
+    </a>`
+    : "";
+  return `<article class="news-compact-card${cardImage ? "" : " news-compact-card--text-only"}" data-image-key="${escapeHtml(imageIdentity || "")}">
+${media ? `    ${media}\n` : ""}    <div>
       <div class="news-compact-card__meta">${escapeHtml(post.category)} &middot; ${formatDate(post.datePublished)}</div>
       <h3><a href="${postHref(post, prefix)}">${escapeHtml(post.title)}</a></h3>
     </div>
@@ -1167,9 +1210,11 @@ function renderFilterBar(prefix, postsForCount, searchPage = false) {
 }
 
 function renderSidebar(prefix) {
-  const popular = [...publishedPosts]
-    .sort((a, b) => (b.popularityScore || 0) - (a.popularityScore || 0))
-    .slice(0, 4);
+  const popular = planCardSequence(
+    [...publishedPosts]
+      .sort((a, b) => (b.popularityScore || 0) - (a.popularityScore || 0))
+      .slice(0, 4)
+  );
 
   return `<aside class="news-sidebar" aria-label="News sidebar">
     <section class="news-sidebar-module">
@@ -1290,13 +1335,15 @@ ${getFooter(prefix)}
 }
 
 function buildFeaturedGrid(prefix) {
-  const featured = [...publishedPosts]
-    .sort((a, b) => {
-      if (a.isPinned !== b.isPinned) return b.isPinned - a.isPinned;
-      if (a.isFeatured !== b.isFeatured) return b.isFeatured - a.isFeatured;
-      return (b.priority || 0) - (a.priority || 0);
-    })
-    .slice(0, 3);
+  const featured = planCardSequence(
+    [...publishedPosts]
+      .sort((a, b) => {
+        if (a.isPinned !== b.isPinned) return b.isPinned - a.isPinned;
+        if (a.isFeatured !== b.isFeatured) return b.isFeatured - a.isFeatured;
+        return (b.priority || 0) - (a.priority || 0);
+      })
+      .slice(0, 3)
+  );
 
   const [lead, ...secondary] = featured;
 
@@ -1321,7 +1368,7 @@ function buildFeaturedGrid(prefix) {
 
 function renderNewsLanding() {
   const prefix = "../";
-  const latest = publishedPosts;
+  const latest = planCardSequence(publishedPosts);
   const lead = publishedPosts[0];
 
   const main = `<main id="main" class="news-main">
@@ -1466,7 +1513,7 @@ function relatedPosts(post) {
 
 function renderStoryPage(post) {
   const prefix = "../../";
-  const related = relatedPosts(post);
+  const related = planCardSequence(relatedPosts(post));
   const bodyParagraphs = post.body
     .split(/\n{2,}/)
     .map((paragraph) => paragraph.trim())
@@ -1622,7 +1669,7 @@ function renderListingPage({
   activeTopic = "all",
   noindex = false,
 }) {
-  const safePosts = postsForPage;
+  const safePosts = planCardSequence(postsForPage);
   const main = `<main id="main" class="news-main">
   <section class="news-archive-hero">
     <div class="container">
@@ -1938,6 +1985,25 @@ function writeNewsAssets() {
       search.value = params.get("q");
     }
 
+    const preventAdjacentImageRepeats = (items) => {
+      let previousImageKey = "";
+      items.forEach((item) => {
+        const media = item.querySelector(".news-card__media");
+        const imageKey = item.dataset.imageKey || "";
+        item.classList.remove("news-card--sequence-text-only");
+        if (media) media.hidden = false;
+
+        if (media && imageKey && imageKey === previousImageKey) {
+          media.hidden = true;
+          item.classList.add("news-card--sequence-text-only");
+          previousImageKey = "";
+          return;
+        }
+
+        previousImageKey = imageKey;
+      });
+    };
+
     const apply = () => {
       const query = normalize(search?.value);
       const selectedCategory = category?.value || "all";
@@ -1967,6 +2033,8 @@ function writeNewsAssets() {
         }
         return new Date(b.dataset.date) - new Date(a.dataset.date);
       });
+
+      preventAdjacentImageRepeats(matches);
 
       matches.forEach((item) => list.appendChild(item));
       allItems.forEach((item) => {
@@ -2105,6 +2173,7 @@ function writeNewsAssets() {
 .news-card--lead .news-card__body{padding:1.35rem}
 .news-card--lead h3{font-size:clamp(1.7rem,3vw,2.45rem)}
 .news-card--secondary{display:grid;grid-template-columns:170px minmax(0,1fr)}
+.news-card--secondary.news-card--text-only{grid-template-columns:1fr}
 .news-card--secondary .news-card__image{height:100%;aspect-ratio:1/1}
 .news-card--secondary .news-card__body{padding:.95rem}
 .news-card--secondary h3{font-size:1.05rem}
@@ -2119,6 +2188,7 @@ function writeNewsAssets() {
 .news-result-count{grid-column:1/-1;margin:0;color:var(--news-muted);font-weight:750}
 .latest-feed-list{display:grid;gap:1rem}
 .latest-feed-list .news-card{display:grid;grid-template-columns:240px minmax(0,1fr)}
+.latest-feed-list .news-card--text-only,.latest-feed-list .news-card--sequence-text-only{grid-template-columns:1fr}
 .latest-feed-list .news-card__image{height:100%;aspect-ratio:4/3}
 .news-load-more-wrap{display:flex;justify-content:center;margin-top:1.35rem}
 .news-empty-state{background:#fff;border:1px solid var(--news-border);border-radius:var(--radius-sm);padding:2rem;text-align:center}
@@ -2132,6 +2202,7 @@ function writeNewsAssets() {
 .news-sidebar-module--quote h2,.news-sidebar-module--quote p{color:#fff}
 .news-compact-list{display:grid;gap:.85rem}
 .news-compact-card{display:grid;grid-template-columns:82px minmax(0,1fr);gap:.75rem;align-items:center}
+.news-compact-card--text-only{grid-template-columns:1fr}
 .news-compact-card__image{width:82px;height:72px;object-fit:cover;border-radius:8px}
 .news-compact-card h3{font-size:.95rem;line-height:1.16;margin:.15rem 0 0}
 .news-compact-card h3 a{color:#050505}

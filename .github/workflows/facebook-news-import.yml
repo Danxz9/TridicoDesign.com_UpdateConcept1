@@ -40,6 +40,9 @@ jobs:
       - name: Sync public Facebook posts
         run: npm run news:fb:sync
 
+      - name: Audit Facebook News data
+        run: npm run news:fb:audit
+
       - name: Rebuild News pages
         run: npm run build
 

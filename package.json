@@ -10,6 +10,8 @@
     "news:fb:backfill": "node scripts/facebook-news-import.js --mode backfill",
     "news:fb:sync": "node scripts/facebook-news-import.js --mode sync",
     "news:fb:dry-run": "node scripts/facebook-news-import.js --mode sync --dry-run",
+    "news:fb:audit": "node tools/audit-facebook-news-data.js --check",
+    "news:fb:repair": "node tools/audit-facebook-news-data.js --write",
     "shop:images": "node tools/generate-shop-product-images.js",
     "shop:svg:privacy": "node tools/check-shop-svg-privacy.js --check",
     "shop:svg:privacy:fix": "node tools/check-shop-svg-privacy.js --write",

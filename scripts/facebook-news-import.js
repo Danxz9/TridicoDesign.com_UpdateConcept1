@@ -6,12 +6,14 @@ const path = require("path");
 const {
   DEFAULT_FACEBOOK_PAGE_URL,
   buildNewsPostFromCandidate,
+  candidateFingerprint,
   downloadImagesForCandidate,
   filterCandidatesByDate,
-  findExistingImport,
   hashCandidate,
   inferSourcePostId,
+  isVerifiedFacebookPostUrl,
   normalizeSourceUrl,
+  parsePublishedDate,
   readJsonFile,
   scrapeFacebookPosts,
   writeJsonFile,
@@ -73,6 +75,7 @@ function indexExisting(posts, registryRecords) {
   const bySourcePostId = new Map();
   const bySourceUrl = new Map();
   const byContentHash = new Map();
+  const bySourceFingerprint = new Map();
 
   for (const post of posts || []) {
     if (post.sourcePostId) {
@@ -85,6 +88,10 @@ function indexExisting(posts, registryRecords) {
     const contentHash = post.sourceContentHash || post.contentHash;
     if (contentHash) {
       byContentHash.set(contentHash, post);
+    }
+    const sourceFingerprint = post.sourceFingerprint || candidateFingerprint(post);
+    if (sourceFingerprint) {
+      bySourceFingerprint.set(sourceFingerprint, post);
     }
   }
 
@@ -109,25 +116,29 @@ function indexExisting(posts, registryRecords) {
     }
   }
 
-  return { bySourcePostId, bySourceUrl, byContentHash };
+  return { bySourcePostId, bySourceUrl, byContentHash, bySourceFingerprint };
 }
 
 function findExisting(candidate, indexes) {
   const sourceUrl = normalizeSourceUrl(candidate.sourceUrl || candidate.permalinkUrl || "");
   const sourcePostId = candidate.sourcePostId || inferSourcePostId(sourceUrl);
   const contentHash = candidate.sourceContentHash || hashCandidate({ ...candidate, sourceUrl });
+  const sourceFingerprint = candidate.sourceFingerprint || candidateFingerprint(candidate);
 
   if (sourcePostId && indexes.bySourcePostId.has(sourcePostId)) {
-    return { post: indexes.bySourcePostId.get(sourcePostId), sourceUrl, sourcePostId, contentHash };
+    return { post: indexes.bySourcePostId.get(sourcePostId), sourceUrl, sourcePostId, contentHash, matchType: "sourcePostId" };
   }
   if (sourceUrl && indexes.bySourceUrl.has(sourceUrl)) {
-    return { post: indexes.bySourceUrl.get(sourceUrl), sourceUrl, sourcePostId, contentHash };
+    return { post: indexes.bySourceUrl.get(sourceUrl), sourceUrl, sourcePostId, contentHash, matchType: "sourceUrl" };
   }
   if (contentHash && indexes.byContentHash.has(contentHash)) {
-    return { post: indexes.byContentHash.get(contentHash), sourceUrl, sourcePostId, contentHash };
+    return { post: indexes.byContentHash.get(contentHash), sourceUrl, sourcePostId, contentHash, matchType: "contentHash" };
+  }
+  if (sourceFingerprint && indexes.bySourceFingerprint.has(sourceFingerprint)) {
+    return { post: indexes.bySourceFingerprint.get(sourceFingerprint), sourceUrl, sourcePostId, contentHash, matchType: "sourceFingerprint" };
   }
 
-  return { post: null, sourceUrl, sourcePostId, contentHash };
+  return { post: null, sourceUrl, sourcePostId, contentHash, matchType: "new" };
 }
 
 function updateRegistry(registry, post, now) {
@@ -162,6 +173,7 @@ async function importCandidates(candidates, config, importedData, registry) {
     updated: 0,
     skippedDuplicates: 0,
     skippedMissingContent: 0,
+    skippedUnverifiable: 0,
     imageDownloadsAttempted: 0,
     imageDownloadsSucceeded: 0,
     imageDownloadsFailed: 0,
@@ -172,6 +184,11 @@ async function importCandidates(candidates, config, importedData, registry) {
 
   for (const candidate of candidates) {
     const text = String(candidate.text || "").trim();
+    const sourceUrl = normalizeSourceUrl(candidate.sourceUrl || candidate.permalinkUrl || "");
+    if (!isVerifiedFacebookPostUrl(sourceUrl) || !parsePublishedDate(candidate, now).iso) {
+      stats.skippedUnverifiable += 1;
+      continue;
+    }
     const sourceContentHash = candidate.sourceContentHash || hashCandidate(candidate);
     const existing = findExisting({ ...candidate, sourceContentHash }, indexes);
     const existingHash = existing.post?.sourceContentHash || existing.post?.contentHash;
@@ -181,7 +198,7 @@ async function importCandidates(candidates, config, importedData, registry) {
       continue;
     }
 
-    if (existing.post && existingHash === sourceContentHash) {
+    if ((existing.post && existingHash === sourceContentHash) || existing.matchType === "sourceFingerprint") {
       stats.skippedDuplicates += 1;
       continue;
     }
@@ -234,9 +251,10 @@ async function importCandidates(candidates, config, importedData, registry) {
     indexes.bySourcePostId.set(post.sourcePostId, post);
     indexes.bySourceUrl.set(normalizeSourceUrl(post.sourceUrl), post);
     indexes.byContentHash.set(post.sourceContentHash || post.contentHash, post);
+    indexes.bySourceFingerprint.set(post.sourceFingerprint || candidateFingerprint(post), post);
   }
 
-  if (!config.dryRun) {
+  if (!config.dryRun && (stats.imported || stats.updated)) {
     importedData.generatedAt = now.toISOString();
     importedData.source = "facebook";
     importedData.sourcePlatform = "facebook";
@@ -277,6 +295,7 @@ function printSummary(summary) {
   console.log(`updated: ${summary.updated}`);
   console.log(`skipped duplicates: ${summary.skippedDuplicates}`);
   console.log(`skipped missing content: ${summary.skippedMissingContent}`);
+  console.log(`skipped unverifiable: ${summary.skippedUnverifiable}`);
   console.log(`image downloads attempted: ${summary.imageDownloadsAttempted}`);
   console.log(`image downloads succeeded: ${summary.imageDownloadsSucceeded}`);
   console.log(`image downloads failed: ${summary.imageDownloadsFailed}`);

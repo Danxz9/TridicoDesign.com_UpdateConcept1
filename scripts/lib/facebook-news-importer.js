@@ -55,8 +55,52 @@ function truncate(value, maxLength) {
   return `${clean}...`;
 }
 
+function repairSocialText(value) {
+  const replacements = new Map([
+    ["â€¦", "…"],
+    ["â€™", "’"],
+    ["â€œ", "“"],
+    ["â€", "”"],
+    ["â€“", "–"],
+    ["â€”", "—"],
+    ["Â·", "·"],
+    ["Â®", "®"],
+    ["Â©", "©"],
+  ]);
+
+  let repaired = String(value || "");
+  for (const [broken, replacement] of replacements) {
+    repaired = repaired.split(broken).join(replacement);
+  }
+  return repaired.replace(/\bAi\b/g, "AI");
+}
+
+function isSourcePageLine(line) {
+  return /^tridico design(?: solutions)?(?: llc)?$/i.test(String(line || "").trim());
+}
+
+function isStandaloneDateLine(line) {
+  const value = String(line || "").trim();
+  return /^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2}(?:,?\s+\d{4})?(?:\s+at\s+\d{1,2}:\d{2}\s*(?:AM|PM)?)?$/i.test(value) ||
+    /^(today|yesterday)(?:\s+at\s+\d{1,2}:\d{2}\s*(?:AM|PM)?)?$/i.test(value);
+}
+
+function looksLikeFacebookDateLabel(value) {
+  const label = String(value || "").replace(/\s+/g, " ").trim();
+  return /\b\d{4}\b|\b(?:yesterday|today)\b|\bat\s+\d|^\d+\s*[mhdw]$|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2}\b/i.test(label);
+}
+
+function dateLabelForAnchor(anchor) {
+  return [
+    anchor?.getAttribute?.("datetime"),
+    anchor?.getAttribute?.("title"),
+    anchor?.getAttribute?.("aria-label"),
+    anchor?.textContent,
+  ].filter(Boolean).join(" ");
+}
+
 function normalizeParagraphText(value) {
-  const rawLines = String(value || "")
+  const rawLines = repairSocialText(value)
     .replace(/\r/g, "\n")
     .replace(/\u00a0/g, " ")
     .split(/\n+/)
@@ -68,7 +112,7 @@ function normalizeParagraphText(value) {
     if (isFacebookCommentBoundary(line)) {
       break;
     }
-    if (!isFacebookUiLine(line)) {
+    if (!isFacebookUiLine(line) && !isSourcePageLine(line) && !isStandaloneDateLine(line)) {
       lines.push(line);
     }
   }
@@ -204,22 +248,30 @@ function inferSourcePostId(sourceUrl) {
 function parsePublishedDate(candidate, now = new Date()) {
   const inputs = [candidate.dateISO, candidate.dateText].filter(Boolean);
   for (const input of inputs) {
-    const parsed = Date.parse(input);
-    if (!Number.isNaN(parsed)) {
-      return { iso: new Date(parsed).toISOString(), approximate: false };
+    const normalized = repairSocialText(input).replace(/\s+/g, " ").trim();
+    const relative = normalized.match(/^(\d+)\s*([mhdw])$/i);
+    if (relative) {
+      const multipliers = { m: 60_000, h: 3_600_000, d: 86_400_000, w: 604_800_000 };
+      const elapsed = Number(relative[1]) * multipliers[relative[2].toLowerCase()];
+      return { iso: new Date(now.getTime() - elapsed).toISOString(), approximate: true };
     }
 
-    const monthDay = String(input).match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2}\b/i);
-    if (monthDay) {
+    const monthDay = normalized.match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2}\b/i);
+    if (monthDay && !/\b\d{4}\b/.test(normalized)) {
       const withYear = `${monthDay[0]} ${now.getUTCFullYear()}`;
       const parsedWithYear = Date.parse(withYear);
       if (!Number.isNaN(parsedWithYear)) {
         return { iso: new Date(parsedWithYear).toISOString(), approximate: true };
       }
     }
+
+    const parsed = Date.parse(normalized);
+    if (!Number.isNaN(parsed)) {
+      return { iso: new Date(parsed).toISOString(), approximate: false };
+    }
   }
 
-  return { iso: now.toISOString(), approximate: true };
+  return { iso: "", approximate: true };
 }
 
 function hashCandidate(candidate) {
@@ -239,6 +291,11 @@ function stableImageIdentity(src) {
     const url = new URL(src, DEFAULT_FACEBOOK_PAGE_URL);
     url.hash = "";
     url.search = "";
+    const host = url.hostname.toLowerCase();
+    const fileName = url.pathname.split("/").filter(Boolean).pop()?.toLowerCase() || "";
+    if (fileName && (host.includes("fbcdn") || host.startsWith("scontent-") || host.startsWith("scontent."))) {
+      return `facebook-media:${fileName}`;
+    }
     return url.toString();
   } catch {
     return String(src).split("?")[0];
@@ -304,10 +361,11 @@ function filterImages(images, limit = DEFAULT_IMAGE_LIMIT) {
   const result = [];
   for (const image of images || []) {
     const src = normalizeImageUrl(image.src || image.currentSrc || "");
-    if (!src || seen.has(src) || !isMeaningfulImage({ ...image, src })) {
+    const identity = stableImageIdentity(src);
+    if (!src || !identity || seen.has(identity) || !isMeaningfulImage({ ...image, src })) {
       continue;
     }
-    seen.add(src);
+    seen.add(identity);
     result.push({
       src,
       alt: image.alt || "",
@@ -319,6 +377,57 @@ function filterImages(images, limit = DEFAULT_IMAGE_LIMIT) {
     }
   }
   return result;
+}
+
+function contentImageIdentity(input) {
+  const candidates = [
+    ...(input?.sourceImages || []),
+    ...(input?.images || []),
+    input?.thumbnailImage,
+    input?.featuredImage,
+  ].filter(Boolean);
+
+  for (const image of candidates) {
+    const identity = stableImageIdentity(image.sourceUrl || image.src || image.currentSrc || "");
+    if (identity) {
+      return identity;
+    }
+  }
+  return "";
+}
+
+function candidateFingerprint(input) {
+  const text = normalizeFlatText(input?.text || input?.caption || input?.body || input?.excerpt || "");
+  const imageIdentity = contentImageIdentity(input);
+  return hashString([text, imageIdentity].join("\n"));
+}
+
+function planListingMedia(posts, getIdentity = (image) => stableImageIdentity(image?.sourceUrl || image?.src || "")) {
+  let previousIdentity = "";
+
+  return (posts || []).map((post) => {
+    const seen = new Set();
+    const candidates = [post.thumbnailImage, post.featuredImage, ...(post.images || [])].filter(Boolean);
+    const available = [];
+
+    for (const image of candidates) {
+      const identity = getIdentity(image);
+      if (!identity || seen.has(identity)) {
+        continue;
+      }
+      seen.add(identity);
+      available.push({ image, identity });
+    }
+
+    const selected = available.find((candidate) => candidate.identity !== previousIdentity) || null;
+    if (!selected) {
+      previousIdentity = "";
+      return { ...post, listingImage: null, listingImageIdentity: "" };
+    }
+
+    previousIdentity = selected.identity;
+    return { ...post, listingImage: selected.image, listingImageIdentity: selected.identity };
+  });
 }
 
 function inferCategoryAndTags(text) {
@@ -381,6 +490,9 @@ function buildNewsPostFromCandidate(candidate, options = {}) {
   const title = generateTitle(text);
   const excerpt = generateExcerpt(text);
   const published = parsePublishedDate(candidate, now);
+  if (!published.iso) {
+    throw new Error("Facebook candidate is missing a verifiable published date.");
+  }
   const sourceContentHash = candidate.sourceContentHash || hashCandidate({ ...candidate, sourceUrl });
   const slug = existingPost?.slug || generateSlug(published.iso, title, sourcePostId);
   const id = existingPost?.id || `news_fb_${new Date(published.iso).toISOString().slice(0, 10).replace(/-/g, "_")}_${slugify(sourcePostId).slice(0, 40)}`;
@@ -429,10 +541,103 @@ function buildNewsPostFromCandidate(candidate, options = {}) {
   };
 }
 
+function importedPostQuality(post) {
+  let score = 0;
+  if (isVerifiedFacebookPostUrl(post?.sourceUrl)) score += 100;
+  if (post?.datePublishedIsApproximate === false) score += 20;
+  if ((post?.sourceImages || []).length) score += 10;
+  if ((post?.images || []).some((image) => image?.src && image.src !== DEFAULT_PLACEHOLDER_IMAGE.src)) score += 5;
+  return score;
+}
+
+function importTimestamp(post) {
+  const parsed = Date.parse(post?.dateImported || post?.datePublished || "");
+  return Number.isNaN(parsed) ? Number.POSITIVE_INFINITY : parsed;
+}
+
+function normalizeImportedPost(post, sourceFingerprint) {
+  const body = normalizeParagraphText(post.body || post.text || post.excerpt || "");
+  const categoryAndTags = inferCategoryAndTags(body);
+  return {
+    ...post,
+    title: generateTitle(body),
+    excerpt: generateExcerpt(body),
+    body,
+    category: categoryAndTags.category,
+    tags: categoryAndTags.tags,
+    readingTime: estimateReadingTime(body),
+    sourceFingerprint,
+  };
+}
+
+function deduplicateImportedPosts(posts, registryRecords = []) {
+  const groups = new Map();
+  const removedPosts = [];
+
+  for (const post of posts || []) {
+    if (!isVerifiedFacebookPostUrl(post?.sourceUrl)) {
+      removedPosts.push(post);
+      continue;
+    }
+
+    const fingerprint = post.sourceFingerprint || candidateFingerprint(post);
+    const current = groups.get(fingerprint);
+    if (!current) {
+      groups.set(fingerprint, post);
+      continue;
+    }
+
+    const currentQuality = importedPostQuality(current);
+    const nextQuality = importedPostQuality(post);
+    const preferNext = nextQuality > currentQuality ||
+      (nextQuality === currentQuality && importTimestamp(post) < importTimestamp(current));
+
+    if (preferNext) {
+      removedPosts.push(current);
+      groups.set(fingerprint, post);
+    } else {
+      removedPosts.push(post);
+    }
+  }
+
+  const keptPosts = [...groups.entries()]
+    .map(([fingerprint, post]) => normalizeImportedPost(post, fingerprint))
+    .sort((a, b) => new Date(b.datePublished) - new Date(a.datePublished));
+
+  const registry = keptPosts.map((post) => {
+    const existing = (registryRecords || []).find((record) => {
+      return (
+        (post.sourcePostId && record.sourcePostId === post.sourcePostId) ||
+        (post.slug && record.importedSlug === post.slug) ||
+        (post.sourceUrl && normalizeSourceUrl(record.sourceUrl) === normalizeSourceUrl(post.sourceUrl))
+      );
+    });
+    return existing || {
+      sourcePostId: post.sourcePostId,
+      sourceUrl: post.sourceUrl,
+      contentHash: post.sourceContentHash || post.contentHash,
+      importedSlug: post.slug,
+      dateImported: post.dateImported,
+      lastSeenAt: post.lastSeenAt || post.dateImported,
+    };
+  });
+
+  return {
+    posts: keptPosts,
+    registry,
+    removedPosts,
+    stats: {
+      kept: keptPosts.length,
+      removed: removedPosts.length,
+    },
+  };
+}
+
 function indexExistingPosts(posts, registryRecords) {
   const bySourcePostId = new Map();
   const bySourceUrl = new Map();
   const byContentHash = new Map();
+  const bySourceFingerprint = new Map();
 
   for (const post of posts || []) {
     if (post.sourcePostId) {
@@ -445,6 +650,10 @@ function indexExistingPosts(posts, registryRecords) {
     const contentHash = post.sourceContentHash || post.contentHash;
     if (contentHash) {
       byContentHash.set(contentHash, post);
+    }
+    const sourceFingerprint = post.sourceFingerprint || candidateFingerprint(post);
+    if (sourceFingerprint) {
+      bySourceFingerprint.set(sourceFingerprint, post);
     }
   }
 
@@ -469,13 +678,14 @@ function indexExistingPosts(posts, registryRecords) {
     }
   }
 
-  return { bySourcePostId, bySourceUrl, byContentHash };
+  return { bySourcePostId, bySourceUrl, byContentHash, bySourceFingerprint };
 }
 
 function findExistingImport(candidate, indexes) {
   const sourceUrl = normalizeSourceUrl(candidate.sourceUrl || candidate.permalinkUrl || "");
   const sourcePostId = candidate.sourcePostId || inferSourcePostId(sourceUrl);
   const contentHash = candidate.sourceContentHash || hashCandidate({ ...candidate, sourceUrl });
+  const sourceFingerprint = candidate.sourceFingerprint || candidateFingerprint(candidate);
 
   if (sourcePostId && indexes.bySourcePostId.has(sourcePostId)) {
     return { post: indexes.bySourcePostId.get(sourcePostId), matchType: "sourcePostId", contentHash };
@@ -485,6 +695,9 @@ function findExistingImport(candidate, indexes) {
   }
   if (contentHash && indexes.byContentHash.has(contentHash)) {
     return { post: indexes.byContentHash.get(contentHash), matchType: "contentHash", contentHash };
+  }
+  if (sourceFingerprint && indexes.bySourceFingerprint.has(sourceFingerprint)) {
+    return { post: indexes.bySourceFingerprint.get(sourceFingerprint), matchType: "sourceFingerprint", contentHash };
   }
 
   return { post: null, matchType: "new", contentHash };
@@ -500,6 +713,7 @@ function mergeImportedPosts(existingPosts, registryRecords, candidates, options 
     updated: 0,
     skippedDuplicates: 0,
     skippedMissingContent: 0,
+    skippedUnverifiable: 0,
     dryRunCreates: [],
     dryRunUpdates: [],
   };
@@ -513,12 +727,16 @@ function mergeImportedPosts(existingPosts, registryRecords, candidates, options 
     }
 
     const sourceUrl = normalizeSourceUrl(candidate.sourceUrl || candidate.permalinkUrl || options.pageUrl || DEFAULT_FACEBOOK_PAGE_URL);
+    if (!isVerifiedFacebookPostUrl(sourceUrl) || !parsePublishedDate(candidate, now).iso) {
+      stats.skippedUnverifiable += 1;
+      continue;
+    }
     const sourcePostId = candidate.sourcePostId || inferSourcePostId(sourceUrl);
     const sourceContentHash = candidate.sourceContentHash || hashCandidate({ ...candidate, sourceUrl });
     const existing = findExistingImport({ ...candidate, sourceUrl, sourcePostId, sourceContentHash }, indexes);
     const sameHash = existing.post && (existing.post.sourceContentHash || existing.post.contentHash) === sourceContentHash;
 
-    if (sameHash) {
+    if (sameHash || existing.matchType === "sourceFingerprint") {
       stats.skippedDuplicates += 1;
       continue;
     }
@@ -573,35 +791,76 @@ function mergeImportedPosts(existingPosts, registryRecords, candidates, options 
     indexes.bySourcePostId.set(sourcePostId, post);
     indexes.bySourceUrl.set(sourceUrl, post);
     indexes.byContentHash.set(sourceContentHash, post);
+    indexes.bySourceFingerprint.set(candidateFingerprint(post), post);
   }
 
   return { posts, registry, stats };
 }
 
-function findPermalink(links, pageUrl) {
+function isVerifiedFacebookPostUrl(value) {
+  const normalized = normalizeSourceUrl(value);
+  if (!normalized) {
+    return false;
+  }
+
+  try {
+    const url = new URL(normalized);
+    const host = url.hostname.toLowerCase();
+    if (!(host === "facebook.com" || host.endsWith(".facebook.com"))) {
+      return false;
+    }
+
+    const pathName = url.pathname.toLowerCase();
+    const hasQueryIdentity = Boolean(url.searchParams.get("story_fbid") || url.searchParams.get("fbid"));
+    const hasPathIdentity = /\/(?:posts|permalink|videos|photos)\/[^/]+/.test(pathName);
+    if (!hasQueryIdentity && !hasPathIdentity) {
+      return false;
+    }
+
+    const sourcePostId = inferSourcePostId(normalized);
+    return Boolean(sourcePostId && !sourcePostId.startsWith("url-"));
+  } catch {
+    return false;
+  }
+}
+
+function findPermalink(links) {
   const candidates = links
     .map((href) => normalizeSourceUrl(href))
-    .filter(Boolean)
-    .filter((href) => {
-      const lowered = href.toLowerCase();
-      return (
-        lowered.includes("story_fbid=") ||
-        lowered.includes("/posts/") ||
-        lowered.includes("/permalink/") ||
-        lowered.includes("/photos/") ||
-        lowered.includes("/videos/") ||
-        lowered.includes("pfbid")
-      );
-    });
+    .filter(isVerifiedFacebookPostUrl);
+  const byIdentity = new Map();
 
-  return candidates[0] || normalizeSourceUrl(pageUrl);
+  for (const candidate of candidates) {
+    const identity = inferSourcePostId(candidate);
+    if (!byIdentity.has(identity)) {
+      byIdentity.set(identity, []);
+    }
+    byIdentity.get(identity).push(candidate);
+  }
+
+  if (byIdentity.size !== 1) {
+    return "";
+  }
+
+  const [matches] = byIdentity.values();
+  return matches.sort((a, b) => {
+    const rank = (url) => (/story_fbid=|\/posts\/|\/permalink\//i.test(url) ? 0 : 1);
+    return rank(a) - rank(b);
+  })[0];
 }
 
 function extractPostsFromDom(root, options = {}) {
   const pageUrl = options.pageUrl || DEFAULT_FACEBOOK_PAGE_URL;
   const containers = Array.from(
     root.querySelectorAll('[role="article"], article, [data-pagelet*="FeedUnit"], [aria-posinset]')
-  );
+  ).sort((a, b) => {
+    const depth = (node) => {
+      let value = 0;
+      for (let parent = node.parentElement; parent; parent = parent.parentElement) value += 1;
+      return value;
+    };
+    return depth(b) - depth(a);
+  });
   const posts = [];
   const seen = new Set();
 
@@ -610,14 +869,20 @@ function extractPostsFromDom(root, options = {}) {
     const text = normalizeParagraphText(rawText);
     const anchors = Array.from(container.querySelectorAll("a[href]"));
     const links = anchors.map((anchor) => anchor.getAttribute("href")).filter(Boolean);
-    const permalinkUrl = findPermalink(links, pageUrl);
+    const permalinkUrl = findPermalink(links);
+    if (!permalinkUrl) {
+      continue;
+    }
     const sourcePostId = inferSourcePostId(permalinkUrl);
     const dateNode =
       container.querySelector("time[datetime]") ||
       container.querySelector("abbr[title]") ||
-      anchors.find((anchor) => /(\d{4}|yesterday|today|at\s+\d)/i.test(anchor.textContent || anchor.getAttribute("aria-label") || ""));
+      anchors.find((anchor) => looksLikeFacebookDateLabel(dateLabelForAnchor(anchor)));
     const dateISO = dateNode?.getAttribute?.("datetime") || "";
     const dateText = dateNode?.getAttribute?.("title") || dateNode?.getAttribute?.("aria-label") || dateNode?.textContent || "";
+    if (!parsePublishedDate({ dateISO, dateText }, options.now || new Date()).iso) {
+      continue;
+    }
     const images = filterImages(
       Array.from(container.querySelectorAll("img")).map((img) => ({
         src: img.getAttribute("src") || img.getAttribute("data-src") || "",
@@ -643,7 +908,7 @@ function extractPostsFromDom(root, options = {}) {
       sourcePostId,
       text,
       dateISO,
-      dateText: normalizeFlatText(dateText),
+      dateText: repairSocialText(dateText).replace(/\s+/g, " ").trim(),
       images,
     });
   }
@@ -658,6 +923,7 @@ async function scrapeFacebookPosts(options = {}) {
   const warnings = [];
   const candidates = [];
   const seen = new Set();
+  const seenFingerprints = new Set();
   let browser;
 
   try {
@@ -791,10 +1057,19 @@ async function scrapeFacebookPosts(options = {}) {
             const links = anchors.map((anchor) => anchor.href).filter(Boolean);
             const permalinkUrl = findPermalink(links);
             const sourcePostId = inferSourcePostId(permalinkUrl);
+            const looksLikeDateLabel = (anchor) => {
+              const label = [
+                anchor?.getAttribute?.("datetime"),
+                anchor?.getAttribute?.("title"),
+                anchor?.getAttribute?.("aria-label"),
+                anchor?.textContent,
+              ].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
+              return /\b\d{4}\b|\b(?:yesterday|today)\b|\bat\s+\d|^\d+\s*[mhdw]$|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2}\b/i.test(label);
+            };
             const dateNode =
               container.querySelector("time[datetime]") ||
               container.querySelector("abbr[title]") ||
-              anchors.find((anchor) => /(\d{4}|yesterday|today|at\s+\d)/i.test(anchor.textContent || anchor.getAttribute("aria-label") || ""));
+              anchors.find(looksLikeDateLabel);
             const images = filterImages(
               Array.from(container.querySelectorAll("img")).map((img) => ({
                 src: img.currentSrc || img.src || img.getAttribute("src") || "",
@@ -816,11 +1091,21 @@ async function scrapeFacebookPosts(options = {}) {
           .filter((post) => post.text || post.images.length);
       }, pageUrl);
 
+      const trustworthyBatch = batch
+        .filter((post) => isVerifiedFacebookPostUrl(post.sourceUrl))
+        .filter((post) => parsePublishedDate(post).iso)
+        .sort((a, b) => {
+          const scopeSize = (post) => normalizeFlatText(post.text).length + (post.images || []).length * 80;
+          return scopeSize(a) - scopeSize(b);
+        });
+
       let newCount = 0;
-      for (const post of batch) {
+      for (const post of trustworthyBatch) {
         const key = post.sourcePostId || normalizeSourceUrl(post.sourceUrl) || hashCandidate(post);
-        if (!seen.has(key)) {
+        const fingerprint = candidateFingerprint(post);
+        if (!seen.has(key) && !seenFingerprints.has(fingerprint)) {
           seen.add(key);
+          seenFingerprints.add(fingerprint);
           candidates.push(post);
           newCount += 1;
         }
@@ -974,6 +1259,8 @@ module.exports = {
   DEFAULT_FACEBOOK_PAGE_URL,
   DEFAULT_PLACEHOLDER_IMAGE,
   buildNewsPostFromCandidate,
+  candidateFingerprint,
+  deduplicateImportedPosts,
   downloadImagesForCandidate,
   ensureDir,
   estimateReadingTime,
@@ -988,12 +1275,14 @@ module.exports = {
   inferCategoryAndTags,
   inferSourcePostId,
   isMeaningfulImage,
+  isVerifiedFacebookPostUrl,
   mergeImportedPosts,
   normalizeFlatText,
   normalizeImageUrl,
   normalizeParagraphText,
   normalizeSourceUrl,
   parsePublishedDate,
+  planListingMedia,
   readJsonFile,
   scrapeFacebookPosts,
   slugify,

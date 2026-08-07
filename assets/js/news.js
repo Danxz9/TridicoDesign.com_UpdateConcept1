@@ -32,6 +32,25 @@
       search.value = params.get("q");
     }
 
+    const preventAdjacentImageRepeats = (items) => {
+      let previousImageKey = "";
+      items.forEach((item) => {
+        const media = item.querySelector(".news-card__media");
+        const imageKey = item.dataset.imageKey || "";
+        item.classList.remove("news-card--sequence-text-only");
+        if (media) media.hidden = false;
+
+        if (media && imageKey && imageKey === previousImageKey) {
+          media.hidden = true;
+          item.classList.add("news-card--sequence-text-only");
+          previousImageKey = "";
+          return;
+        }
+
+        previousImageKey = imageKey;
+      });
+    };
+
     const apply = () => {
       const query = normalize(search?.value);
       const selectedCategory = category?.value || "all";
@@ -61,6 +80,8 @@
         }
         return new Date(b.dataset.date) - new Date(a.dataset.date);
       });
+
+      preventAdjacentImageRepeats(matches);
 
       matches.forEach((item) => list.appendChild(item));
       allItems.forEach((item) => {
