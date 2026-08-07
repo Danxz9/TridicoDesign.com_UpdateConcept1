@@ -1,0 +1,129 @@
+/* Non-store polish: preserve Terra's vehicle-shop surface. */
+body:not(.vehicle-shop-page) main .hero h1 {
+  font-size: clamp(3.25rem, 5vw, 4.75rem);
+  line-height: .98;
+  text-wrap: balance;
+}
+body:not(.vehicle-shop-page) main .page-hero h1 {
+  max-width: 100%;
+  font-size: clamp(2.75rem, 4.25vw, 4rem);
+  line-height: 1;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+body:not(.vehicle-shop-page) .page-hero-grid > * { min-width: 0; }
+body:not(.vehicle-shop-page) main :is(.section-intro, .split-grid, .cta-grid) h2 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+body:not(.vehicle-shop-page) main :is(.quote-aside, .contact-panel, .resource-card, .timeline-item) h2 {
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  line-height: 1.15;
+}
+body:not(.vehicle-shop-page) .page-hero-grid > img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: clamp(240px, 42vw, 420px);
+  object-fit: cover;
+  object-position: center;
+}
+body:not(.vehicle-shop-page) :is(.eyebrow, .kicker) { color: var(--red-dark); }
+body:not(.vehicle-shop-page) :is(.legal, .resource-card, .contact-panel) a:not(.btn) {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+body:not(.vehicle-shop-page) .filter-btn,
+body:not(.vehicle-shop-page) .portfolio-info .text-link,
+body:not(.vehicle-shop-page) .portfolio-carousel-arrow { min-height: 44px; }
+body:not(.vehicle-shop-page) .portfolio-carousel-arrow { width: 44px; }
+body:not(.vehicle-shop-page) .portfolio-carousel-arrow:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+body:not(.vehicle-shop-page) .project-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+body:not(.vehicle-shop-page) .project-compare figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--ink);
+}
+body:not(.vehicle-shop-page) .project-compare img {
+  width: 100%;
+  height: clamp(260px, 34vw, 520px);
+  object-fit: cover;
+}
+body:not(.vehicle-shop-page) .project-compare figcaption {
+  position: absolute;
+  left: .8rem;
+  bottom: .8rem;
+  padding: .4rem .65rem;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+body:not(.vehicle-shop-page) .location-card {
+  display: grid;
+  gap: .55rem;
+  min-height: 260px;
+  align-content: end;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: var(--radius);
+  color: #fff;
+  background: linear-gradient(135deg, rgba(8, 8, 8, .95), rgba(188, 17, 24, .9)), url("../images/work/chapman-ford-dealership-entrance-graphics-01-driveway.jpg") center / cover;
+  box-shadow: var(--shadow);
+}
+body:not(.vehicle-shop-page) .location-card span,
+body:not(.vehicle-shop-page) .location-card small { color: var(--yellow); }
+body:not(.vehicle-shop-page) .location-card strong { font-size: clamp(1.25rem, 2vw, 1.7rem); }
+body:not(.vehicle-shop-page) .tdsa-close,
+body:not(.vehicle-shop-page) .tdsa-chip,
+body:not(.vehicle-shop-page) .tdsa-action { min-height: 44px; }
+body:not(.vehicle-shop-page) .tdsa-close { min-width: 44px; }
+
+@media (max-width: 1180px) and (min-width: 1051px) {
+  body:not(.vehicle-shop-page) .desktop-nav,
+  body:not(.vehicle-shop-page) .header-actions { display: none; }
+  body:not(.vehicle-shop-page) .menu-toggle { display: block; }
+}
+
+@media (max-width: 680px) {
+  body:not(.vehicle-shop-page) main :is(.hero, .page-hero) h1 {
+    max-width: 100%;
+    font-size: clamp(2.15rem, 10vw, 2.75rem);
+    overflow-wrap: anywhere;
+  }
+  body:not(.vehicle-shop-page) :is(.hero-grid, .page-hero-grid) {
+    gap: 1.5rem;
+    padding-block: 2.5rem;
+  }
+  body:not(.vehicle-shop-page) .page-hero-grid > img { max-height: 260px; }
+  body:not(.vehicle-shop-page) .project-compare { grid-template-columns: 1fr; }
+  body:not(.vehicle-shop-page) .project-compare img { height: 260px; }
+  body:not(.vehicle-shop-page) .tdsa-root {
+    right: max(.6rem, env(safe-area-inset-right));
+    bottom: max(.6rem, env(safe-area-inset-bottom));
+    left: auto;
+  }
+  body:not(.vehicle-shop-page) .tdsa-launcher {
+    width: 52px;
+    min-height: 52px;
+    padding: 4px;
+    gap: 0;
+  }
+  body:not(.vehicle-shop-page) .tdsa-launcher__text { display: none; }
+  body:not(.vehicle-shop-page) .tdsa-panel {
+    height: min(680px, calc(100dvh - 5.5rem));
+    min-height: 0;
+    max-height: calc(100dvh - 5.5rem);
+  }
+}
