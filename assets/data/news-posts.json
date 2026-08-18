@@ -125,6 +125,91 @@
   ],
   "posts": [
     {
+      "id": "news_fb_2026_07_07_pfbid0spdb2qqxb1jwhvjhoycwbblmatvydnd8dh",
+      "slug": "2026-07-07-chantelle-huguenin-losey-pfbid0spdb2qqxb1jwhvjhoycwbb",
+      "title": "Chantelle Huguenin Losey",
+      "excerpt": "Chantelle Huguenin Losey Looks awesome!",
+      "body": "Chantelle Huguenin Losey\n\nLooks awesome!",
+      "contentFormat": "social-import",
+      "category": "Company Updates",
+      "categorySlug": "company-updates",
+      "tags": [
+        "local business"
+      ],
+      "tagSlugs": [
+        "local-business"
+      ],
+      "topic": "Company Updates",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-07-07T01:53:54.113Z",
+      "dateImported": "2026-08-18T01:53:54.113Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_2026-07-07-chantelle-huguenin-losey-pfbid0spdb2qqxb1jwhvjhoycwbb_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "thumbnailImage": {
+        "id": "img_2026-07-07-chantelle-huguenin-losey-pfbid0spdb2qqxb1jwhvjhoycwbb_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "images": [
+        {
+          "id": "img_2026-07-07-chantelle-huguenin-losey-pfbid0spdb2qqxb1jwhvjhoycwbb_placeholder",
+          "src": "assets/images/placeholders/hero-project-montage.svg",
+          "width": 1200,
+          "height": 750,
+          "alt": "Tridico Design news update placeholder image.",
+          "caption": "Tridico Design update."
+        }
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid0SpDb2QqXb1jWhVjHoYCWbBLmAtvyDNd8dhmb8eiJQ5Jr9fPkWKkpBHm3aFZK2NNul",
+      "sourcePostId": "pfbid0spdb2qqxb1jwhvjhoycwbblmatvydnd8dhmb8eijq5jr9fpkwkkpbhm3afzk2nnul",
+      "sourceContentHash": "3aa7b7182b7517178c97ad11cd07d8a338537bcfa480f1d96a1c340eabea23db",
+      "relatedPostIds": [],
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Chantelle Huguenin Losey | Tridico Design News",
+        "description": "Chantelle Huguenin Losey Looks awesome!",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/2026-07-07-chantelle-huguenin-losey-pfbid0spdb2qqxb1jwhvjhoycwbb/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/placeholders/hero-project-montage.svg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid0SpDb2QqXb1jWhVjHoYCWbBLmAtvyDNd8dhmb8eiJQ5Jr9fPkWKkpBHm3aFZK2NNul",
+        "sourcePostId": "pfbid0spdb2qqxb1jwhvjhoycwbblmatvydnd8dhmb8eijq5jr9fpkwkkpbhm3afzk2nnul",
+        "sourceContentHash": "3aa7b7182b7517178c97ad11cd07d8a338537bcfa480f1d96a1c340eabea23db",
+        "dateImported": "2026-08-18T01:53:54.113Z",
+        "lastSeenAt": "2026-08-18T01:53:54.113Z",
+        "originalPublishedAt": "2026-07-07T01:53:54.113Z",
+        "datePublishedIsApproximate": true,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
+      },
+      "contentHash": "3aa7b7182b7517178c97ad11cd07d8a338537bcfa480f1d96a1c340eabea23db"
+    },
+    {
       "id": "news_fb_2026_07_04_pfbid0soyv2ne937pj7n5vheywtrrkvnct1tceie",
       "slug": "2026-07-04-tridico-design-pfbid0soyv2ne937pj7n5vheywtr",
       "title": "Happy 4th and 250th year anniversary to the GREATEST country on the planet!!!",
@@ -425,6 +510,91 @@
         "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
       },
       "contentHash": "593d2ac73324ff9e510bd20e617c94049496e4f71bf57a2f4a7471790344b912"
+    },
+    {
+      "id": "news_fb_2026_06_09_pfbid02x1s6blkzmhugb8jrr4a97xlewupf5s5pp",
+      "slug": "2026-06-09-richard-herold-pfbid02x1s6blkzmhugb8jrr4a97",
+      "title": "Richard Herold",
+      "excerpt": "Richard Herold Slow down,,,Ben!!!! You sure stay busy!",
+      "body": "Richard Herold\n\nSlow down,,,Ben!!!! You sure stay busy!",
+      "contentFormat": "social-import",
+      "category": "Company Updates",
+      "categorySlug": "company-updates",
+      "tags": [
+        "local business"
+      ],
+      "tagSlugs": [
+        "local-business"
+      ],
+      "topic": "Company Updates",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-06-09T01:53:54.113Z",
+      "dateImported": "2026-08-18T01:53:54.113Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_2026-06-09-richard-herold-pfbid02x1s6blkzmhugb8jrr4a97_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "thumbnailImage": {
+        "id": "img_2026-06-09-richard-herold-pfbid02x1s6blkzmhugb8jrr4a97_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "images": [
+        {
+          "id": "img_2026-06-09-richard-herold-pfbid02x1s6blkzmhugb8jrr4a97_placeholder",
+          "src": "assets/images/placeholders/hero-project-montage.svg",
+          "width": 1200,
+          "height": 750,
+          "alt": "Tridico Design news update placeholder image.",
+          "caption": "Tridico Design update."
+        }
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02X1s6bLkZMHuGB8jRr4A97XLewUpF5S5ppicQczXFD6SqyZx9mAWjb4y3RhsMGc6Rl",
+      "sourcePostId": "pfbid02x1s6blkzmhugb8jrr4a97xlewupf5s5ppicqczxfd6sqyzx9mawjb4y3rhsmgc6rl",
+      "sourceContentHash": "daa63a072e342f7c9d7408ea9b648566e0ad07dc6ee9773a00df8b65506731c8",
+      "relatedPostIds": [],
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Richard Herold | Tridico Design News",
+        "description": "Richard Herold Slow down,,,Ben!!!! You sure stay busy!",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/2026-06-09-richard-herold-pfbid02x1s6blkzmhugb8jrr4a97/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/placeholders/hero-project-montage.svg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02X1s6bLkZMHuGB8jRr4A97XLewUpF5S5ppicQczXFD6SqyZx9mAWjb4y3RhsMGc6Rl",
+        "sourcePostId": "pfbid02x1s6blkzmhugb8jrr4a97xlewupf5s5ppicqczxfd6sqyzx9mawjb4y3rhsmgc6rl",
+        "sourceContentHash": "daa63a072e342f7c9d7408ea9b648566e0ad07dc6ee9773a00df8b65506731c8",
+        "dateImported": "2026-08-18T01:53:54.113Z",
+        "lastSeenAt": "2026-08-18T01:53:54.113Z",
+        "originalPublishedAt": "2026-06-09T01:53:54.113Z",
+        "datePublishedIsApproximate": true,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
+      },
+      "contentHash": "daa63a072e342f7c9d7408ea9b648566e0ad07dc6ee9773a00df8b65506731c8"
     },
     {
       "id": "news_fb_2026_06_05_pfbid0tczijp9fjkncw2jf4kvdvrcxcm8hr7ddsb",
