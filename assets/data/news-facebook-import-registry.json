@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-08-29T07:10:19.484Z",
+  "generatedAt": "2026-08-30T05:31:31.239Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "pfbid02t3f437emcsmdfjcgc3fwpkuefhevkayrgumupsbscbkruvoksaqna5burvsyvvwyl",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02T3f437eMcsMdfJcGC3FWpKuefhevKAYrgumuPSBscbkrUVoKSaQnA5buRvsYVVWYl",
+      "contentHash": "8cb568b11ad63f9a197612b98fc17dc6fb80590a278bc397cc4e41ba73342839",
+      "importedSlug": "2026-08-30-erin-miller-pfbid02t3f437emcsmdfjcgc3fwp",
+      "dateImported": "2026-08-30T05:31:31.239Z",
+      "lastSeenAt": "2026-08-30T05:31:31.239Z"
+    },
     {
       "sourcePostId": "pfbid037ymfkde7xqyhley5b37s9j2offavbcoiqsrfj9e8qqqqmznaors5sdwkk5vj4ix1l",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid037yMfKde7xqYHLEY5B37s9J2oFfAVBcoiQsRFj9E8QQqQMZNAoRS5sdwKK5Vj4ix1l",
