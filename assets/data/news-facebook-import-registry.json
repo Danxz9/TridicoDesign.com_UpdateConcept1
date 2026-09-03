@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-08-30T16:46:27.582Z",
+  "generatedAt": "2026-09-03T11:24:04.340Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "pfbid02tbja1ug5ovehhpxohssqvrkguhgphizswifvkctmejwn4t23r24mjm26ap7bwgzwl",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02TBJa1Ug5oVehHPxohSSQvRKguhGPhiZSwiFvKcTMeJWn4T23R24MJm26ap7bWgzWl",
+      "contentHash": "e7ba20549fff4f8d2770d1bf49f44cc188c13b978085e78d0d8c5ed870fbae68",
+      "importedSlug": "2026-08-31-joann-wiggins-pfbid02tbja1ug5ovehhpxohssqv",
+      "dateImported": "2026-09-03T11:24:04.340Z",
+      "lastSeenAt": "2026-09-03T11:24:04.340Z"
+    },
     {
       "sourcePostId": "pfbid02t3f437emcsmdfjcgc3fwpkuefhevkayrgumupsbscbkruvoksaqna5burvsyvvwyl",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02T3f437eMcsMdfJcGC3FWpKuefhevKAYrgumuPSBscbkrUVoKSaQnA5buRvsYVVWYl",

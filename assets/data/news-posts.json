@@ -125,6 +125,91 @@
   ],
   "posts": [
     {
+      "id": "news_fb_2026_08_31_pfbid02tbja1ug5ovehhpxohssqvrkguhgphizsw",
+      "slug": "2026-08-31-joann-wiggins-pfbid02tbja1ug5ovehhpxohssqv",
+      "title": "JoAnn Wiggins",
+      "excerpt": "JoAnn Wiggins Wow! Very nice work Ben…love you have the whole family involved",
+      "body": "JoAnn Wiggins\n\nWow! Very nice work Ben…love you have the whole family involved",
+      "contentFormat": "social-import",
+      "category": "Company Updates",
+      "categorySlug": "company-updates",
+      "tags": [
+        "local business"
+      ],
+      "tagSlugs": [
+        "local-business"
+      ],
+      "topic": "Company Updates",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-08-31T11:24:04.340Z",
+      "dateImported": "2026-09-03T11:24:04.340Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_2026-08-31-joann-wiggins-pfbid02tbja1ug5ovehhpxohssqv_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "thumbnailImage": {
+        "id": "img_2026-08-31-joann-wiggins-pfbid02tbja1ug5ovehhpxohssqv_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "images": [
+        {
+          "id": "img_2026-08-31-joann-wiggins-pfbid02tbja1ug5ovehhpxohssqv_placeholder",
+          "src": "assets/images/placeholders/hero-project-montage.svg",
+          "width": 1200,
+          "height": 750,
+          "alt": "Tridico Design news update placeholder image.",
+          "caption": "Tridico Design update."
+        }
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02TBJa1Ug5oVehHPxohSSQvRKguhGPhiZSwiFvKcTMeJWn4T23R24MJm26ap7bWgzWl",
+      "sourcePostId": "pfbid02tbja1ug5ovehhpxohssqvrkguhgphizswifvkctmejwn4t23r24mjm26ap7bwgzwl",
+      "sourceContentHash": "e7ba20549fff4f8d2770d1bf49f44cc188c13b978085e78d0d8c5ed870fbae68",
+      "relatedPostIds": [],
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "JoAnn Wiggins | Tridico Design News",
+        "description": "JoAnn Wiggins Wow! Very nice work Ben…love you have the whole family involved",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/2026-08-31-joann-wiggins-pfbid02tbja1ug5ovehhpxohssqv/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/placeholders/hero-project-montage.svg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02TBJa1Ug5oVehHPxohSSQvRKguhGPhiZSwiFvKcTMeJWn4T23R24MJm26ap7bWgzWl",
+        "sourcePostId": "pfbid02tbja1ug5ovehhpxohssqvrkguhgphizswifvkctmejwn4t23r24mjm26ap7bwgzwl",
+        "sourceContentHash": "e7ba20549fff4f8d2770d1bf49f44cc188c13b978085e78d0d8c5ed870fbae68",
+        "dateImported": "2026-09-03T11:24:04.340Z",
+        "lastSeenAt": "2026-09-03T11:24:04.340Z",
+        "originalPublishedAt": "2026-08-31T11:24:04.340Z",
+        "datePublishedIsApproximate": true,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
+      },
+      "contentHash": "e7ba20549fff4f8d2770d1bf49f44cc188c13b978085e78d0d8c5ed870fbae68"
+    },
+    {
       "id": "news_fb_2026_08_30_pfbid02t3f437emcsmdfjcgc3fwpkuefhevkayrg",
       "slug": "2026-08-30-erin-miller-pfbid02t3f437emcsmdfjcgc3fwp",
       "title": "Sue Powell",
