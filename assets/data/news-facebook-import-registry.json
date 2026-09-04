@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-09-03T11:24:04.340Z",
+  "generatedAt": "2026-09-04T04:46:14.947Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "pfbid0pdfp6k3ixaxzrv2ufhsxgpctt52en2j4hiumybwuujlsj7vtm3vchvu33qum6ibzl",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid0PdfP6K3ixAxzRv2UFhSXgPCtT52en2J4HiUMYbWuUJLsj7VTM3VChvU33quM6iBZl",
+      "contentHash": "7d44335f008a9b7aa4b19173e950a57b62152f23b8b5731c7e707c27a62a4e1a",
+      "importedSlug": "2026-08-30-ashley-nigh-smith-pfbid0pdfp6k3ixaxzrv2ufhsxgp",
+      "dateImported": "2026-09-04T04:46:14.947Z",
+      "lastSeenAt": "2026-09-04T04:46:14.947Z"
+    },
     {
       "sourcePostId": "pfbid02tbja1ug5ovehhpxohssqvrkguhgphizswifvkctmejwn4t23r24mjm26ap7bwgzwl",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02TBJa1Ug5oVehHPxohSSQvRKguhGPhiZSwiFvKcTMeJWn4T23R24MJm26ap7bWgzWl",

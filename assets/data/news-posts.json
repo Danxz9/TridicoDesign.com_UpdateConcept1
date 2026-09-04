@@ -295,6 +295,91 @@
       "contentHash": "aa85e17fcbbfb553a7dfd93a69468f2939456edfc0a0d6753d3985cc18721b24"
     },
     {
+      "id": "news_fb_2026_08_30_pfbid0pdfp6k3ixaxzrv2ufhsxgpctt52en2j4hi",
+      "slug": "2026-08-30-ashley-nigh-smith-pfbid0pdfp6k3ixaxzrv2ufhsxgp",
+      "title": "Ashley Nigh Smith",
+      "excerpt": "Ashley Nigh Smith Looks great! Wish I would have known you were in town!",
+      "body": "Ashley Nigh Smith\n\nLooks great! Wish I would have known you were in town!",
+      "contentFormat": "social-import",
+      "category": "Company Updates",
+      "categorySlug": "company-updates",
+      "tags": [
+        "local business"
+      ],
+      "tagSlugs": [
+        "local-business"
+      ],
+      "topic": "Company Updates",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-08-30T04:46:14.947Z",
+      "dateImported": "2026-09-04T04:46:14.947Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_2026-08-30-ashley-nigh-smith-pfbid0pdfp6k3ixaxzrv2ufhsxgp_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "thumbnailImage": {
+        "id": "img_2026-08-30-ashley-nigh-smith-pfbid0pdfp6k3ixaxzrv2ufhsxgp_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "images": [
+        {
+          "id": "img_2026-08-30-ashley-nigh-smith-pfbid0pdfp6k3ixaxzrv2ufhsxgp_placeholder",
+          "src": "assets/images/placeholders/hero-project-montage.svg",
+          "width": 1200,
+          "height": 750,
+          "alt": "Tridico Design news update placeholder image.",
+          "caption": "Tridico Design update."
+        }
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid0PdfP6K3ixAxzRv2UFhSXgPCtT52en2J4HiUMYbWuUJLsj7VTM3VChvU33quM6iBZl",
+      "sourcePostId": "pfbid0pdfp6k3ixaxzrv2ufhsxgpctt52en2j4hiumybwuujlsj7vtm3vchvu33qum6ibzl",
+      "sourceContentHash": "7d44335f008a9b7aa4b19173e950a57b62152f23b8b5731c7e707c27a62a4e1a",
+      "relatedPostIds": [],
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Ashley Nigh Smith | Tridico Design News",
+        "description": "Ashley Nigh Smith Looks great! Wish I would have known you were in town!",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/2026-08-30-ashley-nigh-smith-pfbid0pdfp6k3ixaxzrv2ufhsxgp/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/placeholders/hero-project-montage.svg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid0PdfP6K3ixAxzRv2UFhSXgPCtT52en2J4HiUMYbWuUJLsj7VTM3VChvU33quM6iBZl",
+        "sourcePostId": "pfbid0pdfp6k3ixaxzrv2ufhsxgpctt52en2j4hiumybwuujlsj7vtm3vchvu33qum6ibzl",
+        "sourceContentHash": "7d44335f008a9b7aa4b19173e950a57b62152f23b8b5731c7e707c27a62a4e1a",
+        "dateImported": "2026-09-04T04:46:14.947Z",
+        "lastSeenAt": "2026-09-04T04:46:14.947Z",
+        "originalPublishedAt": "2026-08-30T04:46:14.947Z",
+        "datePublishedIsApproximate": true,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
+      },
+      "contentHash": "7d44335f008a9b7aa4b19173e950a57b62152f23b8b5731c7e707c27a62a4e1a"
+    },
+    {
       "id": "news_fb_2026_08_29_pfbid037ymfkde7xqyhley5b37s9j2offavbcoiq",
       "slug": "2026-08-29-michael-bolander-pfbid037ymfkde7xqyhley5b37s9",
       "title": "Michael Bolander",
