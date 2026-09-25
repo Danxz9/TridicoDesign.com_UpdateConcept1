@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-09-11T16:35:32.939Z",
+  "generatedAt": "2026-09-25T21:40:19.290Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "pfbid02xhjl18u9z8h5bq4fvwbwak81pawg678ukuqh6ndaqdsoppg3v2ftgehdvfsljetrl",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02xhjL18U9z8h5BQ4FVWBWAk81PAwG678UkUQh6ndAQDSoPpg3V2FtGeHDvfSLJetRl",
+      "contentHash": "9d61f1953db171487d336d5afe4b52055d1cd492dee454dfe4d2192f2eb594ca",
+      "importedSlug": "2026-09-18-powr-zone-columbus-thank-you-pfbid02xhjl18u9z8h5bq4fvwbwa",
+      "dateImported": "2026-09-25T21:40:19.290Z",
+      "lastSeenAt": "2026-09-25T21:40:19.290Z"
+    },
     {
       "sourcePostId": "pfbid02yapqehrxbcdaj4zbue4u56hjo8fawy4qodefrbwemammq1yjarlx5tjgfbp3xdprl",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02YAPQeHrXbCDAj4ZbuE4U56Hjo8FaWy4qodEFRBwemAMmq1yjARLX5tjgFBp3xdPrl",
