@@ -125,6 +125,91 @@
   ],
   "posts": [
     {
+      "id": "news_fb_2026_10_10_pfbid028zegpcgxn5d7c5btnbh3tw5aqgfxhtfdu",
+      "slug": "2026-10-10-michael-bolander-pfbid028zegpcgxn5d7c5btnbh3t",
+      "title": "Michael Bolander",
+      "excerpt": "Michael Bolander That is pretty awesome looking!!",
+      "body": "Michael Bolander\n\nThat is pretty awesome looking!!",
+      "contentFormat": "social-import",
+      "category": "Company Updates",
+      "categorySlug": "company-updates",
+      "tags": [
+        "local business"
+      ],
+      "tagSlugs": [
+        "local-business"
+      ],
+      "topic": "Company Updates",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-10-10T12:21:21.651Z",
+      "dateImported": "2026-10-10T12:42:21.651Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_2026-10-10-michael-bolander-pfbid028zegpcgxn5d7c5btnbh3t_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "thumbnailImage": {
+        "id": "img_2026-10-10-michael-bolander-pfbid028zegpcgxn5d7c5btnbh3t_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "images": [
+        {
+          "id": "img_2026-10-10-michael-bolander-pfbid028zegpcgxn5d7c5btnbh3t_placeholder",
+          "src": "assets/images/placeholders/hero-project-montage.svg",
+          "width": 1200,
+          "height": 750,
+          "alt": "Tridico Design news update placeholder image.",
+          "caption": "Tridico Design update."
+        }
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid028ZEgPcgxN5d7C5BtnBH3tw5aQGfXhtFduh25DqZ6iD7KTzFAYzdT6hAtwb49h9g6l",
+      "sourcePostId": "pfbid028zegpcgxn5d7c5btnbh3tw5aqgfxhtfduh25dqz6id7ktzfayzdt6hatwb49h9g6l",
+      "sourceContentHash": "5f17ea28dbc6ccb7beb4305fcc1e27a11df667a8723c2597bfcd91f2b8ad5153",
+      "relatedPostIds": [],
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Michael Bolander | Tridico Design News",
+        "description": "Michael Bolander That is pretty awesome looking!!",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/2026-10-10-michael-bolander-pfbid028zegpcgxn5d7c5btnbh3t/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/placeholders/hero-project-montage.svg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid028ZEgPcgxN5d7C5BtnBH3tw5aQGfXhtFduh25DqZ6iD7KTzFAYzdT6hAtwb49h9g6l",
+        "sourcePostId": "pfbid028zegpcgxn5d7c5btnbh3tw5aqgfxhtfduh25dqz6id7ktzfayzdt6hatwb49h9g6l",
+        "sourceContentHash": "5f17ea28dbc6ccb7beb4305fcc1e27a11df667a8723c2597bfcd91f2b8ad5153",
+        "dateImported": "2026-10-10T12:42:21.651Z",
+        "lastSeenAt": "2026-10-10T12:42:21.651Z",
+        "originalPublishedAt": "2026-10-10T12:21:21.651Z",
+        "datePublishedIsApproximate": true,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
+      },
+      "contentHash": "5f17ea28dbc6ccb7beb4305fcc1e27a11df667a8723c2597bfcd91f2b8ad5153"
+    },
+    {
       "id": "news_fb_2026_09_18_pfbid02xhjl18u9z8h5bq4fvwbwak81pawg678uk",
       "slug": "2026-09-18-powr-zone-columbus-thank-you-pfbid02xhjl18u9z8h5bq4fvwbwa",
       "title": "POWR-ZONE Columbus - THANK YOU!",

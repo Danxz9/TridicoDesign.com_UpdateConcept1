@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-09-25T21:40:19.290Z",
+  "generatedAt": "2026-10-10T12:42:21.651Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "pfbid028zegpcgxn5d7c5btnbh3tw5aqgfxhtfduh25dqz6id7ktzfayzdt6hatwb49h9g6l",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid028ZEgPcgxN5d7C5BtnBH3tw5aQGfXhtFduh25DqZ6iD7KTzFAYzdT6hAtwb49h9g6l",
+      "contentHash": "5f17ea28dbc6ccb7beb4305fcc1e27a11df667a8723c2597bfcd91f2b8ad5153",
+      "importedSlug": "2026-10-10-michael-bolander-pfbid028zegpcgxn5d7c5btnbh3t",
+      "dateImported": "2026-10-10T12:42:21.651Z",
+      "lastSeenAt": "2026-10-10T12:42:21.651Z"
+    },
     {
       "sourcePostId": "pfbid02xhjl18u9z8h5bq4fvwbwak81pawg678ukuqh6ndaqdsoppg3v2ftgehdvfsljetrl",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02xhjL18U9z8h5BQ4FVWBWAk81PAwG678UkUQh6ndAQDSoPpg3V2FtGeHDvfSLJetRl",
