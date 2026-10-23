@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-10-10T12:42:21.651Z",
+  "generatedAt": "2026-10-23T17:16:03.903Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "pfbid02tyxzej9pv3pdpgu7ebwhegmenvjtyc4jbbfamfkdqo3kk8xkkgfdxd1na4q7pezql",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02TyXZej9Pv3pDPGu7eBWhEGMENVjTYC4jBBfAmFkDqo3Kk8xKKGfdXd1na4Q7Pezql",
+      "contentHash": "43198e7ab412deeddbb15fee38a7bda0e7409211905b6f875838656b9b9148a0",
+      "importedSlug": "2026-10-23-paul-hobart-pfbid02tyxzej9pv3pdpgu7ebwhe",
+      "dateImported": "2026-10-23T17:16:03.903Z",
+      "lastSeenAt": "2026-10-23T17:16:03.903Z"
+    },
     {
       "sourcePostId": "pfbid028zegpcgxn5d7c5btnbh3tw5aqgfxhtfduh25dqz6id7ktzfayzdt6hatwb49h9g6l",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid028ZEgPcgxN5d7C5BtnBH3tw5aQGfXhtFduh25DqZ6iD7KTzFAYzdT6hAtwb49h9g6l",

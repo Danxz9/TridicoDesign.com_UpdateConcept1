@@ -125,6 +125,91 @@
   ],
   "posts": [
     {
+      "id": "news_fb_2026_10_23_pfbid02tyxzej9pv3pdpgu7ebwhegmenvjtyc4jb",
+      "slug": "2026-10-23-paul-hobart-pfbid02tyxzej9pv3pdpgu7ebwhe",
+      "title": "Paul Hobart",
+      "excerpt": "Paul Hobart Enjoy the scenery",
+      "body": "Paul Hobart\n\nEnjoy the scenery",
+      "contentFormat": "social-import",
+      "category": "Company Updates",
+      "categorySlug": "company-updates",
+      "tags": [
+        "local business"
+      ],
+      "tagSlugs": [
+        "local-business"
+      ],
+      "topic": "Company Updates",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-10-23T13:16:03.903Z",
+      "dateImported": "2026-10-23T17:16:03.903Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_2026-10-23-paul-hobart-pfbid02tyxzej9pv3pdpgu7ebwhe_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "thumbnailImage": {
+        "id": "img_2026-10-23-paul-hobart-pfbid02tyxzej9pv3pdpgu7ebwhe_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "images": [
+        {
+          "id": "img_2026-10-23-paul-hobart-pfbid02tyxzej9pv3pdpgu7ebwhe_placeholder",
+          "src": "assets/images/placeholders/hero-project-montage.svg",
+          "width": 1200,
+          "height": 750,
+          "alt": "Tridico Design news update placeholder image.",
+          "caption": "Tridico Design update."
+        }
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02TyXZej9Pv3pDPGu7eBWhEGMENVjTYC4jBBfAmFkDqo3Kk8xKKGfdXd1na4Q7Pezql",
+      "sourcePostId": "pfbid02tyxzej9pv3pdpgu7ebwhegmenvjtyc4jbbfamfkdqo3kk8xkkgfdxd1na4q7pezql",
+      "sourceContentHash": "43198e7ab412deeddbb15fee38a7bda0e7409211905b6f875838656b9b9148a0",
+      "relatedPostIds": [],
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Paul Hobart | Tridico Design News",
+        "description": "Paul Hobart Enjoy the scenery",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/2026-10-23-paul-hobart-pfbid02tyxzej9pv3pdpgu7ebwhe/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/placeholders/hero-project-montage.svg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02TyXZej9Pv3pDPGu7eBWhEGMENVjTYC4jBBfAmFkDqo3Kk8xKKGfdXd1na4Q7Pezql",
+        "sourcePostId": "pfbid02tyxzej9pv3pdpgu7ebwhegmenvjtyc4jbbfamfkdqo3kk8xkkgfdxd1na4q7pezql",
+        "sourceContentHash": "43198e7ab412deeddbb15fee38a7bda0e7409211905b6f875838656b9b9148a0",
+        "dateImported": "2026-10-23T17:16:03.903Z",
+        "lastSeenAt": "2026-10-23T17:16:03.903Z",
+        "originalPublishedAt": "2026-10-23T13:16:03.903Z",
+        "datePublishedIsApproximate": true,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
+      },
+      "contentHash": "43198e7ab412deeddbb15fee38a7bda0e7409211905b6f875838656b9b9148a0"
+    },
+    {
       "id": "news_fb_2026_10_10_pfbid028zegpcgxn5d7c5btnbh3tw5aqgfxhtfdu",
       "slug": "2026-10-10-michael-bolander-pfbid028zegpcgxn5d7c5btnbh3t",
       "title": "Michael Bolander",
