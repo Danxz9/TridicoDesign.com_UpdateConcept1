@@ -1,10 +1,18 @@
 {
-  "generatedAt": "2026-10-23T17:16:03.903Z",
+  "generatedAt": "2026-10-28T22:41:09.429Z",
   "source": "facebook",
   "sourcePlatform": "facebook",
   "sourcePageName": "Tridico Design",
   "pageUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc",
   "records": [
+    {
+      "sourcePostId": "pfbid02tw25kwuph2cvcdexkp3zilj7mydpwtufrfww3k2sekkffrj9bth1iwd1zik9nqhrl",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02Tw25KwuPH2cVCdeXkp3ZiLj7mYdpwTufrFwW3K2SEkkFFrJ9btH1iwD1Zik9NQHrl",
+      "contentHash": "703607a44079b885dcae3c29a8f683a4c91b63fe71f76247f2646caf995024d7",
+      "importedSlug": "2026-10-23-corey-chaos-robertson-pfbid02tw25kwuph2cvcdexkp3zi",
+      "dateImported": "2026-10-28T22:41:09.429Z",
+      "lastSeenAt": "2026-10-28T22:41:09.429Z"
+    },
     {
       "sourcePostId": "pfbid02tyxzej9pv3pdpgu7ebwhegmenvjtyc4jbbfamfkdqo3kk8xkkgfdxd1na4q7pezql",
       "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02TyXZej9Pv3pDPGu7eBWhEGMENVjTYC4jBBfAmFkDqo3Kk8xKKGfdXd1na4Q7Pezql",

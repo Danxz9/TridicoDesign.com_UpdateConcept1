@@ -125,6 +125,91 @@
   ],
   "posts": [
     {
+      "id": "news_fb_2026_10_23_pfbid02tw25kwuph2cvcdexkp3zilj7mydpwtufr",
+      "slug": "2026-10-23-corey-chaos-robertson-pfbid02tw25kwuph2cvcdexkp3zi",
+      "title": "Corey Chaos-Robertson",
+      "excerpt": "Corey Chaos-Robertson Actions speak louder than words!",
+      "body": "Corey Chaos-Robertson\n\nActions speak louder than words!",
+      "contentFormat": "social-import",
+      "category": "Company Updates",
+      "categorySlug": "company-updates",
+      "tags": [
+        "local business"
+      ],
+      "tagSlugs": [
+        "local-business"
+      ],
+      "topic": "Company Updates",
+      "location": "Central Ohio",
+      "author": "Tridico Design",
+      "datePublished": "2026-10-23T22:41:09.429Z",
+      "dateImported": "2026-10-28T22:41:09.429Z",
+      "readingTime": "1 min read",
+      "featuredImage": {
+        "id": "img_2026-10-23-corey-chaos-robertson-pfbid02tw25kwuph2cvcdexkp3zi_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "thumbnailImage": {
+        "id": "img_2026-10-23-corey-chaos-robertson-pfbid02tw25kwuph2cvcdexkp3zi_placeholder",
+        "src": "assets/images/placeholders/hero-project-montage.svg",
+        "width": 1200,
+        "height": 750,
+        "alt": "Tridico Design news update placeholder image.",
+        "caption": "Tridico Design update."
+      },
+      "images": [
+        {
+          "id": "img_2026-10-23-corey-chaos-robertson-pfbid02tw25kwuph2cvcdexkp3zi_placeholder",
+          "src": "assets/images/placeholders/hero-project-montage.svg",
+          "width": 1200,
+          "height": 750,
+          "alt": "Tridico Design news update placeholder image.",
+          "caption": "Tridico Design update."
+        }
+      ],
+      "source": "facebook",
+      "sourcePlatform": "facebook",
+      "sourceLabel": "Facebook",
+      "sourcePageName": "Tridico Design",
+      "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02Tw25KwuPH2cVCdeXkp3ZiLj7mYdpwTufrFwW3K2SEkkFFrJ9btH1iwD1Zik9NQHrl",
+      "sourcePostId": "pfbid02tw25kwuph2cvcdexkp3zilj7mydpwtufrfww3k2sekkffrj9bth1iwd1zik9nqhrl",
+      "sourceContentHash": "703607a44079b885dcae3c29a8f683a4c91b63fe71f76247f2646caf995024d7",
+      "relatedPostIds": [],
+      "priority": 70,
+      "popularityScore": 70,
+      "isFeatured": false,
+      "isPinned": false,
+      "isTrending": false,
+      "isImported": true,
+      "status": "published",
+      "seo": {
+        "title": "Corey Chaos-Robertson | Tridico Design News",
+        "description": "Corey Chaos-Robertson Actions speak louder than words!",
+        "canonicalUrl": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/news/2026-10-23-corey-chaos-robertson-pfbid02tw25kwuph2cvcdexkp3zi/",
+        "ogImage": "https://danxz9.github.io/TridicoDesign.com_UpdateConcept1/assets/images/placeholders/hero-project-montage.svg",
+        "noindex": false,
+        "structuredDataType": "Article"
+      },
+      "importMeta": {
+        "isImported": true,
+        "sourcePlatform": "facebook",
+        "sourcePageName": "Tridico Design",
+        "sourceUrl": "https://www.facebook.com/TridicoDesignSolutionsLlc/posts/pfbid02Tw25KwuPH2cVCdeXkp3ZiLj7mYdpwTufrFwW3K2SEkkFFrJ9btH1iwD1Zik9NQHrl",
+        "sourcePostId": "pfbid02tw25kwuph2cvcdexkp3zilj7mydpwtufrfww3k2sekkffrj9bth1iwd1zik9nqhrl",
+        "sourceContentHash": "703607a44079b885dcae3c29a8f683a4c91b63fe71f76247f2646caf995024d7",
+        "dateImported": "2026-10-28T22:41:09.429Z",
+        "lastSeenAt": "2026-10-28T22:41:09.429Z",
+        "originalPublishedAt": "2026-10-23T22:41:09.429Z",
+        "datePublishedIsApproximate": true,
+        "importNotes": "Public Tridico-owned project update represented in the local Tridico News design with source attribution. No private data, tokens, logins, API access, or external embeds are used."
+      },
+      "contentHash": "703607a44079b885dcae3c29a8f683a4c91b63fe71f76247f2646caf995024d7"
+    },
+    {
       "id": "news_fb_2026_10_23_pfbid02tyxzej9pv3pdpgu7ebwhegmenvjtyc4jb",
       "slug": "2026-10-23-paul-hobart-pfbid02tyxzej9pv3pdpgu7ebwhe",
       "title": "Paul Hobart",
